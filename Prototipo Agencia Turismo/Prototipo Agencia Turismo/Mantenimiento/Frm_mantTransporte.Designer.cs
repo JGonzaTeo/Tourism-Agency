@@ -29,274 +29,274 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantTransporte));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_minimizar = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Lbl_titulo = new System.Windows.Forms.Label();
+            this.Lbl_idTransporte = new System.Windows.Forms.Label();
+            this.Txt_idTransporte = new System.Windows.Forms.TextBox();
+            this.Lbl_noPlaca = new System.Windows.Forms.Label();
+            this.Txt_noPlaca = new System.Windows.Forms.TextBox();
+            this.Lbl_tipoTransporte = new System.Windows.Forms.Label();
+            this.Txt_tipoTransporte = new System.Windows.Forms.TextBox();
+            this.Lbl_capacidad = new System.Windows.Forms.Label();
+            this.Txt_capacidad = new System.Windows.Forms.TextBox();
+            this.Btn_consultar = new System.Windows.Forms.Button();
+            this.Btn_borrar = new System.Windows.Forms.Button();
+            this.Btn_cancelar = new System.Windows.Forms.Button();
+            this.Btn_guardar = new System.Windows.Forms.Button();
+            this.Btn_editar = new System.Windows.Forms.Button();
+            this.Btn_ingresar = new System.Windows.Forms.Button();
+            this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // Pnl_principal
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 40);
-            this.panel1.TabIndex = 1;
+            this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_minimizar);
+            this.Pnl_principal.Controls.Add(this.Btn_cerrar);
+            this.Pnl_principal.Controls.Add(this.Lbl_titulo);
+            this.Pnl_principal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_principal.Margin = new System.Windows.Forms.Padding(4);
+            this.Pnl_principal.Name = "Pnl_principal";
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
+            this.Pnl_principal.TabIndex = 1;
             // 
-            // button1
+            // Btn_minimizar
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1020, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 37);
-            this.button1.TabIndex = 11;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
+            this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
+            this.Btn_minimizar.Name = "Btn_minimizar";
+            this.Btn_minimizar.Size = new System.Drawing.Size(35, 37);
+            this.Btn_minimizar.TabIndex = 11;
+            this.Btn_minimizar.UseVisualStyleBackColor = true;
+            this.Btn_minimizar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Btn_cerrar
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1100, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(35, 37);
-            this.button2.TabIndex = 10;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
+            this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(35, 37);
+            this.Btn_cerrar.TabIndex = 10;
+            this.Btn_cerrar.UseVisualStyleBackColor = true;
+            this.Btn_cerrar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // Lbl_titulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "TRANSPORTES";
+            this.Lbl_titulo.AutoSize = true;
+            this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo.Location = new System.Drawing.Point(34, 16);
+            this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_titulo.Name = "Lbl_titulo";
+            this.Lbl_titulo.Size = new System.Drawing.Size(120, 19);
+            this.Lbl_titulo.TabIndex = 1;
+            this.Lbl_titulo.Text = "TRANSPORTES";
             // 
-            // label2
+            // Lbl_idTransporte
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ID de transporte:";
+            this.Lbl_idTransporte.AutoSize = true;
+            this.Lbl_idTransporte.Location = new System.Drawing.Point(319, 200);
+            this.Lbl_idTransporte.Name = "Lbl_idTransporte";
+            this.Lbl_idTransporte.Size = new System.Drawing.Size(153, 21);
+            this.Lbl_idTransporte.TabIndex = 2;
+            this.Lbl_idTransporte.Text = "ID de transporte:";
             // 
-            // textBox1
+            // Txt_idTransporte
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(494, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 28);
-            this.textBox1.TabIndex = 3;
+            this.Txt_idTransporte.Enabled = false;
+            this.Txt_idTransporte.Location = new System.Drawing.Point(494, 193);
+            this.Txt_idTransporte.Name = "Txt_idTransporte";
+            this.Txt_idTransporte.Size = new System.Drawing.Size(138, 28);
+            this.Txt_idTransporte.TabIndex = 3;
             // 
-            // label3
+            // Lbl_noPlaca
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(319, 264);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 21);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "No. de placa:";
+            this.Lbl_noPlaca.AutoSize = true;
+            this.Lbl_noPlaca.Location = new System.Drawing.Point(319, 264);
+            this.Lbl_noPlaca.Name = "Lbl_noPlaca";
+            this.Lbl_noPlaca.Size = new System.Drawing.Size(127, 21);
+            this.Lbl_noPlaca.TabIndex = 4;
+            this.Lbl_noPlaca.Text = "No. de placa:";
             // 
-            // textBox2
+            // Txt_noPlaca
             // 
-            this.textBox2.Location = new System.Drawing.Point(494, 257);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 28);
-            this.textBox2.TabIndex = 5;
+            this.Txt_noPlaca.Location = new System.Drawing.Point(494, 257);
+            this.Txt_noPlaca.Name = "Txt_noPlaca";
+            this.Txt_noPlaca.Size = new System.Drawing.Size(190, 28);
+            this.Txt_noPlaca.TabIndex = 5;
             // 
-            // label4
+            // Lbl_tipoTransporte
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(319, 326);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 21);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Tipo de transporte:";
+            this.Lbl_tipoTransporte.AutoSize = true;
+            this.Lbl_tipoTransporte.Location = new System.Drawing.Point(319, 326);
+            this.Lbl_tipoTransporte.Name = "Lbl_tipoTransporte";
+            this.Lbl_tipoTransporte.Size = new System.Drawing.Size(169, 21);
+            this.Lbl_tipoTransporte.TabIndex = 6;
+            this.Lbl_tipoTransporte.Text = "Tipo de transporte:";
             // 
-            // textBox3
+            // Txt_tipoTransporte
             // 
-            this.textBox3.Location = new System.Drawing.Point(494, 319);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 28);
-            this.textBox3.TabIndex = 7;
+            this.Txt_tipoTransporte.Location = new System.Drawing.Point(494, 319);
+            this.Txt_tipoTransporte.Name = "Txt_tipoTransporte";
+            this.Txt_tipoTransporte.Size = new System.Drawing.Size(190, 28);
+            this.Txt_tipoTransporte.TabIndex = 7;
             // 
-            // label5
+            // Lbl_capacidad
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(319, 388);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 21);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Capacidad:";
+            this.Lbl_capacidad.AutoSize = true;
+            this.Lbl_capacidad.Location = new System.Drawing.Point(319, 388);
+            this.Lbl_capacidad.Name = "Lbl_capacidad";
+            this.Lbl_capacidad.Size = new System.Drawing.Size(115, 21);
+            this.Lbl_capacidad.TabIndex = 8;
+            this.Lbl_capacidad.Text = "Capacidad:";
             // 
-            // textBox4
+            // Txt_capacidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(494, 381);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(83, 28);
-            this.textBox4.TabIndex = 9;
+            this.Txt_capacidad.Location = new System.Drawing.Point(494, 381);
+            this.Txt_capacidad.Name = "Txt_capacidad";
+            this.Txt_capacidad.Size = new System.Drawing.Size(83, 28);
+            this.Txt_capacidad.TabIndex = 9;
             // 
-            // button8
+            // Btn_consultar
             // 
-            this.button8.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button8.FlatAppearance.BorderSize = 3;
-            this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(842, 59);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 85);
-            this.button8.TabIndex = 40;
-            this.button8.Text = "Consultar";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
+            this.Btn_consultar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultar.FlatAppearance.BorderSize = 3;
+            this.Btn_consultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.Btn_consultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultar.Image")));
+            this.Btn_consultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultar.Location = new System.Drawing.Point(842, 59);
+            this.Btn_consultar.Name = "Btn_consultar";
+            this.Btn_consultar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_consultar.TabIndex = 40;
+            this.Btn_consultar.Text = "Consultar";
+            this.Btn_consultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultar.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // Btn_borrar
             // 
-            this.button7.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button7.FlatAppearance.BorderSize = 3;
-            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(730, 59);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 85);
-            this.button7.TabIndex = 39;
-            this.button7.Text = "Borrar";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
+            this.Btn_borrar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_borrar.FlatAppearance.BorderSize = 3;
+            this.Btn_borrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_borrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.Btn_borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_borrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_borrar.Image")));
+            this.Btn_borrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_borrar.Location = new System.Drawing.Point(730, 59);
+            this.Btn_borrar.Name = "Btn_borrar";
+            this.Btn_borrar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_borrar.TabIndex = 39;
+            this.Btn_borrar.Text = "Borrar";
+            this.Btn_borrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_borrar.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // Btn_cancelar
             // 
-            this.button9.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button9.FlatAppearance.BorderSize = 3;
-            this.button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(618, 59);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 85);
-            this.button9.TabIndex = 38;
-            this.button9.Text = "Cancelar";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_cancelar.FlatAppearance.BorderSize = 3;
+            this.Btn_cancelar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.Btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cancelar.Image")));
+            this.Btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_cancelar.Location = new System.Drawing.Point(618, 59);
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_cancelar.TabIndex = 38;
+            this.Btn_cancelar.Text = "Cancelar";
+            this.Btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_cancelar.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // Btn_guardar
             // 
-            this.button10.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button10.FlatAppearance.BorderSize = 3;
-            this.button10.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(505, 59);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(115, 85);
-            this.button10.TabIndex = 37;
-            this.button10.Text = "Guardar";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
+            this.Btn_guardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_guardar.FlatAppearance.BorderSize = 3;
+            this.Btn_guardar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.Btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_guardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_guardar.Image")));
+            this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_guardar.Location = new System.Drawing.Point(505, 59);
+            this.Btn_guardar.Name = "Btn_guardar";
+            this.Btn_guardar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_guardar.TabIndex = 37;
+            this.Btn_guardar.Text = "Guardar";
+            this.Btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_guardar.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // Btn_editar
             // 
-            this.button11.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button11.FlatAppearance.BorderSize = 3;
-            this.button11.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(392, 59);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(115, 85);
-            this.button11.TabIndex = 36;
-            this.button11.Text = "Editar";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = false;
+            this.Btn_editar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_editar.FlatAppearance.BorderSize = 3;
+            this.Btn_editar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.Btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_editar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_editar.Image")));
+            this.Btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_editar.Location = new System.Drawing.Point(392, 59);
+            this.Btn_editar.Name = "Btn_editar";
+            this.Btn_editar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_editar.TabIndex = 36;
+            this.Btn_editar.Text = "Editar";
+            this.Btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_editar.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // Btn_ingresar
             // 
-            this.button12.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button12.FlatAppearance.BorderSize = 3;
-            this.button12.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(279, 59);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(115, 85);
-            this.button12.TabIndex = 35;
-            this.button12.Text = "Ingresar";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
+            this.Btn_ingresar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_ingresar.FlatAppearance.BorderSize = 3;
+            this.Btn_ingresar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_ingresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.Btn_ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ingresar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ingresar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ingresar.Image")));
+            this.Btn_ingresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_ingresar.Location = new System.Drawing.Point(279, 59);
+            this.Btn_ingresar.Name = "Btn_ingresar";
+            this.Btn_ingresar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_ingresar.TabIndex = 35;
+            this.Btn_ingresar.Text = "Ingresar";
+            this.Btn_ingresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_ingresar.UseVisualStyleBackColor = false;
             // 
             // Frm_mantTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Btn_consultar);
+            this.Controls.Add(this.Btn_borrar);
+            this.Controls.Add(this.Btn_cancelar);
+            this.Controls.Add(this.Btn_guardar);
+            this.Controls.Add(this.Btn_editar);
+            this.Controls.Add(this.Btn_ingresar);
+            this.Controls.Add(this.Txt_capacidad);
+            this.Controls.Add(this.Lbl_capacidad);
+            this.Controls.Add(this.Txt_tipoTransporte);
+            this.Controls.Add(this.Lbl_tipoTransporte);
+            this.Controls.Add(this.Txt_noPlaca);
+            this.Controls.Add(this.Lbl_noPlaca);
+            this.Controls.Add(this.Txt_idTransporte);
+            this.Controls.Add(this.Lbl_idTransporte);
+            this.Controls.Add(this.Pnl_principal);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -304,8 +304,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantTransporte";
             this.Load += new System.EventHandler(this.Frm_mantTransporte_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Pnl_principal.ResumeLayout(false);
+            this.Pnl_principal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,23 +313,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Panel Pnl_principal;
+        private System.Windows.Forms.Button Btn_minimizar;
+        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Label Lbl_titulo;
+        private System.Windows.Forms.Label Lbl_idTransporte;
+        private System.Windows.Forms.TextBox Txt_idTransporte;
+        private System.Windows.Forms.Label Lbl_noPlaca;
+        private System.Windows.Forms.TextBox Txt_noPlaca;
+        private System.Windows.Forms.Label Lbl_tipoTransporte;
+        private System.Windows.Forms.TextBox Txt_tipoTransporte;
+        private System.Windows.Forms.Label Lbl_capacidad;
+        private System.Windows.Forms.TextBox Txt_capacidad;
+        private System.Windows.Forms.Button Btn_consultar;
+        private System.Windows.Forms.Button Btn_borrar;
+        private System.Windows.Forms.Button Btn_cancelar;
+        private System.Windows.Forms.Button Btn_guardar;
+        private System.Windows.Forms.Button Btn_editar;
+        private System.Windows.Forms.Button Btn_ingresar;
     }
 }

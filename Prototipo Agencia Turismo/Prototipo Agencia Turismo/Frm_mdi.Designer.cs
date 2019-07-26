@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenStrip_menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.reservacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guíasTurísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planesDeViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,14 +42,14 @@
             this.hotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.MenStrip_menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenStrip_menuPrincipal
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenStrip_menuPrincipal.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenStrip_menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenStrip_menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reservacionesToolStripMenuItem,
             this.guíasTurísticasToolStripMenuItem,
             this.planesDeViajeToolStripMenuItem,
@@ -57,11 +57,11 @@
             this.seguridadToolStripMenuItem,
             this.mantenimientosToolStripMenuItem,
             this.contabilidadToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1182, 37);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenStrip_menuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.MenStrip_menuPrincipal.Name = "MenStrip_menuPrincipal";
+            this.MenStrip_menuPrincipal.Size = new System.Drawing.Size(1182, 37);
+            this.MenStrip_menuPrincipal.TabIndex = 1;
+            this.MenStrip_menuPrincipal.Text = "menuStrip1";
             // 
             // reservacionesToolStripMenuItem
             // 
@@ -136,7 +136,7 @@
             // 
             this.transporteToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transporteToolStripMenuItem.Name = "transporteToolStripMenuItem";
-            this.transporteToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.transporteToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.transporteToolStripMenuItem.Text = "Transporte";
             this.transporteToolStripMenuItem.Click += new System.EventHandler(this.transporteToolStripMenuItem_Click);
             // 
@@ -144,7 +144,7 @@
             // 
             this.restauranteToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.restauranteToolStripMenuItem.Name = "restauranteToolStripMenuItem";
-            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.restauranteToolStripMenuItem.Text = "Restaurante";
             this.restauranteToolStripMenuItem.Click += new System.EventHandler(this.restauranteToolStripMenuItem_Click);
             // 
@@ -152,7 +152,7 @@
             // 
             this.hotelToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hotelToolStripMenuItem.Name = "hotelToolStripMenuItem";
-            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.hotelToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.hotelToolStripMenuItem.Text = "Hotel";
             this.hotelToolStripMenuItem.Click += new System.EventHandler(this.hotelToolStripMenuItem_Click);
             // 
@@ -172,7 +172,7 @@
             // 
             this.nóminasToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nóminasToolStripMenuItem.Name = "nóminasToolStripMenuItem";
-            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.nóminasToolStripMenuItem.Text = "Nóminas";
             this.nóminasToolStripMenuItem.Click += new System.EventHandler(this.nóminasToolStripMenuItem_Click);
             // 
@@ -182,18 +182,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1182, 853);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MenStrip_menuPrincipal);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MenStrip_menuPrincipal;
             this.Name = "Frm_mdi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_mdi_FormClosed);
             this.Load += new System.EventHandler(this.Frm_mdi_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MenStrip_menuPrincipal.ResumeLayout(false);
+            this.MenStrip_menuPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +201,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MenStrip_menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem reservacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guíasTurísticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planesDeViajeToolStripMenuItem;

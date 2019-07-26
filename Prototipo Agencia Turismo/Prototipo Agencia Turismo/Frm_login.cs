@@ -28,8 +28,8 @@ namespace Prototipo_Agencia_Turismo
             string nombreUsuario = " ";
             string contrasenaUsuario = " ";
 
-            nombreUsuario = textBox1.Text;
-            contrasenaUsuario = textBox2.Text;
+            nombreUsuario = Txt_usuario.Text;
+            contrasenaUsuario = Txt_contrasena.Text;
 
             if(nombreUsuario == "Admin" && contrasenaUsuario == "123")
             {
@@ -50,7 +50,7 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_login_Load(object sender, EventArgs e)
         {
-            textBox1.Focus();
+            Txt_usuario.Focus();
         }
     }
 }

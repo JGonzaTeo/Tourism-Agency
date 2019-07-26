@@ -65,6 +65,12 @@
     <Compile Include="Mantenimiento\Frm_mantHotel.Designer.cs">
       <DependentUpon>Frm_mantHotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Frm_mantPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantPerfil.Designer.cs">
+      <DependentUpon>Frm_mantPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Frm_mantRestaurante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="Mantenimiento\Frm_mantTransporte.Designer.cs">
       <DependentUpon>Frm_mantTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantUsuario.Designer.cs">
+      <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\Frm_bitacora.cs">
       <SubType>Form</SubType>
@@ -117,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_mantTransporte.resx">
       <DependentUpon>Frm_mantTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Frm_mantUsuario.resx">
+      <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\Frm_bitacora.resx">
       <DependentUpon>Frm_bitacora.cs</DependentUpon>

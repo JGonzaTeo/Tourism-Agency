@@ -29,266 +29,266 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_facturacion));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_minimizar = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Lbl_titulo = new System.Windows.Forms.Label();
+            this.Lbl_idFactura = new System.Windows.Forms.Label();
+            this.Lbl_factura = new System.Windows.Forms.Label();
+            this.Lbl_idCliente = new System.Windows.Forms.Label();
+            this.Lbl_cliente = new System.Windows.Forms.Label();
+            this.Lbl_idEmpleado = new System.Windows.Forms.Label();
+            this.Lbl_empleado = new System.Windows.Forms.Label();
+            this.Dgv_detalleFactura = new System.Windows.Forms.DataGridView();
+            this.Btn_consultaCliente = new System.Windows.Forms.Button();
+            this.Lbl_fechaFacturacion = new System.Windows.Forms.Label();
+            this.Lbl_fecha = new System.Windows.Forms.Label();
+            this.Lbl_cantPasajeros = new System.Windows.Forms.Label();
+            this.Txt_cantPasajeros = new System.Windows.Forms.TextBox();
+            this.Lbl_cantHabitaciones = new System.Windows.Forms.Label();
+            this.Txt_cantHabitaciones = new System.Windows.Forms.TextBox();
+            this.Btn_agregar = new System.Windows.Forms.Button();
+            this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Btn_facturar = new System.Windows.Forms.Button();
+            this.Pnl_principal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // Pnl_principal
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 40);
-            this.panel1.TabIndex = 0;
+            this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_minimizar);
+            this.Pnl_principal.Controls.Add(this.Btn_cerrar);
+            this.Pnl_principal.Controls.Add(this.Lbl_titulo);
+            this.Pnl_principal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_principal.Name = "Pnl_principal";
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
+            this.Pnl_principal.TabIndex = 0;
             // 
-            // button1
+            // Btn_minimizar
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1020, -5);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 48);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
+            this.Btn_minimizar.Location = new System.Drawing.Point(1020, -5);
+            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_minimizar.Name = "Btn_minimizar";
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.TabIndex = 12;
+            this.Btn_minimizar.UseVisualStyleBackColor = true;
+            this.Btn_minimizar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Btn_cerrar
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1100, -5);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 48);
-            this.button2.TabIndex = 11;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
+            this.Btn_cerrar.Location = new System.Drawing.Point(1100, -5);
+            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.TabIndex = 11;
+            this.Btn_cerrar.UseVisualStyleBackColor = true;
+            this.Btn_cerrar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // Lbl_titulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "FACTURACIÓN";
+            this.Lbl_titulo.AutoSize = true;
+            this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo.Location = new System.Drawing.Point(24, 9);
+            this.Lbl_titulo.Name = "Lbl_titulo";
+            this.Lbl_titulo.Size = new System.Drawing.Size(128, 19);
+            this.Lbl_titulo.TabIndex = 1;
+            this.Lbl_titulo.Text = "FACTURACIÓN";
             // 
-            // label2
+            // Lbl_idFactura
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID de factura:";
+            this.Lbl_idFactura.AutoSize = true;
+            this.Lbl_idFactura.Location = new System.Drawing.Point(93, 64);
+            this.Lbl_idFactura.Name = "Lbl_idFactura";
+            this.Lbl_idFactura.Size = new System.Drawing.Size(128, 21);
+            this.Lbl_idFactura.TabIndex = 1;
+            this.Lbl_idFactura.Text = "ID de factura:";
             // 
-            // label3
+            // Lbl_factura
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(256, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "codFactura";
+            this.Lbl_factura.AutoSize = true;
+            this.Lbl_factura.Location = new System.Drawing.Point(256, 64);
+            this.Lbl_factura.Name = "Lbl_factura";
+            this.Lbl_factura.Size = new System.Drawing.Size(109, 21);
+            this.Lbl_factura.TabIndex = 2;
+            this.Lbl_factura.Text = "codFactura";
             // 
-            // label4
+            // Lbl_idCliente
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ID de cliente:";
+            this.Lbl_idCliente.AutoSize = true;
+            this.Lbl_idCliente.Location = new System.Drawing.Point(93, 115);
+            this.Lbl_idCliente.Name = "Lbl_idCliente";
+            this.Lbl_idCliente.Size = new System.Drawing.Size(122, 21);
+            this.Lbl_idCliente.TabIndex = 3;
+            this.Lbl_idCliente.Text = "ID de cliente:";
             // 
-            // label5
+            // Lbl_cliente
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(256, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "codCliente";
+            this.Lbl_cliente.AutoSize = true;
+            this.Lbl_cliente.Location = new System.Drawing.Point(256, 115);
+            this.Lbl_cliente.Name = "Lbl_cliente";
+            this.Lbl_cliente.Size = new System.Drawing.Size(103, 21);
+            this.Lbl_cliente.TabIndex = 4;
+            this.Lbl_cliente.Text = "codCliente";
             // 
-            // label6
+            // Lbl_idEmpleado
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(93, 168);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 21);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "ID de empleado:";
+            this.Lbl_idEmpleado.AutoSize = true;
+            this.Lbl_idEmpleado.Location = new System.Drawing.Point(93, 168);
+            this.Lbl_idEmpleado.Name = "Lbl_idEmpleado";
+            this.Lbl_idEmpleado.Size = new System.Drawing.Size(153, 21);
+            this.Lbl_idEmpleado.TabIndex = 5;
+            this.Lbl_idEmpleado.Text = "ID de empleado:";
             // 
-            // label7
+            // Lbl_empleado
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(256, 168);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 21);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "codEmpleado";
+            this.Lbl_empleado.AutoSize = true;
+            this.Lbl_empleado.Location = new System.Drawing.Point(256, 168);
+            this.Lbl_empleado.Name = "Lbl_empleado";
+            this.Lbl_empleado.Size = new System.Drawing.Size(129, 21);
+            this.Lbl_empleado.TabIndex = 6;
+            this.Lbl_empleado.Text = "codEmpleado";
             // 
-            // dataGridView1
+            // Dgv_detalleFactura
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(184, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(788, 272);
-            this.dataGridView1.TabIndex = 7;
+            this.Dgv_detalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_detalleFactura.Location = new System.Drawing.Point(184, 252);
+            this.Dgv_detalleFactura.Name = "Dgv_detalleFactura";
+            this.Dgv_detalleFactura.RowTemplate.Height = 24;
+            this.Dgv_detalleFactura.Size = new System.Drawing.Size(788, 272);
+            this.Dgv_detalleFactura.TabIndex = 7;
             // 
-            // button3
+            // Btn_consultaCliente
             // 
-            this.button3.Location = new System.Drawing.Point(365, 106);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 39);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Btn_consultaCliente.Location = new System.Drawing.Point(365, 106);
+            this.Btn_consultaCliente.Name = "Btn_consultaCliente";
+            this.Btn_consultaCliente.Size = new System.Drawing.Size(64, 39);
+            this.Btn_consultaCliente.TabIndex = 8;
+            this.Btn_consultaCliente.Text = "...";
+            this.Btn_consultaCliente.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // Lbl_fechaFacturacion
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(658, 542);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(197, 21);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Fecha de facturación:";
+            this.Lbl_fechaFacturacion.AutoSize = true;
+            this.Lbl_fechaFacturacion.Location = new System.Drawing.Point(658, 542);
+            this.Lbl_fechaFacturacion.Name = "Lbl_fechaFacturacion";
+            this.Lbl_fechaFacturacion.Size = new System.Drawing.Size(197, 21);
+            this.Lbl_fechaFacturacion.TabIndex = 9;
+            this.Lbl_fechaFacturacion.Text = "Fecha de facturación:";
             // 
-            // label9
+            // Lbl_fecha
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(862, 542);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 21);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "yyyy/mm/dd";
+            this.Lbl_fecha.AutoSize = true;
+            this.Lbl_fecha.Location = new System.Drawing.Point(862, 542);
+            this.Lbl_fecha.Name = "Lbl_fecha";
+            this.Lbl_fecha.Size = new System.Drawing.Size(110, 21);
+            this.Lbl_fecha.TabIndex = 10;
+            this.Lbl_fecha.Text = "yyyy/mm/dd";
             // 
-            // label10
+            // Lbl_cantPasajeros
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(191, 217);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(208, 21);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Cantidad de Pasajeros:";
+            this.Lbl_cantPasajeros.AutoSize = true;
+            this.Lbl_cantPasajeros.Location = new System.Drawing.Point(191, 217);
+            this.Lbl_cantPasajeros.Name = "Lbl_cantPasajeros";
+            this.Lbl_cantPasajeros.Size = new System.Drawing.Size(208, 21);
+            this.Lbl_cantPasajeros.TabIndex = 11;
+            this.Lbl_cantPasajeros.Text = "Cantidad de Pasajeros:";
             // 
-            // textBox1
+            // Txt_cantPasajeros
             // 
-            this.textBox1.Location = new System.Drawing.Point(400, 214);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 28);
-            this.textBox1.TabIndex = 12;
+            this.Txt_cantPasajeros.Location = new System.Drawing.Point(400, 214);
+            this.Txt_cantPasajeros.Name = "Txt_cantPasajeros";
+            this.Txt_cantPasajeros.Size = new System.Drawing.Size(68, 28);
+            this.Txt_cantPasajeros.TabIndex = 12;
             // 
-            // label11
+            // Lbl_cantHabitaciones
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(658, 217);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(241, 21);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Cantidad de Habitaciones:";
+            this.Lbl_cantHabitaciones.AutoSize = true;
+            this.Lbl_cantHabitaciones.Location = new System.Drawing.Point(658, 217);
+            this.Lbl_cantHabitaciones.Name = "Lbl_cantHabitaciones";
+            this.Lbl_cantHabitaciones.Size = new System.Drawing.Size(241, 21);
+            this.Lbl_cantHabitaciones.TabIndex = 13;
+            this.Lbl_cantHabitaciones.Text = "Cantidad de Habitaciones:";
             // 
-            // textBox2
+            // Txt_cantHabitaciones
             // 
-            this.textBox2.Location = new System.Drawing.Point(904, 214);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(68, 28);
-            this.textBox2.TabIndex = 14;
+            this.Txt_cantHabitaciones.Location = new System.Drawing.Point(904, 214);
+            this.Txt_cantHabitaciones.Name = "Txt_cantHabitaciones";
+            this.Txt_cantHabitaciones.Size = new System.Drawing.Size(68, 28);
+            this.Txt_cantHabitaciones.TabIndex = 14;
             // 
-            // button4
+            // Btn_agregar
             // 
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(993, 356);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 38);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Agregar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Btn_agregar.FlatAppearance.BorderSize = 3;
+            this.Btn_agregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_agregar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_agregar.Location = new System.Drawing.Point(993, 356);
+            this.Btn_agregar.Name = "Btn_agregar";
+            this.Btn_agregar.Size = new System.Drawing.Size(175, 38);
+            this.Btn_agregar.TabIndex = 15;
+            this.Btn_agregar.Text = "Agregar";
+            this.Btn_agregar.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // Btn_eliminar
             // 
-            this.button5.FlatAppearance.BorderSize = 3;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(993, 422);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(175, 38);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Eliminar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Btn_eliminar.FlatAppearance.BorderSize = 3;
+            this.Btn_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_eliminar.Location = new System.Drawing.Point(993, 422);
+            this.Btn_eliminar.Name = "Btn_eliminar";
+            this.Btn_eliminar.Size = new System.Drawing.Size(175, 38);
+            this.Btn_eliminar.TabIndex = 16;
+            this.Btn_eliminar.Text = "Eliminar";
+            this.Btn_eliminar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // Btn_facturar
             // 
-            this.button6.FlatAppearance.BorderSize = 3;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(993, 486);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(175, 38);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Facturar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Btn_facturar.FlatAppearance.BorderSize = 3;
+            this.Btn_facturar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_facturar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_facturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_facturar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_facturar.Location = new System.Drawing.Point(993, 486);
+            this.Btn_facturar.Name = "Btn_facturar";
+            this.Btn_facturar.Size = new System.Drawing.Size(175, 38);
+            this.Btn_facturar.TabIndex = 17;
+            this.Btn_facturar.Text = "Facturar";
+            this.Btn_facturar.UseVisualStyleBackColor = true;
             // 
             // Frm_facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Btn_facturar);
+            this.Controls.Add(this.Btn_eliminar);
+            this.Controls.Add(this.Btn_agregar);
+            this.Controls.Add(this.Txt_cantHabitaciones);
+            this.Controls.Add(this.Lbl_cantHabitaciones);
+            this.Controls.Add(this.Txt_cantPasajeros);
+            this.Controls.Add(this.Lbl_cantPasajeros);
+            this.Controls.Add(this.Lbl_fecha);
+            this.Controls.Add(this.Lbl_fechaFacturacion);
+            this.Controls.Add(this.Btn_consultaCliente);
+            this.Controls.Add(this.Dgv_detalleFactura);
+            this.Controls.Add(this.Lbl_empleado);
+            this.Controls.Add(this.Lbl_idEmpleado);
+            this.Controls.Add(this.Lbl_cliente);
+            this.Controls.Add(this.Lbl_idCliente);
+            this.Controls.Add(this.Lbl_factura);
+            this.Controls.Add(this.Lbl_idFactura);
+            this.Controls.Add(this.Pnl_principal);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -296,9 +296,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_facturacion";
             this.Load += new System.EventHandler(this.Frm_facturacion_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Pnl_principal.ResumeLayout(false);
+            this.Pnl_principal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,26 +306,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel Pnl_principal;
+        private System.Windows.Forms.Label Lbl_titulo;
+        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_minimizar;
+        private System.Windows.Forms.Label Lbl_idFactura;
+        private System.Windows.Forms.Label Lbl_factura;
+        private System.Windows.Forms.Label Lbl_idCliente;
+        private System.Windows.Forms.Label Lbl_cliente;
+        private System.Windows.Forms.Label Lbl_idEmpleado;
+        private System.Windows.Forms.Label Lbl_empleado;
+        private System.Windows.Forms.DataGridView Dgv_detalleFactura;
+        private System.Windows.Forms.Button Btn_consultaCliente;
+        private System.Windows.Forms.Label Lbl_fechaFacturacion;
+        private System.Windows.Forms.Label Lbl_fecha;
+        private System.Windows.Forms.Label Lbl_cantPasajeros;
+        private System.Windows.Forms.TextBox Txt_cantPasajeros;
+        private System.Windows.Forms.Label Lbl_cantHabitaciones;
+        private System.Windows.Forms.TextBox Txt_cantHabitaciones;
+        private System.Windows.Forms.Button Btn_agregar;
+        private System.Windows.Forms.Button Btn_eliminar;
+        private System.Windows.Forms.Button Btn_facturar;
     }
 }
