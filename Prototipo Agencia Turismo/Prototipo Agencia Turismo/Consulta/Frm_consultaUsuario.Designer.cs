@@ -202,8 +202,8 @@
         private System.Windows.Forms.Label Lbl_consultaUsuario;
         private System.Windows.Forms.TextBox Txt_consultaUsuario;
         private System.Windows.Forms.Button Btn_consultaPerfil;
-        private System.Windows.Forms.DataGridView Dgv_consultaUsuario;
         private System.Windows.Forms.Button Btn_seleccionar;
         private System.Windows.Forms.Button Btn_actualizar;
+        public System.Windows.Forms.DataGridView Dgv_consultaUsuario;
     }
 }

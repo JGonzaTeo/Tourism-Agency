@@ -20,9 +20,15 @@ namespace Prototipo_Agencia_Turismo
 {
     public partial class Frm_mdi : Form
     {
-        public Frm_mdi()
+        string nombreUsuario = " ";
+        string tipoPerfil = " ";
+        DateTime fecha = DateTime.Now;
+
+        public Frm_mdi(string usuario, string tipoPerfil)
         {
             InitializeComponent();
+            nombreUsuario = usuario;
+            this.tipoPerfil = tipoPerfil;
         }
 
         private void Frm_mdi_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,6 +38,8 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_mdi_Load(object sender, EventArgs e)
         {
+            toolStripStatusLabel1.Text = "BIENVENIDO: " + nombreUsuario;
+
             MdiClient ctlMDI; 
 
             foreach (Control ctl in this.Controls)
