@@ -122,7 +122,7 @@
             this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_generarReporte.Location = new System.Drawing.Point(971, 555);
+            this.Btn_generarReporte.Location = new System.Drawing.Point(971, 575);
             this.Btn_generarReporte.Name = "Btn_generarReporte";
             this.Btn_generarReporte.Size = new System.Drawing.Size(164, 41);
             this.Btn_generarReporte.TabIndex = 4;
@@ -137,7 +137,7 @@
             this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_actualizar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_actualizar.Location = new System.Drawing.Point(771, 555);
+            this.Btn_actualizar.Location = new System.Drawing.Point(771, 575);
             this.Btn_actualizar.Name = "Btn_actualizar";
             this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
             this.Btn_actualizar.TabIndex = 5;

@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta\Frm_consultaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaPerfil.Designer.cs">
+      <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
+      <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Consulta\Frm_consultaPerfil.resx">
+      <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
+      <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_facturacion.resx">
       <DependentUpon>Frm_facturacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_mantHotel.resx">
       <DependentUpon>Frm_mantHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Frm_mantPerfil.resx">
+      <DependentUpon>Frm_mantPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_mantRestaurante.resx">
       <DependentUpon>Frm_mantRestaurante.cs</DependentUpon>

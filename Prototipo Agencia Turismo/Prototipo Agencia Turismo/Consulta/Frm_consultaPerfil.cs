@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prototipo_Agencia_Turismo.Mantenimiento
+namespace Prototipo_Agencia_Turismo.Consulta
 {
-    public partial class Frm_mantPerfil : Form
+    public partial class Frm_consultaPerfil : Form
     {
-        public Frm_mantPerfil()
+        public Frm_consultaPerfil()
         {
             InitializeComponent();
         }
@@ -23,16 +23,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
