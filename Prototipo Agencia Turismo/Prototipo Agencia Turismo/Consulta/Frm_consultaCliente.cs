@@ -28,7 +28,7 @@ namespace Prototipo_Agencia_Turismo.Consulta
         {
             try
             {
-                string consultaMostrar = "SELECT * FROM tbl_cliente";
+                string consultaMostrar = "SELECT * FROM tbl_cliente Where estadoCliente = 1";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
