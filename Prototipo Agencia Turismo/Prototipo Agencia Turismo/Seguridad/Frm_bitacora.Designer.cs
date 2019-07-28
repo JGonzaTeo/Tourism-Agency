@@ -35,9 +35,16 @@
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Dgv_tablaBitacora = new System.Windows.Forms.DataGridView();
             this.Lbl_nombreUsuario = new System.Windows.Forms.Label();
-            this.Txt_nombreUsuario = new System.Windows.Forms.TextBox();
+            this.Txt_consultaUsuario = new System.Windows.Forms.TextBox();
             this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Btn_actualizar = new System.Windows.Forms.Button();
+            this.Btn_consultaPerfil = new System.Windows.Forms.Button();
+            this.idBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operacionBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionIp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_tablaBitacora)).BeginInit();
             this.SuspendLayout();
@@ -90,10 +97,24 @@
             // 
             // Dgv_tablaBitacora
             // 
+            this.Dgv_tablaBitacora.AllowUserToAddRows = false;
+            this.Dgv_tablaBitacora.AllowUserToDeleteRows = false;
+            this.Dgv_tablaBitacora.AllowUserToResizeColumns = false;
+            this.Dgv_tablaBitacora.AllowUserToResizeRows = false;
+            this.Dgv_tablaBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_tablaBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_tablaBitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idBitacora,
+            this.operacionBitacora,
+            this.usuarioBitacora,
+            this.fechaIngreso,
+            this.aplicacion,
+            this.direccionIp});
             this.Dgv_tablaBitacora.Location = new System.Drawing.Point(26, 155);
             this.Dgv_tablaBitacora.Name = "Dgv_tablaBitacora";
+            this.Dgv_tablaBitacora.RowHeadersVisible = false;
             this.Dgv_tablaBitacora.RowTemplate.Height = 24;
+            this.Dgv_tablaBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_tablaBitacora.Size = new System.Drawing.Size(1109, 376);
             this.Dgv_tablaBitacora.TabIndex = 1;
             // 
@@ -107,15 +128,16 @@
             this.Lbl_nombreUsuario.TabIndex = 2;
             this.Lbl_nombreUsuario.Text = "Nombre de usuario:";
             // 
-            // Txt_nombreUsuario
+            // Txt_consultaUsuario
             // 
-            this.Txt_nombreUsuario.Location = new System.Drawing.Point(221, 99);
-            this.Txt_nombreUsuario.Name = "Txt_nombreUsuario";
-            this.Txt_nombreUsuario.Size = new System.Drawing.Size(914, 23);
-            this.Txt_nombreUsuario.TabIndex = 3;
+            this.Txt_consultaUsuario.Location = new System.Drawing.Point(221, 99);
+            this.Txt_consultaUsuario.Name = "Txt_consultaUsuario";
+            this.Txt_consultaUsuario.Size = new System.Drawing.Size(844, 23);
+            this.Txt_consultaUsuario.TabIndex = 3;
             // 
             // Btn_generarReporte
             // 
+            this.Btn_generarReporte.Enabled = false;
             this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
             this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -143,15 +165,67 @@
             this.Btn_actualizar.TabIndex = 5;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
+            // 
+            // Btn_consultaPerfil
+            // 
+            this.Btn_consultaPerfil.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultaPerfil.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaPerfil.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultaPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultaPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultaPerfil.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultaPerfil.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaPerfil.Image")));
+            this.Btn_consultaPerfil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultaPerfil.Location = new System.Drawing.Point(1095, 82);
+            this.Btn_consultaPerfil.Name = "Btn_consultaPerfil";
+            this.Btn_consultaPerfil.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultaPerfil.TabIndex = 42;
+            this.Btn_consultaPerfil.Text = "Consultar";
+            this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
+            this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
+            // 
+            // idBitacora
+            // 
+            this.idBitacora.HeaderText = "ID Bitacora";
+            this.idBitacora.Name = "idBitacora";
+            // 
+            // operacionBitacora
+            // 
+            this.operacionBitacora.HeaderText = "Operación";
+            this.operacionBitacora.Name = "operacionBitacora";
+            // 
+            // usuarioBitacora
+            // 
+            this.usuarioBitacora.HeaderText = "Usuario";
+            this.usuarioBitacora.Name = "usuarioBitacora";
+            // 
+            // fechaIngreso
+            // 
+            this.fechaIngreso.HeaderText = "Fecha de ingreso";
+            this.fechaIngreso.Name = "fechaIngreso";
+            // 
+            // aplicacion
+            // 
+            this.aplicacion.HeaderText = "Aplicación";
+            this.aplicacion.Name = "aplicacion";
+            // 
+            // direccionIp
+            // 
+            this.direccionIp.HeaderText = "Dirección IP";
+            this.direccionIp.Name = "direccionIp";
             // 
             // Frm_bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_consultaPerfil);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_generarReporte);
-            this.Controls.Add(this.Txt_nombreUsuario);
+            this.Controls.Add(this.Txt_consultaUsuario);
             this.Controls.Add(this.Lbl_nombreUsuario);
             this.Controls.Add(this.Dgv_tablaBitacora);
             this.Controls.Add(this.Pnl_principal);
@@ -177,8 +251,15 @@
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.DataGridView Dgv_tablaBitacora;
         private System.Windows.Forms.Label Lbl_nombreUsuario;
-        private System.Windows.Forms.TextBox Txt_nombreUsuario;
+        private System.Windows.Forms.TextBox Txt_consultaUsuario;
         private System.Windows.Forms.Button Btn_generarReporte;
         private System.Windows.Forms.Button Btn_actualizar;
+        private System.Windows.Forms.Button Btn_consultaPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBitacora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operacionBitacora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioBitacora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aplicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionIp;
     }
 }
