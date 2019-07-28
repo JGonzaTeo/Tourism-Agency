@@ -4,6 +4,7 @@
   -----------------------------------------------------
 */
 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,9 @@ using System.Net;
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
-    public partial class Frm_mantTransporte : Form
+    public partial class Frm_mantCliente : Form
     {
-        public Frm_mantTransporte()
+        public Frm_mantCliente()
         {
             InitializeComponent();
         }
@@ -30,26 +31,36 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         bool presionado = false;
 
         string id = "";
-        string placa = "";
-        string tipoTransporte = "";
-        int capacidad = 0;
+        string nombre = "";
+        string apellido = "";
+        int telefono = 0;
+        string correo = "";
+        string dpi = "";
+        string nit = "";
 
 
 
 
         private void limpiar()
         {
-            Txt_idTransporte.Text = "";
-            Txt_noPlaca.Text = "";
-            Txt_tipoTransporte.Text = "";
-            Txt_capacidad.Text = "";
+            Txt_idCliente.Text = "";
+            Txt_Nombre.Text = "";
+            Txt_Apellido.Text = "";
+            Txt_telefono.Text = "";
+            Txt_correo.Text = "";
+            Txt_dpi.Text = "";
+            Txt_nit.Text = "";
+
         }
 
         private void HabilitarCampos()
         {
-            Txt_noPlaca.Enabled = true;
-            Txt_tipoTransporte.Enabled = true;
-            Txt_capacidad.Enabled = true;
+            Txt_Nombre.Enabled = true;
+            Txt_Apellido.Enabled = true;
+            Txt_telefono.Enabled = true;
+            Txt_correo.Enabled = true;
+            Txt_dpi.Enabled = true;
+            Txt_nit.Enabled = true;
         }
 
         private void HabilitarBtn()
@@ -73,17 +84,23 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void DeshabilitarCampos()
         {
 
-            Txt_noPlaca.Enabled = false;
-            Txt_tipoTransporte.Enabled = false;
-            Txt_capacidad.Enabled = false;
+            Txt_Nombre.Enabled = false;
+            Txt_Apellido.Enabled = false;
+            Txt_telefono.Enabled = false;
+            Txt_correo.Enabled = false;
+            Txt_dpi.Enabled = false;
+            Txt_nit.Enabled = false;
 
         }
 
         private void GuardarDatos()
         {
-            placa = Txt_noPlaca.Text;
-            tipoTransporte = Txt_tipoTransporte.Text;
-            capacidad = int.Parse(Txt_capacidad.Text);
+            nombre = Txt_Nombre.Text;
+            apellido = Txt_Apellido.Text;
+            telefono = int.Parse(Txt_telefono.Text);
+            correo = Txt_correo.Text;
+            dpi = Txt_dpi.Text;
+            nit = Txt_nit.Text;
 
 
             try
@@ -99,11 +116,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                OdbcCommand comm = new OdbcCommand("{call SP_InsertarTransporte(?,?,?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
-                comm.Parameters.Add("TipoTransporte", OdbcType.Text).Value = tipoTransporte;
-                comm.Parameters.Add("Capacidad", OdbcType.Int).Value = capacidad;
+                string insertar = "INSERT INTO tbl_cliente (nombreCliente,apellidoCliente,telefonoCliente,correoCliente,identificacionCliente,nitCliente,estadoCliente) VALUES('" + nombre + 
+                    "', '" + apellido + "', '" + telefono + "', '" + correo + "', '" + dpi + "', '" + nit + "', '1' )";
+
+                OdbcCommand comm = new OdbcCommand(insertar, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
 
@@ -112,7 +128,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INGRESO DE REGISTRO";
                 commBitacora.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "TRANSPORTE";
+                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "CLIENTES";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
             }
@@ -126,7 +142,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void BorrarDatos()
         {
-            placa = Txt_noPlaca.Text;
+            dpi = Txt_dpi.Text;
 
             try
             {
@@ -141,9 +157,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                OdbcCommand comm = new OdbcCommand("{call SP_EliminarTransporte(?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
+                string consulta = "UPDATE tbl_cliente SET estadoCliente = 0 WHERE identificacionCliente = " + Txt_dpi.Text;
+                OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
 
@@ -152,7 +167,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "ELIMINACION DE REGISTRO";
                 commBitacora.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
+                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "CLIENTES";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
             }
@@ -166,10 +181,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void ActualizarDatos()
         {
-            id = Txt_idTransporte.Text;
-            placa = Txt_noPlaca.Text;
-            tipoTransporte = Txt_tipoTransporte.Text;
-            capacidad = int.Parse(Txt_capacidad.Text);
+            id = Txt_idCliente.Text;
+            nombre = Txt_Nombre.Text;
+            apellido = Txt_Apellido.Text;
+            telefono = int.Parse(Txt_telefono.Text);
+            correo = Txt_correo.Text;
+            dpi = Txt_dpi.Text;
+            nit = Txt_nit.Text;
+
 
             try
             {
@@ -184,11 +203,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                OdbcCommand comm = new OdbcCommand("{call SP_ActualizarTransporte(?,?,?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
-                comm.Parameters.Add("TipoTransporte", OdbcType.Text).Value = tipoTransporte;
-                comm.Parameters.Add("Capacidad", OdbcType.Text).Value = capacidad;
+                string actualizar = "UPDATE `tbl_cliente` SET `Pk_idCliente` = '" + id  + "' ," +
+                    "`nombreCliente` = '" + nombre + "', `apellidoCliente` = '" + apellido + "', " +
+                    "`telefonoCliente` = '" + telefono + "', " +
+                    "`correoCliente` = '" + correo + "', " +
+                    "`identificacionCliente` = '" + dpi + "', " +
+                    "`nitCliente` = '" + telefono + "', `estadoCliente` = '1' WHERE Pk_idCliente = " + id;
+
+                OdbcCommand comm = new OdbcCommand(actualizar, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
 
@@ -197,7 +219,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "ACTUALIZAR REGISTRO";
                 commBitacora.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
+                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "CLIENTES";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
             }
@@ -208,26 +230,19 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
         }
 
-
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Btn_ingresar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HabilitarCampos();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Btn_minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Frm_mantTransporte_Load(object sender, EventArgs e)
+        private void Btn_cerrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Btn_ingresar_Click(object sender, EventArgs e)
-        {
-            HabilitarCampos();
+            this.Close();
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)
@@ -237,12 +252,12 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 DeshabilitarBtn();
                 Btn_editar.Enabled = true;
                 presionado = true;
-                Txt_noPlaca.Enabled = false;
+                Txt_dpi.Enabled = false;
             }
             else
             {
                 ActualizarDatos();
-                Txt_noPlaca.Focus();
+                Txt_dpi.Focus();
                 presionado = false;
                 DeshabilitarCampos();
                 HabilitarBtn();
@@ -261,7 +276,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             else
             {
                 GuardarDatos();
-                Txt_noPlaca.Focus();
+                Txt_dpi.Focus();
                 presionado = false;
                 DeshabilitarCampos();
                 HabilitarBtn();
@@ -287,7 +302,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             else
             {
                 BorrarDatos();
-                Txt_idTransporte.Focus();
+                Txt_idCliente.Focus();
                 presionado = false;
                 DeshabilitarCampos();
                 HabilitarBtn();
@@ -305,72 +320,46 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
             else
             {
-                Consulta.Frm_consultaTransporte conTransporte = new Consulta.Frm_consultaTransporte();
-                conTransporte.ShowDialog();
+                Consulta.Frm_consultaCliente conCliente = new Consulta.Frm_consultaCliente();
+                conCliente.ShowDialog();
 
-                if (conTransporte.DialogResult == DialogResult.OK)
+                if (conCliente.DialogResult == DialogResult.OK)
                 {
-                    Txt_idTransporte.Text =
-                        conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
+                    Txt_idCliente.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
                         Cells[0].Value.ToString();
 
-                    Txt_noPlaca.Text =
-                         conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
-                         Cells[1].Value.ToString();
+                    Txt_Nombre.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
+                        Cells[1].Value.ToString();
 
-                    Txt_tipoTransporte.Text =
-                        conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
+                    Txt_Apellido.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
                         Cells[2].Value.ToString();
 
-                    Txt_capacidad.Text =
-                        conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
+                    Txt_telefono.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
                         Cells[3].Value.ToString();
 
-                    Txt_idTransporte.Focus();
+                    Txt_correo.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
+                        Cells[4].Value.ToString();
+
+                    Txt_dpi.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
+                        Cells[5].Value.ToString();
+
+                    Txt_nit.Text =
+                        conCliente.Dgv_consultaCliente.Rows[conCliente.Dgv_consultaCliente.CurrentRow.Index].
+                        Cells[6].Value.ToString();
+
+
+
+                    Txt_idCliente.Focus();
                     presionado = false;
                     HabilitarBtn();
                 }
             }
-        }
-
-        private void Txt_capacidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_capacidad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_tipoTransporte_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_tipoTransporte_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_noPlaca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_noPlaca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_idTransporte_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_idTransporte_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
