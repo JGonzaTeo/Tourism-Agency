@@ -345,7 +345,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            v.soloNumeros(e);
+            v.soloNumero(e);
         }
     }
     }

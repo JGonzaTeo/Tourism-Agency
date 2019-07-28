@@ -106,7 +106,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            v.soloNumeros(e);
+            v.soloNumero(e);
         }
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
