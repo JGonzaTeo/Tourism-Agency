@@ -116,8 +116,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                string consulta = "INSERT INTO `tbl_cliente` VALUES ('" + nombre + "', '" + apellido + "', '" + telefono + "', '" + correo + "', '" + dpi + "', '" + nit + "', '" + "1" + "')";
-                OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
+                string insertar = "INSERT INTO tbl_cliente (nombreCliente,apellidoCliente,telefonoCliente,correoCliente,identificacionCliente,nitCliente,estadoCliente) VALUES('" + nombre + 
+                    "', '" + apellido + "', '" + telefono + "', '" + correo + "', '" + dpi + "', '" + nit + "', '1' )";
+
+                OdbcCommand comm = new OdbcCommand(insertar, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
 
@@ -155,8 +157,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                string consulta = "UPDATE `tbl_cliente` SET `estadoCliente` = '" + "0" + " WHERE dpi-pasaporteCliente = " + dpi;
-
+                string consulta = "UPDATE tbl_cliente SET estadoCliente = 0 WHERE identificacionCliente = " + Txt_dpi.Text;
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
@@ -202,9 +203,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                string consulta = "UPDATE `tbl_cliente` SET `nombreCliente` = '" + nombre + "',`apellidoCliente` = '" + apellido + "', `telefonoCliente` = '" + telefono + "', `correoCliente` = " + correo + " WHERE dpi-pasaporteCliente = " + dpi;
+                string actualizar = "UPDATE `tbl_cliente` SET `Pk_idCliente` = '" + id  + "' ," +
+                    "`nombreCliente` = '" + nombre + "', `apellidoCliente` = '" + apellido + "', " +
+                    "`telefonoCliente` = '" + telefono + "', " +
+                    "`correoCliente` = '" + correo + "', " +
+                    "`identificacionCliente` = '" + dpi + "', " +
+                    "`nitCliente` = '" + telefono + "', `estadoCliente` = '1' WHERE Pk_idCliente = " + id;
 
-                OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand(actualizar, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
 
