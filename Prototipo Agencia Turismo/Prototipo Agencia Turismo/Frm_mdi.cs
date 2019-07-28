@@ -218,5 +218,54 @@ namespace Prototipo_Agencia_Turismo
                 nominas.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
+
+
+
+        bool ventanaMantDepartamento = false;
+        Frm_mantDepartamento mantenimientoDepartamento = new Frm_mantDepartamento();
+        private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantDepartamento);
+            if (ventanaNominas == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    mantenimientoDepartamento = new Frm_mantDepartamento();
+                }
+
+                mantenimientoDepartamento.MdiParent = this;
+                mantenimientoDepartamento.Show();
+                Application.DoEvents();
+                ventanaMantDepartamento = true;
+            }
+            else
+            {
+                mantenimientoDepartamento.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+
+        bool ventanaMantCliente = false;
+        Frm_mantCliente mantenimientoCliente = new Frm_mantCliente();
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantCliente);
+            if (ventanaNominas == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    mantenimientoCliente = new Frm_mantCliente();
+                }
+
+                mantenimientoCliente.MdiParent = this;
+                mantenimientoCliente.Show();
+                Application.DoEvents();
+                ventanaMantCliente = true;
+            }
+            else
+            {
+                mantenimientoCliente.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
     }
 }
