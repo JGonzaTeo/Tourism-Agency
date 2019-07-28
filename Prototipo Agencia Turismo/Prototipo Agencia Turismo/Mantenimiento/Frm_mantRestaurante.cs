@@ -4,11 +4,15 @@
   -----------------------------------------------------
 */
 
+<<<<<<< HEAD
 using Prototipo_Agencia_Turismo.Consulta;
+=======
+>>>>>>> Integracion-Ivan-José
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+<<<<<<< HEAD
 using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
@@ -17,11 +21,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Prototipo_Agencia_Turismo;
+=======
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+>>>>>>> Integracion-Ivan-José
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantRestaurante : Form
     {
+<<<<<<< HEAD
         //Declaracion de variables globales
 
         bool presionado = false;
@@ -87,6 +99,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
             InitializeComponent();
             usuario = nombreUsuario;
+=======
+        public Frm_mantRestaurante()
+        {
+            InitializeComponent();
+>>>>>>> Integracion-Ivan-José
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -101,6 +118,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Frm_mantRestaurante_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             DeshabilitarCampos();
         }
 
@@ -350,6 +368,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                     HabilitarBtn();
                 }
             }
+=======
+
+>>>>>>> Integracion-Ivan-José
         }
     }
 }

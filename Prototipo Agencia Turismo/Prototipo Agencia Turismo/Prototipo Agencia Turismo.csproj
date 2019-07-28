@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+<<<<<<< HEAD
     <Compile Include="Consulta\Frm_consultaHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,49 @@
     </Compile>
     <Compile Include="Consulta\Frm_consultaTipoPago.designer.cs">
       <DependentUpon>Frm_consultaTipoPago.cs</DependentUpon>
+=======
+    <Compile Include="Consulta\Frm_consultaBonos_Desc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaBonos_Desc.Designer.cs">
+      <DependentUpon>Frm_consultaBonos_Desc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaCliente.Designer.cs">
+      <DependentUpon>Frm_consultaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaDepartamento.Designer.cs">
+      <DependentUpon>Frm_consultaDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaEmpleado.Designer.cs">
+      <DependentUpon>Frm_consultaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaGuiaT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaGuiaT.Designer.cs">
+      <DependentUpon>Frm_consultaGuiaT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaPerfil.Designer.cs">
+      <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaTransporte.Designer.cs">
+      <DependentUpon>Frm_consultaTransporte.cs</DependentUpon>
+>>>>>>> Integracion-Ivan-José
     </Compile>
     <Compile Include="Consulta\Frm_consultaUsuario.cs">
       <SubType>Form</SubType>
@@ -102,6 +146,7 @@
     <Compile Include="Frm_nominas.Designer.cs">
       <DependentUpon>Frm_nominas.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Mantenimiento\Frm_mantHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +164,43 @@
     </Compile>
     <Compile Include="Mantenimiento\Frm_mantMenuscs.Designer.cs">
       <DependentUpon>Frm_mantMenuscs.cs</DependentUpon>
+=======
+    <Compile Include="Mantenimiento\Frm_manGuiaTuristico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_manGuiaTuristico.Designer.cs">
+      <DependentUpon>Frm_manGuiaTuristico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantBono-Desc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantBono-Desc.Designer.cs">
+      <DependentUpon>Frm_mantBono-Desc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantCliente.Designer.cs">
+      <DependentUpon>Frm_mantCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantDepartamento.Designer.cs">
+      <DependentUpon>Frm_mantDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantEmpleado.Designer.cs">
+      <DependentUpon>Frm_mantEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Frm_mantHotel.Designer.cs">
+      <DependentUpon>Frm_mantHotel.cs</DependentUpon>
+>>>>>>> Integracion-Ivan-José
     </Compile>
     <Compile Include="Mantenimiento\Frm_mantPerfil.cs">
       <SubType>Form</SubType>
@@ -132,12 +214,15 @@
     <Compile Include="Mantenimiento\Frm_mantRestaurante.Designer.cs">
       <DependentUpon>Frm_mantRestaurante.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Mantenimiento\Frm_mantTipoPago.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\Frm_mantTipoPago.designer.cs">
       <DependentUpon>Frm_mantTipoPago.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> Integracion-Ivan-José
     <Compile Include="Mantenimiento\Frm_mantTransporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +253,7 @@
     <Compile Include="Frm_mdi.Designer.cs">
       <DependentUpon>Frm_mdi.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Seguridad\Frm_controlUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,15 +274,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaMenu.resx">
       <DependentUpon>Frm_consultaMenu.cs</DependentUpon>
+=======
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validacion.cs" />
+    <EmbeddedResource Include="Consulta\Frm_consultaBonos_Desc.resx">
+      <DependentUpon>Frm_consultaBonos_Desc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaCliente.resx">
+      <DependentUpon>Frm_consultaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaDepartamento.resx">
+      <DependentUpon>Frm_consultaDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaEmpleado.resx">
+      <DependentUpon>Frm_consultaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaGuiaT.resx">
+      <DependentUpon>Frm_consultaGuiaT.cs</DependentUpon>
+>>>>>>> Integracion-Ivan-José
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaPerfil.resx">
       <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Consulta\Frm_consultaRestaurante.resx">
       <DependentUpon>Frm_consultaRestaurante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaTipoPago.resx">
       <DependentUpon>Frm_consultaTipoPago.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Consulta\Frm_consultaTransporte.resx">
+      <DependentUpon>Frm_consultaTransporte.cs</DependentUpon>
+>>>>>>> Integracion-Ivan-José
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
@@ -207,24 +317,47 @@
     <EmbeddedResource Include="Frm_nominas.resx">
       <DependentUpon>Frm_nominas.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Mantenimiento\Frm_mantHabitacion.resx">
       <DependentUpon>Frm_mantHabitacion.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Mantenimiento\Frm_manGuiaTuristico.resx">
+      <DependentUpon>Frm_manGuiaTuristico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Frm_mantBono-Desc.resx">
+      <DependentUpon>Frm_mantBono-Desc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Frm_mantCliente.resx">
+      <DependentUpon>Frm_mantCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Frm_mantDepartamento.resx">
+      <DependentUpon>Frm_mantDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Frm_mantEmpleado.resx">
+      <DependentUpon>Frm_mantEmpleado.cs</DependentUpon>
+>>>>>>> Integracion-Ivan-José
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_mantHotel.resx">
       <DependentUpon>Frm_mantHotel.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Mantenimiento\Frm_mantMenuscs.resx">
       <DependentUpon>Frm_mantMenuscs.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> Integracion-Ivan-José
     <EmbeddedResource Include="Mantenimiento\Frm_mantPerfil.resx">
       <DependentUpon>Frm_mantPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_mantRestaurante.resx">
       <DependentUpon>Frm_mantRestaurante.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Mantenimiento\Frm_mantTipoPago.resx">
       <DependentUpon>Frm_mantTipoPago.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> Integracion-Ivan-José
     <EmbeddedResource Include="Mantenimiento\Frm_mantTransporte.resx">
       <DependentUpon>Frm_mantTransporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,9 +373,12 @@
     <EmbeddedResource Include="Frm_mdi.resx">
       <DependentUpon>Frm_mdi.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Seguridad\Frm_controlUsuario.resx">
       <DependentUpon>Frm_controlUsuario.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> Integracion-Ivan-José
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

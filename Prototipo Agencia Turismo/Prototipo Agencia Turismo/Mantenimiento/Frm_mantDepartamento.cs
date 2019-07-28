@@ -1,10 +1,6 @@
 ﻿/* 
  -----------------------------------------------------
-<<<<<<< HEAD
-            AUTOR: Ivan Mogollón
-=======
             AUTOR: Angel Solares
->>>>>>> Integracion-Ivan-José
   -----------------------------------------------------
 */
 
@@ -17,48 +13,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
 using System.Data.Odbc;
 using System.Net;
->>>>>>> Integracion-Ivan-José
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
-    public partial class Frm_mantTransporte : Form
+    public partial class Frm_mantDepartamento : Form
     {
-        public Frm_mantTransporte()
-        {
-            InitializeComponent();
-        }
-
-<<<<<<< HEAD
-=======
         string usuario = " ";
         DateTime fecha = DateTime.Now;
         bool presionado = false;
 
         string id = "";
-        string placa = "";
-        string tipoTransporte = "";
-        int capacidad = 0;
+        string nombreDepartamento = "";
+        string descripcionDepartamento = "";
 
 
-
+       
+        public Frm_mantDepartamento()
+        {
+            InitializeComponent();
+        }
 
         private void limpiar()
         {
-            Txt_idTransporte.Text = "";
-            Txt_noPlaca.Text = "";
-            Txt_tipoTransporte.Text = "";
-            Txt_capacidad.Text = "";
+            Txt_id.Text = "";
+            Txt_descripcion.Text = "";
+            Txt_nombre.Text = "";
         }
 
         private void HabilitarCampos()
         {
-            Txt_noPlaca.Enabled = true;
-            Txt_tipoTransporte.Enabled = true;
-            Txt_capacidad.Enabled = true;
+            Txt_descripcion.Enabled = true;
+            Txt_nombre.Enabled = true;
         }
 
         private void HabilitarBtn()
@@ -81,19 +68,16 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void DeshabilitarCampos()
         {
-
-            Txt_noPlaca.Enabled = false;
-            Txt_tipoTransporte.Enabled = false;
-            Txt_capacidad.Enabled = false;
-
+            
+            Txt_nombre.Enabled = false;
+            Txt_descripcion.Enabled = false;
         }
 
         private void GuardarDatos()
         {
-            placa = Txt_noPlaca.Text;
-            tipoTransporte = Txt_tipoTransporte.Text;
-            capacidad = int.Parse(Txt_capacidad.Text);
-
+            nombreDepartamento = Txt_nombre.Text;
+            descripcionDepartamento = Txt_descripcion.Text;
+            
 
             try
             {
@@ -108,11 +92,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                OdbcCommand comm = new OdbcCommand("{call SP_InsertarTransporte(?,?,?)}", Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand("{call SP_InsertarDepartamento(?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
-                comm.Parameters.Add("TipoTransporte", OdbcType.Text).Value = tipoTransporte;
-                comm.Parameters.Add("Capacidad", OdbcType.Int).Value = capacidad;
+                comm.Parameters.Add("Nombre", OdbcType.Text).Value = nombreDepartamento;
+                comm.Parameters.Add("Descripcion", OdbcType.Text).Value = descripcionDepartamento;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
 
@@ -121,7 +104,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INGRESO DE REGISTRO";
                 commBitacora.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "TRANSPORTE";
+                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
             }
@@ -135,7 +118,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void BorrarDatos()
         {
-            placa = Txt_noPlaca.Text;
+            nombreDepartamento = Txt_nombre.Text;
 
             try
             {
@@ -150,9 +133,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                OdbcCommand comm = new OdbcCommand("{call SP_EliminarTransporte(?)}", Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand("{call SP_EliminarDepartamento(?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
+                comm.Parameters.Add("Nombre", OdbcType.Text).Value = nombreDepartamento;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
 
@@ -175,10 +158,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void ActualizarDatos()
         {
-            id = Txt_idTransporte.Text;
-            placa = Txt_noPlaca.Text;
-            tipoTransporte = Txt_tipoTransporte.Text;
-            capacidad = int.Parse(Txt_capacidad.Text);
+            id = Txt_id.Text;
+            nombreDepartamento = Txt_nombre.Text;
+            descripcionDepartamento = Txt_descripcion.Text;
 
             try
             {
@@ -193,11 +175,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                         localIP = ip.ToString();
                     }
                 }
-                OdbcCommand comm = new OdbcCommand("{call SP_ActualizarTransporte(?,?,?)}", Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand("{call SP_ActualizarDepartamento(?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
-                comm.Parameters.Add("TipoTransporte", OdbcType.Text).Value = tipoTransporte;
-                comm.Parameters.Add("Capacidad", OdbcType.Text).Value = capacidad;
+                comm.Parameters.Add("Nombre", OdbcType.Text).Value = nombreDepartamento;
+                comm.Parameters.Add("Departamento", OdbcType.Text).Value = descripcionDepartamento;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
 
@@ -217,29 +198,38 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
         }
 
-
-
->>>>>>> Integracion-Ivan-José
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Btn_minimizar1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Frm_mantTransporte_Load(object sender, EventArgs e)
+        private void Btn_cerrar1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-<<<<<<< HEAD
-=======
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
             HabilitarCampos();
+        }
+
+        private void Btn_borrar_Click(object sender, EventArgs e)
+        {
+            if (presionado == false)
+            {
+                DeshabilitarBtn();
+                Btn_borrar.Enabled = true;
+                presionado = true;
+            }
+            else
+            {
+                BorrarDatos();
+                Txt_id.Focus();
+                presionado = false;
+                DeshabilitarCampos();
+                HabilitarBtn();
+                limpiar();
+            }
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)
@@ -249,31 +239,12 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 DeshabilitarBtn();
                 Btn_editar.Enabled = true;
                 presionado = true;
-                Txt_noPlaca.Enabled = false;
+                Txt_nombre.Enabled = false;
             }
             else
             {
                 ActualizarDatos();
-                Txt_noPlaca.Focus();
-                presionado = false;
-                DeshabilitarCampos();
-                HabilitarBtn();
-                limpiar();
-            }
-        }
-
-        private void Btn_guardar_Click(object sender, EventArgs e)
-        {
-            if (presionado == false)
-            {
-                DeshabilitarBtn();
-                Btn_guardar.Enabled = true;
-                presionado = true;
-            }
-            else
-            {
-                GuardarDatos();
-                Txt_noPlaca.Focus();
+                Txt_nombre.Focus();
                 presionado = false;
                 DeshabilitarCampos();
                 HabilitarBtn();
@@ -288,18 +259,18 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             HabilitarBtn();
         }
 
-        private void Btn_borrar_Click(object sender, EventArgs e)
+        private void Btn_guardar_Click(object sender, EventArgs e)
         {
             if (presionado == false)
             {
                 DeshabilitarBtn();
-                Btn_borrar.Enabled = true;
+                Btn_guardar.Enabled = true;
                 presionado = true;
             }
             else
             {
-                BorrarDatos();
-                Txt_idTransporte.Focus();
+                GuardarDatos();
+                Txt_nombre.Focus();
                 presionado = false;
                 DeshabilitarCampos();
                 HabilitarBtn();
@@ -317,73 +288,28 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
             else
             {
-                Consulta.Frm_consultaTransporte conTransporte = new Consulta.Frm_consultaTransporte();
-                conTransporte.ShowDialog();
+                Consulta.Frm_consultaDepartamento conDepartamento = new Consulta.Frm_consultaDepartamento();
+                conDepartamento.ShowDialog();
 
-                if (conTransporte.DialogResult == DialogResult.OK)
+                if (conDepartamento.DialogResult == DialogResult.OK)
                 {
-                    Txt_idTransporte.Text =
-                        conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
+                    Txt_id.Text =
+                        conDepartamento.Dgv_consultaDepartamento.Rows[conDepartamento.Dgv_consultaDepartamento.CurrentRow.Index].
                         Cells[0].Value.ToString();
 
-                    Txt_noPlaca.Text =
-                         conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
-                         Cells[1].Value.ToString();
+                    Txt_nombre.Text =
+                        conDepartamento.Dgv_consultaDepartamento.Rows[conDepartamento.Dgv_consultaDepartamento.CurrentRow.Index].
+                        Cells[1].Value.ToString();
 
-                    Txt_tipoTransporte.Text =
-                        conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
+                    Txt_descripcion.Text =
+                        conDepartamento.Dgv_consultaDepartamento.Rows[conDepartamento.Dgv_consultaDepartamento.CurrentRow.Index].
                         Cells[2].Value.ToString();
 
-                    Txt_capacidad.Text =
-                        conTransporte.Dgv_consultaTransporte.Rows[conTransporte.Dgv_consultaTransporte.CurrentRow.Index].
-                        Cells[3].Value.ToString();
-
-                    Txt_idTransporte.Focus();
+                    Txt_id.Focus();
                     presionado = false;
                     HabilitarBtn();
                 }
             }
         }
-
-        private void Txt_capacidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_capacidad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_tipoTransporte_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_tipoTransporte_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_noPlaca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_noPlaca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_idTransporte_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_idTransporte_Click(object sender, EventArgs e)
-        {
-
-        }
->>>>>>> Integracion-Ivan-José
     }
 }

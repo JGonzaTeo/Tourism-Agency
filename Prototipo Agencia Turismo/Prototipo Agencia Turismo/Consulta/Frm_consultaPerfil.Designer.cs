@@ -39,6 +39,13 @@
             this.Dgv_consultaPerfil = new System.Windows.Forms.DataGridView();
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.idPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detallePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> Integracion-Ivan-José
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaPerfil)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +134,7 @@
             this.Btn_consultaPerfil.Text = "Consultar";
             this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             // 
             // Dgv_consultaPerfil
             // 
@@ -134,6 +142,29 @@
             this.Dgv_consultaPerfil.Location = new System.Drawing.Point(47, 156);
             this.Dgv_consultaPerfil.Name = "Dgv_consultaPerfil";
             this.Dgv_consultaPerfil.RowTemplate.Height = 24;
+=======
+            this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
+            // 
+            // Dgv_consultaPerfil
+            // 
+            this.Dgv_consultaPerfil.AllowUserToAddRows = false;
+            this.Dgv_consultaPerfil.AllowUserToDeleteRows = false;
+            this.Dgv_consultaPerfil.AllowUserToResizeColumns = false;
+            this.Dgv_consultaPerfil.AllowUserToResizeRows = false;
+            this.Dgv_consultaPerfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv_consultaPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_consultaPerfil.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPerfil,
+            this.nombrePerfil,
+            this.detallePerfil,
+            this.estadoPerfil});
+            this.Dgv_consultaPerfil.Location = new System.Drawing.Point(47, 156);
+            this.Dgv_consultaPerfil.Name = "Dgv_consultaPerfil";
+            this.Dgv_consultaPerfil.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.Dgv_consultaPerfil.RowHeadersVisible = false;
+            this.Dgv_consultaPerfil.RowTemplate.Height = 24;
+            this.Dgv_consultaPerfil.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+>>>>>>> Integracion-Ivan-José
             this.Dgv_consultaPerfil.Size = new System.Drawing.Size(1098, 405);
             this.Dgv_consultaPerfil.TabIndex = 42;
             // 
@@ -151,6 +182,10 @@
             this.Btn_actualizar.TabIndex = 44;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
+>>>>>>> Integracion-Ivan-José
             // 
             // Btn_seleccionar
             // 
@@ -166,6 +201,30 @@
             this.Btn_seleccionar.TabIndex = 43;
             this.Btn_seleccionar.Text = "Seleccionar";
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
+            // 
+            // idPerfil
+            // 
+            this.idPerfil.HeaderText = "ID perfil";
+            this.idPerfil.Name = "idPerfil";
+            // 
+            // nombrePerfil
+            // 
+            this.nombrePerfil.HeaderText = "Nombre ";
+            this.nombrePerfil.Name = "nombrePerfil";
+            // 
+            // detallePerfil
+            // 
+            this.detallePerfil.HeaderText = "Detalle";
+            this.detallePerfil.Name = "detallePerfil";
+            // 
+            // estadoPerfil
+            // 
+            this.estadoPerfil.HeaderText = "Estado";
+            this.estadoPerfil.Name = "estadoPerfil";
+>>>>>>> Integracion-Ivan-José
             // 
             // Frm_consultaPerfil
             // 
@@ -181,10 +240,18 @@
             this.Controls.Add(this.Pnl_principal);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Frm_consultaPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaPerfil";
+=======
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Frm_consultaPerfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Frm_consultaPerfil";
+            this.Load += new System.EventHandler(this.Frm_consultaPerfil_Load);
+>>>>>>> Integracion-Ivan-José
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaPerfil)).EndInit();
@@ -205,5 +272,12 @@
         private System.Windows.Forms.Button Btn_actualizar;
         private System.Windows.Forms.Button Btn_seleccionar;
         public System.Windows.Forms.DataGridView Dgv_consultaPerfil;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrePerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detallePerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoPerfil;
+>>>>>>> Integracion-Ivan-José
     }
 }

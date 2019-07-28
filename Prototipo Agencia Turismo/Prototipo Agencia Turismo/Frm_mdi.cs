@@ -5,13 +5,23 @@
 */
 
 using Prototipo_Agencia_Turismo.Mantenimiento;
+<<<<<<< HEAD
 using Prototipo_Agencia_Turismo.Mantenimientos;
+=======
+>>>>>>> Integracion-Ivan-José
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+<<<<<<< HEAD
 using System.Drawing;
 using System.Linq;
+=======
+using System.Data.Odbc;
+using System.Drawing;
+using System.Linq;
+using System.Net;
+>>>>>>> Integracion-Ivan-José
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +50,14 @@ namespace Prototipo_Agencia_Turismo
         {
             toolStripStatusLabel1.Text = "BIENVENIDO: " + nombreUsuario;
 
+<<<<<<< HEAD
+=======
+            if (tipoPerfil == "1") //usuario normal
+            {
+                seguridadToolStripMenuItem.Enabled = false;
+            }
+
+>>>>>>> Integracion-Ivan-José
             MdiClient ctlMDI; 
 
             foreach (Control ctl in this.Controls)
@@ -80,6 +98,34 @@ namespace Prototipo_Agencia_Turismo
             }
         }
 
+<<<<<<< HEAD
+=======
+        /*
+        bool ventanaControlUsuario = false;
+        Frm_controlUsuario controlUsuario = new Frm_controlUsuario();
+        private void controlDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_controlUsuario);
+            if (ventanaControlUsuario == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    controlUsuario = new Frm_controlUsuario();
+                }
+
+                controlUsuario.MdiParent = this;
+                controlUsuario.Show();
+                Application.DoEvents();
+                ventanaControlUsuario = true;
+            }
+            else
+            {
+                controlUsuario.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+        */
+
+>>>>>>> Integracion-Ivan-José
         bool ventanaMantTransporte = false;
         Frm_mantTransporte mantenimientoTransporte = new Frm_mantTransporte();
         private void transporteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,7 +150,11 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaMantRestaurante = false;
+<<<<<<< HEAD
         Frm_mantRestaurante mantenimientoRestaurante = new Frm_mantRestaurante("");
+=======
+        Frm_mantRestaurante mantenimientoRestaurante = new Frm_mantRestaurante();
+>>>>>>> Integracion-Ivan-José
         private void restauranteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantRestaurante);
@@ -112,7 +162,11 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
+<<<<<<< HEAD
                     mantenimientoRestaurante = new Frm_mantRestaurante(nombreUsuario);
+=======
+                    mantenimientoRestaurante = new Frm_mantRestaurante();
+>>>>>>> Integracion-Ivan-José
                 }
 
                 mantenimientoRestaurante.MdiParent = this;
@@ -127,6 +181,7 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaMantHotel = false;
+<<<<<<< HEAD
         Frm_mantHotel mantenimientoHotel = new Frm_mantHotel("");
         private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -136,6 +191,17 @@ namespace Prototipo_Agencia_Turismo
                 if (frmC == null)
                 {
                     mantenimientoHotel = new Frm_mantHotel(nombreUsuario);
+=======
+        Frm_mantHotel mantenimientoHotel = new Frm_mantHotel();
+        private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantHotel);
+            if (ventanaMantRestaurante == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    mantenimientoHotel = new Frm_mantHotel();
+>>>>>>> Integracion-Ivan-José
                 }
 
                 mantenimientoHotel.MdiParent = this;
@@ -195,6 +261,7 @@ namespace Prototipo_Agencia_Turismo
                 nominas.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
+<<<<<<< HEAD
         bool ventanaPagos = false;
         Frm_mantTipoPago pagos = new Frm_mantTipoPago("");
         private void tipoDePagoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -265,3 +332,215 @@ namespace Prototipo_Agencia_Turismo
         }
     }
 }
+=======
+
+        bool ventanaMantUsuario = false;
+        Frm_mantUsuario usuarios = new Frm_mantUsuario("");
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantUsuario);
+            if (ventanaMantUsuario == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    usuarios = new Frm_mantUsuario(nombreUsuario);
+                }
+
+                usuarios.MdiParent = this;
+                usuarios.Show();
+                Application.DoEvents();
+                ventanaMantUsuario = true;
+            }
+            else
+            {
+                usuarios.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_login login = new Frm_login();
+            login.Show();
+
+            IPHostEntry host;
+            string localIP = "?";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+
+            try
+            {
+                OdbcCommand comm = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("ope", OdbcType.Text).Value = "CIERRE DE SESIÓN";
+                comm.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
+                comm.Parameters.Add("proc", OdbcType.Text).Value = "-----";
+                comm.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+        }
+
+        bool ventanaMantPerfil = false;
+        Frm_mantPerfil perfil = new Frm_mantPerfil("");
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantPerfil);
+            if (ventanaMantPerfil == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    perfil = new Frm_mantPerfil(nombreUsuario);
+                }
+
+                perfil.MdiParent = this;
+                perfil.Show();
+                Application.DoEvents();
+                ventanaMantPerfil = true;
+            }
+            else
+            {
+                perfil.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+
+
+        bool ventanaMantDepartamento = false;
+        Frm_mantDepartamento mantenimientoDepartamento = new Frm_mantDepartamento();
+        private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantDepartamento);
+            if (ventanaNominas == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    mantenimientoDepartamento = new Frm_mantDepartamento();
+                }
+
+                mantenimientoDepartamento.MdiParent = this;
+                mantenimientoDepartamento.Show();
+                Application.DoEvents();
+                ventanaMantDepartamento = true;
+            }
+            else
+            {
+                mantenimientoDepartamento.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+
+        bool ventanaMantCliente = false;
+        Frm_mantCliente mantenimientoCliente = new Frm_mantCliente();
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantCliente);
+            if (ventanaNominas == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    mantenimientoCliente = new Frm_mantCliente();
+                }
+
+                mantenimientoCliente.MdiParent = this;
+                mantenimientoCliente.Show();
+                Application.DoEvents();
+                ventanaMantCliente = true;
+            }
+            else
+            {
+                mantenimientoCliente.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaMantBonos = false;
+        Frm_mantBono_Desc BonosyDescuentos = new Frm_mantBono_Desc("");
+        private void bonosYDescuentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantBono_Desc);
+            if (ventanaMantBonos == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    BonosyDescuentos = new Frm_mantBono_Desc(nombreUsuario);
+                }
+
+                BonosyDescuentos.MdiParent = this;
+                BonosyDescuentos.Show();
+                Application.DoEvents();
+                ventanaMantBonos = true;
+            }
+            else
+            {
+                mantenimientoCliente.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+
+        bool ventanaMantGuia = false;
+        Frm_manGuiaTuristico GuiaTuristico = new Frm_manGuiaTuristico("");
+        private void guiaTuristicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_manGuiaTuristico);
+            if (ventanaMantGuia == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    GuiaTuristico = new Frm_manGuiaTuristico(nombreUsuario);
+                }
+
+                GuiaTuristico.MdiParent = this;
+                GuiaTuristico.Show();
+                Application.DoEvents();
+                ventanaMantGuia = true;
+            }
+            else
+            {
+                mantenimientoCliente.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+
+        bool ventanaMantEmp = false;
+        Frm_mantEmpleado Emple = new Frm_mantEmpleado("");
+        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantEmpleado);
+            if (ventanaMantEmp == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    Emple = new Frm_mantEmpleado(nombreUsuario);
+                }
+
+                Emple.MdiParent = this;
+                Emple.Show();
+                Application.DoEvents();
+                ventanaMantEmp = true;
+            }
+            else
+            {
+                mantenimientoCliente.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+
+
+
+        }
+    }
+    }
+
+
+>>>>>>> Integracion-Ivan-José
