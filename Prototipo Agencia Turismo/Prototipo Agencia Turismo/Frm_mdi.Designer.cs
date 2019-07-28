@@ -35,18 +35,17 @@
             this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restauranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TipoPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.habitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.habitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenStrip_menuPrincipal.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -103,8 +102,7 @@
             // 
             this.seguridadToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bitácoraToolStripMenuItem,
-            this.controlDeUsuariosToolStripMenuItem});
+            this.bitácoraToolStripMenuItem});
             this.seguridadToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(88, 31);
@@ -114,17 +112,9 @@
             // 
             this.bitácoraToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bitácoraToolStripMenuItem.Text = "Bitácora";
             this.bitácoraToolStripMenuItem.Click += new System.EventHandler(this.bitácoraToolStripMenuItem_Click);
-            // 
-            // controlDeUsuariosToolStripMenuItem
-            // 
-            this.controlDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
-            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.controlDeUsuariosToolStripMenuItem.Text = "Control de usuarios";
-            this.controlDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.controlDeUsuariosToolStripMenuItem_Click);
             // 
             // mantenimientosToolStripMenuItem
             // 
@@ -136,9 +126,9 @@
             this.TipoPagoToolStripMenuItem,
             this.menusToolStripMenuItem,
             this.habitacionToolStripMenuItem});
-            this.mantenimientosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantenimientosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(117, 31);
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(123, 31);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimiento";
             // 
             // transporteToolStripMenuItem
@@ -181,6 +171,14 @@
             this.menusToolStripMenuItem.Text = "Menus";
             this.menusToolStripMenuItem.Click += new System.EventHandler(this.menusToolStripMenuItem_Click);
             // 
+            // habitacionToolStripMenuItem
+            // 
+            this.habitacionToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
+            this.habitacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.habitacionToolStripMenuItem.Text = "Habitacion";
+            this.habitacionToolStripMenuItem.Click += new System.EventHandler(this.habitacionToolStripMenuItem_Click);
+            // 
             // contabilidadToolStripMenuItem
             // 
             this.contabilidadToolStripMenuItem.BackColor = System.Drawing.Color.White;
@@ -197,7 +195,7 @@
             // 
             this.nóminasToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nóminasToolStripMenuItem.Name = "nóminasToolStripMenuItem";
-            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nóminasToolStripMenuItem.Text = "Nóminas";
             this.nóminasToolStripMenuItem.Click += new System.EventHandler(this.nóminasToolStripMenuItem_Click);
             // 
@@ -217,14 +215,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
             this.toolStripStatusLabel1.Text = "Usuario";
-            // 
-            // habitacionToolStripMenuItem
-            // 
-            this.habitacionToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
-            this.habitacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.habitacionToolStripMenuItem.Text = "Habitacion";
-            this.habitacionToolStripMenuItem.Click += new System.EventHandler(this.habitacionToolStripMenuItem_Click);
             // 
             // Frm_mdi
             // 
@@ -261,7 +251,6 @@
         private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitácoraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem controlDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restauranteToolStripMenuItem;

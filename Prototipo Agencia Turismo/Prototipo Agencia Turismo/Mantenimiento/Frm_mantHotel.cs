@@ -78,9 +78,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_correo.Text = "";
         }
 
-        public Frm_mantHotel()
+        public Frm_mantHotel(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         private void Frm_mantHotelcs_Load(object sender, EventArgs e)

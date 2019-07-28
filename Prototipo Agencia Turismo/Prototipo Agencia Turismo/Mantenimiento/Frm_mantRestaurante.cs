@@ -83,9 +83,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_correo.Text = "";
         }
 
-        public Frm_mantRestaurante()
+        public Frm_mantRestaurante(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         private void button2_Click(object sender, EventArgs e)

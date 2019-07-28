@@ -24,9 +24,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantTipoPago : Form
     {
-        public Frm_mantTipoPago()
+        public Frm_mantTipoPago(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         //Declaracion de variables globales
