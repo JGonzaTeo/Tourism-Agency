@@ -39,6 +39,11 @@
             this.Dgv_consultaUsuario = new System.Windows.Forms.DataGridView();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Btn_actualizar = new System.Windows.Forms.Button();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrasenaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaUsuario)).BeginInit();
             this.SuspendLayout();
@@ -127,13 +132,27 @@
             this.Btn_consultaPerfil.Text = "Consultar";
             this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
+            this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
             // 
             // Dgv_consultaUsuario
             // 
+            this.Dgv_consultaUsuario.AllowUserToAddRows = false;
+            this.Dgv_consultaUsuario.AllowUserToDeleteRows = false;
+            this.Dgv_consultaUsuario.AllowUserToResizeColumns = false;
+            this.Dgv_consultaUsuario.AllowUserToResizeRows = false;
+            this.Dgv_consultaUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_consultaUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idUsuario,
+            this.nombreUsuario,
+            this.contrasenaUsuario,
+            this.idPerfil,
+            this.estado});
             this.Dgv_consultaUsuario.Location = new System.Drawing.Point(47, 156);
             this.Dgv_consultaUsuario.Name = "Dgv_consultaUsuario";
+            this.Dgv_consultaUsuario.RowHeadersVisible = false;
             this.Dgv_consultaUsuario.RowTemplate.Height = 24;
+            this.Dgv_consultaUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaUsuario.Size = new System.Drawing.Size(1098, 405);
             this.Dgv_consultaUsuario.TabIndex = 43;
             // 
@@ -151,6 +170,7 @@
             this.Btn_seleccionar.TabIndex = 44;
             this.Btn_seleccionar.Text = "Seleccionar";
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
+            this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
             // 
             // Btn_actualizar
             // 
@@ -166,6 +186,32 @@
             this.Btn_actualizar.TabIndex = 45;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "ID usuario";
+            this.idUsuario.Name = "idUsuario";
+            // 
+            // nombreUsuario
+            // 
+            this.nombreUsuario.HeaderText = "Nombre";
+            this.nombreUsuario.Name = "nombreUsuario";
+            // 
+            // contrasenaUsuario
+            // 
+            this.contrasenaUsuario.HeaderText = "Contraseña";
+            this.contrasenaUsuario.Name = "contrasenaUsuario";
+            // 
+            // idPerfil
+            // 
+            this.idPerfil.HeaderText = "ID perfil";
+            this.idPerfil.Name = "idPerfil";
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
             // 
             // Frm_consultaUsuario
             // 
@@ -181,10 +227,11 @@
             this.Controls.Add(this.Pnl_principal);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_consultaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaUsuario";
+            this.Load += new System.EventHandler(this.Frm_consultaUsuario_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaUsuario)).EndInit();
@@ -202,8 +249,13 @@
         private System.Windows.Forms.Label Lbl_consultaUsuario;
         private System.Windows.Forms.TextBox Txt_consultaUsuario;
         private System.Windows.Forms.Button Btn_consultaPerfil;
-        private System.Windows.Forms.DataGridView Dgv_consultaUsuario;
         private System.Windows.Forms.Button Btn_seleccionar;
         private System.Windows.Forms.Button Btn_actualizar;
+        public System.Windows.Forms.DataGridView Dgv_consultaUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contrasenaUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

@@ -52,22 +52,22 @@
             // 
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion.Location = new System.Drawing.Point(163, 325);
+            this.Lbl_descripcion.Location = new System.Drawing.Point(203, 312);
             this.Lbl_descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
             this.Lbl_descripcion.Size = new System.Drawing.Size(132, 25);
-            this.Lbl_descripcion.TabIndex = 63;
+            this.Lbl_descripcion.TabIndex = 76;
             this.Lbl_descripcion.Text = "Descripción:";
             // 
             // Lbl_ruta
             // 
             this.Lbl_ruta.AutoSize = true;
             this.Lbl_ruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_ruta.Location = new System.Drawing.Point(163, 283);
+            this.Lbl_ruta.Location = new System.Drawing.Point(203, 270);
             this.Lbl_ruta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_ruta.Name = "Lbl_ruta";
             this.Lbl_ruta.Size = new System.Drawing.Size(63, 25);
-            this.Lbl_ruta.TabIndex = 62;
+            this.Lbl_ruta.TabIndex = 75;
             this.Lbl_ruta.Text = "Ruta:";
             // 
             // Btn_consultar
@@ -81,10 +81,10 @@
             this.Btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consultar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultar.Image")));
             this.Btn_consultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultar.Location = new System.Drawing.Point(766, 83);
+            this.Btn_consultar.Location = new System.Drawing.Point(809, 70);
             this.Btn_consultar.Name = "Btn_consultar";
-            this.Btn_consultar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_consultar.TabIndex = 61;
+            this.Btn_consultar.Size = new System.Drawing.Size(150, 111);
+            this.Btn_consultar.TabIndex = 74;
             this.Btn_consultar.Text = "Consultar";
             this.Btn_consultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultar.UseVisualStyleBackColor = false;
@@ -101,10 +101,10 @@
             this.Btn_borrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_borrar.Image")));
             this.Btn_borrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_borrar.Location = new System.Drawing.Point(657, 83);
+            this.Btn_borrar.Location = new System.Drawing.Point(697, 70);
             this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_borrar.TabIndex = 60;
+            this.Btn_borrar.Size = new System.Drawing.Size(115, 111);
+            this.Btn_borrar.TabIndex = 73;
             this.Btn_borrar.Text = "Borrar";
             this.Btn_borrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_borrar.UseVisualStyleBackColor = false;
@@ -121,10 +121,10 @@
             this.Btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cancelar.Image")));
             this.Btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_cancelar.Location = new System.Drawing.Point(545, 83);
+            this.Btn_cancelar.Location = new System.Drawing.Point(585, 70);
             this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_cancelar.TabIndex = 59;
+            this.Btn_cancelar.Size = new System.Drawing.Size(115, 111);
+            this.Btn_cancelar.TabIndex = 72;
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
@@ -141,10 +141,10 @@
             this.Btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_guardar.Image")));
             this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_guardar.Location = new System.Drawing.Point(433, 83);
+            this.Btn_guardar.Location = new System.Drawing.Point(473, 70);
             this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_guardar.TabIndex = 58;
+            this.Btn_guardar.Size = new System.Drawing.Size(115, 111);
+            this.Btn_guardar.TabIndex = 71;
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_guardar.UseVisualStyleBackColor = false;
@@ -161,10 +161,10 @@
             this.Btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_editar.Image")));
             this.Btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_editar.Location = new System.Drawing.Point(321, 83);
+            this.Btn_editar.Location = new System.Drawing.Point(361, 70);
             this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_editar.TabIndex = 57;
+            this.Btn_editar.Size = new System.Drawing.Size(115, 111);
+            this.Btn_editar.TabIndex = 70;
             this.Btn_editar.Text = "Editar";
             this.Btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_editar.UseVisualStyleBackColor = false;
@@ -181,10 +181,10 @@
             this.Btn_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ingresar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ingresar.Image")));
             this.Btn_ingresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_ingresar.Location = new System.Drawing.Point(209, 83);
+            this.Btn_ingresar.Location = new System.Drawing.Point(249, 70);
             this.Btn_ingresar.Name = "Btn_ingresar";
-            this.Btn_ingresar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_ingresar.TabIndex = 56;
+            this.Btn_ingresar.Size = new System.Drawing.Size(115, 111);
+            this.Btn_ingresar.TabIndex = 69;
             this.Btn_ingresar.Text = "Ingresar";
             this.Btn_ingresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_ingresar.UseVisualStyleBackColor = false;
@@ -192,38 +192,37 @@
             // 
             // Txt_descripcion
             // 
-            this.Txt_descripcion.Location = new System.Drawing.Point(344, 328);
+            this.Txt_descripcion.Location = new System.Drawing.Point(384, 315);
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(100, 22);
-            this.Txt_descripcion.TabIndex = 55;
-            this.Txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_descripcion_KeyPress);
+            this.Txt_descripcion.TabIndex = 68;
             // 
             // Txt_ruta
             // 
-            this.Txt_ruta.Location = new System.Drawing.Point(344, 286);
+            this.Txt_ruta.Location = new System.Drawing.Point(384, 273);
             this.Txt_ruta.Name = "Txt_ruta";
             this.Txt_ruta.Size = new System.Drawing.Size(172, 22);
-            this.Txt_ruta.TabIndex = 54;
+            this.Txt_ruta.TabIndex = 67;
             this.Txt_ruta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_ruta_KeyPress);
             // 
             // Txt_idguia
             // 
             this.Txt_idguia.Enabled = false;
-            this.Txt_idguia.Location = new System.Drawing.Point(344, 247);
+            this.Txt_idguia.Location = new System.Drawing.Point(384, 234);
             this.Txt_idguia.Name = "Txt_idguia";
             this.Txt_idguia.Size = new System.Drawing.Size(100, 22);
-            this.Txt_idguia.TabIndex = 53;
+            this.Txt_idguia.TabIndex = 66;
             this.Txt_idguia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_idguia_KeyPress);
             // 
             // Lbl_idguia
             // 
             this.Lbl_idguia.AutoSize = true;
             this.Lbl_idguia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_idguia.Location = new System.Drawing.Point(162, 243);
+            this.Lbl_idguia.Location = new System.Drawing.Point(202, 230);
             this.Lbl_idguia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_idguia.Name = "Lbl_idguia";
             this.Lbl_idguia.Size = new System.Drawing.Size(88, 25);
-            this.Lbl_idguia.TabIndex = 52;
+            this.Lbl_idguia.TabIndex = 65;
             this.Lbl_idguia.Text = "Codigo:";
             // 
             // Pnl_principal
@@ -237,7 +236,7 @@
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1162, 51);
-            this.Pnl_principal.TabIndex = 51;
+            this.Pnl_principal.TabIndex = 64;
             // 
             // Btn_minimizar
             // 
@@ -294,7 +293,9 @@
             this.Controls.Add(this.Txt_idguia);
             this.Controls.Add(this.Lbl_idguia);
             this.Controls.Add(this.Pnl_principal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_manGuiaTuristico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_manGuiaTuristico";
             this.Load += new System.EventHandler(this.Frm_manGuiaTuristico_Load);
             this.Pnl_principal.ResumeLayout(false);
@@ -305,6 +306,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label Lbl_descripcion;
         private System.Windows.Forms.Label Lbl_ruta;
         private System.Windows.Forms.Button Btn_consultar;

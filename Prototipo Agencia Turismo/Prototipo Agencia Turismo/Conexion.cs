@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Odbc;
 
 namespace Prototipo_Agencia_Turismo
 {
@@ -11,9 +11,9 @@ namespace Prototipo_Agencia_Turismo
     {
         public static OdbcConnection nuevaConexion()
         {
-            OdbcConnection conectar = new OdbcConnection("Dsn=ventas_directas");
+            OdbcConnection conectar = new OdbcConnection("Dsn=agencia_turismo");
             conectar.Open();
-            // MessageBox.Show("Conexion Exitosa");
+            //MessageBox.Show("Conexion Exitosa");
             return conectar;
         }
     }

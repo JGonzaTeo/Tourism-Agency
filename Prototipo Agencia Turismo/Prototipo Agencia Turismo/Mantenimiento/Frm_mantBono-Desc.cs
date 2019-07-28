@@ -1,20 +1,24 @@
-﻿
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: José Gonzalez
+  -----------------------------------------------------
+*/
+
 using Prototipo_Agencia_Turismo.Consulta;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Odbc;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantBono_Desc : Form
     {
+        IPHostEntry host;
+        string localIP = "?";
+        string nombreUsuario = " ";
+        DateTime fechai = DateTime.Now;
         Validacion v = new Validacion();
 
         bool presionado = false;
@@ -25,9 +29,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         String valor;
         String tipo;
 
-        public Frm_mantBono_Desc()
+        public Frm_mantBono_Desc(string usuario)
         {
             InitializeComponent();
+            nombreUsuario = usuario;
             Txt_nombre.Enabled = false;
             Txt_valor.Enabled = false;
             Txt_idBonoDesc.Enabled = false;
@@ -88,7 +93,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             cod_bono = Txt_idBonoDesc.Text;
             nombre = Txt_nombre.Text;
             valor = Txt_valor.Text;
-        if (Chk_bono.Checked == true && Chk_descuento.Checked==false)
+            if (Chk_bono.Checked == true && Chk_descuento.Checked == false)
             {
                 tipo = "0";
             }
@@ -107,6 +112,15 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("tipo", OdbcType.Text).Value = tipo;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
+
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO MODIFICADO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Bonos Y Descuentos";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
             }
             catch (Exception err)
             {
@@ -141,6 +155,15 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Guardado correctamente");
 
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO INGRESADO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Bonos Y Descuentos";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
+
             }
             catch (Exception err)
             {
@@ -155,12 +178,21 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
             try
             {
-     OdbcCommand comm = new OdbcCommand("{call Sp_EliminarBonos_Desc(?,?)}", Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand("{call Sp_EliminarBonos_Desc(?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("cod", OdbcType.Text).Value = cod_bono;
                 comm.Parameters.Add("estdo", OdbcType.Text).Value = "1";
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO BORRADO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Bonos Y Descuentos";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
             }
             catch (Exception err)
             {
@@ -179,94 +211,25 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         }
 
-        private void Txt_idBonoDesc_KeyPress(object sender, KeyPressEventArgs e)
+ 
+   
+
+        private void Btn_cerrar_Click_1(object sender, EventArgs e)
         {
-            v.soloCodigo(e);
+            this.Close();
         }
 
-        private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void Btn_minimizar_Click_1(object sender, EventArgs e)
         {
-            v.soloLetra(e);
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Txt_valor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.soloNumero(e);
-        }
-
-        private void Btn_ingresar_Click(object sender, EventArgs e)
+        private void Btn_ingresar_Click_1(object sender, EventArgs e)
         {
             Habilitarcampos();
         }
 
-        private void Btn_cancelar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-            presionado = false;
-            Habilitarbtn();
-        }
-
-        private void Btn_guardar_Click(object sender, EventArgs e)
-        {
-            if (presionado == false)
-            {
-                Desahiblitarbtn();
-                Btn_guardar.Enabled = true;
-                presionado = true;
-            }
-            else
-            {
-                Guardardatos();
-                Txt_idBonoDesc.Focus();
-                presionado = false;
-                Deshabilitarcampos();
-                Habilitarbtn();
-                Limpiar();
-                
-            }
-        }
-
-        private void Btn_editar_Click(object sender, EventArgs e)
-        {
-
-            if (presionado == false)
-            {
-                Desahiblitarbtn();
-                Btn_editar.Enabled = true;
-                presionado = true;
-                Txt_idBonoDesc.Enabled = false;
-            }
-            else
-            {
-                ActualizarDatos();
-                Txt_idBonoDesc.Focus();
-                presionado = false;
-                Deshabilitarcampos();
-                Habilitarbtn();
-                Limpiar();
-            }
-        }
-
-        private void Btn_borrar_Click(object sender, EventArgs e)
-        {
-            if (presionado == false)
-            {
-                Desahiblitarbtn();
-                Btn_borrar.Enabled = true;
-                presionado = true;
-            }
-            else
-            {
-                Borrardatos();
-                Txt_idBonoDesc.Focus();
-                presionado = false;
-                Deshabilitarcampos();
-                Habilitarbtn();
-                Limpiar();
-            }
-        }
-
-        private void Btn_consultar_Click(object sender, EventArgs e)
+        private void Btn_consultar_Click_1(object sender, EventArgs e)
         {
             if (presionado == false)
             {
@@ -311,14 +274,96 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
         }
 
-        private void Btn_cerrar_Click(object sender, EventArgs e)
+        private void Btn_borrar_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+
+            if (presionado == false)
+            {
+                Desahiblitarbtn();
+                Btn_borrar.Enabled = true;
+                presionado = true;
+            }
+            else
+            {
+                Borrardatos();
+                Txt_idBonoDesc.Focus();
+                presionado = false;
+                Deshabilitarcampos();
+                Habilitarbtn();
+                Limpiar();
+            }
         }
 
-        private void Btn_minimizar_Click(object sender, EventArgs e)
+        private void Btn_editar_Click_1(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            if (presionado == false)
+            {
+                Desahiblitarbtn();
+                Btn_editar.Enabled = true;
+                presionado = true;
+                Txt_idBonoDesc.Enabled = false;
+            }
+            else
+            {
+                ActualizarDatos();
+                Txt_idBonoDesc.Focus();
+                presionado = false;
+                Deshabilitarcampos();
+                Habilitarbtn();
+                Limpiar();
+            }
+        }
+
+        private void Btn_guardar_Click_1(object sender, EventArgs e)
+        {
+            if (presionado == false)
+            {
+                Desahiblitarbtn();
+                Btn_guardar.Enabled = true;
+                presionado = true;
+            }
+            else
+            {
+                Guardardatos();
+                Txt_idBonoDesc.Focus();
+                presionado = false;
+                Deshabilitarcampos();
+                Habilitarbtn();
+                Limpiar();
+
+            }
+        }
+
+        private void Btn_cancelar_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+            presionado = false;
+            Habilitarbtn();
+        }
+
+        private void Txt_idBonoDesc_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            v.soloCodigo(e);
+        }
+
+        private void Txt_nombre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetra(e);
+        }
+
+        private void Txt_valor_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+             v.soloNumero(e);
+        }
+
+        private void Txt_valor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumero(e);
+        }
+
+        private void Txt_valor_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

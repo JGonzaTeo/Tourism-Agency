@@ -64,10 +64,10 @@
             this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_actualizar.Location = new System.Drawing.Point(758, 480);
+            this.Btn_actualizar.Location = new System.Drawing.Point(746, 461);
             this.Btn_actualizar.Name = "Btn_actualizar";
             this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_actualizar.TabIndex = 61;
+            this.Btn_actualizar.TabIndex = 68;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
             this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
@@ -80,10 +80,10 @@
             this.Btn_seleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_seleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_seleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_seleccionar.Location = new System.Drawing.Point(958, 480);
+            this.Btn_seleccionar.Location = new System.Drawing.Point(946, 461);
             this.Btn_seleccionar.Name = "Btn_seleccionar";
             this.Btn_seleccionar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_seleccionar.TabIndex = 60;
+            this.Btn_seleccionar.TabIndex = 67;
             this.Btn_seleccionar.Text = "Seleccionar";
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
             this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
@@ -105,11 +105,11 @@
             this.Sueldo_Base,
             this.Direccion,
             this.Departamento});
-            this.Dgv_consultaEmpleados.Location = new System.Drawing.Point(12, 130);
+            this.Dgv_consultaEmpleados.Location = new System.Drawing.Point(0, 111);
             this.Dgv_consultaEmpleados.Name = "Dgv_consultaEmpleados";
             this.Dgv_consultaEmpleados.RowTemplate.Height = 24;
             this.Dgv_consultaEmpleados.Size = new System.Drawing.Size(1418, 305);
-            this.Dgv_consultaEmpleados.TabIndex = 59;
+            this.Dgv_consultaEmpleados.TabIndex = 66;
             // 
             // Codigo
             // 
@@ -191,10 +191,10 @@
             this.Btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consulta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consulta.Image")));
             this.Btn_consulta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consulta.Location = new System.Drawing.Point(1095, 75);
+            this.Btn_consulta.Location = new System.Drawing.Point(1083, 56);
             this.Btn_consulta.Name = "Btn_consulta";
             this.Btn_consulta.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consulta.TabIndex = 58;
+            this.Btn_consulta.TabIndex = 65;
             this.Btn_consulta.Text = "Consultar";
             this.Btn_consulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consulta.UseVisualStyleBackColor = false;
@@ -202,18 +202,18 @@
             // 
             // Txt_consultaEmpleado
             // 
-            this.Txt_consultaEmpleado.Location = new System.Drawing.Point(131, 87);
+            this.Txt_consultaEmpleado.Location = new System.Drawing.Point(119, 68);
             this.Txt_consultaEmpleado.Name = "Txt_consultaEmpleado";
             this.Txt_consultaEmpleado.Size = new System.Drawing.Size(934, 22);
-            this.Txt_consultaEmpleado.TabIndex = 57;
+            this.Txt_consultaEmpleado.TabIndex = 64;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 90);
+            this.label1.Location = new System.Drawing.Point(31, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 56;
+            this.label1.TabIndex = 63;
             this.label1.Text = "Nombre:";
             // 
             // Pnl_principal
@@ -226,15 +226,15 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1442, 51);
-            this.Pnl_principal.TabIndex = 55;
+            this.Pnl_principal.Size = new System.Drawing.Size(1398, 51);
+            this.Pnl_principal.TabIndex = 62;
             // 
             // Btn_minimizar
             // 
             this.Btn_minimizar.FlatAppearance.BorderSize = 0;
             this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
-            this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
+            this.Btn_minimizar.Location = new System.Drawing.Point(1239, -1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
             this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
@@ -247,12 +247,13 @@
             this.Btn_cerrar.FlatAppearance.BorderSize = 0;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
-            this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
+            this.Btn_cerrar.Location = new System.Drawing.Point(1319, -1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
             // Lbl_titulo
             // 
@@ -269,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1442, 546);
+            this.ClientSize = new System.Drawing.Size(1398, 593);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_seleccionar);
             this.Controls.Add(this.Dgv_consultaEmpleados);
@@ -277,7 +278,9 @@
             this.Controls.Add(this.Txt_consultaEmpleado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Pnl_principal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_consultaEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaEmpleado";
             this.Load += new System.EventHandler(this.Frm_consultaEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaEmpleados)).EndInit();

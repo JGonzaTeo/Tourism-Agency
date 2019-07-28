@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_consultaBonos_Desc));
-            this.Lbl_consultaUsuario = new System.Windows.Forms.Label();
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Dgv_consultaBonoYDesc = new System.Windows.Forms.DataGridView();
@@ -48,15 +47,6 @@
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Lbl_consultaUsuario
-            // 
-            this.Lbl_consultaUsuario.AutoSize = true;
-            this.Lbl_consultaUsuario.Location = new System.Drawing.Point(-129, 5);
-            this.Lbl_consultaUsuario.Name = "Lbl_consultaUsuario";
-            this.Lbl_consultaUsuario.Size = new System.Drawing.Size(61, 17);
-            this.Lbl_consultaUsuario.TabIndex = 47;
-            this.Lbl_consultaUsuario.Text = "Usuario:";
-            // 
             // Btn_actualizar
             // 
             this.Btn_actualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -65,13 +55,13 @@
             this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_actualizar.Location = new System.Drawing.Point(753, 221);
+            this.Btn_actualizar.Location = new System.Drawing.Point(753, 258);
             this.Btn_actualizar.Name = "Btn_actualizar";
             this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_actualizar.TabIndex = 54;
+            this.Btn_actualizar.TabIndex = 61;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
-            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click_1);
             // 
             // Btn_seleccionar
             // 
@@ -81,13 +71,13 @@
             this.Btn_seleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_seleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_seleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_seleccionar.Location = new System.Drawing.Point(953, 221);
+            this.Btn_seleccionar.Location = new System.Drawing.Point(953, 258);
             this.Btn_seleccionar.Name = "Btn_seleccionar";
             this.Btn_seleccionar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_seleccionar.TabIndex = 53;
+            this.Btn_seleccionar.TabIndex = 60;
             this.Btn_seleccionar.Text = "Seleccionar";
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
-            this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
+            this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click_1);
             // 
             // Dgv_consultaBonoYDesc
             // 
@@ -97,11 +87,11 @@
             this.Nombre,
             this.Valor,
             this.Tipo});
-            this.Dgv_consultaBonoYDesc.Location = new System.Drawing.Point(117, 113);
+            this.Dgv_consultaBonoYDesc.Location = new System.Drawing.Point(117, 150);
             this.Dgv_consultaBonoYDesc.Name = "Dgv_consultaBonoYDesc";
             this.Dgv_consultaBonoYDesc.RowTemplate.Height = 24;
             this.Dgv_consultaBonoYDesc.Size = new System.Drawing.Size(593, 405);
-            this.Dgv_consultaBonoYDesc.TabIndex = 52;
+            this.Dgv_consultaBonoYDesc.TabIndex = 59;
             // 
             // Codigo
             // 
@@ -138,29 +128,29 @@
             this.Btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consulta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consulta.Image")));
             this.Btn_consulta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consulta.Location = new System.Drawing.Point(1095, 61);
+            this.Btn_consulta.Location = new System.Drawing.Point(1095, 98);
             this.Btn_consulta.Name = "Btn_consulta";
             this.Btn_consulta.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consulta.TabIndex = 51;
+            this.Btn_consulta.TabIndex = 58;
             this.Btn_consulta.Text = "Consultar";
             this.Btn_consulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consulta.UseVisualStyleBackColor = false;
-            this.Btn_consulta.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
+            this.Btn_consulta.Click += new System.EventHandler(this.Btn_consulta_Click);
             // 
             // Txt_consultaGuiaturistico
             // 
-            this.Txt_consultaGuiaturistico.Location = new System.Drawing.Point(131, 73);
+            this.Txt_consultaGuiaturistico.Location = new System.Drawing.Point(131, 110);
             this.Txt_consultaGuiaturistico.Name = "Txt_consultaGuiaturistico";
             this.Txt_consultaGuiaturistico.Size = new System.Drawing.Size(934, 22);
-            this.Txt_consultaGuiaturistico.TabIndex = 50;
+            this.Txt_consultaGuiaturistico.TabIndex = 57;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 76);
+            this.label1.Location = new System.Drawing.Point(43, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 49;
+            this.label1.TabIndex = 56;
             this.label1.Text = "Nombre:";
             // 
             // Pnl_principal
@@ -174,7 +164,7 @@
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1162, 51);
-            this.Pnl_principal.TabIndex = 48;
+            this.Pnl_principal.TabIndex = 55;
             // 
             // Btn_minimizar
             // 
@@ -187,7 +177,7 @@
             this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
-            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
+            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click_1);
             // 
             // Btn_cerrar
             // 
@@ -200,7 +190,7 @@
             this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
-            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click_1);
             // 
             // Lbl_titulo
             // 
@@ -212,7 +202,6 @@
             this.Lbl_titulo.Size = new System.Drawing.Size(295, 20);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "Consulta De Bonos Y Descuentos";
-            this.Lbl_titulo.Click += new System.EventHandler(this.Lbl_titulo_Click);
             // 
             // Frm_consultaBonos_Desc
             // 
@@ -226,8 +215,6 @@
             this.Controls.Add(this.Txt_consultaGuiaturistico);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Pnl_principal);
-            this.Controls.Add(this.Lbl_consultaUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_consultaBonos_Desc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaBonos_Desc";
@@ -241,9 +228,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label Lbl_consultaUsuario;
+
         private System.Windows.Forms.Button Btn_actualizar;
         private System.Windows.Forms.Button Btn_seleccionar;
+        public System.Windows.Forms.DataGridView Dgv_consultaBonoYDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.Button Btn_consulta;
         private System.Windows.Forms.TextBox Txt_consultaGuiaturistico;
         private System.Windows.Forms.Label label1;
@@ -251,10 +243,5 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        public System.Windows.Forms.DataGridView Dgv_consultaBonoYDesc;
     }
 }

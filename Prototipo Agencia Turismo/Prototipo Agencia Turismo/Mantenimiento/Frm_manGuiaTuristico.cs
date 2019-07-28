@@ -1,4 +1,10 @@
-﻿using Prototipo_Agencia_Turismo.Consulta;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: José Gonzalez
+  -----------------------------------------------------
+*/
+
+using Prototipo_Agencia_Turismo.Consulta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +12,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,23 +21,28 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_manGuiaTuristico : Form
     {
+
+        IPHostEntry host;
+        string localIP = "?";
+        string nombreUsuario = " ";
+        DateTime fechai = DateTime.Now;
         Validacion v = new Validacion();
         String cod_guia;
         String ruta;
         String descripcion;
         bool presionado = false;
-        public Frm_manGuiaTuristico()
+        public Frm_manGuiaTuristico(String usuario)
         {
             InitializeComponent();
+           nombreUsuario = usuario;
         }
-
 
         private void Habilitarcampos()
         {
             Txt_idguia.Enabled = true;
             Txt_ruta.Enabled = true;
             Txt_descripcion.Enabled = true;
-      
+
         }
 
 
@@ -73,7 +85,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             cod_guia = Txt_idguia.Text;
             ruta = Txt_ruta.Text;
             descripcion = Txt_descripcion.Text;
-      
+
             try
             {
                 OdbcCommand comm = new OdbcCommand("{call  Sp_Modificarguia(?,?,?)}", Conexion.nuevaConexion());
@@ -83,6 +95,15 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("descrip", OdbcType.Text).Value = descripcion;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
+
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO Modificado";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Guia Turistico";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
             }
             catch (Exception err)
             {
@@ -108,6 +129,15 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Guardado correctamente");
 
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO INGRESADO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Guia Turistico";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
+
             }
             catch (Exception err)
             {
@@ -128,35 +158,21 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("estdo", OdbcType.Text).Value = "1";
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "BORRAR REGISTRO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Guia Truristico";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
             }
             catch (Exception err)
             {
                 Console.WriteLine(err.Message);
                 MessageBox.Show("Error al intentar borrar el registro");
             }
-        }
-
-
-
-
-        private void Txt_idguia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.soloCodigo(e);
-        }
-
-        private void Txt_ruta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.soloLetra(e);
-        }
-
-        private void Txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.soloLetra(e);
-        }
-
-        private void Frm_manGuiaTuristico_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
@@ -187,7 +203,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            if(presionado == false)
+            if (presionado == false)
             {
                 Desahiblitarbtn();
                 Btn_guardar.Enabled = true;
@@ -255,8 +271,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                     Txt_descripcion.Text = conBonos_Desc.Dgv_consultaBonoYDesc.Rows[conBonos_Desc.Dgv_consultaBonoYDesc.CurrentRow.Index].
                         Cells[2].Value.ToString();
 
-                   
-                  
+
+
                     Txt_idguia.Focus();
                     presionado = false;
                     Habilitarbtn();
@@ -273,5 +289,21 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Frm_manGuiaTuristico_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_idguia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloCodigo(e);
+        }
+
+        private void Txt_ruta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetra(e);
+        }
     }
 }
+

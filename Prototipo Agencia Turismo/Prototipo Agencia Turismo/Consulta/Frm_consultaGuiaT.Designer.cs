@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_consultaGuiaT));
-            this.label1 = new System.Windows.Forms.Label();
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Dgv_consultaBonoYDesc = new System.Windows.Forms.DataGridView();
@@ -47,15 +46,6 @@
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-124, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Nombre:";
-            // 
             // Btn_actualizar
             // 
             this.Btn_actualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -64,10 +54,10 @@
             this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_actualizar.Location = new System.Drawing.Point(753, 235);
+            this.Btn_actualizar.Location = new System.Drawing.Point(739, 220);
             this.Btn_actualizar.Name = "Btn_actualizar";
             this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_actualizar.TabIndex = 63;
+            this.Btn_actualizar.TabIndex = 70;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
             this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
@@ -80,10 +70,10 @@
             this.Btn_seleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_seleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_seleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_seleccionar.Location = new System.Drawing.Point(953, 235);
+            this.Btn_seleccionar.Location = new System.Drawing.Point(939, 220);
             this.Btn_seleccionar.Name = "Btn_seleccionar";
             this.Btn_seleccionar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_seleccionar.TabIndex = 62;
+            this.Btn_seleccionar.TabIndex = 69;
             this.Btn_seleccionar.Text = "Seleccionar";
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
             this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
@@ -95,11 +85,11 @@
             this.Codigo,
             this.Nombre,
             this.Valor});
-            this.Dgv_consultaBonoYDesc.Location = new System.Drawing.Point(117, 127);
+            this.Dgv_consultaBonoYDesc.Location = new System.Drawing.Point(103, 112);
             this.Dgv_consultaBonoYDesc.Name = "Dgv_consultaBonoYDesc";
             this.Dgv_consultaBonoYDesc.RowTemplate.Height = 24;
             this.Dgv_consultaBonoYDesc.Size = new System.Drawing.Size(593, 405);
-            this.Dgv_consultaBonoYDesc.TabIndex = 61;
+            this.Dgv_consultaBonoYDesc.TabIndex = 68;
             // 
             // Codigo
             // 
@@ -130,10 +120,10 @@
             this.Btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consulta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consulta.Image")));
             this.Btn_consulta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consulta.Location = new System.Drawing.Point(1095, 75);
+            this.Btn_consulta.Location = new System.Drawing.Point(1081, 60);
             this.Btn_consulta.Name = "Btn_consulta";
             this.Btn_consulta.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consulta.TabIndex = 60;
+            this.Btn_consulta.TabIndex = 67;
             this.Btn_consulta.Text = "Consultar";
             this.Btn_consulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consulta.UseVisualStyleBackColor = false;
@@ -141,18 +131,18 @@
             // 
             // Txt_consultaNombre
             // 
-            this.Txt_consultaNombre.Location = new System.Drawing.Point(131, 87);
+            this.Txt_consultaNombre.Location = new System.Drawing.Point(117, 72);
             this.Txt_consultaNombre.Name = "Txt_consultaNombre";
             this.Txt_consultaNombre.Size = new System.Drawing.Size(934, 22);
-            this.Txt_consultaNombre.TabIndex = 59;
+            this.Txt_consultaNombre.TabIndex = 66;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 90);
+            this.label2.Location = new System.Drawing.Point(29, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 58;
+            this.label2.TabIndex = 65;
             this.label2.Text = "Nombre:";
             // 
             // Pnl_principal
@@ -166,7 +156,7 @@
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1144, 51);
-            this.Pnl_principal.TabIndex = 57;
+            this.Pnl_principal.TabIndex = 64;
             // 
             // Btn_minimizar
             // 
@@ -179,6 +169,7 @@
             this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
+            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
             // 
             // Btn_cerrar
             // 
@@ -191,6 +182,7 @@
             this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
             // Lbl_titulo
             // 
@@ -215,9 +207,10 @@
             this.Controls.Add(this.Txt_consultaNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Pnl_principal);
-            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_consultaGuiaT";
-            this.Text = "Frm_consultaRutas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Frm_consultaGuiaT";
             this.Load += new System.EventHandler(this.Frm_consultaGuiaT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaBonoYDesc)).EndInit();
             this.Pnl_principal.ResumeLayout(false);
@@ -228,10 +221,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Button Btn_actualizar;
         private System.Windows.Forms.Button Btn_seleccionar;
         public System.Windows.Forms.DataGridView Dgv_consultaBonoYDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.Button Btn_consulta;
         private System.Windows.Forms.TextBox Txt_consultaNombre;
         private System.Windows.Forms.Label label2;
@@ -239,8 +235,5 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
 }

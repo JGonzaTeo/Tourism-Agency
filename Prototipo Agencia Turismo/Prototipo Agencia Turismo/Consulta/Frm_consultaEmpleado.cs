@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: José Gonzalez
+  -----------------------------------------------------
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +25,6 @@ namespace Prototipo_Agencia_Turismo.Consulta
         {
             InitializeComponent();
         }
-
         private void MostrarConsulta()
         {
             try
@@ -48,25 +54,6 @@ namespace Prototipo_Agencia_Turismo.Consulta
             MostrarConsulta();
         }
 
-        private void Btn_actualizar_Click(object sender, EventArgs e)
-        {
-            Dgv_consultaEmpleados.Rows.Clear();
-            MostrarConsulta();
-        }
-
-        private void Btn_seleccionar_Click(object sender, EventArgs e)
-        {
-            if (Dgv_consultaEmpleados.Rows.Count == 0)
-            {
-                return;
-            }
-            else
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-
         private void Btn_consulta_Click(object sender, EventArgs e)
         {
             Dgv_consultaEmpleados.Rows.Clear();
@@ -92,12 +79,35 @@ namespace Prototipo_Agencia_Turismo.Consulta
             {
                 Console.WriteLine("ERROR:" + err.Message);
             }
+        }
 
+        private void Btn_actualizar_Click(object sender, EventArgs e)
+        {
+            Dgv_consultaEmpleados.Rows.Clear();
+            MostrarConsulta();
+        }
+
+        private void Btn_seleccionar_Click(object sender, EventArgs e)
+        {
+            if (Dgv_consultaEmpleados.Rows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
+
+        private void Btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
