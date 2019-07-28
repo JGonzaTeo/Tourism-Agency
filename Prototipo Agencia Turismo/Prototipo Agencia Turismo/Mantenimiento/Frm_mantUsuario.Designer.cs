@@ -50,6 +50,8 @@
             this.Txt_idUsuario = new System.Windows.Forms.TextBox();
             this.Lbl_idUsuario = new System.Windows.Forms.Label();
             this.Btn_consultaPerfil = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Txt_estado = new System.Windows.Forms.TextBox();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +123,7 @@
             this.Btn_ingresar.Text = "Ingresar";
             this.Btn_ingresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_ingresar.UseVisualStyleBackColor = false;
+            this.Btn_ingresar.Click += new System.EventHandler(this.Btn_ingresar_Click);
             // 
             // Btn_editar
             // 
@@ -140,6 +143,7 @@
             this.Btn_editar.Text = "Editar";
             this.Btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_editar.UseVisualStyleBackColor = false;
+            this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
             // 
             // Btn_guardar
             // 
@@ -159,6 +163,7 @@
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_guardar.UseVisualStyleBackColor = false;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Btn_cancelar
             // 
@@ -178,6 +183,7 @@
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Btn_borrar
             // 
@@ -197,6 +203,7 @@
             this.Btn_borrar.Text = "Borrar";
             this.Btn_borrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_borrar.UseVisualStyleBackColor = false;
+            this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
             // 
             // Btn_consultar
             // 
@@ -216,9 +223,11 @@
             this.Btn_consultar.Text = "Consultar";
             this.Btn_consultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultar.UseVisualStyleBackColor = false;
+            this.Btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
             // 
             // Txt_idPerfil
             // 
+            this.Txt_idPerfil.Enabled = false;
             this.Txt_idPerfil.Location = new System.Drawing.Point(595, 411);
             this.Txt_idPerfil.Name = "Txt_idPerfil";
             this.Txt_idPerfil.Size = new System.Drawing.Size(172, 28);
@@ -235,8 +244,10 @@
             // 
             // Txt_confirmarContrasena
             // 
+            this.Txt_confirmarContrasena.Enabled = false;
             this.Txt_confirmarContrasena.Location = new System.Drawing.Point(595, 363);
             this.Txt_confirmarContrasena.Name = "Txt_confirmarContrasena";
+            this.Txt_confirmarContrasena.PasswordChar = '*';
             this.Txt_confirmarContrasena.Size = new System.Drawing.Size(243, 28);
             this.Txt_confirmarContrasena.TabIndex = 37;
             // 
@@ -251,8 +262,10 @@
             // 
             // Txt_contrasena
             // 
+            this.Txt_contrasena.Enabled = false;
             this.Txt_contrasena.Location = new System.Drawing.Point(595, 311);
             this.Txt_contrasena.Name = "Txt_contrasena";
+            this.Txt_contrasena.PasswordChar = '*';
             this.Txt_contrasena.Size = new System.Drawing.Size(243, 28);
             this.Txt_contrasena.TabIndex = 35;
             // 
@@ -267,6 +280,7 @@
             // 
             // Txt_nombre
             // 
+            this.Txt_nombre.Enabled = false;
             this.Txt_nombre.Location = new System.Drawing.Point(595, 259);
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(172, 28);
@@ -277,9 +291,9 @@
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Location = new System.Drawing.Point(379, 262);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(82, 21);
+            this.Lbl_nombre.Size = new System.Drawing.Size(51, 21);
             this.Lbl_nombre.TabIndex = 32;
-            this.Lbl_nombre.Text = "Nombre:";
+            this.Lbl_nombre.Text = "Nick:";
             // 
             // Txt_idUsuario
             // 
@@ -302,6 +316,7 @@
             // Btn_consultaPerfil
             // 
             this.Btn_consultaPerfil.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultaPerfil.Enabled = false;
             this.Btn_consultaPerfil.FlatAppearance.BorderSize = 3;
             this.Btn_consultaPerfil.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.Btn_consultaPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -314,15 +329,34 @@
             this.Btn_consultaPerfil.Name = "Btn_consultaPerfil";
             this.Btn_consultaPerfil.Size = new System.Drawing.Size(40, 40);
             this.Btn_consultaPerfil.TabIndex = 40;
-            this.Btn_consultaPerfil.Text = "Consultar";
             this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
+            this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(377, 473);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 21);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Estado";
+            // 
+            // Txt_estado
+            // 
+            this.Txt_estado.Enabled = false;
+            this.Txt_estado.Location = new System.Drawing.Point(595, 466);
+            this.Txt_estado.Name = "Txt_estado";
+            this.Txt_estado.Size = new System.Drawing.Size(100, 28);
+            this.Txt_estado.TabIndex = 42;
             // 
             // Frm_mantUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Txt_estado);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_consultaPerfil);
             this.Controls.Add(this.Txt_idPerfil);
             this.Controls.Add(this.Lbl_idPerfil);
@@ -347,6 +381,7 @@
             this.Name = "Frm_mantUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantUsuario";
+            this.Load += new System.EventHandler(this.Frm_mantUsuario_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             this.ResumeLayout(false);
@@ -377,5 +412,7 @@
         private System.Windows.Forms.TextBox Txt_idUsuario;
         private System.Windows.Forms.Label Lbl_idUsuario;
         private System.Windows.Forms.Button Btn_consultaPerfil;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox Txt_estado;
     }
 }
