@@ -218,5 +218,73 @@ namespace Prototipo_Agencia_Turismo
                 nominas.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
+        bool ventanaPagos = false;
+        Frm_mantTipoPago pagos = new Frm_mantTipoPago();
+        private void tipoDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantTipoPago);
+            if (ventanaPagos == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    pagos = new Frm_mantTipoPago();
+                }
+
+                pagos.MdiParent = this;
+                pagos.Show();
+                Application.DoEvents();
+                ventanaPagos = true;
+            }
+            else
+            {
+                pagos.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaMenus = false;
+        Frm_mantMenuscs menu = new Frm_mantMenuscs();
+        private void menusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantMenuscs);
+            if (ventanaMenus == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    menu = new Frm_mantMenuscs();
+                }
+
+                menu.MdiParent = this;
+                menu.Show();
+                Application.DoEvents();
+                ventanaMenus= true;
+            }
+            else
+            {
+                menu.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaHabitacion = false;
+        Frm_mantHabitacion habitacion = new Frm_mantHabitacion();
+        private void habitacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantHabitacion);
+            if (ventanaHabitacion == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    habitacion = new Frm_mantHabitacion();
+                }
+
+                habitacion.MdiParent = this;
+                habitacion.Show();
+                Application.DoEvents();
+                ventanaHabitacion = true;
+            }
+            else
+            {
+                habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
     }
 }

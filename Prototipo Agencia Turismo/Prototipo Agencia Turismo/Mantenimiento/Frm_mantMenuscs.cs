@@ -5,17 +5,23 @@
 */
 
 
+using Prototipo_Agencia_Turismo.Consulta;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.Odbc;
+using System.Drawing;
+using System.Linq;
 using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Prototipo_Agencia_Turismo.Consulta;
-using Prototipo_Agencia_Turismo;
+using static Prototipo_Agencia_Turismo.Form1;
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
-    public partial class Frm_mantHotel : Form
+    public partial class Frm_mantMenuscs : Form
     {
         //Declaracion de variables globales
 
@@ -23,11 +29,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         string usuario;
         DateTime fecha = DateTime.Now;
 
-        string idHotel = " ";
+        string idMenu = " ";
+        string idRestaurante = " ";
         string nombre = " ";
-        string direccion = " ";
-        string telefono = " ";
-        string correo = " ";
+        string descripcion = " ";
+        string precio = " ";
 
         //Validaciones
         Validacion v = new Validacion();
@@ -35,20 +41,22 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         //Metodos
         private void DeshabilitarCampos()
         {
-            Txt_idHotel.Enabled = false;
+            Txt_idMenu.Enabled = false;
+            Txt_restaurante.Enabled = false;
             Txt_nombre.Enabled = false;
-            Txt_direccion.Enabled = false;
-            Txt_telefono.Enabled = false;
-            Txt_correo.Enabled = false;
+            Txt_descipcion.Enabled = false;
+            Txt_precio.Enabled = false;
+            Btn_busqueda.Enabled = false;
         }
 
         private void HabilitarCampos()
         {
-            Txt_idHotel.Enabled = false;
+            Txt_idMenu.Enabled = false;
+            Txt_restaurante.Enabled = false;
             Txt_nombre.Enabled = true;
-            Txt_direccion.Enabled = true;
-            Txt_telefono.Enabled = true;
-            Txt_correo.Enabled = true;
+            Txt_descipcion.Enabled = true;
+            Txt_precio.Enabled = true;
+            Btn_busqueda.Enabled = true;
         }
 
         private void DeshabilitarBtn()
@@ -71,31 +79,54 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Limpiar()
         {
-            Txt_idHotel.Text = "";
+            Txt_idMenu.Text = "";
+            Txt_restaurante.Text = "";
             Txt_nombre.Text = "";
-            Txt_direccion.Text = "";
-            Txt_telefono.Text = "";
-            Txt_correo.Text = "";
+            Txt_descipcion.Text = "";
+            Txt_precio.Text = "";
         }
-
-        public Frm_mantHotel()
+        public Frm_mantMenuscs()
         {
             InitializeComponent();
         }
 
-        private void Frm_mantHotelcs_Load(object sender, EventArgs e)
-        {
-            DeshabilitarCampos();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Btn_minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+       
+
+        private void Btn_busqueda_Click(object sender, EventArgs e)
+        {
+            if (presionado == false)
+            {
+                DeshabilitarBtn();
+                Btn_consultar.Enabled = true;
+                presionado = true;
+            }
+            else
+            {
+
+                Frm_consultaRestaurante conRestaurante = new Frm_consultaRestaurante();
+                conRestaurante.ShowDialog();
+
+                if (conRestaurante.DialogResult == DialogResult.OK)
+                {
+                    Txt_restaurante.Text = conRestaurante.Dgv_consultaRestaurante.Rows[conRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].
+                    Cells[0].Value.ToString();
+
+
+                    Txt_nombre.Focus();
+                    presionado = false;
+                    HabilitarBtn();
+                }
+            }
         }
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
@@ -104,60 +135,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_nombre.Focus();
         }
 
-        private void GuardarDatos()
-        {
-            idHotel = Txt_idHotel.Text;
-            nombre = Txt_nombre.Text;
-            direccion = Txt_direccion.Text;
-            telefono = Txt_telefono.Text;
-            correo = Txt_correo.Text;
-   
-            IPHostEntry host;
-            string localIP = "?";
-            host = Dns.GetHostEntry(Dns.GetHostName());
-
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily.ToString() == "InterNetwork")
-                {
-                    localIP = ip.ToString();
-                }
-            }
-
-            try
-            {
-                string consulta = "INSERT INTO `tbl_hoteles` VALUES ('" + 0+ "', '" + nombre + "', '" + direccion + "'," +
-                    " '" + telefono + "', '" + correo + "', '" + 1 + "')";
-
-                OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
-                comm.ExecuteNonQuery();
-                MessageBox.Show("Registro guardado correctamente");
-
-                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
-                comm1.CommandType = CommandType.StoredProcedure;
-                comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
-                comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
-                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "HOTELES";
-                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
-                comm1.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                MessageBox.Show("Error al intentar guardar el registro");
-            }
-        }
-
         private void ActualizarDatos()
         {
-            idHotel = Txt_idHotel.Text;
+            idMenu = Txt_idMenu.Text;
             nombre = Txt_nombre.Text;
-            direccion = Txt_direccion.Text;
-            telefono = Txt_telefono.Text;
-            correo = Txt_correo.Text;
-            int numTelefonico = Convert.ToInt32(telefono);
-
+            descripcion = Txt_descipcion.Text;
+            precio = Txt_precio.Text;
+            idRestaurante = Txt_restaurante.Text;
+           
             IPHostEntry host;
             string localIP = "?";
             host = Dns.GetHostEntry(Dns.GetHostName());
@@ -172,9 +157,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
             try
             {
-                string consulta = "UPDATE `tbl_hoteles` SET `NombreHotel` = '" + nombre + "'" +
-                    ", `direccionHotel` = '" + direccion + "', `telefonoHotel` = '" + telefono + "', `correoHotel` = '" + correo + 
-                    "' WHERE Pk_idHotel = " + idHotel;
+                string consulta = "UPDATE `tbl_menus` SET `Fk_idRestaurantes` = '" + idRestaurante + "'" +
+                    ", `nombreMenu` = '" + nombre + "', `descripcionMenu` = '" + descripcion + "', `precioMenu` = '" + precio +
+                    "' WHERE Pk_idmenus = " + idMenu;
 
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
@@ -185,7 +170,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "ACTUALIZACIÓN DE REGISTRO";
                 comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "HOTELES";
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "MENUS";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
             }
@@ -195,7 +180,75 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 MessageBox.Show("Error al intentar actualizar el registro");
             }
         }
-            private void Btn_guardar_Click(object sender, EventArgs e)
+
+        private void Btn_editar_Click(object sender, EventArgs e)
+        {
+            if (presionado == false)
+            {
+                DeshabilitarBtn();
+                Btn_editar.Enabled = true;
+                HabilitarCampos();
+                presionado = true;
+                Txt_idMenu.Enabled = false;
+                Txt_restaurante.Enabled = false;
+            }
+            else
+            {
+                ActualizarDatos();
+                Txt_nombre.Focus();
+                presionado = false;
+                DeshabilitarCampos();
+                HabilitarBtn();
+                Limpiar();
+            }
+        }
+
+        private void GuardarDatos()
+        {
+            idMenu = Txt_idMenu.Text;
+            nombre = Txt_nombre.Text;
+            descripcion = Txt_descipcion.Text;
+            precio = Txt_precio.Text;
+            idRestaurante = Txt_restaurante.Text;
+
+            IPHostEntry host;
+            string localIP = "?";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+
+            try
+            {
+                string consulta = "INSERT INTO `tbl_menus` VALUES ('" + 0 + "', '" + idRestaurante + "', '" + nombre + "'," +
+                    " '" + descripcion + "', '" + precio + "', '" + 1 + "')";
+
+                OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
+                comm.ExecuteNonQuery();
+                MessageBox.Show("Registro guardado correctamente");
+
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "MENUS";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                MessageBox.Show("Error al intentar guardar el registro");
+            }
+        }
+
+        private void Btn_guardar_Click(object sender, EventArgs e)
         {
             if (presionado == false)
             {
@@ -213,27 +266,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
         }
 
-        private void Btn_editar_Click(object sender, EventArgs e)
-        {
-            if (presionado == false)
-            {
-                DeshabilitarBtn();
-                Btn_editar.Enabled = true;
-                HabilitarCampos();
-                presionado = true;
-                Txt_idHotel.Enabled = false;
-            }
-            else
-            {
-                ActualizarDatos();
-                Txt_nombre.Focus();
-                presionado = false;
-                DeshabilitarCampos();
-                HabilitarBtn();
-                Limpiar();
-            }
-        }
-
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -243,7 +275,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void BorrarDatos()
         {
-            idHotel = Txt_idHotel.Text;
+            idMenu = Txt_idMenu.Text;
 
             IPHostEntry host;
             string localIP = "?";
@@ -259,17 +291,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
             try
             {
-                string consulta = "UPDATE `tbl_hoteles` SET `estadoHotel` = '" + 0 +
-                    "' WHERE Pk_idHotel = " + idHotel;
-         
+                string consulta = "UPDATE `tbl_menus` SET `estadoMenu` = '" + 0 + 
+                    "' WHERE Pk_idmenus = " + idMenu;
+
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
-                string consulta2 = "UPDATE tbl_tipohabitacion T " +
-                "INNER JOIN tbl_hoteles H ON T.Fk_idhotel = H.Pk_idHotel " +
-                "SET T.estadoHabitacion = 0 " +
-                "WHERE T.Fk_idHotel =" + idHotel + "; ";
-                OdbcCommand comm2 = new OdbcCommand(consulta2, Conexion.nuevaConexion());
-                comm2.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -277,7 +303,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "ACTUALIZACIÓN DE REGISTRO";
                 comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "HOTELES";
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "MENUS";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
             }
@@ -317,22 +343,22 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
             else
             {
-                
-                Frm_consultaHotel conHotel = new Frm_consultaHotel();
-                conHotel.ShowDialog();
 
-                if (conHotel.DialogResult == DialogResult.OK)
+                Frm_consultaMenu conMenu = new Frm_consultaMenu();
+                conMenu.ShowDialog();
+
+                if (conMenu.DialogResult == DialogResult.OK)
                 {
-                    Txt_idHotel.Text = conHotel.Dgv_consultaHotel.Rows[conHotel.Dgv_consultaHotel.CurrentRow.Index].
+                    Txt_idMenu.Text = conMenu.Dgv_consultaMenu.Rows[conMenu.Dgv_consultaMenu.CurrentRow.Index].
                         Cells[0].Value.ToString();
-                    Txt_nombre.Text = conHotel.Dgv_consultaHotel.Rows[conHotel.Dgv_consultaHotel.CurrentRow.Index].
+                    Txt_restaurante.Text = conMenu.Dgv_consultaMenu.Rows[conMenu.Dgv_consultaMenu.CurrentRow.Index].
                         Cells[1].Value.ToString();
-                    Txt_direccion.Text = conHotel.Dgv_consultaHotel.Rows[conHotel.Dgv_consultaHotel.CurrentRow.Index].
+                    Txt_nombre.Text = conMenu.Dgv_consultaMenu.Rows[conMenu.Dgv_consultaMenu.CurrentRow.Index].
                         Cells[2].Value.ToString();
-                    Txt_telefono.Text = conHotel.Dgv_consultaHotel.Rows[conHotel.Dgv_consultaHotel.CurrentRow.Index].
+                    Txt_descipcion.Text = conMenu.Dgv_consultaMenu.Rows[conMenu.Dgv_consultaMenu.CurrentRow.Index].
                         Cells[3].Value.ToString();
-                    Txt_correo.Text = conHotel.Dgv_consultaHotel.Rows[conHotel.Dgv_consultaHotel.CurrentRow.Index].
-                        Cells[0].Value.ToString();
+                    Txt_precio.Text = conMenu.Dgv_consultaMenu.Rows[conMenu.Dgv_consultaMenu.CurrentRow.Index].
+                        Cells[4].Value.ToString();
 
 
                     Txt_nombre.Focus();
@@ -342,10 +368,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             }
         }
 
-        private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        private void Frm_mantMenuscs_Load(object sender, EventArgs e)
         {
-            v.soloNumeros(e);
+            DeshabilitarCampos();
+        }
+
+        private void Txt_precio_KeyUp(object sender, KeyEventArgs e)
+        {
+            Funciones.ValidarCampoDecimal((TextBox)sender);
         }
     }
-    }
-
+}

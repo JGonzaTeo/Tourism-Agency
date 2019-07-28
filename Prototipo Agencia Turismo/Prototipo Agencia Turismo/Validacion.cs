@@ -35,5 +35,27 @@ namespace Prototipo_Agencia_Turismo
                 Console.WriteLine(err.Message);
             }
         }
+        public void soloNumeros(KeyPressEventArgs e)
+        {
+            try
+            {
+                if (Char.IsNumber(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
