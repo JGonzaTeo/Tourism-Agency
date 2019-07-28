@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Net;
+using Prototipo_Agencia_Turismo.Seguridad;
 
 namespace Prototipo_Agencia_Turismo
 {
@@ -29,6 +30,8 @@ namespace Prototipo_Agencia_Turismo
         {
             try
             {
+                string contrasenaDesencriptada = " ";
+
                 string nombreUsuario = " ";
                 string tipoPerfil = " ";
                 DateTime fecha_ingreso = DateTime.Now;
@@ -51,7 +54,9 @@ namespace Prototipo_Agencia_Turismo
 
                 while (mostrarUsuarios.Read())
                 {
-                    if ((Txt_usuario.Text == mostrarUsuarios.GetString(1)) && (Txt_contrasena.Text == mostrarUsuarios.GetString(2)))
+                    contrasenaDesencriptada = Seguridad_Login.DesEncriptar(mostrarUsuarios.GetString(2));
+                    Console.WriteLine("CONTRASENA DESENCRIPTADA: " +contrasenaDesencriptada);
+                    if ((Txt_usuario.Text == mostrarUsuarios.GetString(1)) && (Txt_contrasena.Text == contrasenaDesencriptada))
                     {
                         nombreUsuario = mostrarUsuarios.GetString(1);
                         tipoPerfil = mostrarUsuarios.GetString(3);

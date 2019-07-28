@@ -6,6 +6,7 @@
 
 
 using Prototipo_Agencia_Turismo.Consulta;
+using Prototipo_Agencia_Turismo.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,15 +125,19 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void ActualizarRegistro()
         {
+            string contrasenaEncriptada = " ";
+
             idUsuario = Txt_idUsuario.Text;
             nickUsuario = Txt_nombre.Text;
             contrasenaUsuario = Txt_contrasena.Text;
             idPerfil = Txt_idPerfil.Text;
 
+            contrasenaEncriptada = Seguridad_Login.Encriptar(Txt_contrasena.Text);
+
             try
             {
                 string actualizarRegistro = "UPDATE `tbl_usuario` SET `Pk_idUsuario` = '" + idUsuario + "' ," +
-                    "`nombreUsuario` = '" + nickUsuario + "', `contrasenaUsuario` = '" + contrasenaUsuario + "', " +
+                    "`nombreUsuario` = '" + nickUsuario + "', `contrasenaUsuario` = '" + contrasenaEncriptada + "', " +
                     "`Fk_idPerfil` = '" + idPerfil + "', `estado` = '1' WHERE Pk_idUsuario = " + idUsuario;
 
                 OdbcCommand comm = new OdbcCommand(actualizarRegistro, Conexion.nuevaConexion());
@@ -157,16 +162,20 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void GuardarRegistro()
         {
+            string contrasenaEncriptada = " ";
+
             nickUsuario = Txt_nombre.Text;
             contrasenaUsuario = Txt_contrasena.Text;
             confirmarContraUsuario = Txt_confirmarContrasena.Text;
             idPerfil = Txt_idPerfil.Text;
 
+            contrasenaEncriptada = Seguridad_Login.Encriptar(Txt_contrasena.Text);
+
             if(contrasenaUsuario == confirmarContraUsuario)
             {
                 try
                 {
-                    string insertarUsuario = "INSERT INTO tbl_usuario (nombreUsuario,contrasenaUsuario,Fk_idPerfil,estado) VALUES('" + nickUsuario + "', '" + contrasenaUsuario + "', '" + idPerfil + "', '1' )";
+                    string insertarUsuario = "INSERT INTO tbl_usuario (nombreUsuario,contrasenaUsuario,Fk_idPerfil,estado) VALUES('" + nickUsuario + "', '" + contrasenaEncriptada + "', '" + idPerfil + "', '1' )";
 
                     OdbcCommand comm = new OdbcCommand(insertarUsuario, Conexion.nuevaConexion());
                     comm.ExecuteNonQuery();
