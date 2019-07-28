@@ -45,7 +45,7 @@ namespace Prototipo_Agencia_Turismo
                     }
                 }
 
-                string consultaUsuario = string.Format("SELECT * FROM tbl_usuario;");
+                string consultaUsuario = string.Format("SELECT * FROM tbl_usuario WHERE estado = 1;");
                 OdbcCommand comm = new OdbcCommand(consultaUsuario, Conexion.nuevaConexion());
                 OdbcDataReader mostrarUsuarios = comm.ExecuteReader();
 
