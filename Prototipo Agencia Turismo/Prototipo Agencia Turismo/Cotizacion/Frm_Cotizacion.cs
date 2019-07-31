@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: Angel Solares
+  -----------------------------------------------------
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
