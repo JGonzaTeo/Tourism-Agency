@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-=======
 ﻿/* 
  -----------------------------------------------------
             AUTOR: Edson Juarez
@@ -9,34 +6,22 @@
 
 
 using System;
->>>>>>> Integracion-Ivan-José
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-<<<<<<< HEAD
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-=======
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using Prototipo_Agencia_Turismo.Consulta;
->>>>>>> Integracion-Ivan-José
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantPerfil : Form
     {
-<<<<<<< HEAD
-        public Frm_mantPerfil()
-        {
-            InitializeComponent();
-=======
         IPHostEntry host;
         string localIP = "?";
         bool presionado = false;
@@ -191,7 +176,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 Console.WriteLine(err.Message);
                 MessageBox.Show("No se han llenado todos los campos para guardar el registro...");
             }
->>>>>>> Integracion-Ivan-José
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
@@ -213,8 +197,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
             this.WindowState = FormWindowState.Minimized;
         }
-<<<<<<< HEAD
-=======
 
         private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -338,6 +320,5 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 LimpiarCampos();
             }
         }
->>>>>>> Integracion-Ivan-José
     }
 }

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-=======
 ﻿/* 
  -----------------------------------------------------
             AUTOR: Edson Juarez
@@ -9,7 +6,6 @@
 
 
 using System;
->>>>>>> Integracion-Ivan-José
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,19 +14,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
 using System.Data.Odbc;
->>>>>>> Integracion-Ivan-José
 
 namespace Prototipo_Agencia_Turismo.Consulta
 {
     public partial class Frm_consultaUsuario : Form
     {
-<<<<<<< HEAD
-=======
         string consultaUsuarios = " ";
->>>>>>> Integracion-Ivan-José
         public Frm_consultaUsuario()
         {
             InitializeComponent();
@@ -45,8 +35,6 @@ namespace Prototipo_Agencia_Turismo.Consulta
         {
             this.WindowState = FormWindowState.Minimized;
         }
-<<<<<<< HEAD
-=======
 
         private void Btn_seleccionar_Click(object sender, EventArgs e)
         {
@@ -122,6 +110,5 @@ namespace Prototipo_Agencia_Turismo.Consulta
                 MessageBox.Show("No se ha ingresado ningún campo");
             }
         }
->>>>>>> Integracion-Ivan-José
     }
 }

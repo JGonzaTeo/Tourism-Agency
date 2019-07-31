@@ -153,8 +153,6 @@
         CG/arF3UIEYxjHLOnFdIwpsG/zeKf49KX64AwcUtdjj11S4AAAAASUVORK5CYII=
 </value>
   </data>
-<<<<<<< HEAD
-=======
   <metadata name="idPerfil.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -167,5 +165,4 @@
   <metadata name="estadoPerfil.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
->>>>>>> Integracion-Ivan-José
 </root>

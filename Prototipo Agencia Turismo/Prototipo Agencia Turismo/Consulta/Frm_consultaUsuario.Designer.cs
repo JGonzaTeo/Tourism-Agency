@@ -39,14 +39,11 @@
             this.Dgv_consultaUsuario = new System.Windows.Forms.DataGridView();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Btn_actualizar = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contrasenaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> Integracion-Ivan-José
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaUsuario)).BeginInit();
             this.SuspendLayout();
@@ -135,15 +132,6 @@
             this.Btn_consultaPerfil.Text = "Consultar";
             this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-            // 
-            // Dgv_consultaUsuario
-            // 
-            this.Dgv_consultaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_consultaUsuario.Location = new System.Drawing.Point(47, 156);
-            this.Dgv_consultaUsuario.Name = "Dgv_consultaUsuario";
-            this.Dgv_consultaUsuario.RowTemplate.Height = 24;
-=======
             this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
             // 
             // Dgv_consultaUsuario
@@ -165,7 +153,6 @@
             this.Dgv_consultaUsuario.RowHeadersVisible = false;
             this.Dgv_consultaUsuario.RowTemplate.Height = 24;
             this.Dgv_consultaUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
->>>>>>> Integracion-Ivan-José
             this.Dgv_consultaUsuario.Size = new System.Drawing.Size(1098, 405);
             this.Dgv_consultaUsuario.TabIndex = 43;
             // 
@@ -183,10 +170,7 @@
             this.Btn_seleccionar.TabIndex = 44;
             this.Btn_seleccionar.Text = "Seleccionar";
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
             this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_actualizar
             // 
@@ -202,8 +186,6 @@
             this.Btn_actualizar.TabIndex = 45;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
             this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
             // idUsuario
@@ -230,7 +212,6 @@
             // 
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
->>>>>>> Integracion-Ivan-José
             // 
             // Frm_consultaUsuario
             // 
@@ -246,18 +227,11 @@
             this.Controls.Add(this.Pnl_principal);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-<<<<<<< HEAD
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Frm_consultaUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_consultaUsuario";
-=======
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_consultaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaUsuario";
             this.Load += new System.EventHandler(this.Frm_consultaUsuario_Load);
->>>>>>> Integracion-Ivan-José
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaUsuario)).EndInit();
@@ -278,13 +252,10 @@
         private System.Windows.Forms.Button Btn_seleccionar;
         private System.Windows.Forms.Button Btn_actualizar;
         public System.Windows.Forms.DataGridView Dgv_consultaUsuario;
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn contrasenaUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
->>>>>>> Integracion-Ivan-José
     }
 }

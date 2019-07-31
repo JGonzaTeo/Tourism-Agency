@@ -35,9 +35,6 @@ namespace Prototipo_Agencia_Turismo
                 Console.WriteLine(err.Message);
             }
         }
-<<<<<<< HEAD
-        public void soloNumeros(KeyPressEventArgs e)
-=======
 
         public void soloLetra(KeyPressEventArgs e)
         {
@@ -98,7 +95,6 @@ namespace Prototipo_Agencia_Turismo
         }
 
         public void soloCodigo(KeyPressEventArgs e)
->>>>>>> Integracion-Ivan-José
         {
             try
             {
@@ -110,8 +106,6 @@ namespace Prototipo_Agencia_Turismo
                 {
                     e.Handled = false;
                 }
-<<<<<<< HEAD
-=======
                 else if (Char.IsSeparator(e.KeyChar))
                 {
                     e.Handled = false;
@@ -148,17 +142,12 @@ namespace Prototipo_Agencia_Turismo
                 {
                     e.Handled = false;
                 }
->>>>>>> Integracion-Ivan-José
                 else
                 {
                     e.Handled = true;
                 }
             }
-<<<<<<< HEAD
-            catch (Exception ex)
-=======
             catch
->>>>>>> Integracion-Ivan-José
             {
 
             }

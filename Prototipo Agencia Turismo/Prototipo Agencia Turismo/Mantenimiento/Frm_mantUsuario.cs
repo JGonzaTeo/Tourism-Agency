@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-=======
 ﻿/* 
  -----------------------------------------------------
             AUTOR: Edson Juarez
@@ -14,6 +6,7 @@ using System.Linq;
 
 
 using Prototipo_Agencia_Turismo.Consulta;
+using Prototipo_Agencia_Turismo.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +15,6 @@ using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Net;
->>>>>>> Integracion-Ivan-José
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,11 +23,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantUsuario : Form
     {
-<<<<<<< HEAD
-        public Frm_mantUsuario()
-        {
-            InitializeComponent();
-=======
         IPHostEntry host;
         string localIP = "?";
         bool presionado = false;
@@ -138,15 +125,19 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void ActualizarRegistro()
         {
+            string contrasenaEncriptada = " ";
+
             idUsuario = Txt_idUsuario.Text;
             nickUsuario = Txt_nombre.Text;
             contrasenaUsuario = Txt_contrasena.Text;
             idPerfil = Txt_idPerfil.Text;
 
+            contrasenaEncriptada = Seguridad_Login.Encriptar(Txt_contrasena.Text);
+
             try
             {
                 string actualizarRegistro = "UPDATE `tbl_usuario` SET `Pk_idUsuario` = '" + idUsuario + "' ," +
-                    "`nombreUsuario` = '" + nickUsuario + "', `contrasenaUsuario` = '" + contrasenaUsuario + "', " +
+                    "`nombreUsuario` = '" + nickUsuario + "', `contrasenaUsuario` = '" + contrasenaEncriptada + "', " +
                     "`Fk_idPerfil` = '" + idPerfil + "', `estado` = '1' WHERE Pk_idUsuario = " + idUsuario;
 
                 OdbcCommand comm = new OdbcCommand(actualizarRegistro, Conexion.nuevaConexion());
@@ -171,16 +162,20 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void GuardarRegistro()
         {
+            string contrasenaEncriptada = " ";
+
             nickUsuario = Txt_nombre.Text;
             contrasenaUsuario = Txt_contrasena.Text;
             confirmarContraUsuario = Txt_confirmarContrasena.Text;
             idPerfil = Txt_idPerfil.Text;
 
+            contrasenaEncriptada = Seguridad_Login.Encriptar(Txt_contrasena.Text);
+
             if(contrasenaUsuario == confirmarContraUsuario)
             {
                 try
                 {
-                    string insertarUsuario = "INSERT INTO tbl_usuario (nombreUsuario,contrasenaUsuario,Fk_idPerfil,estado) VALUES('" + nickUsuario + "', '" + contrasenaUsuario + "', '" + idPerfil + "', '1' )";
+                    string insertarUsuario = "INSERT INTO tbl_usuario (nombreUsuario,contrasenaUsuario,Fk_idPerfil,estado) VALUES('" + nickUsuario + "', '" + contrasenaEncriptada + "', '" + idPerfil + "', '1' )";
 
                     OdbcCommand comm = new OdbcCommand(insertarUsuario, Conexion.nuevaConexion());
                     comm.ExecuteNonQuery();
@@ -205,7 +200,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             {
                 MessageBox.Show("Las contraseñas ingresadas no son idénticas");
             }
->>>>>>> Integracion-Ivan-José
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)
@@ -217,8 +211,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
             this.Close();
         }
-<<<<<<< HEAD
-=======
 
         private void Frm_mantUsuario_Load(object sender, EventArgs e)
         {
@@ -348,6 +340,5 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 LimpiarCampos();
             }
         }
->>>>>>> Integracion-Ivan-José
     }
 }

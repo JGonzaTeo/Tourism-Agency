@@ -94,11 +94,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(34, 16);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-<<<<<<< HEAD
-            this.Lbl_titulo.Size = new System.Drawing.Size(120, 19);
-=======
             this.Lbl_titulo.Size = new System.Drawing.Size(97, 17);
->>>>>>> Integracion-Ivan-José
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "TRANSPORTES";
             // 
@@ -107,50 +103,27 @@
             this.Lbl_idTransporte.AutoSize = true;
             this.Lbl_idTransporte.Location = new System.Drawing.Point(319, 200);
             this.Lbl_idTransporte.Name = "Lbl_idTransporte";
-<<<<<<< HEAD
-            this.Lbl_idTransporte.Size = new System.Drawing.Size(153, 21);
-            this.Lbl_idTransporte.TabIndex = 2;
-            this.Lbl_idTransporte.Text = "ID de transporte:";
-=======
             this.Lbl_idTransporte.Size = new System.Drawing.Size(123, 19);
             this.Lbl_idTransporte.TabIndex = 2;
             this.Lbl_idTransporte.Text = "ID de transporte:";
             this.Lbl_idTransporte.Visible = false;
             this.Lbl_idTransporte.Click += new System.EventHandler(this.Lbl_idTransporte_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Txt_idTransporte
             // 
             this.Txt_idTransporte.Enabled = false;
             this.Txt_idTransporte.Location = new System.Drawing.Point(494, 193);
             this.Txt_idTransporte.Name = "Txt_idTransporte";
-<<<<<<< HEAD
-            this.Txt_idTransporte.Size = new System.Drawing.Size(138, 28);
-            this.Txt_idTransporte.TabIndex = 3;
-=======
             this.Txt_idTransporte.Size = new System.Drawing.Size(138, 24);
             this.Txt_idTransporte.TabIndex = 3;
             this.Txt_idTransporte.Visible = false;
             this.Txt_idTransporte.TextChanged += new System.EventHandler(this.Txt_idTransporte_TextChanged);
->>>>>>> Integracion-Ivan-José
             // 
             // Lbl_noPlaca
             // 
             this.Lbl_noPlaca.AutoSize = true;
             this.Lbl_noPlaca.Location = new System.Drawing.Point(319, 264);
             this.Lbl_noPlaca.Name = "Lbl_noPlaca";
-<<<<<<< HEAD
-            this.Lbl_noPlaca.Size = new System.Drawing.Size(127, 21);
-            this.Lbl_noPlaca.TabIndex = 4;
-            this.Lbl_noPlaca.Text = "No. de placa:";
-            // 
-            // Txt_noPlaca
-            // 
-            this.Txt_noPlaca.Location = new System.Drawing.Point(494, 257);
-            this.Txt_noPlaca.Name = "Txt_noPlaca";
-            this.Txt_noPlaca.Size = new System.Drawing.Size(190, 28);
-            this.Txt_noPlaca.TabIndex = 5;
-=======
             this.Lbl_noPlaca.Size = new System.Drawing.Size(105, 19);
             this.Lbl_noPlaca.TabIndex = 4;
             this.Lbl_noPlaca.Text = "No. de placa:";
@@ -164,25 +137,12 @@
             this.Txt_noPlaca.Size = new System.Drawing.Size(190, 24);
             this.Txt_noPlaca.TabIndex = 5;
             this.Txt_noPlaca.TextChanged += new System.EventHandler(this.Txt_noPlaca_TextChanged);
->>>>>>> Integracion-Ivan-José
             // 
             // Lbl_tipoTransporte
             // 
             this.Lbl_tipoTransporte.AutoSize = true;
             this.Lbl_tipoTransporte.Location = new System.Drawing.Point(319, 326);
             this.Lbl_tipoTransporte.Name = "Lbl_tipoTransporte";
-<<<<<<< HEAD
-            this.Lbl_tipoTransporte.Size = new System.Drawing.Size(169, 21);
-            this.Lbl_tipoTransporte.TabIndex = 6;
-            this.Lbl_tipoTransporte.Text = "Tipo de transporte:";
-            // 
-            // Txt_tipoTransporte
-            // 
-            this.Txt_tipoTransporte.Location = new System.Drawing.Point(494, 319);
-            this.Txt_tipoTransporte.Name = "Txt_tipoTransporte";
-            this.Txt_tipoTransporte.Size = new System.Drawing.Size(190, 28);
-            this.Txt_tipoTransporte.TabIndex = 7;
-=======
             this.Lbl_tipoTransporte.Size = new System.Drawing.Size(137, 19);
             this.Lbl_tipoTransporte.TabIndex = 6;
             this.Lbl_tipoTransporte.Text = "Tipo de transporte:";
@@ -196,25 +156,12 @@
             this.Txt_tipoTransporte.Size = new System.Drawing.Size(190, 24);
             this.Txt_tipoTransporte.TabIndex = 7;
             this.Txt_tipoTransporte.TextChanged += new System.EventHandler(this.Txt_tipoTransporte_TextChanged);
->>>>>>> Integracion-Ivan-José
             // 
             // Lbl_capacidad
             // 
             this.Lbl_capacidad.AutoSize = true;
             this.Lbl_capacidad.Location = new System.Drawing.Point(319, 388);
             this.Lbl_capacidad.Name = "Lbl_capacidad";
-<<<<<<< HEAD
-            this.Lbl_capacidad.Size = new System.Drawing.Size(115, 21);
-            this.Lbl_capacidad.TabIndex = 8;
-            this.Lbl_capacidad.Text = "Capacidad:";
-            // 
-            // Txt_capacidad
-            // 
-            this.Txt_capacidad.Location = new System.Drawing.Point(494, 381);
-            this.Txt_capacidad.Name = "Txt_capacidad";
-            this.Txt_capacidad.Size = new System.Drawing.Size(83, 28);
-            this.Txt_capacidad.TabIndex = 9;
-=======
             this.Lbl_capacidad.Size = new System.Drawing.Size(96, 19);
             this.Lbl_capacidad.TabIndex = 8;
             this.Lbl_capacidad.Text = "Capacidad:";
@@ -228,7 +175,6 @@
             this.Txt_capacidad.Size = new System.Drawing.Size(83, 24);
             this.Txt_capacidad.TabIndex = 9;
             this.Txt_capacidad.TextChanged += new System.EventHandler(this.Txt_capacidad_TextChanged);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_consultar
             // 
@@ -248,10 +194,7 @@
             this.Btn_consultar.Text = "Consultar";
             this.Btn_consultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.Btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_borrar
             // 
@@ -271,10 +214,7 @@
             this.Btn_borrar.Text = "Borrar";
             this.Btn_borrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_borrar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_cancelar
             // 
@@ -294,10 +234,7 @@
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_guardar
             // 
@@ -317,10 +254,7 @@
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_guardar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_editar
             // 
@@ -340,10 +274,7 @@
             this.Btn_editar.Text = "Editar";
             this.Btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_editar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.Btn_editar.Click += new System.EventHandler(this.Btn_editar_Click);
->>>>>>> Integracion-Ivan-José
             // 
             // Btn_ingresar
             // 
@@ -363,18 +294,11 @@
             this.Btn_ingresar.Text = "Ingresar";
             this.Btn_ingresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_ingresar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-            // 
-            // Frm_mantTransporte
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-=======
             this.Btn_ingresar.Click += new System.EventHandler(this.Btn_ingresar_Click);
             // 
             // Frm_mantTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
->>>>>>> Integracion-Ivan-José
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_consultar);

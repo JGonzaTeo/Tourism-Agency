@@ -4,7 +4,6 @@
   -----------------------------------------------------
 */
 
-<<<<<<< HEAD
 
 using System;
 using System.Data;
@@ -13,23 +12,11 @@ using System.Net;
 using System.Windows.Forms;
 using Prototipo_Agencia_Turismo.Consulta;
 using Prototipo_Agencia_Turismo;
-=======
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
->>>>>>> Integracion-Ivan-José
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantHotel : Form
     {
-<<<<<<< HEAD
         //Declaracion de variables globales
 
         bool presionado = false;
@@ -95,20 +82,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
             InitializeComponent();
             usuario = nombreUsuario;
-=======
-        public Frm_mantHotel()
-        {
-            InitializeComponent();
->>>>>>> Integracion-Ivan-José
         }
 
         private void Frm_mantHotelcs_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             DeshabilitarCampos();
-=======
-
->>>>>>> Integracion-Ivan-José
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -120,7 +98,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
             this.WindowState = FormWindowState.Minimized;
         }
-<<<<<<< HEAD
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
@@ -368,12 +345,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            v.soloNumeros(e);
+            v.soloNumero(e);
         }
     }
     }
 
-=======
-    }
-}
->>>>>>> Integracion-Ivan-José

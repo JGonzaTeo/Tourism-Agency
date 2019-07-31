@@ -35,11 +35,6 @@
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Dgv_tablaBitacora = new System.Windows.Forms.DataGridView();
             this.Lbl_nombreUsuario = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.Txt_nombreUsuario = new System.Windows.Forms.TextBox();
-            this.Btn_generarReporte = new System.Windows.Forms.Button();
-            this.Btn_actualizar = new System.Windows.Forms.Button();
-=======
             this.Txt_consultaUsuario = new System.Windows.Forms.TextBox();
             this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Btn_actualizar = new System.Windows.Forms.Button();
@@ -50,7 +45,6 @@
             this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionIp = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> Integracion-Ivan-José
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_tablaBitacora)).BeginInit();
             this.SuspendLayout();
@@ -103,12 +97,6 @@
             // 
             // Dgv_tablaBitacora
             // 
-<<<<<<< HEAD
-            this.Dgv_tablaBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_tablaBitacora.Location = new System.Drawing.Point(26, 155);
-            this.Dgv_tablaBitacora.Name = "Dgv_tablaBitacora";
-            this.Dgv_tablaBitacora.RowTemplate.Height = 24;
-=======
             this.Dgv_tablaBitacora.AllowUserToAddRows = false;
             this.Dgv_tablaBitacora.AllowUserToDeleteRows = false;
             this.Dgv_tablaBitacora.AllowUserToResizeColumns = false;
@@ -127,7 +115,6 @@
             this.Dgv_tablaBitacora.RowHeadersVisible = false;
             this.Dgv_tablaBitacora.RowTemplate.Height = 24;
             this.Dgv_tablaBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
->>>>>>> Integracion-Ivan-José
             this.Dgv_tablaBitacora.Size = new System.Drawing.Size(1109, 376);
             this.Dgv_tablaBitacora.TabIndex = 1;
             // 
@@ -141,17 +128,6 @@
             this.Lbl_nombreUsuario.TabIndex = 2;
             this.Lbl_nombreUsuario.Text = "Nombre de usuario:";
             // 
-<<<<<<< HEAD
-            // Txt_nombreUsuario
-            // 
-            this.Txt_nombreUsuario.Location = new System.Drawing.Point(221, 99);
-            this.Txt_nombreUsuario.Name = "Txt_nombreUsuario";
-            this.Txt_nombreUsuario.Size = new System.Drawing.Size(914, 23);
-            this.Txt_nombreUsuario.TabIndex = 3;
-            // 
-            // Btn_generarReporte
-            // 
-=======
             // Txt_consultaUsuario
             // 
             this.Txt_consultaUsuario.Location = new System.Drawing.Point(221, 99);
@@ -162,7 +138,6 @@
             // Btn_generarReporte
             // 
             this.Btn_generarReporte.Enabled = false;
->>>>>>> Integracion-Ivan-José
             this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
             this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -190,8 +165,6 @@
             this.Btn_actualizar.TabIndex = 5;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
             this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
             // Btn_consultaPerfil
@@ -243,23 +216,16 @@
             // 
             this.direccionIp.HeaderText = "Dirección IP";
             this.direccionIp.Name = "direccionIp";
->>>>>>> Integracion-Ivan-José
             // 
             // Frm_bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
-<<<<<<< HEAD
-            this.Controls.Add(this.Btn_actualizar);
-            this.Controls.Add(this.Btn_generarReporte);
-            this.Controls.Add(this.Txt_nombreUsuario);
-=======
             this.Controls.Add(this.Btn_consultaPerfil);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_generarReporte);
             this.Controls.Add(this.Txt_consultaUsuario);
->>>>>>> Integracion-Ivan-José
             this.Controls.Add(this.Lbl_nombreUsuario);
             this.Controls.Add(this.Dgv_tablaBitacora);
             this.Controls.Add(this.Pnl_principal);
@@ -285,11 +251,6 @@
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.DataGridView Dgv_tablaBitacora;
         private System.Windows.Forms.Label Lbl_nombreUsuario;
-<<<<<<< HEAD
-        private System.Windows.Forms.TextBox Txt_nombreUsuario;
-        private System.Windows.Forms.Button Btn_generarReporte;
-        private System.Windows.Forms.Button Btn_actualizar;
-=======
         private System.Windows.Forms.TextBox Txt_consultaUsuario;
         private System.Windows.Forms.Button Btn_generarReporte;
         private System.Windows.Forms.Button Btn_actualizar;
@@ -300,6 +261,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn aplicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionIp;
->>>>>>> Integracion-Ivan-José
     }
 }

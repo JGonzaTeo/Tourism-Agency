@@ -8,10 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-<<<<<<< HEAD
-=======
 using System.Data.Odbc;
->>>>>>> Integracion-Ivan-José
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,18 +19,13 @@ namespace Prototipo_Agencia_Turismo
 {
     public partial class Frm_bitacora : Form
     {
-<<<<<<< HEAD
-=======
 
         string consultaBitacora = " ";
->>>>>>> Integracion-Ivan-José
         public Frm_bitacora()
         {
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-=======
         private void CargarDatos()
         {
             try
@@ -55,7 +47,6 @@ namespace Prototipo_Agencia_Turismo
             }
         }
 
->>>>>>> Integracion-Ivan-José
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -68,9 +59,6 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_bitacora_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             CargarDatos();
         }
 
@@ -108,7 +96,6 @@ namespace Prototipo_Agencia_Turismo
         {
             Dgv_tablaBitacora.Rows.Clear();
             CargarDatos();
->>>>>>> Integracion-Ivan-José
         }
     }
 }

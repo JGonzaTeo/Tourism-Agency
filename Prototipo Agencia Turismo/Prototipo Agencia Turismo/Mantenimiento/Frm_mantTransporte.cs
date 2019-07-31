@@ -1,10 +1,6 @@
 ﻿/* 
  -----------------------------------------------------
-<<<<<<< HEAD
-            AUTOR: Ivan Mogollón
-=======
             AUTOR: Angel Solares
->>>>>>> Integracion-Ivan-José
   -----------------------------------------------------
 */
 
@@ -17,11 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
 using System.Data.Odbc;
 using System.Net;
->>>>>>> Integracion-Ivan-José
 
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
@@ -32,8 +25,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-=======
         string usuario = " ";
         DateTime fecha = DateTime.Now;
         bool presionado = false;
@@ -219,7 +210,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
 
 
->>>>>>> Integracion-Ivan-José
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -234,8 +224,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
 
         }
-<<<<<<< HEAD
-=======
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
@@ -384,6 +372,5 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         {
 
         }
->>>>>>> Integracion-Ivan-José
     }
 }

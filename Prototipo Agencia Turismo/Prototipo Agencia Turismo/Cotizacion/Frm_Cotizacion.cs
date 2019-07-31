@@ -1,6 +1,6 @@
 ﻿/* 
  -----------------------------------------------------
-            AUTOR: Edson Juarez
+            AUTOR: Angel Solares
   -----------------------------------------------------
 */
 
@@ -14,26 +14,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prototipo_Agencia_Turismo.Mantenimientos
+namespace Prototipo_Agencia_Turismo.Cotizacion
 {
-    public partial class Frm_controlUsuario : Form
+    public partial class Frm_Cotizacion : Form
     {
-        public Frm_controlUsuario()
+        public Frm_Cotizacion()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Lbl_titulo_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Lbl_IdEmpleado_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void Frm_controlUsuario_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
