@@ -1,6 +1,6 @@
 ﻿namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
-    partial class Frm_mantRestaurante
+    partial class Frm_mantHabitacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantRestaurante));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantHabitacion));
             this.Pnl_principal = new System.Windows.Forms.Panel();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
-            this.Lbl_idRestaurante = new System.Windows.Forms.Label();
-            this.Txt_idRestaurante = new System.Windows.Forms.TextBox();
-            this.Lbl_nombre = new System.Windows.Forms.Label();
-            this.Txt_nombre = new System.Windows.Forms.TextBox();
-            this.Lbl_direccion = new System.Windows.Forms.Label();
-            this.Txt_direccion = new System.Windows.Forms.TextBox();
-            this.Lbl_telefono = new System.Windows.Forms.Label();
-            this.Txt_telefono = new System.Windows.Forms.TextBox();
-            this.Lbl_correo = new System.Windows.Forms.Label();
-            this.Txt_correo = new System.Windows.Forms.TextBox();
             this.Btn_consultar = new System.Windows.Forms.Button();
             this.Btn_borrar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_editar = new System.Windows.Forms.Button();
             this.Btn_ingresar = new System.Windows.Forms.Button();
+            this.Btn_busqueda = new System.Windows.Forms.Button();
+            this.Txt_costo = new System.Windows.Forms.TextBox();
+            this.Lbl_costo = new System.Windows.Forms.Label();
+            this.Txt_capacidad = new System.Windows.Forms.TextBox();
+            this.Lbl_capacidad = new System.Windows.Forms.Label();
+            this.Txt_nombre = new System.Windows.Forms.TextBox();
+            this.Lbl_nombre = new System.Windows.Forms.Label();
+            this.Txt_hotel = new System.Windows.Forms.TextBox();
+            this.Lbl_idHotel = new System.Windows.Forms.Label();
+            this.Txt_idHabitacion = new System.Windows.Forms.TextBox();
+            this.Lbl_idHabitacion = new System.Windows.Forms.Label();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
-            this.Pnl_principal.TabIndex = 2;
+            this.Pnl_principal.TabIndex = 4;
             // 
             // Btn_minimizar
             // 
@@ -76,7 +77,7 @@
             this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
-            this.Btn_minimizar.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
             // 
             // Btn_cerrar
             // 
@@ -89,7 +90,7 @@
             this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
-            this.Btn_cerrar.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
             // Lbl_titulo
             // 
@@ -98,92 +99,9 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(103, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(107, 17);
             this.Lbl_titulo.TabIndex = 1;
-            this.Lbl_titulo.Text = "RESTAURANTES";
-            // 
-            // Lbl_idRestaurante
-            // 
-            this.Lbl_idRestaurante.AutoSize = true;
-            this.Lbl_idRestaurante.Location = new System.Drawing.Point(336, 204);
-            this.Lbl_idRestaurante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lbl_idRestaurante.Name = "Lbl_idRestaurante";
-            this.Lbl_idRestaurante.Size = new System.Drawing.Size(132, 19);
-            this.Lbl_idRestaurante.TabIndex = 3;
-            this.Lbl_idRestaurante.Text = "ID de restaurante:";
-            // 
-            // Txt_idRestaurante
-            // 
-            this.Txt_idRestaurante.Enabled = false;
-            this.Txt_idRestaurante.Location = new System.Drawing.Point(518, 197);
-            this.Txt_idRestaurante.Name = "Txt_idRestaurante";
-            this.Txt_idRestaurante.Size = new System.Drawing.Size(100, 24);
-            this.Txt_idRestaurante.TabIndex = 4;
-            // 
-            // Lbl_nombre
-            // 
-            this.Lbl_nombre.AutoSize = true;
-            this.Lbl_nombre.Location = new System.Drawing.Point(336, 254);
-            this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(68, 19);
-            this.Lbl_nombre.TabIndex = 5;
-            this.Lbl_nombre.Text = "Nombre:";
-            // 
-            // Txt_nombre
-            // 
-            this.Txt_nombre.Location = new System.Drawing.Point(518, 247);
-            this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(172, 24);
-            this.Txt_nombre.TabIndex = 6;
-            // 
-            // Lbl_direccion
-            // 
-            this.Lbl_direccion.AutoSize = true;
-            this.Lbl_direccion.Location = new System.Drawing.Point(334, 306);
-            this.Lbl_direccion.Name = "Lbl_direccion";
-            this.Lbl_direccion.Size = new System.Drawing.Size(78, 19);
-            this.Lbl_direccion.TabIndex = 7;
-            this.Lbl_direccion.Text = "Dirección:";
-            // 
-            // Txt_direccion
-            // 
-            this.Txt_direccion.Location = new System.Drawing.Point(518, 299);
-            this.Txt_direccion.Name = "Txt_direccion";
-            this.Txt_direccion.Size = new System.Drawing.Size(243, 24);
-            this.Txt_direccion.TabIndex = 8;
-            // 
-            // Lbl_telefono
-            // 
-            this.Lbl_telefono.AutoSize = true;
-            this.Lbl_telefono.Location = new System.Drawing.Point(336, 358);
-            this.Lbl_telefono.Name = "Lbl_telefono";
-            this.Lbl_telefono.Size = new System.Drawing.Size(70, 19);
-            this.Lbl_telefono.TabIndex = 9;
-            this.Lbl_telefono.Text = "Teléfono:";
-            // 
-            // Txt_telefono
-            // 
-            this.Txt_telefono.Location = new System.Drawing.Point(518, 351);
-            this.Txt_telefono.Name = "Txt_telefono";
-            this.Txt_telefono.Size = new System.Drawing.Size(172, 24);
-            this.Txt_telefono.TabIndex = 10;
-            this.Txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
-            // 
-            // Lbl_correo
-            // 
-            this.Lbl_correo.AutoSize = true;
-            this.Lbl_correo.Location = new System.Drawing.Point(336, 406);
-            this.Lbl_correo.Name = "Lbl_correo";
-            this.Lbl_correo.Size = new System.Drawing.Size(59, 19);
-            this.Lbl_correo.TabIndex = 11;
-            this.Lbl_correo.Text = "Correo:";
-            // 
-            // Txt_correo
-            // 
-            this.Txt_correo.Location = new System.Drawing.Point(518, 399);
-            this.Txt_correo.Name = "Txt_correo";
-            this.Txt_correo.Size = new System.Drawing.Size(172, 24);
-            this.Txt_correo.TabIndex = 12;
+            this.Lbl_titulo.Text = "HABITACIONES";
             // 
             // Btn_consultar
             // 
@@ -196,7 +114,7 @@
             this.Btn_consultar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consultar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultar.Image")));
             this.Btn_consultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultar.Location = new System.Drawing.Point(832, 59);
+            this.Btn_consultar.Location = new System.Drawing.Point(834, 59);
             this.Btn_consultar.Name = "Btn_consultar";
             this.Btn_consultar.Size = new System.Drawing.Size(115, 85);
             this.Btn_consultar.TabIndex = 34;
@@ -216,7 +134,7 @@
             this.Btn_borrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_borrar.Image")));
             this.Btn_borrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_borrar.Location = new System.Drawing.Point(721, 59);
+            this.Btn_borrar.Location = new System.Drawing.Point(723, 59);
             this.Btn_borrar.Name = "Btn_borrar";
             this.Btn_borrar.Size = new System.Drawing.Size(115, 85);
             this.Btn_borrar.TabIndex = 33;
@@ -236,7 +154,7 @@
             this.Btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cancelar.Image")));
             this.Btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_cancelar.Location = new System.Drawing.Point(612, 59);
+            this.Btn_cancelar.Location = new System.Drawing.Point(611, 59);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(115, 85);
             this.Btn_cancelar.TabIndex = 32;
@@ -256,7 +174,7 @@
             this.Btn_guardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_guardar.Image")));
             this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_guardar.Location = new System.Drawing.Point(500, 59);
+            this.Btn_guardar.Location = new System.Drawing.Point(499, 59);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(115, 85);
             this.Btn_guardar.TabIndex = 31;
@@ -305,35 +223,139 @@
             this.Btn_ingresar.UseVisualStyleBackColor = false;
             this.Btn_ingresar.Click += new System.EventHandler(this.Btn_ingresar_Click);
             // 
-            // Frm_mantRestaurante
+            // Btn_busqueda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.Btn_busqueda.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_busqueda.FlatAppearance.BorderSize = 3;
+            this.Btn_busqueda.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_busqueda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_busqueda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_busqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_busqueda.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_busqueda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_busqueda.Image")));
+            this.Btn_busqueda.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_busqueda.Location = new System.Drawing.Point(607, 242);
+            this.Btn_busqueda.Name = "Btn_busqueda";
+            this.Btn_busqueda.Size = new System.Drawing.Size(40, 40);
+            this.Btn_busqueda.TabIndex = 69;
+            this.Btn_busqueda.Text = "Consultar";
+            this.Btn_busqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_busqueda.UseVisualStyleBackColor = false;
+            this.Btn_busqueda.Click += new System.EventHandler(this.Btn_busqueda_Click);
+            // 
+            // Txt_costo
+            // 
+            this.Txt_costo.Location = new System.Drawing.Point(474, 403);
+            this.Txt_costo.Name = "Txt_costo";
+            this.Txt_costo.Size = new System.Drawing.Size(172, 26);
+            this.Txt_costo.TabIndex = 68;
+            this.Txt_costo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_costo_KeyUp);
+            // 
+            // Lbl_costo
+            // 
+            this.Lbl_costo.AutoSize = true;
+            this.Lbl_costo.Location = new System.Drawing.Point(292, 410);
+            this.Lbl_costo.Name = "Lbl_costo";
+            this.Lbl_costo.Size = new System.Drawing.Size(56, 20);
+            this.Lbl_costo.TabIndex = 67;
+            this.Lbl_costo.Text = "Costo:";
+            // 
+            // Txt_capacidad
+            // 
+            this.Txt_capacidad.Location = new System.Drawing.Point(474, 355);
+            this.Txt_capacidad.Name = "Txt_capacidad";
+            this.Txt_capacidad.Size = new System.Drawing.Size(172, 26);
+            this.Txt_capacidad.TabIndex = 66;
+            this.Txt_capacidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_capacidad_KeyUp);
+            // 
+            // Lbl_capacidad
+            // 
+            this.Lbl_capacidad.AutoSize = true;
+            this.Lbl_capacidad.Location = new System.Drawing.Point(292, 362);
+            this.Lbl_capacidad.Name = "Lbl_capacidad";
+            this.Lbl_capacidad.Size = new System.Drawing.Size(98, 20);
+            this.Lbl_capacidad.TabIndex = 65;
+            this.Lbl_capacidad.Text = "Capacidad:";
+            // 
+            // Txt_nombre
+            // 
+            this.Txt_nombre.Location = new System.Drawing.Point(474, 303);
+            this.Txt_nombre.Name = "Txt_nombre";
+            this.Txt_nombre.Size = new System.Drawing.Size(243, 26);
+            this.Txt_nombre.TabIndex = 64;
+            // 
+            // Lbl_nombre
+            // 
+            this.Lbl_nombre.AutoSize = true;
+            this.Lbl_nombre.Location = new System.Drawing.Point(290, 310);
+            this.Lbl_nombre.Name = "Lbl_nombre";
+            this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
+            this.Lbl_nombre.TabIndex = 63;
+            this.Lbl_nombre.Text = "Nombre:";
+            // 
+            // Txt_hotel
+            // 
+            this.Txt_hotel.Location = new System.Drawing.Point(474, 251);
+            this.Txt_hotel.Name = "Txt_hotel";
+            this.Txt_hotel.Size = new System.Drawing.Size(100, 26);
+            this.Txt_hotel.TabIndex = 62;
+            // 
+            // Lbl_idHotel
+            // 
+            this.Lbl_idHotel.AutoSize = true;
+            this.Lbl_idHotel.Location = new System.Drawing.Point(292, 258);
+            this.Lbl_idHotel.Name = "Lbl_idHotel";
+            this.Lbl_idHotel.Size = new System.Drawing.Size(95, 20);
+            this.Lbl_idHotel.TabIndex = 61;
+            this.Lbl_idHotel.Text = "ID de Hotel:";
+            // 
+            // Txt_idHabitacion
+            // 
+            this.Txt_idHabitacion.Enabled = false;
+            this.Txt_idHabitacion.Location = new System.Drawing.Point(474, 201);
+            this.Txt_idHabitacion.Name = "Txt_idHabitacion";
+            this.Txt_idHabitacion.Size = new System.Drawing.Size(100, 26);
+            this.Txt_idHabitacion.TabIndex = 60;
+            // 
+            // Lbl_idHabitacion
+            // 
+            this.Lbl_idHabitacion.AutoSize = true;
+            this.Lbl_idHabitacion.Location = new System.Drawing.Point(292, 208);
+            this.Lbl_idHabitacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_idHabitacion.Name = "Lbl_idHabitacion";
+            this.Lbl_idHabitacion.Size = new System.Drawing.Size(136, 20);
+            this.Lbl_idHabitacion.TabIndex = 59;
+            this.Lbl_idHabitacion.Text = "ID de habitacion:";
+            // 
+            // Frm_mantHabitacion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_busqueda);
+            this.Controls.Add(this.Txt_costo);
+            this.Controls.Add(this.Lbl_costo);
+            this.Controls.Add(this.Txt_capacidad);
+            this.Controls.Add(this.Lbl_capacidad);
+            this.Controls.Add(this.Txt_nombre);
+            this.Controls.Add(this.Lbl_nombre);
+            this.Controls.Add(this.Txt_hotel);
+            this.Controls.Add(this.Lbl_idHotel);
+            this.Controls.Add(this.Txt_idHabitacion);
+            this.Controls.Add(this.Lbl_idHabitacion);
             this.Controls.Add(this.Btn_consultar);
             this.Controls.Add(this.Btn_borrar);
             this.Controls.Add(this.Btn_cancelar);
             this.Controls.Add(this.Btn_guardar);
             this.Controls.Add(this.Btn_editar);
             this.Controls.Add(this.Btn_ingresar);
-            this.Controls.Add(this.Txt_correo);
-            this.Controls.Add(this.Lbl_correo);
-            this.Controls.Add(this.Txt_telefono);
-            this.Controls.Add(this.Lbl_telefono);
-            this.Controls.Add(this.Txt_direccion);
-            this.Controls.Add(this.Lbl_direccion);
-            this.Controls.Add(this.Txt_nombre);
-            this.Controls.Add(this.Lbl_nombre);
-            this.Controls.Add(this.Txt_idRestaurante);
-            this.Controls.Add(this.Lbl_idRestaurante);
             this.Controls.Add(this.Pnl_principal);
-            this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Frm_mantRestaurante";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_mantRestaurante";
-            this.Load += new System.EventHandler(this.Frm_mantRestaurante_Load);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Frm_mantHabitacion";
+            this.Text = "Frm_mantHabitacion";
+            this.Load += new System.EventHandler(this.Frm_mantHabitacion_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             this.ResumeLayout(false);
@@ -347,21 +369,22 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
-        private System.Windows.Forms.Label Lbl_idRestaurante;
-        private System.Windows.Forms.TextBox Txt_idRestaurante;
-        private System.Windows.Forms.Label Lbl_nombre;
-        private System.Windows.Forms.TextBox Txt_nombre;
-        private System.Windows.Forms.Label Lbl_direccion;
-        private System.Windows.Forms.TextBox Txt_direccion;
-        private System.Windows.Forms.Label Lbl_telefono;
-        private System.Windows.Forms.TextBox Txt_telefono;
-        private System.Windows.Forms.Label Lbl_correo;
-        private System.Windows.Forms.TextBox Txt_correo;
         private System.Windows.Forms.Button Btn_consultar;
         private System.Windows.Forms.Button Btn_borrar;
         private System.Windows.Forms.Button Btn_cancelar;
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_editar;
         private System.Windows.Forms.Button Btn_ingresar;
+        private System.Windows.Forms.Button Btn_busqueda;
+        private System.Windows.Forms.TextBox Txt_costo;
+        private System.Windows.Forms.Label Lbl_costo;
+        private System.Windows.Forms.TextBox Txt_capacidad;
+        private System.Windows.Forms.Label Lbl_capacidad;
+        private System.Windows.Forms.TextBox Txt_nombre;
+        private System.Windows.Forms.Label Lbl_nombre;
+        private System.Windows.Forms.TextBox Txt_hotel;
+        private System.Windows.Forms.Label Lbl_idHotel;
+        private System.Windows.Forms.TextBox Txt_idHabitacion;
+        private System.Windows.Forms.Label Lbl_idHabitacion;
     }
 }

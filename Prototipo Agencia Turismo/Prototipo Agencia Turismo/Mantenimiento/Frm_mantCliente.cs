@@ -361,5 +361,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 }
             }
         }
+
+        private void Frm_mantCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
