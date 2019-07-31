@@ -96,11 +96,11 @@
             // Lbl_titulo
             // 
             this.Lbl_titulo.AutoSize = true;
-            this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_titulo.Location = new System.Drawing.Point(34, 16);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(66, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(98, 20);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CLIENTES";
             // 
@@ -112,7 +112,7 @@
             this.Btn_consultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.Btn_consultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consultar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultar.Image")));
             this.Btn_consultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_consultar.Location = new System.Drawing.Point(791, 69);
@@ -132,7 +132,7 @@
             this.Btn_borrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.Btn_borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_borrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_borrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_borrar.Image")));
             this.Btn_borrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_borrar.Location = new System.Drawing.Point(679, 69);
@@ -152,7 +152,7 @@
             this.Btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.Btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cancelar.Image")));
             this.Btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_cancelar.Location = new System.Drawing.Point(567, 69);
@@ -172,7 +172,7 @@
             this.Btn_guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.Btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_guardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_guardar.Image")));
             this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_guardar.Location = new System.Drawing.Point(454, 69);
@@ -192,7 +192,7 @@
             this.Btn_editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.Btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_editar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_editar.Image")));
             this.Btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_editar.Location = new System.Drawing.Point(341, 69);
@@ -212,7 +212,7 @@
             this.Btn_ingresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.Btn_ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ingresar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ingresar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ingresar.Image")));
             this.Btn_ingresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_ingresar.Location = new System.Drawing.Point(228, 69);
@@ -229,7 +229,7 @@
             this.Txt_dpi.Enabled = false;
             this.Txt_dpi.Location = new System.Drawing.Point(414, 344);
             this.Txt_dpi.Name = "Txt_dpi";
-            this.Txt_dpi.Size = new System.Drawing.Size(138, 26);
+            this.Txt_dpi.Size = new System.Drawing.Size(138, 29);
             this.Txt_dpi.TabIndex = 48;
             // 
             // Lbl_dpi
@@ -237,7 +237,7 @@
             this.Lbl_dpi.AutoSize = true;
             this.Lbl_dpi.Location = new System.Drawing.Point(187, 350);
             this.Lbl_dpi.Name = "Lbl_dpi";
-            this.Lbl_dpi.Size = new System.Drawing.Size(226, 20);
+            this.Lbl_dpi.Size = new System.Drawing.Size(249, 24);
             this.Lbl_dpi.TabIndex = 47;
             this.Lbl_dpi.Text = "Documento de Identificacion";
             // 
@@ -246,7 +246,7 @@
             this.Txt_telefono.Enabled = false;
             this.Txt_telefono.Location = new System.Drawing.Point(362, 281);
             this.Txt_telefono.Name = "Txt_telefono";
-            this.Txt_telefono.Size = new System.Drawing.Size(190, 26);
+            this.Txt_telefono.Size = new System.Drawing.Size(190, 29);
             this.Txt_telefono.TabIndex = 46;
             // 
             // Lbl_telefono
@@ -254,7 +254,7 @@
             this.Lbl_telefono.AutoSize = true;
             this.Lbl_telefono.Location = new System.Drawing.Point(187, 288);
             this.Lbl_telefono.Name = "Lbl_telefono";
-            this.Lbl_telefono.Size = new System.Drawing.Size(71, 20);
+            this.Lbl_telefono.Size = new System.Drawing.Size(85, 24);
             this.Lbl_telefono.TabIndex = 45;
             this.Lbl_telefono.Text = "Telefono";
             // 
@@ -263,7 +263,7 @@
             this.Txt_Nombre.Enabled = false;
             this.Txt_Nombre.Location = new System.Drawing.Point(362, 219);
             this.Txt_Nombre.Name = "Txt_Nombre";
-            this.Txt_Nombre.Size = new System.Drawing.Size(190, 26);
+            this.Txt_Nombre.Size = new System.Drawing.Size(190, 29);
             this.Txt_Nombre.TabIndex = 44;
             // 
             // Lbl_nombreCliente
@@ -271,7 +271,7 @@
             this.Lbl_nombreCliente.AutoSize = true;
             this.Lbl_nombreCliente.Location = new System.Drawing.Point(187, 226);
             this.Lbl_nombreCliente.Name = "Lbl_nombreCliente";
-            this.Lbl_nombreCliente.Size = new System.Drawing.Size(68, 20);
+            this.Lbl_nombreCliente.Size = new System.Drawing.Size(79, 24);
             this.Lbl_nombreCliente.TabIndex = 43;
             this.Lbl_nombreCliente.Text = "Nombre";
             // 
@@ -280,7 +280,7 @@
             this.Txt_idCliente.Enabled = false;
             this.Txt_idCliente.Location = new System.Drawing.Point(362, 160);
             this.Txt_idCliente.Name = "Txt_idCliente";
-            this.Txt_idCliente.Size = new System.Drawing.Size(138, 26);
+            this.Txt_idCliente.Size = new System.Drawing.Size(138, 29);
             this.Txt_idCliente.TabIndex = 42;
             this.Txt_idCliente.Visible = false;
             // 
@@ -289,7 +289,7 @@
             this.Lbl_idTransporte.AutoSize = true;
             this.Lbl_idTransporte.Location = new System.Drawing.Point(187, 166);
             this.Lbl_idTransporte.Name = "Lbl_idTransporte";
-            this.Lbl_idTransporte.Size = new System.Drawing.Size(81, 20);
+            this.Lbl_idTransporte.Size = new System.Drawing.Size(90, 24);
             this.Lbl_idTransporte.TabIndex = 41;
             this.Lbl_idTransporte.Text = "ID Cliente";
             this.Lbl_idTransporte.Visible = false;
@@ -299,7 +299,7 @@
             this.Txt_nit.Enabled = false;
             this.Txt_nit.Location = new System.Drawing.Point(752, 343);
             this.Txt_nit.Name = "Txt_nit";
-            this.Txt_nit.Size = new System.Drawing.Size(138, 26);
+            this.Txt_nit.Size = new System.Drawing.Size(138, 29);
             this.Txt_nit.TabIndex = 60;
             // 
             // Lbl_nit
@@ -307,7 +307,7 @@
             this.Lbl_nit.AutoSize = true;
             this.Lbl_nit.Location = new System.Drawing.Point(577, 350);
             this.Lbl_nit.Name = "Lbl_nit";
-            this.Lbl_nit.Size = new System.Drawing.Size(30, 20);
+            this.Lbl_nit.Size = new System.Drawing.Size(40, 24);
             this.Lbl_nit.TabIndex = 59;
             this.Lbl_nit.Text = "NIT";
             // 
@@ -316,7 +316,7 @@
             this.Txt_correo.Enabled = false;
             this.Txt_correo.Location = new System.Drawing.Point(752, 281);
             this.Txt_correo.Name = "Txt_correo";
-            this.Txt_correo.Size = new System.Drawing.Size(190, 26);
+            this.Txt_correo.Size = new System.Drawing.Size(190, 29);
             this.Txt_correo.TabIndex = 58;
             // 
             // Lbl_correo
@@ -324,7 +324,7 @@
             this.Lbl_correo.AutoSize = true;
             this.Lbl_correo.Location = new System.Drawing.Point(577, 288);
             this.Lbl_correo.Name = "Lbl_correo";
-            this.Lbl_correo.Size = new System.Drawing.Size(61, 20);
+            this.Lbl_correo.Size = new System.Drawing.Size(68, 24);
             this.Lbl_correo.TabIndex = 57;
             this.Lbl_correo.Text = "Correo";
             // 
@@ -333,7 +333,7 @@
             this.Txt_Apellido.Enabled = false;
             this.Txt_Apellido.Location = new System.Drawing.Point(752, 219);
             this.Txt_Apellido.Name = "Txt_Apellido";
-            this.Txt_Apellido.Size = new System.Drawing.Size(190, 26);
+            this.Txt_Apellido.Size = new System.Drawing.Size(190, 29);
             this.Txt_Apellido.TabIndex = 56;
             // 
             // Lbl_Apellido
@@ -341,13 +341,13 @@
             this.Lbl_Apellido.AutoSize = true;
             this.Lbl_Apellido.Location = new System.Drawing.Point(577, 226);
             this.Lbl_Apellido.Name = "Lbl_Apellido";
-            this.Lbl_Apellido.Size = new System.Drawing.Size(69, 20);
+            this.Lbl_Apellido.Size = new System.Drawing.Size(79, 24);
             this.Lbl_Apellido.TabIndex = 55;
             this.Lbl_Apellido.Text = "Apellido";
             // 
             // Frm_mantCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Txt_nit);
@@ -371,12 +371,13 @@
             this.Controls.Add(this.Txt_idCliente);
             this.Controls.Add(this.Lbl_idTransporte);
             this.Controls.Add(this.Pnl_principal);
-            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_mantCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantCliente";
+            this.Load += new System.EventHandler(this.Frm_mantCliente_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             this.ResumeLayout(false);

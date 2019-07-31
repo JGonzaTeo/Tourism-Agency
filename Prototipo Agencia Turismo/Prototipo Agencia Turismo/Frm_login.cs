@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Net;
+using Prototipo_Agencia_Turismo.Seguridad;
 
 namespace Prototipo_Agencia_Turismo
 {
@@ -29,9 +30,13 @@ namespace Prototipo_Agencia_Turismo
         {
             try
             {
+                string contrasenaDesencriptada = " ";
+                int idUsuario = 0;
                 string nombreUsuario = " ";
                 string tipoPerfil = " ";
                 DateTime fecha_ingreso = DateTime.Now;
+
+                string actualizarCampo = " ";
 
                 IPHostEntry host;
                 string localIP = "?";
@@ -45,20 +50,29 @@ namespace Prototipo_Agencia_Turismo
                     }
                 }
 
-                string consultaUsuario = string.Format("SELECT * FROM tbl_usuario WHERE estado = 1;");
+                string consultaUsuario = string.Format("SELECT * FROM tbl_usuario WHERE estado = 1 AND logeado = 0;");
                 OdbcCommand comm = new OdbcCommand(consultaUsuario, Conexion.nuevaConexion());
                 OdbcDataReader mostrarUsuarios = comm.ExecuteReader();
 
                 while (mostrarUsuarios.Read())
                 {
-                    if ((Txt_usuario.Text == mostrarUsuarios.GetString(1)) && (Txt_contrasena.Text == mostrarUsuarios.GetString(2)))
+                    contrasenaDesencriptada = Seguridad_Login.DesEncriptar(mostrarUsuarios.GetString(2));
+                    Console.WriteLine("CONTRASENA DESENCRIPTADA: " +contrasenaDesencriptada);
+                    if ((Txt_usuario.Text == mostrarUsuarios.GetString(1)) && (Txt_contrasena.Text == contrasenaDesencriptada))
                     {
+                        idUsuario = mostrarUsuarios.GetInt32(0);
                         nombreUsuario = mostrarUsuarios.GetString(1);
                         tipoPerfil = mostrarUsuarios.GetString(3);
                         MessageBox.Show("INICIANDO SESIÓN");
-                        Frm_mdi mdiMenu = new Frm_mdi(nombreUsuario, tipoPerfil);
+                        Frm_mdi mdiMenu = new Frm_mdi(idUsuario, nombreUsuario, tipoPerfil);
                         this.Hide();
                         mdiMenu.Show();
+                        Console.WriteLine("Inicio de sesión");
+                        
+                        actualizarCampo = "UPDATE tbl_usuario SET logeado = '1' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
+                        OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                        commAct.ExecuteNonQuery();
+
                         break;
                     }
                     else
@@ -67,6 +81,9 @@ namespace Prototipo_Agencia_Turismo
                         Txt_usuario.Focus();
                     }
                 }
+                Console.WriteLine("ID DE USUARIO : " + mostrarUsuarios.GetString(0));
+               
+                
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -76,6 +93,8 @@ namespace Prototipo_Agencia_Turismo
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "-------------";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+
+
             }
             catch(Exception err)
             {
