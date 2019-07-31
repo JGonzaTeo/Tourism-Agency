@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: Ivan Mogollón
+  -----------------------------------------------------
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +21,11 @@ namespace Prototipo_Agencia_Turismo
         public Frm_reservacion()
         {
             InitializeComponent();
+        }
+
+        private void Frm_reservacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

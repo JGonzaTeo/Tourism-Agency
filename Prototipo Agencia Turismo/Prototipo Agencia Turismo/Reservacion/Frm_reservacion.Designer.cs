@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_reservacion));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_minimizar = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Dgv_detalleFactura = new System.Windows.Forms.DataGridView();
             this.Lbl_empleado = new System.Windows.Forms.Label();
@@ -50,15 +52,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Lbl_detalle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_consultarMetodoPago = new System.Windows.Forms.Button();
+            this.Btn_busquedaCotizacion = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_consultarPiloto = new System.Windows.Forms.Button();
             this.Btn_consultarVehiculo = new System.Windows.Forms.Button();
-            this.Btn_consultarMetodoPago = new System.Windows.Forms.Button();
-            this.Btn_busquedaCotizacion = new System.Windows.Forms.Button();
             this.Btn_reservar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
-            this.Btn_minimizar = new System.Windows.Forms.Button();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,9 +73,34 @@
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
             this.Pnl_principal.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_principal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 1;
+            // 
+            // Btn_minimizar
+            // 
+            this.Btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
+            this.Btn_minimizar.Location = new System.Drawing.Point(1020, -5);
+            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_minimizar.Name = "Btn_minimizar";
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.TabIndex = 12;
+            this.Btn_minimizar.UseVisualStyleBackColor = true;
+            // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
+            this.Btn_cerrar.Location = new System.Drawing.Point(1100, -5);
+            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.TabIndex = 11;
+            this.Btn_cerrar.UseVisualStyleBackColor = true;
             // 
             // Lbl_titulo
             // 
@@ -91,6 +116,7 @@
             // 
             this.Dgv_detalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_detalleFactura.Location = new System.Drawing.Point(28, 278);
+            this.Dgv_detalleFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Dgv_detalleFactura.Name = "Dgv_detalleFactura";
             this.Dgv_detalleFactura.RowTemplate.Height = 24;
             this.Dgv_detalleFactura.Size = new System.Drawing.Size(904, 272);
@@ -99,151 +125,167 @@
             // Lbl_empleado
             // 
             this.Lbl_empleado.AutoSize = true;
+            this.Lbl_empleado.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_empleado.Location = new System.Drawing.Point(196, 111);
             this.Lbl_empleado.Name = "Lbl_empleado";
-            this.Lbl_empleado.Size = new System.Drawing.Size(93, 20);
+            this.Lbl_empleado.Size = new System.Drawing.Size(89, 19);
             this.Lbl_empleado.TabIndex = 23;
             this.Lbl_empleado.Text = "nomCliente";
             // 
             // Lbl_nomCliente
             // 
             this.Lbl_nomCliente.AutoSize = true;
+            this.Lbl_nomCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_nomCliente.Location = new System.Drawing.Point(8, 111);
             this.Lbl_nomCliente.Name = "Lbl_nomCliente";
-            this.Lbl_nomCliente.Size = new System.Drawing.Size(153, 20);
+            this.Lbl_nomCliente.Size = new System.Drawing.Size(145, 19);
             this.Lbl_nomCliente.TabIndex = 22;
             this.Lbl_nomCliente.Text = "Nombre del cliente:";
             // 
             // Lbl_idCotizacion
             // 
             this.Lbl_idCotizacion.AutoSize = true;
+            this.Lbl_idCotizacion.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idCotizacion.Location = new System.Drawing.Point(196, 62);
             this.Lbl_idCotizacion.Name = "Lbl_idCotizacion";
-            this.Lbl_idCotizacion.Size = new System.Drawing.Size(100, 20);
+            this.Lbl_idCotizacion.Size = new System.Drawing.Size(96, 19);
             this.Lbl_idCotizacion.TabIndex = 21;
             this.Lbl_idCotizacion.Text = "idCotizacion";
             // 
             // Lbl_idCliente
             // 
             this.Lbl_idCliente.AutoSize = true;
+            this.Lbl_idCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idCliente.Location = new System.Drawing.Point(8, 62);
             this.Lbl_idCliente.Name = "Lbl_idCliente";
-            this.Lbl_idCliente.Size = new System.Drawing.Size(133, 20);
+            this.Lbl_idCliente.Size = new System.Drawing.Size(125, 19);
             this.Lbl_idCliente.TabIndex = 20;
             this.Lbl_idCliente.Text = "ID de cotizacion:";
             // 
             // Lbl_reservacion
             // 
             this.Lbl_reservacion.AutoSize = true;
+            this.Lbl_reservacion.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_reservacion.Location = new System.Drawing.Point(196, 16);
             this.Lbl_reservacion.Name = "Lbl_reservacion";
-            this.Lbl_reservacion.Size = new System.Drawing.Size(114, 20);
+            this.Lbl_reservacion.Size = new System.Drawing.Size(106, 19);
             this.Lbl_reservacion.TabIndex = 19;
             this.Lbl_reservacion.Text = "idReservacion";
             // 
             // Lbl_idReservacion
             // 
             this.Lbl_idReservacion.AutoSize = true;
+            this.Lbl_idReservacion.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idReservacion.Location = new System.Drawing.Point(8, 16);
             this.Lbl_idReservacion.Name = "Lbl_idReservacion";
-            this.Lbl_idReservacion.Size = new System.Drawing.Size(141, 20);
+            this.Lbl_idReservacion.Size = new System.Drawing.Size(128, 19);
             this.Lbl_idReservacion.TabIndex = 18;
             this.Lbl_idReservacion.Text = "ID de reservacion";
             // 
             // Lbl_metodo
             // 
             this.Lbl_metodo.AutoSize = true;
+            this.Lbl_metodo.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_metodo.Location = new System.Drawing.Point(196, 155);
             this.Lbl_metodo.Name = "Lbl_metodo";
-            this.Lbl_metodo.Size = new System.Drawing.Size(89, 20);
+            this.Lbl_metodo.Size = new System.Drawing.Size(85, 19);
             this.Lbl_metodo.TabIndex = 34;
             this.Lbl_metodo.Text = "idTipoPago";
             // 
             // Lbl_metodoPago
             // 
             this.Lbl_metodoPago.AutoSize = true;
+            this.Lbl_metodoPago.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_metodoPago.Location = new System.Drawing.Point(8, 155);
             this.Lbl_metodoPago.Name = "Lbl_metodoPago";
-            this.Lbl_metodoPago.Size = new System.Drawing.Size(141, 20);
+            this.Lbl_metodoPago.Size = new System.Drawing.Size(133, 19);
             this.Lbl_metodoPago.TabIndex = 33;
             this.Lbl_metodoPago.Text = "Metodo de pago:";
             // 
             // Lbl_fechaSalida
             // 
             this.Lbl_fechaSalida.AutoSize = true;
+            this.Lbl_fechaSalida.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_fechaSalida.Location = new System.Drawing.Point(8, 111);
             this.Lbl_fechaSalida.Name = "Lbl_fechaSalida";
-            this.Lbl_fechaSalida.Size = new System.Drawing.Size(129, 20);
+            this.Lbl_fechaSalida.Size = new System.Drawing.Size(125, 19);
             this.Lbl_fechaSalida.TabIndex = 40;
             this.Lbl_fechaSalida.Text = "Fecha de salida:";
             // 
             // Lbl_piloto
             // 
             this.Lbl_piloto.AutoSize = true;
+            this.Lbl_piloto.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_piloto.Location = new System.Drawing.Point(196, 67);
             this.Lbl_piloto.Name = "Lbl_piloto";
-            this.Lbl_piloto.Size = new System.Drawing.Size(62, 20);
+            this.Lbl_piloto.Size = new System.Drawing.Size(59, 19);
             this.Lbl_piloto.TabIndex = 39;
             this.Lbl_piloto.Text = "idPiloto";
             // 
             // Lbl_idPiloto
             // 
             this.Lbl_idPiloto.AutoSize = true;
+            this.Lbl_idPiloto.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idPiloto.Location = new System.Drawing.Point(8, 67);
             this.Lbl_idPiloto.Name = "Lbl_idPiloto";
-            this.Lbl_idPiloto.Size = new System.Drawing.Size(98, 20);
+            this.Lbl_idPiloto.Size = new System.Drawing.Size(92, 19);
             this.Lbl_idPiloto.TabIndex = 38;
             this.Lbl_idPiloto.Text = "ID de piloto:";
             // 
             // Lbl_vehiculo
             // 
             this.Lbl_vehiculo.AutoSize = true;
+            this.Lbl_vehiculo.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_vehiculo.Location = new System.Drawing.Point(196, 16);
             this.Lbl_vehiculo.Name = "Lbl_vehiculo";
-            this.Lbl_vehiculo.Size = new System.Drawing.Size(87, 20);
+            this.Lbl_vehiculo.Size = new System.Drawing.Size(82, 19);
             this.Lbl_vehiculo.TabIndex = 37;
             this.Lbl_vehiculo.Text = "idVehiculo";
             // 
             // Lbl_idVehiculo
             // 
             this.Lbl_idVehiculo.AutoSize = true;
+            this.Lbl_idVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idVehiculo.Location = new System.Drawing.Point(8, 16);
             this.Lbl_idVehiculo.Name = "Lbl_idVehiculo";
-            this.Lbl_idVehiculo.Size = new System.Drawing.Size(121, 20);
+            this.Lbl_idVehiculo.Size = new System.Drawing.Size(112, 19);
             this.Lbl_idVehiculo.TabIndex = 36;
             this.Lbl_idVehiculo.Text = "ID de vehiculo:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label2.Location = new System.Drawing.Point(8, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 20);
+            this.label2.Size = new System.Drawing.Size(141, 19);
             this.label2.TabIndex = 47;
             this.label2.Text = "Fecha de entrada:";
             // 
             // Lbl_fecha
             // 
             this.Lbl_fecha.AutoSize = true;
+            this.Lbl_fecha.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_fecha.Location = new System.Drawing.Point(196, 111);
             this.Lbl_fecha.Name = "Lbl_fecha";
-            this.Lbl_fecha.Size = new System.Drawing.Size(101, 20);
+            this.Lbl_fecha.Size = new System.Drawing.Size(99, 19);
             this.Lbl_fecha.TabIndex = 48;
             this.Lbl_fecha.Text = "yyyy/mm/dd";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label1.Location = new System.Drawing.Point(196, 155);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 49;
             this.label1.Text = "yyyy/mm/dd";
             // 
             // Lbl_detalle
             // 
             this.Lbl_detalle.AutoSize = true;
-            this.Lbl_detalle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_detalle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.Lbl_detalle.Location = new System.Drawing.Point(25, 248);
             this.Lbl_detalle.Name = "Lbl_detalle";
             this.Lbl_detalle.Size = new System.Drawing.Size(158, 17);
@@ -264,67 +306,11 @@
             this.panel1.Controls.Add(this.Lbl_empleado);
             this.panel1.Controls.Add(this.Lbl_nomCliente);
             this.panel1.Location = new System.Drawing.Point(43, 46);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel1.Size = new System.Drawing.Size(401, 188);
             this.panel1.TabIndex = 51;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.Btn_consultarPiloto);
-            this.panel2.Controls.Add(this.Btn_consultarVehiculo);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.Lbl_idVehiculo);
-            this.panel2.Controls.Add(this.Lbl_fecha);
-            this.panel2.Controls.Add(this.Lbl_vehiculo);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.Lbl_idPiloto);
-            this.panel2.Controls.Add(this.Lbl_piloto);
-            this.panel2.Controls.Add(this.Lbl_fechaSalida);
-            this.panel2.Location = new System.Drawing.Point(519, 46);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(401, 188);
-            this.panel2.TabIndex = 52;
-            // 
-            // Btn_consultarPiloto
-            // 
-            this.Btn_consultarPiloto.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_consultarPiloto.FlatAppearance.BorderSize = 3;
-            this.Btn_consultarPiloto.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_consultarPiloto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_consultarPiloto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_consultarPiloto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultarPiloto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_consultarPiloto.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarPiloto.Image")));
-            this.Btn_consultarPiloto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultarPiloto.Location = new System.Drawing.Point(334, 51);
-            this.Btn_consultarPiloto.Name = "Btn_consultarPiloto";
-            this.Btn_consultarPiloto.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consultarPiloto.TabIndex = 60;
-            this.Btn_consultarPiloto.Text = "Consultar";
-            this.Btn_consultarPiloto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_consultarPiloto.UseVisualStyleBackColor = false;
-            // 
-            // Btn_consultarVehiculo
-            // 
-            this.Btn_consultarVehiculo.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_consultarVehiculo.FlatAppearance.BorderSize = 3;
-            this.Btn_consultarVehiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_consultarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_consultarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_consultarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_consultarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarVehiculo.Image")));
-            this.Btn_consultarVehiculo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultarVehiculo.Location = new System.Drawing.Point(334, 3);
-            this.Btn_consultarVehiculo.Name = "Btn_consultarVehiculo";
-            this.Btn_consultarVehiculo.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consultarVehiculo.TabIndex = 59;
-            this.Btn_consultarVehiculo.Text = "Consultar";
-            this.Btn_consultarVehiculo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_consultarVehiculo.UseVisualStyleBackColor = false;
             // 
             // Btn_consultarMetodoPago
             // 
@@ -338,6 +324,7 @@
             this.Btn_consultarMetodoPago.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarMetodoPago.Image")));
             this.Btn_consultarMetodoPago.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_consultarMetodoPago.Location = new System.Drawing.Point(334, 139);
+            this.Btn_consultarMetodoPago.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_consultarMetodoPago.Name = "Btn_consultarMetodoPago";
             this.Btn_consultarMetodoPago.Size = new System.Drawing.Size(40, 40);
             this.Btn_consultarMetodoPago.TabIndex = 60;
@@ -357,12 +344,73 @@
             this.Btn_busquedaCotizacion.Image = ((System.Drawing.Image)(resources.GetObject("Btn_busquedaCotizacion.Image")));
             this.Btn_busquedaCotizacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_busquedaCotizacion.Location = new System.Drawing.Point(334, 47);
+            this.Btn_busquedaCotizacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_busquedaCotizacion.Name = "Btn_busquedaCotizacion";
             this.Btn_busquedaCotizacion.Size = new System.Drawing.Size(40, 40);
             this.Btn_busquedaCotizacion.TabIndex = 59;
             this.Btn_busquedaCotizacion.Text = "Consultar";
             this.Btn_busquedaCotizacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_busquedaCotizacion.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Btn_consultarPiloto);
+            this.panel2.Controls.Add(this.Btn_consultarVehiculo);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.Lbl_idVehiculo);
+            this.panel2.Controls.Add(this.Lbl_fecha);
+            this.panel2.Controls.Add(this.Lbl_vehiculo);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.Lbl_idPiloto);
+            this.panel2.Controls.Add(this.Lbl_piloto);
+            this.panel2.Controls.Add(this.Lbl_fechaSalida);
+            this.panel2.Location = new System.Drawing.Point(519, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(401, 188);
+            this.panel2.TabIndex = 52;
+            // 
+            // Btn_consultarPiloto
+            // 
+            this.Btn_consultarPiloto.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultarPiloto.FlatAppearance.BorderSize = 3;
+            this.Btn_consultarPiloto.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultarPiloto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultarPiloto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultarPiloto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultarPiloto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultarPiloto.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarPiloto.Image")));
+            this.Btn_consultarPiloto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultarPiloto.Location = new System.Drawing.Point(334, 51);
+            this.Btn_consultarPiloto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_consultarPiloto.Name = "Btn_consultarPiloto";
+            this.Btn_consultarPiloto.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultarPiloto.TabIndex = 60;
+            this.Btn_consultarPiloto.Text = "Consultar";
+            this.Btn_consultarPiloto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultarPiloto.UseVisualStyleBackColor = false;
+            // 
+            // Btn_consultarVehiculo
+            // 
+            this.Btn_consultarVehiculo.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultarVehiculo.FlatAppearance.BorderSize = 3;
+            this.Btn_consultarVehiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarVehiculo.Image")));
+            this.Btn_consultarVehiculo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultarVehiculo.Location = new System.Drawing.Point(334, 4);
+            this.Btn_consultarVehiculo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_consultarVehiculo.Name = "Btn_consultarVehiculo";
+            this.Btn_consultarVehiculo.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultarVehiculo.TabIndex = 59;
+            this.Btn_consultarVehiculo.Text = "Consultar";
+            this.Btn_consultarVehiculo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultarVehiculo.UseVisualStyleBackColor = false;
             // 
             // Btn_reservar
             // 
@@ -374,8 +422,9 @@
             this.Btn_reservar.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.icons8_guardar_40;
             this.Btn_reservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_reservar.Location = new System.Drawing.Point(970, 420);
+            this.Btn_reservar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_reservar.Name = "Btn_reservar";
-            this.Btn_reservar.Size = new System.Drawing.Size(175, 43);
+            this.Btn_reservar.Size = new System.Drawing.Size(176, 44);
             this.Btn_reservar.TabIndex = 32;
             this.Btn_reservar.Text = "Reservar";
             this.Btn_reservar.UseVisualStyleBackColor = true;
@@ -389,36 +438,13 @@
             this.Btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_eliminar.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.icons8_borrar_40;
             this.Btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_eliminar.Location = new System.Drawing.Point(970, 350);
+            this.Btn_eliminar.Location = new System.Drawing.Point(970, 351);
+            this.Btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(175, 43);
+            this.Btn_eliminar.Size = new System.Drawing.Size(176, 44);
             this.Btn_eliminar.TabIndex = 31;
             this.Btn_eliminar.Text = "Eliminar";
             this.Btn_eliminar.UseVisualStyleBackColor = true;
-            // 
-            // Btn_minimizar
-            // 
-            this.Btn_minimizar.FlatAppearance.BorderSize = 0;
-            this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
-            this.Btn_minimizar.Location = new System.Drawing.Point(1020, -5);
-            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
-            this.Btn_minimizar.TabIndex = 12;
-            this.Btn_minimizar.UseVisualStyleBackColor = true;
-            // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
-            this.Btn_cerrar.Location = new System.Drawing.Point(1100, -5);
-            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
-            this.Btn_cerrar.TabIndex = 11;
-            this.Btn_cerrar.UseVisualStyleBackColor = true;
             // 
             // Frm_reservacion
             // 
@@ -437,6 +463,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_reservacion";
             this.Text = "Frm_reservacion";
+            this.Load += new System.EventHandler(this.Frm_reservacion_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).EndInit();

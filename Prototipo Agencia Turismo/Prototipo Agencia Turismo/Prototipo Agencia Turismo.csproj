@@ -138,10 +138,10 @@
     <Compile Include="Frm_nominas.Designer.cs">
       <DependentUpon>Frm_nominas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_reservacion.cs">
+    <Compile Include="Reservacion\Frm_reservacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_reservacion.Designer.cs">
+    <Compile Include="Reservacion\Frm_reservacion.Designer.cs">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Frm_manGuiaTuristico.cs">
@@ -292,7 +292,7 @@
     <EmbeddedResource Include="Frm_nominas.resx">
       <DependentUpon>Frm_nominas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_reservacion.resx">
+    <EmbeddedResource Include="Reservacion\Frm_reservacion.resx">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_manGuiaTuristico.resx">

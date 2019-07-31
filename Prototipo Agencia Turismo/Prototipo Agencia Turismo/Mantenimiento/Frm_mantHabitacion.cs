@@ -1,4 +1,10 @@
-﻿using Prototipo_Agencia_Turismo.Consulta;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: Ivan Mogollón
+  -----------------------------------------------------
+*/
+
+using Prototipo_Agencia_Turismo.Consulta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
