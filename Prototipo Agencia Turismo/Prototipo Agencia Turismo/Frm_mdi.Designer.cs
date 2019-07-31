@@ -46,12 +46,14 @@
             this.bonosYDescuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guiaTuristicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.habitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenStrip_menuPrincipal.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -121,21 +123,21 @@
             // 
             this.bitácoraToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.bitácoraToolStripMenuItem.Text = "Bitácora";
             this.bitácoraToolStripMenuItem.Click += new System.EventHandler(this.bitácoraToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
@@ -151,7 +153,9 @@
             this.bonosYDescuentosToolStripMenuItem,
             this.guiaTuristicoToolStripMenuItem,
             this.empleadoToolStripMenuItem,
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.tipoDePagoToolStripMenuItem,
+            this.habitacionToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(125, 31);
@@ -218,6 +222,13 @@
             this.empleadoToolStripMenuItem.Text = "Empleado";
             this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
             // contabilidadToolStripMenuItem
             // 
             this.contabilidadToolStripMenuItem.BackColor = System.Drawing.Color.White;
@@ -263,11 +274,19 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
             this.toolStripStatusLabel1.Text = "Usuario";
             // 
-            // menuToolStripMenuItem
+            // tipoDePagoToolStripMenuItem
             // 
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.menuToolStripMenuItem.Text = "Menu";
+            this.tipoDePagoToolStripMenuItem.Name = "tipoDePagoToolStripMenuItem";
+            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.tipoDePagoToolStripMenuItem.Text = "Tipo de pago";
+            this.tipoDePagoToolStripMenuItem.Click += new System.EventHandler(this.tipoDePagoToolStripMenuItem_Click);
+            // 
+            // habitacionToolStripMenuItem
+            // 
+            this.habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
+            this.habitacionToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.habitacionToolStripMenuItem.Text = "Habitacion";
+            this.habitacionToolStripMenuItem.Click += new System.EventHandler(this.habitacionToolStripMenuItem_Click);
             // 
             // Frm_mdi
             // 
@@ -321,5 +340,7 @@
         private System.Windows.Forms.ToolStripMenuItem guiaTuristicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDePagoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem habitacionToolStripMenuItem;
     }
 }

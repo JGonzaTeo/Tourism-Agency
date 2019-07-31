@@ -4,6 +4,7 @@
   -----------------------------------------------------
 */
 
+
 using Prototipo_Agencia_Turismo.Consulta;
 using System;
 using System.Collections.Generic;
@@ -18,42 +19,43 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Prototipo_Agencia_Turismo;
 
+
 namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
-    public partial class Frm_mantRestaurante : Form
+    public partial class Frm_mantTipoPago : Form
     {
+        public Frm_mantTipoPago(string nombreUsuario)
+        {
+            InitializeComponent();
+            usuario = nombreUsuario;
+        }
+
         //Declaracion de variables globales
 
         bool presionado = false;
         string usuario;
         DateTime fecha = DateTime.Now;
 
-        string idRestaurante = " ";
+        string idPago = " ";
         string nombre = " ";
-        string direccion = " ";
-        string telefono = " ";
-        string correo = " ";
-
+        string descripcion = " ";
+        
         //Validaciones
         Validacion v = new Validacion();
 
         //Metodos
         private void DeshabilitarCampos()
         {
-            Txt_idRestaurante.Enabled = false;
+            Txt_idPago.Enabled = false;
             Txt_nombre.Enabled = false;
-            Txt_direccion.Enabled = false;
-            Txt_telefono.Enabled = false;
-            Txt_correo.Enabled = false;
+            Txt_descripcion.Enabled = false;
         }
 
         private void HabilitarCampos()
         {
-            Txt_idRestaurante.Enabled = false;
+            Txt_idPago.Enabled = false;
             Txt_nombre.Enabled = true;
-            Txt_direccion.Enabled = true;
-            Txt_telefono.Enabled = true;
-            Txt_correo.Enabled = true;
+            Txt_descripcion.Enabled = true;
         }
 
         private void DeshabilitarBtn()
@@ -76,37 +78,24 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Limpiar()
         {
-            Txt_idRestaurante.Text = "";
+            Txt_idPago.Text = "";
             Txt_nombre.Text = "";
-            Txt_direccion.Text = "";
-            Txt_telefono.Text = "";
-            Txt_correo.Text = "";
+            Txt_descripcion.Text = "";
         }
 
-        public Frm_mantRestaurante(string nombreUsuario)
+        private void Lbl_titulo_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            usuario = nombreUsuario;
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Btn_minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Frm_mantRestaurante_Load(object sender, EventArgs e)
+        private void Btn_cerrar_Click(object sender, EventArgs e)
         {
-            DeshabilitarCampos();
-        }
-
-        private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            v.soloNumero(e);
+            this.Close();
         }
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
@@ -117,12 +106,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void ActualizarDatos()
         {
-            idRestaurante = Txt_idRestaurante.Text;
+            idPago = Txt_idPago.Text;
             nombre = Txt_nombre.Text;
-            direccion = Txt_direccion.Text;
-            telefono = Txt_telefono.Text;
-            correo = Txt_correo.Text;
-            int numTelefonico = Convert.ToInt32(telefono);
+            descripcion = Txt_descripcion.Text;
 
             IPHostEntry host;
             string localIP = "?";
@@ -138,9 +124,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
             try
             {
-                string consulta = "UPDATE `tbl_restaurantes` SET `NombreRestaurante` = '" + nombre + "'" +
-                    ", `direccionRestaurante` = '" + direccion + "', `telefonoRestaurante` = '" + telefono + "', `correoRestaurante` = '" + correo +
-                    "' WHERE Pk_idRestaurante = " + idRestaurante;
+                string consulta = "UPDATE `tbl_TipoPagos` SET `NombreTipoPago` = '" + nombre + "'" +
+                    ", `DescripcionTipoPago` = '" + descripcion +
+                    "' WHERE Pk_idTipoPago = " + idPago;
 
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
@@ -151,7 +137,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "ACTUALIZACIÓN DE REGISTRO";
                 comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESTAURANTES";
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "PAGOS";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
             }
@@ -170,7 +156,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 Btn_editar.Enabled = true;
                 HabilitarCampos();
                 presionado = true;
-                Txt_idRestaurante.Enabled = false;
+                Txt_idPago.Enabled = false;
             }
             else
             {
@@ -185,11 +171,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void GuardarDatos()
         {
-            idRestaurante = Txt_idRestaurante.Text;
+            idPago = Txt_idPago.Text;
             nombre = Txt_nombre.Text;
-            direccion = Txt_direccion.Text;
-            telefono = Txt_telefono.Text;
-            correo = Txt_correo.Text;
+            descripcion = Txt_descripcion.Text;
 
             IPHostEntry host;
             string localIP = "?";
@@ -205,8 +189,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
             try
             {
-                string consulta = "INSERT INTO `tbl_restaurantes` VALUES ('" + 0 + "', '" + nombre + "', '" + direccion + "'," +
-                    " '" + telefono + "', '" + correo + "', '" + 1 + "')";
+                string consulta = "INSERT INTO `tbl_tipoPagos` VALUES ('" + 0 + "', '" + nombre + "', '" + descripcion+ "', '" + 1 + "')";
 
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
@@ -217,7 +200,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
                 comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESTAURANTES";
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "PAGOS";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
             }
@@ -255,7 +238,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void BorrarDatos()
         {
-            idRestaurante = Txt_idRestaurante.Text;
+            idPago = Txt_idPago.Text;
+            nombre = Txt_nombre.Text;
+            descripcion = Txt_descripcion.Text;
 
             IPHostEntry host;
             string localIP = "?";
@@ -271,17 +256,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
             try
             {
-                string consulta = "UPDATE `tbl_restaurantes` SET `estadoRestaurante` = '" + 0  +
-                    "' WHERE Pk_idRestaurante = " + idRestaurante;
-
+               string consulta = "UPDATE `tbl_TipoPagos` SET `estadoTipoPago` = '" + 0 +
+                    "' WHERE Pk_idTipoPago = " + idPago;
+ 
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
-                string consulta2 = "UPDATE tbl_menus M " +
-                "INNER JOIN tbl_restaurantes R ON M.Fk_idRestaurantes = R.Pk_idRestaurante " +
-                "SET M.estadoMenu = 0 " +
-                "WHERE M.Fk_idRestaurantes =" + idRestaurante + "; ";
-                OdbcCommand comm2 = new OdbcCommand(consulta2, Conexion.nuevaConexion());
-                comm2.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -289,7 +268,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "ACTUALIZACIÓN DE REGISTRO";
                 comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fecha.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESTAURANTES";
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "PAGOS";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
             }
@@ -330,26 +309,34 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             else
             {
 
-                Frm_consultaRestaurante conRestaurante = new Frm_consultaRestaurante();
-                conRestaurante.ShowDialog();
+                Frm_consultaTipoPago conPago = new Frm_consultaTipoPago();
+                conPago.ShowDialog();
 
-                if (conRestaurante.DialogResult == DialogResult.OK)
+                if (conPago.DialogResult == DialogResult.OK)
                 {
-                    Txt_idRestaurante.Text = conRestaurante.Dgv_consultaRestaurante.Rows[conRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].
+                    Txt_idPago.Text = conPago.Dgv_consultaPago.Rows[conPago.Dgv_consultaPago.CurrentRow.Index].
                         Cells[0].Value.ToString();
-                    Txt_nombre.Text = conRestaurante.Dgv_consultaRestaurante.Rows[conRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].
+                    Txt_nombre.Text = conPago.Dgv_consultaPago.Rows[conPago.Dgv_consultaPago.CurrentRow.Index].
                         Cells[1].Value.ToString();
-                    Txt_direccion.Text = conRestaurante.Dgv_consultaRestaurante.Rows[conRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].
+                    Txt_descripcion.Text = conPago.Dgv_consultaPago.Rows[conPago.Dgv_consultaPago.CurrentRow.Index].
                         Cells[2].Value.ToString();
-                    Txt_telefono.Text = conRestaurante.Dgv_consultaRestaurante.Rows[conRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].
-                        Cells[3].Value.ToString();
-                    Txt_correo.Text = conRestaurante.Dgv_consultaRestaurante.Rows[conRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].
-                        Cells[0].Value.ToString();
+
+
                     Txt_nombre.Focus();
                     presionado = false;
                     HabilitarBtn();
                 }
             }
+        }
+
+        private void Frm_mantTipoPago_Load(object sender, EventArgs e)
+        {
+            DeshabilitarCampos();
+        }
+
+        private void Lbl_descripcion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
