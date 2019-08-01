@@ -119,7 +119,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void BorrarDatos()
         {
             nombreDepartamento = Txt_nombre.Text;
-
+            id = Txt_id.Text;
             try
             {
                 IPHostEntry host;
@@ -137,6 +137,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("Nombre", OdbcType.Text).Value = nombreDepartamento;
                 comm.ExecuteNonQuery();
+
+                string consulta2 = "UPDATE tbl_lugarturistico T " +
+                 "INNER JOIN tbl_departamentos D ON T.Fk_idDepartamento = D.Pk_idDepartamento " +
+                 "SET M.estadoLugarTuristico = 0 " +
+                 "WHERE T.Fk_idDepartamento =" + id + "; ";
+                OdbcCommand comm2 = new OdbcCommand(consulta2, Conexion.nuevaConexion());
+                comm2.ExecuteNonQuery();
+
                 MessageBox.Show("Registro eliminado correctamente");
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
