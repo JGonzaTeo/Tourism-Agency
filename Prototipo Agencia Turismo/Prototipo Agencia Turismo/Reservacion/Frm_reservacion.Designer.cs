@@ -34,11 +34,9 @@
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Dgv_detalleFactura = new System.Windows.Forms.DataGridView();
-            this.Lbl_empleado = new System.Windows.Forms.Label();
+            this.Lbl_nombCliente = new System.Windows.Forms.Label();
             this.Lbl_nomCliente = new System.Windows.Forms.Label();
-            this.Lbl_idCotizacion = new System.Windows.Forms.Label();
             this.Lbl_idCliente = new System.Windows.Forms.Label();
-            this.Lbl_reservacion = new System.Windows.Forms.Label();
             this.Lbl_idReservacion = new System.Windows.Forms.Label();
             this.Lbl_metodo = new System.Windows.Forms.Label();
             this.Lbl_metodoPago = new System.Windows.Forms.Label();
@@ -48,17 +46,23 @@
             this.Lbl_vehiculo = new System.Windows.Forms.Label();
             this.Lbl_idVehiculo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Lbl_fecha = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Lbl_detalle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_consultarMetodoPago = new System.Windows.Forms.Button();
             this.Btn_busquedaCotizacion = new System.Windows.Forms.Button();
+            this.Lbl_reservacion = new System.Windows.Forms.Label();
+            this.Lbl_idCotizacion = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_consultarPiloto = new System.Windows.Forms.Button();
             this.Btn_consultarVehiculo = new System.Windows.Forms.Button();
             this.Btn_reservar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Dtp_FecaSalida = new System.Windows.Forms.DateTimePicker();
+            this.Dtp_FecaEntrada = new System.Windows.Forms.DateTimePicker();
+            this.habitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lugarTuristico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,7 +88,7 @@
             this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
             this.Btn_minimizar.Location = new System.Drawing.Point(1020, -5);
-            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
             this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
             this.Btn_minimizar.TabIndex = 12;
@@ -96,7 +100,7 @@
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
             this.Btn_cerrar.Location = new System.Drawing.Point(1100, -5);
-            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
             this.Btn_cerrar.TabIndex = 11;
@@ -114,23 +118,31 @@
             // 
             // Dgv_detalleFactura
             // 
+            this.Dgv_detalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_detalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_detalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.habitacion,
+            this.menu,
+            this.lugarTuristico,
+            this.cantidad});
             this.Dgv_detalleFactura.Location = new System.Drawing.Point(28, 278);
             this.Dgv_detalleFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Dgv_detalleFactura.MultiSelect = false;
             this.Dgv_detalleFactura.Name = "Dgv_detalleFactura";
+            this.Dgv_detalleFactura.ReadOnly = true;
             this.Dgv_detalleFactura.RowTemplate.Height = 24;
             this.Dgv_detalleFactura.Size = new System.Drawing.Size(904, 272);
             this.Dgv_detalleFactura.TabIndex = 24;
             // 
-            // Lbl_empleado
+            // Lbl_nombCliente
             // 
-            this.Lbl_empleado.AutoSize = true;
-            this.Lbl_empleado.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_empleado.Location = new System.Drawing.Point(196, 111);
-            this.Lbl_empleado.Name = "Lbl_empleado";
-            this.Lbl_empleado.Size = new System.Drawing.Size(89, 19);
-            this.Lbl_empleado.TabIndex = 23;
-            this.Lbl_empleado.Text = "nomCliente";
+            this.Lbl_nombCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbl_nombCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lbl_nombCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Lbl_nombCliente.Location = new System.Drawing.Point(196, 111);
+            this.Lbl_nombCliente.Name = "Lbl_nombCliente";
+            this.Lbl_nombCliente.Size = new System.Drawing.Size(178, 19);
+            this.Lbl_nombCliente.TabIndex = 23;
             // 
             // Lbl_nomCliente
             // 
@@ -142,16 +154,6 @@
             this.Lbl_nomCliente.TabIndex = 22;
             this.Lbl_nomCliente.Text = "Nombre del cliente:";
             // 
-            // Lbl_idCotizacion
-            // 
-            this.Lbl_idCotizacion.AutoSize = true;
-            this.Lbl_idCotizacion.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_idCotizacion.Location = new System.Drawing.Point(196, 62);
-            this.Lbl_idCotizacion.Name = "Lbl_idCotizacion";
-            this.Lbl_idCotizacion.Size = new System.Drawing.Size(96, 19);
-            this.Lbl_idCotizacion.TabIndex = 21;
-            this.Lbl_idCotizacion.Text = "idCotizacion";
-            // 
             // Lbl_idCliente
             // 
             this.Lbl_idCliente.AutoSize = true;
@@ -161,16 +163,6 @@
             this.Lbl_idCliente.Size = new System.Drawing.Size(125, 19);
             this.Lbl_idCliente.TabIndex = 20;
             this.Lbl_idCliente.Text = "ID de cotizacion:";
-            // 
-            // Lbl_reservacion
-            // 
-            this.Lbl_reservacion.AutoSize = true;
-            this.Lbl_reservacion.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_reservacion.Location = new System.Drawing.Point(196, 16);
-            this.Lbl_reservacion.Name = "Lbl_reservacion";
-            this.Lbl_reservacion.Size = new System.Drawing.Size(106, 19);
-            this.Lbl_reservacion.TabIndex = 19;
-            this.Lbl_reservacion.Text = "idReservacion";
             // 
             // Lbl_idReservacion
             // 
@@ -184,13 +176,13 @@
             // 
             // Lbl_metodo
             // 
-            this.Lbl_metodo.AutoSize = true;
+            this.Lbl_metodo.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbl_metodo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_metodo.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_metodo.Location = new System.Drawing.Point(196, 155);
             this.Lbl_metodo.Name = "Lbl_metodo";
-            this.Lbl_metodo.Size = new System.Drawing.Size(85, 19);
+            this.Lbl_metodo.Size = new System.Drawing.Size(106, 19);
             this.Lbl_metodo.TabIndex = 34;
-            this.Lbl_metodo.Text = "idTipoPago";
             // 
             // Lbl_metodoPago
             // 
@@ -214,13 +206,13 @@
             // 
             // Lbl_piloto
             // 
-            this.Lbl_piloto.AutoSize = true;
+            this.Lbl_piloto.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbl_piloto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_piloto.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_piloto.Location = new System.Drawing.Point(196, 67);
             this.Lbl_piloto.Name = "Lbl_piloto";
-            this.Lbl_piloto.Size = new System.Drawing.Size(59, 19);
+            this.Lbl_piloto.Size = new System.Drawing.Size(99, 19);
             this.Lbl_piloto.TabIndex = 39;
-            this.Lbl_piloto.Text = "idPiloto";
             // 
             // Lbl_idPiloto
             // 
@@ -234,13 +226,13 @@
             // 
             // Lbl_vehiculo
             // 
-            this.Lbl_vehiculo.AutoSize = true;
+            this.Lbl_vehiculo.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbl_vehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_vehiculo.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_vehiculo.Location = new System.Drawing.Point(196, 16);
             this.Lbl_vehiculo.Name = "Lbl_vehiculo";
-            this.Lbl_vehiculo.Size = new System.Drawing.Size(82, 19);
+            this.Lbl_vehiculo.Size = new System.Drawing.Size(99, 19);
             this.Lbl_vehiculo.TabIndex = 37;
-            this.Lbl_vehiculo.Text = "idVehiculo";
             // 
             // Lbl_idVehiculo
             // 
@@ -261,26 +253,6 @@
             this.label2.Size = new System.Drawing.Size(141, 19);
             this.label2.TabIndex = 47;
             this.label2.Text = "Fecha de entrada:";
-            // 
-            // Lbl_fecha
-            // 
-            this.Lbl_fecha.AutoSize = true;
-            this.Lbl_fecha.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_fecha.Location = new System.Drawing.Point(196, 111);
-            this.Lbl_fecha.Name = "Lbl_fecha";
-            this.Lbl_fecha.Size = new System.Drawing.Size(99, 19);
-            this.Lbl_fecha.TabIndex = 48;
-            this.Lbl_fecha.Text = "yyyy/mm/dd";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label1.Location = new System.Drawing.Point(196, 155);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "yyyy/mm/dd";
             // 
             // Lbl_detalle
             // 
@@ -303,7 +275,7 @@
             this.panel1.Controls.Add(this.Lbl_idCliente);
             this.panel1.Controls.Add(this.Lbl_metodoPago);
             this.panel1.Controls.Add(this.Lbl_idCotizacion);
-            this.panel1.Controls.Add(this.Lbl_empleado);
+            this.panel1.Controls.Add(this.Lbl_nombCliente);
             this.panel1.Controls.Add(this.Lbl_nomCliente);
             this.panel1.Location = new System.Drawing.Point(43, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -331,6 +303,7 @@
             this.Btn_consultarMetodoPago.Text = "Consultar";
             this.Btn_consultarMetodoPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultarMetodoPago.UseVisualStyleBackColor = false;
+            this.Btn_consultarMetodoPago.Click += new System.EventHandler(this.Btn_consultarMetodoPago_Click);
             // 
             // Btn_busquedaCotizacion
             // 
@@ -351,15 +324,36 @@
             this.Btn_busquedaCotizacion.Text = "Consultar";
             this.Btn_busquedaCotizacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_busquedaCotizacion.UseVisualStyleBackColor = false;
+            this.Btn_busquedaCotizacion.Click += new System.EventHandler(this.Btn_busquedaCotizacion_Click);
+            // 
+            // Lbl_reservacion
+            // 
+            this.Lbl_reservacion.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbl_reservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lbl_reservacion.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Lbl_reservacion.Location = new System.Drawing.Point(196, 16);
+            this.Lbl_reservacion.Name = "Lbl_reservacion";
+            this.Lbl_reservacion.Size = new System.Drawing.Size(106, 19);
+            this.Lbl_reservacion.TabIndex = 19;
+            // 
+            // Lbl_idCotizacion
+            // 
+            this.Lbl_idCotizacion.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbl_idCotizacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lbl_idCotizacion.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Lbl_idCotizacion.Location = new System.Drawing.Point(196, 62);
+            this.Lbl_idCotizacion.Name = "Lbl_idCotizacion";
+            this.Lbl_idCotizacion.Size = new System.Drawing.Size(106, 19);
+            this.Lbl_idCotizacion.TabIndex = 21;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Dtp_FecaEntrada);
+            this.panel2.Controls.Add(this.Dtp_FecaSalida);
             this.panel2.Controls.Add(this.Btn_consultarPiloto);
             this.panel2.Controls.Add(this.Btn_consultarVehiculo);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.Lbl_idVehiculo);
-            this.panel2.Controls.Add(this.Lbl_fecha);
             this.panel2.Controls.Add(this.Lbl_vehiculo);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.Lbl_idPiloto);
@@ -391,6 +385,7 @@
             this.Btn_consultarPiloto.Text = "Consultar";
             this.Btn_consultarPiloto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultarPiloto.UseVisualStyleBackColor = false;
+            this.Btn_consultarPiloto.Click += new System.EventHandler(this.Btn_consultarPiloto_Click);
             // 
             // Btn_consultarVehiculo
             // 
@@ -411,6 +406,7 @@
             this.Btn_consultarVehiculo.Text = "Consultar";
             this.Btn_consultarVehiculo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultarVehiculo.UseVisualStyleBackColor = false;
+            this.Btn_consultarVehiculo.Click += new System.EventHandler(this.Btn_consultarVehiculo_Click);
             // 
             // Btn_reservar
             // 
@@ -428,6 +424,7 @@
             this.Btn_reservar.TabIndex = 32;
             this.Btn_reservar.Text = "Reservar";
             this.Btn_reservar.UseVisualStyleBackColor = true;
+            this.Btn_reservar.Click += new System.EventHandler(this.Btn_reservar_Click);
             // 
             // Btn_eliminar
             // 
@@ -445,6 +442,53 @@
             this.Btn_eliminar.TabIndex = 31;
             this.Btn_eliminar.Text = "Eliminar";
             this.Btn_eliminar.UseVisualStyleBackColor = true;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
+            // 
+            // Dtp_FecaSalida
+            // 
+            this.Dtp_FecaSalida.CustomFormat = "yyyy-MM-dd";
+            this.Dtp_FecaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_FecaSalida.Location = new System.Drawing.Point(196, 104);
+            this.Dtp_FecaSalida.Margin = new System.Windows.Forms.Padding(2);
+            this.Dtp_FecaSalida.Name = "Dtp_FecaSalida";
+            this.Dtp_FecaSalida.Size = new System.Drawing.Size(99, 26);
+            this.Dtp_FecaSalida.TabIndex = 109;
+            this.Dtp_FecaSalida.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
+            // 
+            // Dtp_FecaEntrada
+            // 
+            this.Dtp_FecaEntrada.CustomFormat = "yyyy-MM-dd";
+            this.Dtp_FecaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_FecaEntrada.Location = new System.Drawing.Point(196, 147);
+            this.Dtp_FecaEntrada.Margin = new System.Windows.Forms.Padding(2);
+            this.Dtp_FecaEntrada.Name = "Dtp_FecaEntrada";
+            this.Dtp_FecaEntrada.Size = new System.Drawing.Size(99, 26);
+            this.Dtp_FecaEntrada.TabIndex = 110;
+            this.Dtp_FecaEntrada.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
+            // 
+            // habitacion
+            // 
+            this.habitacion.HeaderText = "Nombre Habitacion";
+            this.habitacion.Name = "habitacion";
+            this.habitacion.ReadOnly = true;
+            // 
+            // menu
+            // 
+            this.menu.HeaderText = "Nombre Menu";
+            this.menu.Name = "menu";
+            this.menu.ReadOnly = true;
+            // 
+            // lugarTuristico
+            // 
+            this.lugarTuristico.HeaderText = "Lugar Turistico";
+            this.lugarTuristico.Name = "lugarTuristico";
+            this.lugarTuristico.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad Habitaciones";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
             // Frm_reservacion
             // 
@@ -485,11 +529,9 @@
         private System.Windows.Forms.Button Btn_reservar;
         private System.Windows.Forms.Button Btn_eliminar;
         private System.Windows.Forms.DataGridView Dgv_detalleFactura;
-        private System.Windows.Forms.Label Lbl_empleado;
+        private System.Windows.Forms.Label Lbl_nombCliente;
         private System.Windows.Forms.Label Lbl_nomCliente;
-        private System.Windows.Forms.Label Lbl_idCotizacion;
         private System.Windows.Forms.Label Lbl_idCliente;
-        private System.Windows.Forms.Label Lbl_reservacion;
         private System.Windows.Forms.Label Lbl_idReservacion;
         private System.Windows.Forms.Label Lbl_metodo;
         private System.Windows.Forms.Label Lbl_metodoPago;
@@ -499,8 +541,6 @@
         private System.Windows.Forms.Label Lbl_vehiculo;
         private System.Windows.Forms.Label Lbl_idVehiculo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Lbl_fecha;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Lbl_detalle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -508,5 +548,13 @@
         private System.Windows.Forms.Button Btn_busquedaCotizacion;
         private System.Windows.Forms.Button Btn_consultarPiloto;
         private System.Windows.Forms.Button Btn_consultarVehiculo;
+        private System.Windows.Forms.Label Lbl_reservacion;
+        private System.Windows.Forms.Label Lbl_idCotizacion;
+        private System.Windows.Forms.DateTimePicker Dtp_FecaEntrada;
+        private System.Windows.Forms.DateTimePicker Dtp_FecaSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn habitacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lugarTuristico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }
