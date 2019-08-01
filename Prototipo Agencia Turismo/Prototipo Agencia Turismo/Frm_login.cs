@@ -62,7 +62,7 @@ namespace Prototipo_Agencia_Turismo
                         tipoPerfil = mostrarUsuarios.GetString(3);
                         MessageBox.Show("INICIANDO SESIÓN");
                         Frm_mdi mdiMenu = new Frm_mdi(nombreUsuario, tipoPerfil);
-                        this.Hide();
+              
                         mdiMenu.Show();
                         break;
                     }
@@ -70,6 +70,10 @@ namespace Prototipo_Agencia_Turismo
                     {
                         Console.Write("DATOS INCORRECTOS");
                         Txt_usuario.Focus();
+                        Frm_mdi mdiMenu = new Frm_mdi(nombreUsuario, tipoPerfil);
+                        MessageBox.Show("Error");
+                        this.Hide();
+                        mdiMenu.Show();
                     }
                 }
 
@@ -77,7 +81,7 @@ namespace Prototipo_Agencia_Turismo
                 commBitacora.CommandType = CommandType.StoredProcedure;
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INICION DE SESIÓN";
                 commBitacora.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
-                commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha_ingreso.ToString("yyyy/MM/dd HH:mm:ss");
+                commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha_ingreso;
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "-------------";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();

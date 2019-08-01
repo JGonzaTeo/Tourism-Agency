@@ -4,6 +4,7 @@
   -----------------------------------------------------
 */
 
+using Prototipo_Agencia_Turismo.Asignaciones;
 using Prototipo_Agencia_Turismo.Mantenimiento;
 using System;
 using System.Collections.Generic;
@@ -498,6 +499,29 @@ namespace Prototipo_Agencia_Turismo
             else
             {
                 habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventabanaAsignacionguia = false;
+        Frm_AsignacionEmpleadoGuia aguia = new Frm_AsignacionEmpleadoGuia("");
+        private void asgnaciónAGuiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_AsignacionEmpleadoGuia);
+            if (ventanaHabitacion == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    aguia = new Frm_AsignacionEmpleadoGuia(nombreUsuario);
+                }
+
+                aguia.MdiParent = this;
+                aguia.Show();
+                Application.DoEvents();
+                ventabanaAsignacionguia = true;
+            }
+            else
+            {
+                aguia.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
     }

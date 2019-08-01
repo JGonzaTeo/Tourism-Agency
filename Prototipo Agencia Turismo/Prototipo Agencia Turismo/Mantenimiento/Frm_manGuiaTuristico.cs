@@ -262,13 +262,13 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
                 if (conBonos_Desc.DialogResult == DialogResult.OK)
                 {
-                    Txt_idguia.Text = conBonos_Desc.Dgv_consultaBonoYDesc.Rows[conBonos_Desc.Dgv_consultaBonoYDesc.CurrentRow.Index].
+                    Txt_idguia.Text = conBonos_Desc.Dgv_consultaguia.Rows[conBonos_Desc.Dgv_consultaguia.CurrentRow.Index].
                         Cells[0].Value.ToString();
 
-                    Txt_ruta.Text = conBonos_Desc.Dgv_consultaBonoYDesc.Rows[conBonos_Desc.Dgv_consultaBonoYDesc.CurrentRow.Index].
+                    Txt_ruta.Text = conBonos_Desc.Dgv_consultaguia.Rows[conBonos_Desc.Dgv_consultaguia.CurrentRow.Index].
                         Cells[1].Value.ToString();
 
-                    Txt_descripcion.Text = conBonos_Desc.Dgv_consultaBonoYDesc.Rows[conBonos_Desc.Dgv_consultaBonoYDesc.CurrentRow.Index].
+                    Txt_descripcion.Text = conBonos_Desc.Dgv_consultaguia.Rows[conBonos_Desc.Dgv_consultaguia.CurrentRow.Index].
                         Cells[2].Value.ToString();
 
 

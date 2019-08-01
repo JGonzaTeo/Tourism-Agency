@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_consultaGuiaT));
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
-            this.Dgv_consultaBonoYDesc = new System.Windows.Forms.DataGridView();
+            this.Dgv_consultaguia = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaBonoYDesc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaguia)).BeginInit();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,18 +78,18 @@
             this.Btn_seleccionar.UseVisualStyleBackColor = true;
             this.Btn_seleccionar.Click += new System.EventHandler(this.Btn_seleccionar_Click);
             // 
-            // Dgv_consultaBonoYDesc
+            // Dgv_consultaguia
             // 
-            this.Dgv_consultaBonoYDesc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_consultaBonoYDesc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Dgv_consultaguia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_consultaguia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.Valor});
-            this.Dgv_consultaBonoYDesc.Location = new System.Drawing.Point(103, 112);
-            this.Dgv_consultaBonoYDesc.Name = "Dgv_consultaBonoYDesc";
-            this.Dgv_consultaBonoYDesc.RowTemplate.Height = 24;
-            this.Dgv_consultaBonoYDesc.Size = new System.Drawing.Size(593, 405);
-            this.Dgv_consultaBonoYDesc.TabIndex = 68;
+            this.Dgv_consultaguia.Location = new System.Drawing.Point(103, 112);
+            this.Dgv_consultaguia.Name = "Dgv_consultaguia";
+            this.Dgv_consultaguia.RowTemplate.Height = 24;
+            this.Dgv_consultaguia.Size = new System.Drawing.Size(593, 405);
+            this.Dgv_consultaguia.TabIndex = 68;
             // 
             // Codigo
             // 
@@ -202,7 +202,7 @@
             this.ClientSize = new System.Drawing.Size(1144, 546);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_seleccionar);
-            this.Controls.Add(this.Dgv_consultaBonoYDesc);
+            this.Controls.Add(this.Dgv_consultaguia);
             this.Controls.Add(this.Btn_consulta);
             this.Controls.Add(this.Txt_consultaNombre);
             this.Controls.Add(this.label2);
@@ -212,7 +212,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaGuiaT";
             this.Load += new System.EventHandler(this.Frm_consultaGuiaT_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaBonoYDesc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaguia)).EndInit();
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             this.ResumeLayout(false);
@@ -224,7 +224,7 @@
 
         private System.Windows.Forms.Button Btn_actualizar;
         private System.Windows.Forms.Button Btn_seleccionar;
-        public System.Windows.Forms.DataGridView Dgv_consultaBonoYDesc;
+        public System.Windows.Forms.DataGridView Dgv_consultaguia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;

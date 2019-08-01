@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AsignacionEmpleadoGuia));
-            this.Txt_nombre = new System.Windows.Forms.TextBox();
-            this.Lbl_nombre = new System.Windows.Forms.Label();
+            this.Txt_Guia = new System.Windows.Forms.TextBox();
+            this.Lbl_idGuia = new System.Windows.Forms.Label();
             this.Txt_idEmpleado = new System.Windows.Forms.TextBox();
             this.Lbl_idempleado = new System.Windows.Forms.Label();
             this.Btn_consultar = new System.Windows.Forms.Button();
             this.Btn_borrar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
-            this.Btn_editar = new System.Windows.Forms.Button();
             this.Btn_ingresar = new System.Windows.Forms.Button();
             this.Pnl_principal = new System.Windows.Forms.Panel();
             this.Btn_minimizar1 = new System.Windows.Forms.Button();
@@ -45,43 +44,43 @@
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Dtp_FechaNc = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Gpb_Busqueda = new System.Windows.Forms.GroupBox();
+            this.Btn_buscarGuia = new System.Windows.Forms.Button();
+            this.Btn_ConsultaEmpleado = new System.Windows.Forms.Button();
+            this.Gpb_Horario = new System.Windows.Forms.GroupBox();
+            this.Dtp_Fechafin = new System.Windows.Forms.DateTimePicker();
+            this.Dtp_Fechainicio = new System.Windows.Forms.DateTimePicker();
+            this.Lbl_horainicio = new System.Windows.Forms.Label();
+            this.Lbl_horafinal = new System.Windows.Forms.Label();
             this.Pnl_principal.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.Gpb_Busqueda.SuspendLayout();
+            this.Gpb_Horario.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Txt_nombre
+            // Txt_Guia
             // 
-            this.Txt_nombre.Enabled = false;
-            this.Txt_nombre.Location = new System.Drawing.Point(586, 56);
-            this.Txt_nombre.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(128, 22);
-            this.Txt_nombre.TabIndex = 54;
+            this.Txt_Guia.Enabled = false;
+            this.Txt_Guia.Location = new System.Drawing.Point(586, 56);
+            this.Txt_Guia.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Guia.Name = "Txt_Guia";
+            this.Txt_Guia.Size = new System.Drawing.Size(128, 22);
+            this.Txt_Guia.TabIndex = 54;
             // 
-            // Lbl_nombre
+            // Lbl_idGuia
             // 
-            this.Lbl_nombre.AutoSize = true;
-            this.Lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(470, 56);
-            this.Lbl_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(108, 20);
-            this.Lbl_nombre.TabIndex = 53;
-            this.Lbl_nombre.Text = "Nombre Guia";
+            this.Lbl_idGuia.AutoSize = true;
+            this.Lbl_idGuia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_idGuia.Location = new System.Drawing.Point(470, 56);
+            this.Lbl_idGuia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_idGuia.Name = "Lbl_idGuia";
+            this.Lbl_idGuia.Size = new System.Drawing.Size(108, 20);
+            this.Lbl_idGuia.TabIndex = 53;
+            this.Lbl_idGuia.Text = "Nombre Guia";
             // 
             // Txt_idEmpleado
             // 
             this.Txt_idEmpleado.Enabled = false;
-            this.Txt_idEmpleado.Location = new System.Drawing.Point(185, 51);
+            this.Txt_idEmpleado.Location = new System.Drawing.Point(195, 51);
             this.Txt_idEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_idEmpleado.Name = "Txt_idEmpleado";
             this.Txt_idEmpleado.Size = new System.Drawing.Size(124, 22);
@@ -97,6 +96,7 @@
             this.Lbl_idempleado.Size = new System.Drawing.Size(168, 20);
             this.Lbl_idempleado.TabIndex = 51;
             this.Lbl_idempleado.Text = "Nombre de empleado";
+            this.Lbl_idempleado.Click += new System.EventHandler(this.Lbl_idempleado_Click);
             // 
             // Btn_consultar
             // 
@@ -109,14 +109,15 @@
             this.Btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consultar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultar.Image")));
             this.Btn_consultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultar.Location = new System.Drawing.Point(835, 60);
+            this.Btn_consultar.Location = new System.Drawing.Point(736, 81);
             this.Btn_consultar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_consultar.Name = "Btn_consultar";
-            this.Btn_consultar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_consultar.Size = new System.Drawing.Size(115, 115);
             this.Btn_consultar.TabIndex = 50;
             this.Btn_consultar.Text = "Consultar";
             this.Btn_consultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultar.UseVisualStyleBackColor = false;
+            this.Btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
             // 
             // Btn_borrar
             // 
@@ -129,14 +130,15 @@
             this.Btn_borrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_borrar.Image")));
             this.Btn_borrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_borrar.Location = new System.Drawing.Point(724, 60);
+            this.Btn_borrar.Location = new System.Drawing.Point(613, 81);
             this.Btn_borrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_borrar.Name = "Btn_borrar";
-            this.Btn_borrar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_borrar.Size = new System.Drawing.Size(115, 115);
             this.Btn_borrar.TabIndex = 49;
             this.Btn_borrar.Text = "Borrar";
             this.Btn_borrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_borrar.UseVisualStyleBackColor = false;
+            this.Btn_borrar.Click += new System.EventHandler(this.Btn_borrar_Click);
             // 
             // Btn_cancelar
             // 
@@ -149,14 +151,15 @@
             this.Btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cancelar.Image")));
             this.Btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_cancelar.Location = new System.Drawing.Point(612, 60);
+            this.Btn_cancelar.Location = new System.Drawing.Point(490, 81);
             this.Btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_cancelar.Size = new System.Drawing.Size(115, 115);
             this.Btn_cancelar.TabIndex = 48;
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Btn_guardar
             // 
@@ -169,34 +172,15 @@
             this.Btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_guardar.Image")));
             this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_guardar.Location = new System.Drawing.Point(500, 60);
+            this.Btn_guardar.Location = new System.Drawing.Point(367, 81);
             this.Btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_guardar.Size = new System.Drawing.Size(115, 115);
             this.Btn_guardar.TabIndex = 47;
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_guardar.UseVisualStyleBackColor = false;
-            // 
-            // Btn_editar
-            // 
-            this.Btn_editar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_editar.FlatAppearance.BorderSize = 3;
-            this.Btn_editar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_editar.Image")));
-            this.Btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_editar.Location = new System.Drawing.Point(388, 60);
-            this.Btn_editar.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_editar.Name = "Btn_editar";
-            this.Btn_editar.Size = new System.Drawing.Size(115, 85);
-            this.Btn_editar.TabIndex = 46;
-            this.Btn_editar.Text = "Editar";
-            this.Btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_editar.UseVisualStyleBackColor = false;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Btn_ingresar
             // 
@@ -209,14 +193,15 @@
             this.Btn_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ingresar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ingresar.Image")));
             this.Btn_ingresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_ingresar.Location = new System.Drawing.Point(276, 60);
+            this.Btn_ingresar.Location = new System.Drawing.Point(244, 81);
             this.Btn_ingresar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_ingresar.Name = "Btn_ingresar";
-            this.Btn_ingresar.Size = new System.Drawing.Size(115, 85);
+            this.Btn_ingresar.Size = new System.Drawing.Size(115, 115);
             this.Btn_ingresar.TabIndex = 45;
             this.Btn_ingresar.Text = "Ingresar";
             this.Btn_ingresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_ingresar.UseVisualStyleBackColor = false;
+            this.Btn_ingresar.Click += new System.EventHandler(this.Btn_ingresar_Click);
             // 
             // Pnl_principal
             // 
@@ -292,132 +277,134 @@
             this.Lbl_titulo.Text = "Asignacion Empleado A Guia Turistico";
             this.Lbl_titulo.Click += new System.EventHandler(this.Lbl_titulo_Click);
             // 
-            // groupBox1
+            // Gpb_Busqueda
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.Lbl_idempleado);
-            this.groupBox1.Controls.Add(this.Txt_idEmpleado);
-            this.groupBox1.Controls.Add(this.Lbl_nombre);
-            this.groupBox1.Controls.Add(this.Txt_nombre);
-            this.groupBox1.Location = new System.Drawing.Point(165, 215);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(921, 120);
-            this.groupBox1.TabIndex = 58;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda";
+            this.Gpb_Busqueda.Controls.Add(this.Btn_buscarGuia);
+            this.Gpb_Busqueda.Controls.Add(this.Btn_ConsultaEmpleado);
+            this.Gpb_Busqueda.Controls.Add(this.Lbl_idempleado);
+            this.Gpb_Busqueda.Controls.Add(this.Txt_idEmpleado);
+            this.Gpb_Busqueda.Controls.Add(this.Lbl_idGuia);
+            this.Gpb_Busqueda.Controls.Add(this.Txt_Guia);
+            this.Gpb_Busqueda.Location = new System.Drawing.Point(88, 203);
+            this.Gpb_Busqueda.Name = "Gpb_Busqueda";
+            this.Gpb_Busqueda.Size = new System.Drawing.Size(921, 120);
+            this.Gpb_Busqueda.TabIndex = 58;
+            this.Gpb_Busqueda.TabStop = false;
+            this.Gpb_Busqueda.Text = "Busqueda";
+            this.Gpb_Busqueda.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
+            // Btn_buscarGuia
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.Dtp_FechaNc);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(165, 353);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(921, 120);
-            this.groupBox2.TabIndex = 59;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Horario:";
+            this.Btn_buscarGuia.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_buscarGuia.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.busqueda;
+            this.Btn_buscarGuia.Location = new System.Drawing.Point(721, 50);
+            this.Btn_buscarGuia.Name = "Btn_buscarGuia";
+            this.Btn_buscarGuia.Size = new System.Drawing.Size(40, 34);
+            this.Btn_buscarGuia.TabIndex = 56;
+            this.Btn_buscarGuia.UseVisualStyleBackColor = false;
+            this.Btn_buscarGuia.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
+            // Btn_ConsultaEmpleado
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 51);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Hora de inicio";
+            this.Btn_ConsultaEmpleado.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_ConsultaEmpleado.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.busqueda;
+            this.Btn_ConsultaEmpleado.Location = new System.Drawing.Point(326, 45);
+            this.Btn_ConsultaEmpleado.Name = "Btn_ConsultaEmpleado";
+            this.Btn_ConsultaEmpleado.Size = new System.Drawing.Size(40, 34);
+            this.Btn_ConsultaEmpleado.TabIndex = 55;
+            this.Btn_ConsultaEmpleado.UseVisualStyleBackColor = false;
+            this.Btn_ConsultaEmpleado.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
+            // Gpb_Horario
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(470, 56);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Hora de fin";
+            this.Gpb_Horario.Controls.Add(this.Dtp_Fechafin);
+            this.Gpb_Horario.Controls.Add(this.Dtp_Fechainicio);
+            this.Gpb_Horario.Controls.Add(this.Lbl_horainicio);
+            this.Gpb_Horario.Controls.Add(this.Lbl_horafinal);
+            this.Gpb_Horario.Location = new System.Drawing.Point(88, 350);
+            this.Gpb_Horario.Name = "Gpb_Horario";
+            this.Gpb_Horario.Size = new System.Drawing.Size(921, 120);
+            this.Gpb_Horario.TabIndex = 59;
+            this.Gpb_Horario.TabStop = false;
+            this.Gpb_Horario.Text = "Horario:";
             // 
-            // Dtp_FechaNc
+            // Dtp_Fechafin
             // 
-            this.Dtp_FechaNc.CustomFormat = "yyyy-MM-dd";
-            this.Dtp_FechaNc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp_FechaNc.Location = new System.Drawing.Point(146, 49);
-            this.Dtp_FechaNc.Name = "Dtp_FechaNc";
-            this.Dtp_FechaNc.Size = new System.Drawing.Size(125, 22);
-            this.Dtp_FechaNc.TabIndex = 109;
+            this.Dtp_Fechafin.CustomFormat = "yyyy-MM-dd";
+            this.Dtp_Fechafin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_Fechafin.Location = new System.Drawing.Point(569, 54);
+            this.Dtp_Fechafin.Name = "Dtp_Fechafin";
+            this.Dtp_Fechafin.Size = new System.Drawing.Size(125, 22);
+            this.Dtp_Fechafin.TabIndex = 110;
             // 
-            // dateTimePicker1
+            // Dtp_Fechainicio
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(569, 54);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker1.TabIndex = 110;
+            this.Dtp_Fechainicio.CustomFormat = "yyyy-MM-dd";
+            this.Dtp_Fechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_Fechainicio.Location = new System.Drawing.Point(146, 49);
+            this.Dtp_Fechainicio.Name = "Dtp_Fechainicio";
+            this.Dtp_Fechainicio.Size = new System.Drawing.Size(125, 22);
+            this.Dtp_Fechainicio.TabIndex = 109;
             // 
-            // button1
+            // Lbl_horainicio
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button1.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.busqueda;
-            this.button1.Location = new System.Drawing.Point(316, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 34);
-            this.button1.TabIndex = 55;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Lbl_horainicio.AutoSize = true;
+            this.Lbl_horainicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_horainicio.Location = new System.Drawing.Point(8, 51);
+            this.Lbl_horainicio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Lbl_horainicio.Name = "Lbl_horainicio";
+            this.Lbl_horainicio.Size = new System.Drawing.Size(113, 20);
+            this.Lbl_horainicio.TabIndex = 51;
+            this.Lbl_horainicio.Text = "Hora de inicio";
             // 
-            // button2
+            // Lbl_horafinal
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button2.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.busqueda;
-            this.button2.Location = new System.Drawing.Point(721, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 34);
-            this.button2.TabIndex = 56;
-            this.button2.UseVisualStyleBackColor = false;
+            this.Lbl_horafinal.AutoSize = true;
+            this.Lbl_horafinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_horafinal.Location = new System.Drawing.Point(470, 56);
+            this.Lbl_horafinal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_horafinal.Name = "Lbl_horafinal";
+            this.Lbl_horafinal.Size = new System.Drawing.Size(92, 20);
+            this.Lbl_horafinal.TabIndex = 53;
+            this.Lbl_horafinal.Text = "Hora de fin";
             // 
             // Frm_AsignacionEmpleadoGuia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Gpb_Horario);
+            this.Controls.Add(this.Gpb_Busqueda);
             this.Controls.Add(this.Btn_consultar);
             this.Controls.Add(this.Btn_borrar);
             this.Controls.Add(this.Btn_cancelar);
             this.Controls.Add(this.Btn_guardar);
-            this.Controls.Add(this.Btn_editar);
             this.Controls.Add(this.Btn_ingresar);
             this.Controls.Add(this.Pnl_principal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_AsignacionEmpleadoGuia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_AsignacionEmpleadoGuia";
+            this.Load += new System.EventHandler(this.Frm_AsignacionEmpleadoGuia_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Gpb_Busqueda.ResumeLayout(false);
+            this.Gpb_Busqueda.PerformLayout();
+            this.Gpb_Horario.ResumeLayout(false);
+            this.Gpb_Horario.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox Txt_nombre;
-        private System.Windows.Forms.Label Lbl_nombre;
+        private System.Windows.Forms.TextBox Txt_Guia;
+        private System.Windows.Forms.Label Lbl_idGuia;
         private System.Windows.Forms.TextBox Txt_idEmpleado;
         private System.Windows.Forms.Label Lbl_idempleado;
         private System.Windows.Forms.Button Btn_consultar;
         private System.Windows.Forms.Button Btn_borrar;
         private System.Windows.Forms.Button Btn_cancelar;
         private System.Windows.Forms.Button Btn_guardar;
-        private System.Windows.Forms.Button Btn_editar;
         private System.Windows.Forms.Button Btn_ingresar;
         private System.Windows.Forms.Panel Pnl_principal;
         private System.Windows.Forms.Button Btn_minimizar1;
@@ -425,13 +412,13 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker Dtp_FechaNc;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox Gpb_Busqueda;
+        private System.Windows.Forms.GroupBox Gpb_Horario;
+        private System.Windows.Forms.Label Lbl_horainicio;
+        private System.Windows.Forms.Label Lbl_horafinal;
+        private System.Windows.Forms.DateTimePicker Dtp_Fechafin;
+        private System.Windows.Forms.DateTimePicker Dtp_Fechainicio;
+        private System.Windows.Forms.Button Btn_ConsultaEmpleado;
+        private System.Windows.Forms.Button Btn_buscarGuia;
     }
 }
