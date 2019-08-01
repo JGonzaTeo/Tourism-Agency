@@ -38,7 +38,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         string dpi = "";
         string nit = "";
 
-
+        //Validaciones
+        Validacion v = new Validacion();
 
 
         private void limpiar()
@@ -364,7 +365,14 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Frm_mantCliente_Load(object sender, EventArgs e)
         {
+            Btn_editar.Enabled = false;
+            Btn_guardar.Enabled = false;
+            Btn_borrar.Enabled = false;
+        }
 
+        private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumero(e);
         }
     }
 }

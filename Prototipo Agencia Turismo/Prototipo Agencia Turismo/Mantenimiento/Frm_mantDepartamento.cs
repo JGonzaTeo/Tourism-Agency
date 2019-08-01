@@ -319,5 +319,12 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 }
             }
         }
+
+        private void Frm_mantDepartamento_Load(object sender, EventArgs e)
+        {
+            Btn_editar.Enabled = false;
+            Btn_guardar.Enabled = false;
+            Btn_borrar.Enabled = false;
+        }
     }
 }

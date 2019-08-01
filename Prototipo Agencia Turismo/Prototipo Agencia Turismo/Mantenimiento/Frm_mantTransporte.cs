@@ -33,7 +33,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         string placa = "";
         string tipoTransporte = "";
         int capacidad = 0;
-
+        //Validaciones
+        Validacion v = new Validacion();
 
 
 
@@ -222,7 +223,9 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Frm_mantTransporte_Load(object sender, EventArgs e)
         {
-
+            Btn_editar.Enabled = false;
+            Btn_guardar.Enabled = false;
+            Btn_borrar.Enabled = false;
         }
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
@@ -371,6 +374,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void Lbl_idTransporte_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txt_capacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumero(e);
         }
     }
 }
