@@ -4,6 +4,7 @@
   -----------------------------------------------------
 */
 
+using Prototipo_Agencia_Turismo.Cotizacion;
 using Prototipo_Agencia_Turismo.Mantenimiento;
 using System;
 using System.Collections.Generic;

@@ -126,16 +126,10 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cotizacion\Frm_Cotizacion.cs">
+    <Compile Include="Ventas\Frm_facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cotizacion\Frm_Cotizacion.Designer.cs">
-      <DependentUpon>Frm_Cotizacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_facturacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_facturacion.Designer.cs">
+    <Compile Include="Ventas\Frm_facturacion.Designer.cs">
       <DependentUpon>Frm_facturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_nominas.cs">
@@ -286,10 +280,7 @@
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cotizacion\Frm_Cotizacion.resx">
-      <DependentUpon>Frm_Cotizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_facturacion.resx">
+    <EmbeddedResource Include="Ventas\Frm_facturacion.resx">
       <DependentUpon>Frm_facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_nominas.resx">
