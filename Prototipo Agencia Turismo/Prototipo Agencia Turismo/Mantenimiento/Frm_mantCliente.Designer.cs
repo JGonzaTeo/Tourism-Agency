@@ -41,8 +41,8 @@
             this.Btn_ingresar = new System.Windows.Forms.Button();
             this.Txt_dpi = new System.Windows.Forms.TextBox();
             this.Lbl_dpi = new System.Windows.Forms.Label();
-            this.Txt_telefono = new System.Windows.Forms.TextBox();
-            this.Lbl_telefono = new System.Windows.Forms.Label();
+            this.Txt_telefonoCel = new System.Windows.Forms.TextBox();
+            this.Lbl_telefonoCel = new System.Windows.Forms.Label();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Lbl_nombreCliente = new System.Windows.Forms.Label();
             this.Txt_idCliente = new System.Windows.Forms.TextBox();
@@ -53,6 +53,10 @@
             this.Lbl_correo = new System.Windows.Forms.Label();
             this.Txt_Apellido = new System.Windows.Forms.TextBox();
             this.Lbl_Apellido = new System.Windows.Forms.Label();
+            this.Txt_TelefonoRes = new System.Windows.Forms.TextBox();
+            this.Lbl_Telres = new System.Windows.Forms.Label();
+            this.Txt_CorreoAlt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,7 +231,7 @@
             // Txt_dpi
             // 
             this.Txt_dpi.Enabled = false;
-            this.Txt_dpi.Location = new System.Drawing.Point(414, 344);
+            this.Txt_dpi.Location = new System.Drawing.Point(414, 414);
             this.Txt_dpi.Name = "Txt_dpi";
             this.Txt_dpi.Size = new System.Drawing.Size(138, 24);
             this.Txt_dpi.TabIndex = 48;
@@ -235,29 +239,29 @@
             // Lbl_dpi
             // 
             this.Lbl_dpi.AutoSize = true;
-            this.Lbl_dpi.Location = new System.Drawing.Point(187, 350);
+            this.Lbl_dpi.Location = new System.Drawing.Point(187, 417);
             this.Lbl_dpi.Name = "Lbl_dpi";
             this.Lbl_dpi.Size = new System.Drawing.Size(195, 18);
             this.Lbl_dpi.TabIndex = 47;
             this.Lbl_dpi.Text = "Documento de Identificacion";
             // 
-            // Txt_telefono
+            // Txt_telefonoCel
             // 
-            this.Txt_telefono.Enabled = false;
-            this.Txt_telefono.Location = new System.Drawing.Point(362, 281);
-            this.Txt_telefono.Name = "Txt_telefono";
-            this.Txt_telefono.Size = new System.Drawing.Size(190, 24);
-            this.Txt_telefono.TabIndex = 46;
-            this.Txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
+            this.Txt_telefonoCel.Enabled = false;
+            this.Txt_telefonoCel.Location = new System.Drawing.Point(362, 281);
+            this.Txt_telefonoCel.Name = "Txt_telefonoCel";
+            this.Txt_telefonoCel.Size = new System.Drawing.Size(190, 24);
+            this.Txt_telefonoCel.TabIndex = 46;
+            this.Txt_telefonoCel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
             // 
-            // Lbl_telefono
+            // Lbl_telefonoCel
             // 
-            this.Lbl_telefono.AutoSize = true;
-            this.Lbl_telefono.Location = new System.Drawing.Point(187, 288);
-            this.Lbl_telefono.Name = "Lbl_telefono";
-            this.Lbl_telefono.Size = new System.Drawing.Size(66, 18);
-            this.Lbl_telefono.TabIndex = 45;
-            this.Lbl_telefono.Text = "Telefono";
+            this.Lbl_telefonoCel.AutoSize = true;
+            this.Lbl_telefonoCel.Location = new System.Drawing.Point(187, 288);
+            this.Lbl_telefonoCel.Name = "Lbl_telefonoCel";
+            this.Lbl_telefonoCel.Size = new System.Drawing.Size(116, 18);
+            this.Lbl_telefonoCel.TabIndex = 45;
+            this.Lbl_telefonoCel.Text = "Telefono Celular";
             // 
             // Txt_Nombre
             // 
@@ -298,7 +302,7 @@
             // Txt_nit
             // 
             this.Txt_nit.Enabled = false;
-            this.Txt_nit.Location = new System.Drawing.Point(752, 343);
+            this.Txt_nit.Location = new System.Drawing.Point(752, 411);
             this.Txt_nit.Name = "Txt_nit";
             this.Txt_nit.Size = new System.Drawing.Size(138, 24);
             this.Txt_nit.TabIndex = 60;
@@ -306,7 +310,7 @@
             // Lbl_nit
             // 
             this.Lbl_nit.AutoSize = true;
-            this.Lbl_nit.Location = new System.Drawing.Point(577, 350);
+            this.Lbl_nit.Location = new System.Drawing.Point(577, 417);
             this.Lbl_nit.Name = "Lbl_nit";
             this.Lbl_nit.Size = new System.Drawing.Size(31, 18);
             this.Lbl_nit.TabIndex = 59;
@@ -346,11 +350,50 @@
             this.Lbl_Apellido.TabIndex = 55;
             this.Lbl_Apellido.Text = "Apellido";
             // 
+            // Txt_TelefonoRes
+            // 
+            this.Txt_TelefonoRes.Enabled = false;
+            this.Txt_TelefonoRes.Location = new System.Drawing.Point(362, 347);
+            this.Txt_TelefonoRes.Name = "Txt_TelefonoRes";
+            this.Txt_TelefonoRes.Size = new System.Drawing.Size(190, 24);
+            this.Txt_TelefonoRes.TabIndex = 62;
+            this.Txt_TelefonoRes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_TelefonoRes_KeyPress);
+            // 
+            // Lbl_Telres
+            // 
+            this.Lbl_Telres.AutoSize = true;
+            this.Lbl_Telres.Location = new System.Drawing.Point(187, 354);
+            this.Lbl_Telres.Name = "Lbl_Telres";
+            this.Lbl_Telres.Size = new System.Drawing.Size(146, 18);
+            this.Lbl_Telres.TabIndex = 61;
+            this.Lbl_Telres.Text = "Telefono Residencial";
+            // 
+            // Txt_CorreoAlt
+            // 
+            this.Txt_CorreoAlt.Enabled = false;
+            this.Txt_CorreoAlt.Location = new System.Drawing.Point(752, 347);
+            this.Txt_CorreoAlt.Name = "Txt_CorreoAlt";
+            this.Txt_CorreoAlt.Size = new System.Drawing.Size(190, 24);
+            this.Txt_CorreoAlt.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(577, 354);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 18);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Correo Alternativo";
+            // 
             // Frm_mantCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Txt_CorreoAlt);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Txt_TelefonoRes);
+            this.Controls.Add(this.Lbl_Telres);
             this.Controls.Add(this.Txt_nit);
             this.Controls.Add(this.Lbl_nit);
             this.Controls.Add(this.Txt_correo);
@@ -365,8 +408,8 @@
             this.Controls.Add(this.Btn_ingresar);
             this.Controls.Add(this.Txt_dpi);
             this.Controls.Add(this.Lbl_dpi);
-            this.Controls.Add(this.Txt_telefono);
-            this.Controls.Add(this.Lbl_telefono);
+            this.Controls.Add(this.Txt_telefonoCel);
+            this.Controls.Add(this.Lbl_telefonoCel);
             this.Controls.Add(this.Txt_Nombre);
             this.Controls.Add(this.Lbl_nombreCliente);
             this.Controls.Add(this.Txt_idCliente);
@@ -400,8 +443,8 @@
         private System.Windows.Forms.Button Btn_ingresar;
         private System.Windows.Forms.TextBox Txt_dpi;
         private System.Windows.Forms.Label Lbl_dpi;
-        private System.Windows.Forms.TextBox Txt_telefono;
-        private System.Windows.Forms.Label Lbl_telefono;
+        private System.Windows.Forms.TextBox Txt_telefonoCel;
+        private System.Windows.Forms.Label Lbl_telefonoCel;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.Label Lbl_nombreCliente;
         private System.Windows.Forms.TextBox Txt_idCliente;
@@ -412,5 +455,9 @@
         private System.Windows.Forms.Label Lbl_correo;
         private System.Windows.Forms.TextBox Txt_Apellido;
         private System.Windows.Forms.Label Lbl_Apellido;
+        private System.Windows.Forms.TextBox Txt_TelefonoRes;
+        private System.Windows.Forms.Label Lbl_Telres;
+        private System.Windows.Forms.TextBox Txt_CorreoAlt;
+        private System.Windows.Forms.Label label1;
     }
 }

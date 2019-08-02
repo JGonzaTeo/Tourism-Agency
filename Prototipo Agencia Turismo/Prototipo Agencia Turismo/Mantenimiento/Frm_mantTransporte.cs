@@ -231,6 +231,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
             HabilitarCampos();
+            HabilitarBtn();
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)
