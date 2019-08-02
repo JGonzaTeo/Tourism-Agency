@@ -22,6 +22,7 @@ namespace Prototipo_Agencia_Turismo.Consulta
         public Frm_consultaCliente()
         {
             InitializeComponent();
+             
         }
 
         private void MostrarConsulta()

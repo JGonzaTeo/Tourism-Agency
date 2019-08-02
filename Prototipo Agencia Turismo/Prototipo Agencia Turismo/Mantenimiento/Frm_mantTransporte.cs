@@ -20,9 +20,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantTransporte : Form
     {
-        public Frm_mantTransporte()
+        public Frm_mantTransporte(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         string usuario = " ";

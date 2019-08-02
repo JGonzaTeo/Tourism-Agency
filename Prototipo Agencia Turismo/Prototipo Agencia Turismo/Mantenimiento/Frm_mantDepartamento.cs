@@ -30,9 +30,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
 
        
-        public Frm_mantDepartamento()
+        public Frm_mantDepartamento(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         private void limpiar()
