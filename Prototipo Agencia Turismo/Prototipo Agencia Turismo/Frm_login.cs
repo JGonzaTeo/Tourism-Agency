@@ -71,13 +71,12 @@ namespace Prototipo_Agencia_Turismo
                     //si los campos escritos en el Formulario son iguales a los del registro de la BD se permite el logeo
                     if (Txt_usuario.Text != mostrarUsuarios.GetString(1) || Txt_contrasena.Text != contrasenaDesencriptada)
                     {
-                        //MessageBox.Show("DATOS INCORRECTOS");
                         Txt_usuario.Focus();
                         datosIncorrectos = true;
                     }
                     else
                     {
-                        if (estadoLogeado == 1)
+                        if (estadoLogeado == 1) //El usuario ya ha sido logeado
                         {
                             MessageBox.Show("ESTE USUARIO ESTA LOGEADO ACTUALMENTE");
                             datosIncorrectos = false;
