@@ -36,7 +36,7 @@
             this.Dgv_detalleFactura = new System.Windows.Forms.DataGridView();
             this.Lbl_nombCliente = new System.Windows.Forms.Label();
             this.Lbl_nomCliente = new System.Windows.Forms.Label();
-            this.Lbl_idCliente = new System.Windows.Forms.Label();
+            this.Lbl_idcoti = new System.Windows.Forms.Label();
             this.Lbl_idReservacion = new System.Windows.Forms.Label();
             this.Lbl_metodo = new System.Windows.Forms.Label();
             this.Lbl_metodoPago = new System.Windows.Forms.Label();
@@ -53,12 +53,12 @@
             this.Lbl_reservacion = new System.Windows.Forms.Label();
             this.Lbl_idCotizacion = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Dtp_FecaEntrada = new System.Windows.Forms.DateTimePicker();
+            this.Dtp_FecaSalida = new System.Windows.Forms.DateTimePicker();
             this.Btn_consultarPiloto = new System.Windows.Forms.Button();
             this.Btn_consultarVehiculo = new System.Windows.Forms.Button();
             this.Btn_reservar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
-            this.Dtp_FecaSalida = new System.Windows.Forms.DateTimePicker();
-            this.Dtp_FecaEntrada = new System.Windows.Forms.DateTimePicker();
             this.habitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugarTuristico = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +93,7 @@
             this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
             this.Btn_minimizar.TabIndex = 12;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
+            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
             // 
             // Btn_cerrar
             // 
@@ -105,6 +106,7 @@
             this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
             this.Btn_cerrar.TabIndex = 11;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
             // Lbl_titulo
             // 
@@ -139,9 +141,9 @@
             this.Lbl_nombCliente.BackColor = System.Drawing.SystemColors.Window;
             this.Lbl_nombCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_nombCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_nombCliente.Location = new System.Drawing.Point(196, 111);
+            this.Lbl_nombCliente.Location = new System.Drawing.Point(196, 104);
             this.Lbl_nombCliente.Name = "Lbl_nombCliente";
-            this.Lbl_nombCliente.Size = new System.Drawing.Size(178, 19);
+            this.Lbl_nombCliente.Size = new System.Drawing.Size(178, 26);
             this.Lbl_nombCliente.TabIndex = 23;
             // 
             // Lbl_nomCliente
@@ -154,15 +156,15 @@
             this.Lbl_nomCliente.TabIndex = 22;
             this.Lbl_nomCliente.Text = "Nombre del cliente:";
             // 
-            // Lbl_idCliente
+            // Lbl_idcoti
             // 
-            this.Lbl_idCliente.AutoSize = true;
-            this.Lbl_idCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_idCliente.Location = new System.Drawing.Point(8, 62);
-            this.Lbl_idCliente.Name = "Lbl_idCliente";
-            this.Lbl_idCliente.Size = new System.Drawing.Size(125, 19);
-            this.Lbl_idCliente.TabIndex = 20;
-            this.Lbl_idCliente.Text = "ID de cotizacion:";
+            this.Lbl_idcoti.AutoSize = true;
+            this.Lbl_idcoti.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Lbl_idcoti.Location = new System.Drawing.Point(8, 62);
+            this.Lbl_idcoti.Name = "Lbl_idcoti";
+            this.Lbl_idcoti.Size = new System.Drawing.Size(125, 19);
+            this.Lbl_idcoti.TabIndex = 20;
+            this.Lbl_idcoti.Text = "ID de cotizacion:";
             // 
             // Lbl_idReservacion
             // 
@@ -179,9 +181,9 @@
             this.Lbl_metodo.BackColor = System.Drawing.SystemColors.Window;
             this.Lbl_metodo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_metodo.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_metodo.Location = new System.Drawing.Point(196, 155);
+            this.Lbl_metodo.Location = new System.Drawing.Point(196, 147);
             this.Lbl_metodo.Name = "Lbl_metodo";
-            this.Lbl_metodo.Size = new System.Drawing.Size(106, 19);
+            this.Lbl_metodo.Size = new System.Drawing.Size(106, 27);
             this.Lbl_metodo.TabIndex = 34;
             // 
             // Lbl_metodoPago
@@ -209,9 +211,9 @@
             this.Lbl_piloto.BackColor = System.Drawing.SystemColors.Window;
             this.Lbl_piloto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_piloto.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_piloto.Location = new System.Drawing.Point(196, 67);
+            this.Lbl_piloto.Location = new System.Drawing.Point(196, 66);
             this.Lbl_piloto.Name = "Lbl_piloto";
-            this.Lbl_piloto.Size = new System.Drawing.Size(99, 19);
+            this.Lbl_piloto.Size = new System.Drawing.Size(99, 24);
             this.Lbl_piloto.TabIndex = 39;
             // 
             // Lbl_idPiloto
@@ -229,9 +231,9 @@
             this.Lbl_vehiculo.BackColor = System.Drawing.SystemColors.Window;
             this.Lbl_vehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_vehiculo.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_vehiculo.Location = new System.Drawing.Point(196, 16);
+            this.Lbl_vehiculo.Location = new System.Drawing.Point(196, 15);
             this.Lbl_vehiculo.Name = "Lbl_vehiculo";
-            this.Lbl_vehiculo.Size = new System.Drawing.Size(99, 19);
+            this.Lbl_vehiculo.Size = new System.Drawing.Size(99, 28);
             this.Lbl_vehiculo.TabIndex = 37;
             // 
             // Lbl_idVehiculo
@@ -272,7 +274,7 @@
             this.panel1.Controls.Add(this.Lbl_idReservacion);
             this.panel1.Controls.Add(this.Lbl_reservacion);
             this.panel1.Controls.Add(this.Lbl_metodo);
-            this.panel1.Controls.Add(this.Lbl_idCliente);
+            this.panel1.Controls.Add(this.Lbl_idcoti);
             this.panel1.Controls.Add(this.Lbl_metodoPago);
             this.panel1.Controls.Add(this.Lbl_idCotizacion);
             this.panel1.Controls.Add(this.Lbl_nombCliente);
@@ -331,9 +333,9 @@
             this.Lbl_reservacion.BackColor = System.Drawing.SystemColors.Window;
             this.Lbl_reservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_reservacion.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_reservacion.Location = new System.Drawing.Point(196, 16);
+            this.Lbl_reservacion.Location = new System.Drawing.Point(196, 7);
             this.Lbl_reservacion.Name = "Lbl_reservacion";
-            this.Lbl_reservacion.Size = new System.Drawing.Size(106, 19);
+            this.Lbl_reservacion.Size = new System.Drawing.Size(106, 28);
             this.Lbl_reservacion.TabIndex = 19;
             // 
             // Lbl_idCotizacion
@@ -341,9 +343,9 @@
             this.Lbl_idCotizacion.BackColor = System.Drawing.SystemColors.Window;
             this.Lbl_idCotizacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lbl_idCotizacion.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Lbl_idCotizacion.Location = new System.Drawing.Point(196, 62);
+            this.Lbl_idCotizacion.Location = new System.Drawing.Point(196, 56);
             this.Lbl_idCotizacion.Name = "Lbl_idCotizacion";
-            this.Lbl_idCotizacion.Size = new System.Drawing.Size(106, 19);
+            this.Lbl_idCotizacion.Size = new System.Drawing.Size(106, 25);
             this.Lbl_idCotizacion.TabIndex = 21;
             // 
             // panel2
@@ -365,6 +367,28 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel2.Size = new System.Drawing.Size(401, 188);
             this.panel2.TabIndex = 52;
+            // 
+            // Dtp_FecaEntrada
+            // 
+            this.Dtp_FecaEntrada.CustomFormat = "yyyy-MM-dd";
+            this.Dtp_FecaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_FecaEntrada.Location = new System.Drawing.Point(196, 147);
+            this.Dtp_FecaEntrada.Margin = new System.Windows.Forms.Padding(2);
+            this.Dtp_FecaEntrada.Name = "Dtp_FecaEntrada";
+            this.Dtp_FecaEntrada.Size = new System.Drawing.Size(111, 26);
+            this.Dtp_FecaEntrada.TabIndex = 110;
+            this.Dtp_FecaEntrada.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
+            // 
+            // Dtp_FecaSalida
+            // 
+            this.Dtp_FecaSalida.CustomFormat = "yyyy-MM-dd";
+            this.Dtp_FecaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_FecaSalida.Location = new System.Drawing.Point(196, 104);
+            this.Dtp_FecaSalida.Margin = new System.Windows.Forms.Padding(2);
+            this.Dtp_FecaSalida.Name = "Dtp_FecaSalida";
+            this.Dtp_FecaSalida.Size = new System.Drawing.Size(111, 26);
+            this.Dtp_FecaSalida.TabIndex = 109;
+            this.Dtp_FecaSalida.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
             // 
             // Btn_consultarPiloto
             // 
@@ -444,43 +468,21 @@
             this.Btn_eliminar.UseVisualStyleBackColor = true;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
-            // Dtp_FecaSalida
-            // 
-            this.Dtp_FecaSalida.CustomFormat = "yyyy-MM-dd";
-            this.Dtp_FecaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp_FecaSalida.Location = new System.Drawing.Point(196, 104);
-            this.Dtp_FecaSalida.Margin = new System.Windows.Forms.Padding(2);
-            this.Dtp_FecaSalida.Name = "Dtp_FecaSalida";
-            this.Dtp_FecaSalida.Size = new System.Drawing.Size(99, 26);
-            this.Dtp_FecaSalida.TabIndex = 109;
-            this.Dtp_FecaSalida.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
-            // 
-            // Dtp_FecaEntrada
-            // 
-            this.Dtp_FecaEntrada.CustomFormat = "yyyy-MM-dd";
-            this.Dtp_FecaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp_FecaEntrada.Location = new System.Drawing.Point(196, 147);
-            this.Dtp_FecaEntrada.Margin = new System.Windows.Forms.Padding(2);
-            this.Dtp_FecaEntrada.Name = "Dtp_FecaEntrada";
-            this.Dtp_FecaEntrada.Size = new System.Drawing.Size(99, 26);
-            this.Dtp_FecaEntrada.TabIndex = 110;
-            this.Dtp_FecaEntrada.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
-            // 
             // habitacion
             // 
-            this.habitacion.HeaderText = "Nombre Habitacion";
+            this.habitacion.HeaderText = "ID Habitacion";
             this.habitacion.Name = "habitacion";
             this.habitacion.ReadOnly = true;
             // 
             // menu
             // 
-            this.menu.HeaderText = "Nombre Menu";
+            this.menu.HeaderText = "ID Menu";
             this.menu.Name = "menu";
             this.menu.ReadOnly = true;
             // 
             // lugarTuristico
             // 
-            this.lugarTuristico.HeaderText = "Lugar Turistico";
+            this.lugarTuristico.HeaderText = "ID Turistico";
             this.lugarTuristico.Name = "lugarTuristico";
             this.lugarTuristico.ReadOnly = true;
             // 
@@ -531,7 +533,7 @@
         private System.Windows.Forms.DataGridView Dgv_detalleFactura;
         private System.Windows.Forms.Label Lbl_nombCliente;
         private System.Windows.Forms.Label Lbl_nomCliente;
-        private System.Windows.Forms.Label Lbl_idCliente;
+        private System.Windows.Forms.Label Lbl_idcoti;
         private System.Windows.Forms.Label Lbl_idReservacion;
         private System.Windows.Forms.Label Lbl_metodo;
         private System.Windows.Forms.Label Lbl_metodoPago;

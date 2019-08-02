@@ -47,13 +47,13 @@
             this.guiaTuristicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.habitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tipoDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.habitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenStrip_menuPrincipal.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             this.reservacionesToolStripMenuItem.Name = "reservacionesToolStripMenuItem";
             this.reservacionesToolStripMenuItem.Size = new System.Drawing.Size(127, 31);
             this.reservacionesToolStripMenuItem.Text = "Reservaciones";
+            this.reservacionesToolStripMenuItem.Click += new System.EventHandler(this.reservacionesToolStripMenuItem_Click);
             // 
             // guíasTurísticasToolStripMenuItem
             // 
@@ -229,6 +230,20 @@
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
+            // tipoDePagoToolStripMenuItem
+            // 
+            this.tipoDePagoToolStripMenuItem.Name = "tipoDePagoToolStripMenuItem";
+            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.tipoDePagoToolStripMenuItem.Text = "Tipo de pago";
+            this.tipoDePagoToolStripMenuItem.Click += new System.EventHandler(this.tipoDePagoToolStripMenuItem_Click);
+            // 
+            // habitacionToolStripMenuItem
+            // 
+            this.habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
+            this.habitacionToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.habitacionToolStripMenuItem.Text = "Habitacion";
+            this.habitacionToolStripMenuItem.Click += new System.EventHandler(this.habitacionToolStripMenuItem_Click);
+            // 
             // contabilidadToolStripMenuItem
             // 
             this.contabilidadToolStripMenuItem.BackColor = System.Drawing.Color.White;
@@ -273,20 +288,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
             this.toolStripStatusLabel1.Text = "Usuario";
-            // 
-            // tipoDePagoToolStripMenuItem
-            // 
-            this.tipoDePagoToolStripMenuItem.Name = "tipoDePagoToolStripMenuItem";
-            this.tipoDePagoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.tipoDePagoToolStripMenuItem.Text = "Tipo de pago";
-            this.tipoDePagoToolStripMenuItem.Click += new System.EventHandler(this.tipoDePagoToolStripMenuItem_Click);
-            // 
-            // habitacionToolStripMenuItem
-            // 
-            this.habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
-            this.habitacionToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.habitacionToolStripMenuItem.Text = "Habitacion";
-            this.habitacionToolStripMenuItem.Click += new System.EventHandler(this.habitacionToolStripMenuItem_Click);
             // 
             // Frm_mdi
             // 

@@ -500,6 +500,29 @@ namespace Prototipo_Agencia_Turismo
                 habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
+
+        bool ventanaReservacion = false;
+        Frm_reservacion reservacion = new Frm_reservacion("");
+        private void reservacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_reservacion);
+            if (ventanaReservacion == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    reservacion = new Frm_reservacion(nombreUsuario);
+                }
+
+                reservacion.MdiParent = this;
+                reservacion.Show();
+                Application.DoEvents();
+                ventanaReservacion = true;
+            }
+            else
+            {
+                reservacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
     }
     }
 

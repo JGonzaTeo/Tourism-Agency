@@ -36,15 +36,20 @@
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Btn_consultar = new System.Windows.Forms.Button();
-            this.Txt_consultaMenu = new System.Windows.Forms.TextBox();
+            this.Txt_consultaCotizacion = new System.Windows.Forms.TextBox();
             this.Lbl_consultaMenu = new System.Windows.Forms.Label();
             this.Btn_actu = new System.Windows.Forms.Button();
             this.Btn_selec = new System.Windows.Forms.Button();
             this.Dgv_consultaCotizacion = new System.Windows.Forms.DataGridView();
-            this.idCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadPasajeros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadHabitaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaCotizacion)).BeginInit();
             this.SuspendLayout();
@@ -145,15 +150,15 @@
             this.Btn_consultar.UseVisualStyleBackColor = false;
             this.Btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
             // 
-            // Txt_consultaMenu
+            // Txt_consultaCotizacion
             // 
-            this.Txt_consultaMenu.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Txt_consultaMenu.Location = new System.Drawing.Point(157, 76);
-            this.Txt_consultaMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Txt_consultaMenu.Name = "Txt_consultaMenu";
-            this.Txt_consultaMenu.Size = new System.Drawing.Size(787, 24);
-            this.Txt_consultaMenu.TabIndex = 63;
-            this.Txt_consultaMenu.TextChanged += new System.EventHandler(this.Txt_consultaMenu_TextChanged);
+            this.Txt_consultaCotizacion.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.Txt_consultaCotizacion.Location = new System.Drawing.Point(157, 76);
+            this.Txt_consultaCotizacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Txt_consultaCotizacion.Name = "Txt_consultaCotizacion";
+            this.Txt_consultaCotizacion.Size = new System.Drawing.Size(787, 24);
+            this.Txt_consultaCotizacion.TabIndex = 63;
+            this.Txt_consultaCotizacion.TextChanged += new System.EventHandler(this.Txt_consultaMenu_TextChanged);
             // 
             // Lbl_consultaMenu
             // 
@@ -204,10 +209,15 @@
             this.Dgv_consultaCotizacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaCotizacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaCotizacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCotizacion,
-            this.nomCliente,
-            this.cantidad,
-            this.total});
+            this.idFactura,
+            this.idCliente,
+            this.fecha,
+            this.cantidadPasajeros,
+            this.total,
+            this.idHabitacion,
+            this.idMenu,
+            this.idLugar,
+            this.cantidadHabitaciones});
             this.Dgv_consultaCotizacion.Location = new System.Drawing.Point(38, 129);
             this.Dgv_consultaCotizacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Dgv_consultaCotizacion.MultiSelect = false;
@@ -217,29 +227,59 @@
             this.Dgv_consultaCotizacion.Size = new System.Drawing.Size(1116, 429);
             this.Dgv_consultaCotizacion.TabIndex = 65;
             // 
-            // idCotizacion
+            // idFactura
             // 
-            this.idCotizacion.HeaderText = "ID Cotizacion";
-            this.idCotizacion.Name = "idCotizacion";
-            this.idCotizacion.ReadOnly = true;
+            this.idFactura.HeaderText = "ID Factura";
+            this.idFactura.Name = "idFactura";
+            this.idFactura.ReadOnly = true;
             // 
-            // nomCliente
+            // idCliente
             // 
-            this.nomCliente.HeaderText = "Nombre Cliente";
-            this.nomCliente.Name = "nomCliente";
-            this.nomCliente.ReadOnly = true;
+            this.idCliente.HeaderText = "ID Cliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
             // 
-            // cantidad
+            // fecha
             // 
-            this.cantidad.HeaderText = "Cantidad Pasajeros";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
+            this.fecha.HeaderText = "Fecha Cotizacion";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // cantidadPasajeros
+            // 
+            this.cantidadPasajeros.HeaderText = "Cantidad Pasajeros";
+            this.cantidadPasajeros.Name = "cantidadPasajeros";
+            this.cantidadPasajeros.ReadOnly = true;
             // 
             // total
             // 
             this.total.HeaderText = "Total";
             this.total.Name = "total";
             this.total.ReadOnly = true;
+            // 
+            // idHabitacion
+            // 
+            this.idHabitacion.HeaderText = "ID Habitacion";
+            this.idHabitacion.Name = "idHabitacion";
+            this.idHabitacion.ReadOnly = true;
+            // 
+            // idMenu
+            // 
+            this.idMenu.HeaderText = "ID Menu";
+            this.idMenu.Name = "idMenu";
+            this.idMenu.ReadOnly = true;
+            // 
+            // idLugar
+            // 
+            this.idLugar.HeaderText = "ID Lugar Turistico";
+            this.idLugar.Name = "idLugar";
+            this.idLugar.ReadOnly = true;
+            // 
+            // cantidadHabitaciones
+            // 
+            this.cantidadHabitaciones.HeaderText = "Cantidad Habitaciones";
+            this.cantidadHabitaciones.Name = "cantidadHabitaciones";
+            this.cantidadHabitaciones.ReadOnly = true;
             // 
             // Frm_consultaCotizacion
             // 
@@ -250,7 +290,7 @@
             this.Controls.Add(this.Btn_selec);
             this.Controls.Add(this.Dgv_consultaCotizacion);
             this.Controls.Add(this.Btn_consultar);
-            this.Controls.Add(this.Txt_consultaMenu);
+            this.Controls.Add(this.Txt_consultaCotizacion);
             this.Controls.Add(this.Lbl_consultaMenu);
             this.Controls.Add(this.Pnl_principal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -274,14 +314,19 @@
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Button Btn_consultar;
-        private System.Windows.Forms.TextBox Txt_consultaMenu;
+        private System.Windows.Forms.TextBox Txt_consultaCotizacion;
         private System.Windows.Forms.Label Lbl_consultaMenu;
         private System.Windows.Forms.Button Btn_actu;
         private System.Windows.Forms.Button Btn_selec;
         public System.Windows.Forms.DataGridView Dgv_consultaCotizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCotizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadPasajeros;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idHabitacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLugar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadHabitaciones;
     }
 }

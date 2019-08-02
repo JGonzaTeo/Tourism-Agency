@@ -41,14 +41,14 @@ namespace Prototipo_Agencia_Turismo.Consulta
         {
             try
             {
-                string consultaMostrar = "SELECT * FROM tbl_facturaencabezado WHERE Factura_Cotizacion = 1;";
+                string consultaMostrar = "SELECT * FROM tbl_facturaencabezado E, tbl_facturadetalle D WHERE E.Factura_Cotizacion = 0" + "; ";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
                 while (mostrarDatos.Read())
                 {
                     Dgv_consultaCotizacion.Refresh();
-                    Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetInt32(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetInt32(3), mostrarDatos.GetString(4));
+                    Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(6), mostrarDatos.GetString(10), mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                 }
 
             }
@@ -70,7 +70,26 @@ namespace Prototipo_Agencia_Turismo.Consulta
 
         private void Btn_consultar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Txt_consultaCotizacion.Text.Trim()) == false)
+            {
+                Dgv_consultaCotizacion.Rows.Clear();
+                try
+                {
+                    string consultaMostrar = "SELECT * FROM tbl_facturaencabezado E, tbl_facturadetalle D WHERE  E.Pk_idFactura =  ('%" + Txt_consultaCotizacion.Text.Trim() + "%')"+ " AND D.Pk_idFactura = ('%" + Txt_consultaCotizacion.Text.Trim() + "%')" + "AND E.Factura_Cotizacion=0" + ";";
+                    OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
+                    OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
+                    while (mostrarDatos.Read())
+                    {
+                        Dgv_consultaCotizacion.Refresh();
+                        Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(6),mostrarDatos.GetString(10), mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
+                    }
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine("ERROR:" + err.Message);
+                }
+            }
         }
 
         private void Btn_selec_Click_1(object sender, EventArgs e)
