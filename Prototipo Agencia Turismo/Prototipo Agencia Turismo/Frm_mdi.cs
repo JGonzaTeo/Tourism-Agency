@@ -4,7 +4,6 @@
   -----------------------------------------------------
 */
 
-using Prototipo_Agencia_Turismo.Asignaciones;
 using Prototipo_Agencia_Turismo.Mantenimiento;
 using System;
 using System.Collections.Generic;
@@ -25,10 +24,12 @@ namespace Prototipo_Agencia_Turismo
         string nombreUsuario = " ";
         string tipoPerfil = " ";
         DateTime fecha = DateTime.Now;
+        int idUsuario;
 
-        public Frm_mdi(string usuario, string tipoPerfil)
+        public Frm_mdi(int idUsuario, string usuario, string tipoPerfil)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
             nombreUsuario = usuario;
             this.tipoPerfil = tipoPerfil;
         }
@@ -279,6 +280,10 @@ namespace Prototipo_Agencia_Turismo
                 comm.Parameters.Add("proc", OdbcType.Text).Value = "-----";
                 comm.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm.ExecuteNonQuery();
+
+                string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'"; 
+                OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                commAct.ExecuteNonQuery();
             }
             catch (Exception err)
             {
@@ -499,29 +504,6 @@ namespace Prototipo_Agencia_Turismo
             else
             {
                 habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
-            }
-        }
-
-        bool ventabanaAsignacionguia = false;
-        Frm_AsignacionEmpleadoGuia aguia = new Frm_AsignacionEmpleadoGuia("");
-        private void asgnaciónAGuiaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_AsignacionEmpleadoGuia);
-            if (ventanaHabitacion == false || frmC == null)
-            {
-                if (frmC == null)
-                {
-                    aguia = new Frm_AsignacionEmpleadoGuia(nombreUsuario);
-                }
-
-                aguia.MdiParent = this;
-                aguia.Show();
-                Application.DoEvents();
-                ventabanaAsignacionguia = true;
-            }
-            else
-            {
-                aguia.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
     }

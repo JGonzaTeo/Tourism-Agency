@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Asignaciones\Frm_AsignacionEmpleadoGuia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Asignaciones\Frm_AsignacionEmpleadoGuia.Designer.cs">
-      <DependentUpon>Frm_AsignacionEmpleadoGuia.cs</DependentUpon>
-    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Consulta\Frm_consultaBonos_Desc.cs">
       <SubType>Form</SubType>
@@ -228,12 +222,6 @@
     <Compile Include="Mantenimiento\Frm_mantUsuario.Designer.cs">
       <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nomina\Frm_Nomina.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nomina\Frm_Nomina.Designer.cs">
-      <DependentUpon>Frm_Nomina.cs</DependentUpon>
-    </Compile>
     <Compile Include="Seguridad\Frm_bitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,9 +247,6 @@
     <Compile Include="ValidarPrecio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Asignaciones\Frm_AsignacionEmpleadoGuia.resx">
-      <DependentUpon>Frm_AsignacionEmpleadoGuia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaBonos_Desc.resx">
       <DependentUpon>Frm_consultaBonos_Desc.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,9 +334,6 @@
     <EmbeddedResource Include="Mantenimiento\Frm_mantUsuario.resx">
       <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nomina\Frm_Nomina.resx">
-      <DependentUpon>Frm_Nomina.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\Frm_bitacora.resx">
       <DependentUpon>Frm_bitacora.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,7 +351,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -384,9 +365,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\busqueda.png" />
+    <Folder Include="Asignaciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

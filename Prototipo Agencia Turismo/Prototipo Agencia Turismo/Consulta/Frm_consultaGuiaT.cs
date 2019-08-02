@@ -34,8 +34,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
 
                 while (mostrarDatos.Read())
                 {
-                    Dgv_consultaguia.Refresh();
-                    Dgv_consultaguia.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2));
+                    Dgv_consultaBonoYDesc.Refresh();
+                    Dgv_consultaBonoYDesc.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2));
                 }
 
             }
@@ -51,13 +51,13 @@ namespace Prototipo_Agencia_Turismo.Consulta
 
         private void Btn_actualizar_Click(object sender, EventArgs e)
         {
-            Dgv_consultaguia.Rows.Clear();
+            Dgv_consultaBonoYDesc.Rows.Clear();
             MostrarConsulta();
         }
 
         private void Btn_seleccionar_Click(object sender, EventArgs e)
         {
-            if (Dgv_consultaguia.Rows.Count == 0)
+            if (Dgv_consultaBonoYDesc.Rows.Count == 0)
             {
                 return;
             }
@@ -70,7 +70,7 @@ namespace Prototipo_Agencia_Turismo.Consulta
 
         private void Btn_consulta_Click(object sender, EventArgs e)
         {
-            Dgv_consultaguia.Rows.Clear();
+            Dgv_consultaBonoYDesc.Rows.Clear();
             ruta = Txt_consultaNombre.Text;
             try
             {
@@ -81,8 +81,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
 
                 while (mostrarDatos.Read())
                 {
-                    Dgv_consultaguia.Refresh();
-                    Dgv_consultaguia.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2),
+                    Dgv_consultaBonoYDesc.Refresh();
+                    Dgv_consultaBonoYDesc.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2),
                          mostrarDatos.GetString(3));
                 }
             }

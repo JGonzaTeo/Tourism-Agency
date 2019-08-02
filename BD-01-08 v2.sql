@@ -1,8 +1,10 @@
+CREATE DATABASE  IF NOT EXISTS `agencia_turismo` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `agencia_turismo`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: agencia_turismo
+-- Host: localhost    Database: agencia_turismo
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.34-MariaDB
+-- Server version	5.7.19-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,9 +62,10 @@ CREATE TABLE `tbl_asignaciontransporte` (
   PRIMARY KEY (`Pk_idAsignacion`),
   KEY `fk_tbl_AsignacionTransporte_tbl_Transporte1_idx` (`Fk_idTransporte`),
   KEY `fk_tbl_AsignacionTransporte_tbl_Reservacion1_idx` (`Fk_idReservacion`),
-  CONSTRAINT `fk_tbl_AsignacionTransporte_Tbl_empleado1` FOREIGN KEY (`Fk_idReservacion`) REFERENCES `tbl_empleado` (`Pk_idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  KEY `fk_tbl_asignaciontransporte_tbl_empleado1_idx` (`Fk_idEmpleado`),
   CONSTRAINT `fk_tbl_AsignacionTransporte_tbl_Reservacion1` FOREIGN KEY (`Fk_idReservacion`) REFERENCES `tbl_reservacion` (`Pk_idReservacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_AsignacionTransporte_tbl_Transporte1` FOREIGN KEY (`Fk_idTransporte`) REFERENCES `tbl_transporte` (`Pk_idTransporte`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_AsignacionTransporte_tbl_Transporte1` FOREIGN KEY (`Fk_idTransporte`) REFERENCES `tbl_transporte` (`Pk_idTransporte`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_asignaciontransporte_tbl_empleado1` FOREIGN KEY (`Fk_idEmpleado`) REFERENCES `tbl_empleado` (`Pk_idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -90,7 +93,7 @@ CREATE TABLE `tbl_bitacora` (
   `proceso_afectado` varchar(45) NOT NULL,
   `direccion_ip` varchar(45) NOT NULL,
   PRIMARY KEY (`Pk_idBitacora`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +102,6 @@ CREATE TABLE `tbl_bitacora` (
 
 LOCK TABLES `tbl_bitacora` WRITE;
 /*!40000 ALTER TABLE `tbl_bitacora` DISABLE KEYS */;
-INSERT INTO `tbl_bitacora` VALUES (1,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(2,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(3,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(4,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(5,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(6,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(7,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(8,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(9,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(10,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(11,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(12,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(13,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(14,'INICION DE SESIÓN',' ','2019-07-27 00:00:00','-------------','192.168.8.101'),(15,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(16,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(17,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(18,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(19,'INGRESO DE REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(20,'ELIMINACION DE REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(21,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(22,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(23,'ELIMINACION DE REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(24,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(25,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(26,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(27,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(28,'INGRESO DE REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(29,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(30,'INICION DE SESIÓN','admin','2019-07-27 00:00:00','-------------','192.168.8.101'),(31,'CIERRE DE SESIÓN','admin','2019-07-27 00:00:00','-----','192.168.8.101'),(32,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(33,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(34,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(35,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(36,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(37,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(38,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(39,'INGRESO DE REGISTRO',' ','2019-07-27 00:00:00','TRANSPORTE','192.168.8.101'),(40,'ELIMINACION DE REGISTRO',' ','2019-07-27 00:00:00','DEPARTAMENTOS','192.168.8.101'),(41,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(42,'ELIMINACIÓN DE REGISTRO','angel','2019-07-27 00:00:00','MANTEMIMIENTO USUARIO','192.168.8.101'),(43,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(44,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','CLIENTES','192.168.8.101'),(45,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(46,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(47,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(48,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(49,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(50,'INGRESO DE REGISTRO',' ','2019-07-27 00:00:00','CLIENTES','192.168.8.101'),(51,'ELIMINACION DE REGISTRO',' ','2019-07-27 00:00:00','CLIENTES','192.168.8.101'),(52,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(53,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(54,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(55,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(56,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(57,'INICION DE SESIÓN','angel','2019-07-27 00:00:00','-------------','192.168.8.101'),(58,'ACTUALIZAR REGISTRO',' ','2019-07-27 00:00:00','CLIENTES','192.168.8.101'),(59,'CIERRE DE SESIÓN','angel','2019-07-27 00:00:00','-----','192.168.8.101'),(60,'INICION DE SESIÓN',' ','2019-07-28 00:00:00','-------------','192.168.1.9'),(61,'INICION DE SESIÓN',' ','2019-07-28 00:00:00','-------------','192.168.1.9'),(62,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(63,'CIERRE DE SESIÓN','admin','2019-07-28 00:00:00','-----','192.168.1.9'),(64,'INICION DE SESIÓN','angel','2019-07-28 00:00:00','-------------','192.168.1.9'),(65,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(66,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(67,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(68,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(69,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(70,'INICION DE SESIÓN',' ','2019-07-28 00:00:00','-------------','192.168.1.9'),(71,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(72,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(73,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(74,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(75,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(76,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(77,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(78,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(79,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(80,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(81,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(82,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(83,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9'),(84,'INICION DE SESIÓN','admin','2019-07-28 00:00:00','-------------','192.168.1.9');
 /*!40000 ALTER TABLE `tbl_bitacora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +128,6 @@ CREATE TABLE `tbl_bonos_descuentos` (
 
 LOCK TABLES `tbl_bonos_descuentos` WRITE;
 /*!40000 ALTER TABLE `tbl_bonos_descuentos` DISABLE KEYS */;
-INSERT INTO `tbl_bonos_descuentos` VALUES (1,'BonoIncentivo',250,0,1);
 /*!40000 ALTER TABLE `tbl_bonos_descuentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,8 +142,10 @@ CREATE TABLE `tbl_cliente` (
   `Pk_idCliente` int(11) NOT NULL AUTO_INCREMENT,
   `nombreCliente` varchar(45) DEFAULT NULL,
   `apellidoCliente` varchar(45) DEFAULT NULL,
-  `telefonoCliente` int(11) DEFAULT NULL,
+  `telefonoCelCliente` int(11) DEFAULT NULL,
+  `telefonoCasaCliente` int(11) DEFAULT NULL,
   `correoCliente` varchar(45) DEFAULT NULL,
+  `correoAltCliente` varchar(45) DEFAULT NULL,
   `identificacionCliente` varchar(45) DEFAULT NULL,
   `nitCliente` varchar(45) DEFAULT NULL,
   `estadoCliente` tinyint(1) DEFAULT NULL,
@@ -156,72 +159,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
-INSERT INTO `tbl_cliente` VALUES (1,'Angel','Solares',444356,'notiene','321','444356',1),(2,'Edson','Juarez',555,'no','789','1',0);
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_cotizaciondetalle`
---
-
-DROP TABLE IF EXISTS `tbl_cotizaciondetalle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_cotizaciondetalle` (
-  `Pk_idCotizacion` int(11) NOT NULL,
-  `Pk_codigoLinea` int(11) NOT NULL,
-  `Fk_idTipoHabitacion` int(11) DEFAULT NULL,
-  `FK_idMenus` int(11) DEFAULT NULL,
-  `Fk_idLugarTuristico` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Pk_idCotizacion`,`Pk_codigoLinea`),
-  KEY `fk_Tbl_CotizacionDetalle_tbl_TipoHabitacion1_idx` (`Fk_idTipoHabitacion`),
-  KEY `fk_Tbl_CotizacionDetalle_tbl_Menus1_idx` (`FK_idMenus`),
-  KEY `fk_Tbl_CotizacionDetalle_Tbl_LugarTuristico1_idx` (`Fk_idLugarTuristico`),
-  CONSTRAINT `fk_Tbl_CotizacionDetalle_Tbl_LugarTuristico1` FOREIGN KEY (`Fk_idLugarTuristico`) REFERENCES `tbl_lugarturistico` (`Pk_idLugarTuristico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Tbl_CotizacionDetalle_tbl_CotizacionEncabezado1` FOREIGN KEY (`Pk_idCotizacion`) REFERENCES `tbl_cotizacionencabezado` (`Pk_idCotizacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Tbl_CotizacionDetalle_tbl_Menus1` FOREIGN KEY (`FK_idMenus`) REFERENCES `tbl_menus` (`Pk_idMenus`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Tbl_CotizacionDetalle_tbl_TipoHabitacion1` FOREIGN KEY (`Fk_idTipoHabitacion`) REFERENCES `tbl_tipohabitacion` (`Pk_idTipoHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_cotizaciondetalle`
---
-
-LOCK TABLES `tbl_cotizaciondetalle` WRITE;
-/*!40000 ALTER TABLE `tbl_cotizaciondetalle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_cotizaciondetalle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_cotizacionencabezado`
---
-
-DROP TABLE IF EXISTS `tbl_cotizacionencabezado`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_cotizacionencabezado` (
-  `Pk_idCotizacion` int(11) NOT NULL,
-  `Pk_idCliente` int(11) NOT NULL,
-  `Pk_idEmpleado` int(11) NOT NULL,
-  `fechaCotizacion` date DEFAULT NULL,
-  `cantidadPasajeros` int(11) DEFAULT NULL,
-  `cantidadHabitaciones` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Pk_idCotizacion`,`Pk_idCliente`,`Pk_idEmpleado`),
-  KEY `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1_idx` (`Pk_idEmpleado`),
-  KEY `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1_idx` (`Pk_idCliente`),
-  CONSTRAINT `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1` FOREIGN KEY (`Pk_idCliente`) REFERENCES `tbl_cliente` (`Pk_idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1` FOREIGN KEY (`Pk_idEmpleado`) REFERENCES `tbl_empleado` (`Pk_idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_cotizacionencabezado`
---
-
-LOCK TABLES `tbl_cotizacionencabezado` WRITE;
-/*!40000 ALTER TABLE `tbl_cotizacionencabezado` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_cotizacionencabezado` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -246,7 +184,6 @@ CREATE TABLE `tbl_departamentos` (
 
 LOCK TABLES `tbl_departamentos` WRITE;
 /*!40000 ALTER TABLE `tbl_departamentos` DISABLE KEYS */;
-INSERT INTO `tbl_departamentos` VALUES (1,'Guatemala','Peligroso',1),(2,'Peten','Ruinas',0),(3,'Zacapa','H',1);
 /*!40000 ALTER TABLE `tbl_departamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -263,14 +200,15 @@ CREATE TABLE `tbl_empleado` (
   `apellidoEmpleado` varchar(45) DEFAULT NULL,
   `fechaNacEmpleado` date DEFAULT NULL,
   `correo` varchar(45) DEFAULT NULL,
+  `correoAlternativo` varchar(45) DEFAULT NULL,
   `telefono` varchar(25) DEFAULT NULL,
+  `telefonoResidencial` varchar(45) DEFAULT NULL,
   `DPI` varchar(25) DEFAULT NULL,
   `Fk_idUsuario` int(11) DEFAULT NULL,
   `Cuenta_Bancaria` int(11) DEFAULT NULL,
   `NIT` varchar(45) DEFAULT NULL,
   `Sueldo_Base` double DEFAULT NULL,
   `Direccion` varchar(45) DEFAULT NULL,
-  `Departamento` varchar(45) DEFAULT NULL,
   `Estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`Pk_idEmpleado`),
   KEY `fk_Tbl_empleado_Tbl_usuario_idx` (`Fk_idUsuario`),
@@ -284,8 +222,76 @@ CREATE TABLE `tbl_empleado` (
 
 LOCK TABLES `tbl_empleado` WRITE;
 /*!40000 ALTER TABLE `tbl_empleado` DISABLE KEYS */;
-INSERT INTO `tbl_empleado` VALUES (1,'Jose','Gonza','2019-05-08','Jose','12122','121',1,121,'1221',1212,'Jose','Jose',1),(3,'Muricio','Hernandezz','1999-10-12','qowkowq','1212','121',1,121212,'1212c',2500,'jiasjas','sdds',0);
 /*!40000 ALTER TABLE `tbl_empleado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_facturadetalle`
+--
+
+DROP TABLE IF EXISTS `tbl_facturadetalle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_facturadetalle` (
+  `Pk_idFactura` int(11) NOT NULL,
+  `Pk_codigoLinea` int(11) NOT NULL,
+  `Fk_idTipoHabitacion` int(11) DEFAULT NULL,
+  `FK_idMenus` int(11) DEFAULT NULL,
+  `Fk_idLugarTuristico` int(11) DEFAULT NULL,
+  `cantidadHabitaciones` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Pk_idFactura`,`Pk_codigoLinea`),
+  KEY `fk_Tbl_CotizacionDetalle_tbl_TipoHabitacion1_idx` (`Fk_idTipoHabitacion`),
+  KEY `fk_Tbl_CotizacionDetalle_tbl_Menus1_idx` (`FK_idMenus`),
+  KEY `fk_Tbl_CotizacionDetalle_Tbl_LugarTuristico1_idx` (`Fk_idLugarTuristico`),
+  CONSTRAINT `fk_Tbl_CotizacionDetalle_Tbl_LugarTuristico1` FOREIGN KEY (`Fk_idLugarTuristico`) REFERENCES `tbl_lugarturistico` (`Pk_idLugarTuristico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tbl_CotizacionDetalle_tbl_Menus1` FOREIGN KEY (`FK_idMenus`) REFERENCES `tbl_menus` (`Pk_idMenus`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tbl_CotizacionDetalle_tbl_TipoHabitacion1` FOREIGN KEY (`Fk_idTipoHabitacion`) REFERENCES `tbl_tipohabitacion` (`Pk_idTipoHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tbl_FacturaDetalle_tbl_FacturaEncabezado1` FOREIGN KEY (`Pk_idFactura`) REFERENCES `tbl_facturaencabezado` (`Pk_idFactura`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_facturadetalle`
+--
+
+LOCK TABLES `tbl_facturadetalle` WRITE;
+/*!40000 ALTER TABLE `tbl_facturadetalle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_facturadetalle` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_facturaencabezado`
+--
+
+DROP TABLE IF EXISTS `tbl_facturaencabezado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_facturaencabezado` (
+  `Pk_idFactura` int(11) NOT NULL,
+  `Pk_idCliente` int(11) NOT NULL,
+  `Pk_idEmpleado` int(11) NOT NULL,
+  `fechaCotizacion` date DEFAULT NULL,
+  `cantidadPasajeros` int(11) DEFAULT NULL,
+  `Fk_idTipoPago` int(11) DEFAULT NULL,
+  `Total` double DEFAULT NULL,
+  `Factura_Cotizacion` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`Pk_idFactura`,`Pk_idCliente`,`Pk_idEmpleado`),
+  KEY `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1_idx` (`Pk_idEmpleado`),
+  KEY `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1_idx` (`Pk_idCliente`),
+  KEY `fk_Tbl_FacturaEncabezado_Tbl_TipoPago1_idx` (`Fk_idTipoPago`),
+  CONSTRAINT `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1` FOREIGN KEY (`Pk_idCliente`) REFERENCES `tbl_cliente` (`Pk_idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1` FOREIGN KEY (`Pk_idEmpleado`) REFERENCES `tbl_empleado` (`Pk_idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tbl_FacturaEncabezado_Tbl_TipoPago1` FOREIGN KEY (`Fk_idTipoPago`) REFERENCES `tbl_tipopagos` (`Pk_idTipoPago`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_facturaencabezado`
+--
+
+LOCK TABLES `tbl_facturaencabezado` WRITE;
+/*!40000 ALTER TABLE `tbl_facturaencabezado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_facturaencabezado` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -310,7 +316,6 @@ CREATE TABLE `tbl_guiaturistico` (
 
 LOCK TABLES `tbl_guiaturistico` WRITE;
 /*!40000 ALTER TABLE `tbl_guiaturistico` DISABLE KEYS */;
-INSERT INTO `tbl_guiaturistico` VALUES (1,'Quetzal','asnkas',1),(2,' wqoop',' ssas',0);
 /*!40000 ALTER TABLE `tbl_guiaturistico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -475,7 +480,6 @@ CREATE TABLE `tbl_perfil` (
 
 LOCK TABLES `tbl_perfil` WRITE;
 /*!40000 ALTER TABLE `tbl_perfil` DISABLE KEYS */;
-INSERT INTO `tbl_perfil` VALUES (1,'Administrador','Todo',1),(2,'Admin','todo',1);
 /*!40000 ALTER TABLE `tbl_perfil` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -493,7 +497,7 @@ CREATE TABLE `tbl_reservacion` (
   PRIMARY KEY (`Pk_idReservacion`),
   KEY `fk_tbl_Reservacion_tbl_TipoPagos1_idx` (`Fk_idTipoPago`),
   KEY `fk_Tbl_Reservacion_Tbl_CotizacionEncabezado1_idx` (`Fk_idCotizacion`),
-  CONSTRAINT `fk_Tbl_Reservacion_Tbl_CotizacionEncabezado1` FOREIGN KEY (`Fk_idCotizacion`) REFERENCES `tbl_cotizacionencabezado` (`Pk_idCotizacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tbl_Reservacion_Tbl_CotizacionEncabezado1` FOREIGN KEY (`Fk_idCotizacion`) REFERENCES `tbl_facturaencabezado` (`Pk_idFactura`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_Reservacion_tbl_TipoPagos1` FOREIGN KEY (`Fk_idTipoPago`) REFERENCES `tbl_tipopagos` (`Pk_idTipoPago`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -546,7 +550,7 @@ CREATE TABLE `tbl_tipohabitacion` (
   `Fk_idHotel` int(11) DEFAULT NULL,
   `nombreHabitacion` varchar(20) DEFAULT NULL,
   `capacidadHabitacion` int(11) DEFAULT NULL,
-  `costoHabitacion` decimal(10,0) DEFAULT NULL,
+  `precioHabitacion` double DEFAULT NULL,
   `estadoHabitacion` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`Pk_idTipoHabitacion`),
   KEY `fk_tbl_TipoHabitacion_tbl_Hoteles1_idx` (`Fk_idHotel`),
@@ -611,7 +615,6 @@ CREATE TABLE `tbl_transporte` (
 
 LOCK TABLES `tbl_transporte` WRITE;
 /*!40000 ALTER TABLE `tbl_transporte` DISABLE KEYS */;
-INSERT INTO `tbl_transporte` VALUES (1,'453CDE','Pesado',5,1),(2,'CDE','Pesad',5,1),(3,'789','Ligero',2,0);
 /*!40000 ALTER TABLE `tbl_transporte` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -628,6 +631,7 @@ CREATE TABLE `tbl_usuario` (
   `contrasenaUsuario` varchar(45) DEFAULT NULL,
   `Fk_idPerfil` int(11) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL,
+  `logeado` tinyint(1) NOT NULL,
   PRIMARY KEY (`Pk_idUsuario`,`Fk_idPerfil`),
   KEY `fk_Tbl_Usuario_Tbl_perfil1_idx` (`Fk_idPerfil`),
   CONSTRAINT `fk_Tbl_Usuario_Tbl_perfil1` FOREIGN KEY (`Fk_idPerfil`) REFERENCES `tbl_perfil` (`Pk_idPerfil`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -640,7 +644,6 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'admin','123',1,0),(2,'angel','123',2,1);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -690,7 +693,7 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ActualizarDepartamento`(IN Nombre VARCHAR(45), IN Descripcion varchar(45))
 BEGIN 
@@ -709,7 +712,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ActualizarTransporte`(IN pla VARCHAR(45), IN TipoT varchar(45), IN Cap int)
 BEGIN 
@@ -728,7 +731,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_BuscarBonosYDesc`(in nom VARCHAR(45))
 BEGIN
@@ -748,7 +751,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BuscarDepartamento`(IN Nombre VARCHAR(45))
 BEGIN 
@@ -767,7 +770,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Buscarempleado`(in nom VARCHAR(45))
 BEGIN
@@ -787,7 +790,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Buscarguia`(in nom VARCHAR(45))
 BEGIN
@@ -807,7 +810,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_EliminarBonos_Desc`(in cod INT(11),in estado TINYINT(1))
 BEGIN
@@ -828,7 +831,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarDepartamento`(IN Nombre VARCHAR(45))
 BEGIN 
@@ -847,7 +850,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Eliminarempleado`(in cod INT(11))
 BEGIN
@@ -868,7 +871,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Eliminarguia`(in cod INT(11),in estado TINYINT(1))
 BEGIN
@@ -889,7 +892,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarTransporte`(IN pla VARCHAR(45))
 BEGIN 
@@ -908,7 +911,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarBitacora`(IN ope VARCHAR(45), IN usr VARCHAR(45), IN fecha DATE, IN proc VARCHAR(45), IN dirIp VARCHAR(45))
 BEGIN 
@@ -927,7 +930,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_InsertarBonos_Desc`(in cod INT(11),in nom VARCHAR(45),in valor DOUBLE,in tipo TINYINT(1))
 BEGIN
@@ -946,7 +949,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarDepartamento`(IN Nombre VARCHAR(45), IN Descripcion VARCHAR(45))
 BEGIN 
@@ -965,7 +968,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Insertarempleado`(in nombre VARCHAR(45),in apellido VARCHAR(45),in fechanac DATE,in corr VARCHAR(45),in tel VARCHAR(25),in dpi VARCHAR(25),in usu INT(11),in cuentabancaria INT(11),nit VARCHAR(45),sueldobase DOUBLE,dir VARCHAR(45),dep VARCHAR(45),estado TINYINT(1))
 BEGIN
@@ -985,7 +988,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Insertarguia`(in cod INT(11),in rut VARCHAR(45),in descrip VARCHAR(45))
 BEGIN
@@ -1004,7 +1007,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarTransporte`(IN Placa VARCHAR(45), IN TipoTransporte VARCHAR(45), IN Capacidad int)
 BEGIN 
@@ -1023,7 +1026,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_ModificarBonos_Desc`(in cod INT(11),in nom VARCHAR(45),in valor DOUBLE,in tipo TINYINT(1))
 BEGIN
@@ -1046,7 +1049,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Modificarempleado`(in cod INT(11),in nombre VARCHAR(45),in apellido VARCHAR(45),in fechanac DATE,in corr VARCHAR(45),in tel VARCHAR(25),in dpi VARCHAR(25),in usu INT(11),in cuentabancaria INT(11),nit VARCHAR(45),sueldobase DOUBLE,dir VARCHAR(45),dep VARCHAR(45))
 BEGIN
@@ -1067,7 +1070,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Modificarguia`(in cod INT(11),in rut VARCHAR(45),in descrip VARCHAR(45))
 BEGIN
@@ -1126,4 +1129,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-28  4:41:59
+-- Dump completed on 2019-08-01 21:05:14
