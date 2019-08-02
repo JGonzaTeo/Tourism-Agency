@@ -23,11 +23,11 @@ namespace Prototipo_Agencia_Turismo
     public partial class Frm_mdi : Form
     {
         string nombreUsuario = " ";
-        string tipoPerfil = " ";
+        int tipoPerfil = 0;
         DateTime fecha = DateTime.Now;
         int idUsuario;
 
-        public Frm_mdi(int idUsuario, string usuario, string tipoPerfil)
+        public Frm_mdi(int idUsuario, string usuario, int tipoPerfil)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
@@ -44,7 +44,7 @@ namespace Prototipo_Agencia_Turismo
         {
             toolStripStatusLabel1.Text = "BIENVENIDO: " + nombreUsuario;
 
-            if (tipoPerfil == "1") //usuario normal
+            if (tipoPerfil == 1) //usuario normal
             {
                 seguridadToolStripMenuItem.Enabled = false;
             }

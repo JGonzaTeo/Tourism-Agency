@@ -24,7 +24,8 @@ namespace Prototipo_Agencia_Turismo
         string contrasenaDesencriptada = " ";
         int idUsuario = 0;
         string nombreUsuario = " ";
-        string tipoPerfil = " ";
+        int estadoLogeado = 0;
+        int tipoPerfil = 0;
         string actualizarCampo = " ";
         bool datosIncorrectos = false;
 
@@ -38,7 +39,8 @@ namespace Prototipo_Agencia_Turismo
             contrasenaDesencriptada = " ";
             idUsuario = 0;
             nombreUsuario = " ";
-            tipoPerfil = " ";
+            tipoPerfil = 0;
+            estadoLogeado = 0;
             actualizarCampo = " ";
             DateTime fecha_ingreso = DateTime.Now;
             IPHostEntry host;
@@ -56,7 +58,7 @@ namespace Prototipo_Agencia_Turismo
             try
             {
                 //Ejecución de consulta para buscar el usuario
-                string consultaUsuario = string.Format("SELECT * FROM tbl_usuario WHERE estado = 1 AND logeado = 0;");
+                string consultaUsuario = string.Format("SELECT * FROM tbl_usuario WHERE estado = 1;");
                 OdbcCommand comm = new OdbcCommand(consultaUsuario, Conexion.nuevaConexion());
                 OdbcDataReader mostrarUsuarios = comm.ExecuteReader();
 
@@ -65,6 +67,7 @@ namespace Prototipo_Agencia_Turismo
                     //guarda la contraseña del usuario desencriptada 
                     contrasenaDesencriptada = Seguridad_Login.DesEncriptar(mostrarUsuarios.GetString(2));
                     nombreUsuario = mostrarUsuarios.GetString(1);
+                    estadoLogeado = mostrarUsuarios.GetInt32(5);
                     //si los campos escritos en el Formulario son iguales a los del registro de la BD se permite el logeo
                     if (Txt_usuario.Text != mostrarUsuarios.GetString(1) || Txt_contrasena.Text != contrasenaDesencriptada)
                     {
@@ -74,22 +77,33 @@ namespace Prototipo_Agencia_Turismo
                     }
                     else
                     {
-                        idUsuario = mostrarUsuarios.GetInt32(0);
-                        nombreUsuario = mostrarUsuarios.GetString(1);
-                        tipoPerfil = mostrarUsuarios.GetString(3);
+                        if (estadoLogeado == 1)
+                        {
+                            MessageBox.Show("ESTE USUARIO ESTA LOGEADO ACTUALMENTE");
+                            datosIncorrectos = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("WORKS");
+                            idUsuario = mostrarUsuarios.GetInt32(0);
+                            nombreUsuario = mostrarUsuarios.GetString(1);
+                            Console.WriteLine("WORKS2");
+                            tipoPerfil = mostrarUsuarios.GetInt32(3);
+                            Console.WriteLine("WORKS3");
+                            MessageBox.Show("INICIANDO SESIÓN");
+                            Frm_mdi mdiMenu = new Frm_mdi(idUsuario, nombreUsuario, tipoPerfil);
+                            this.Hide();
+                            mdiMenu.Show();
 
-                        MessageBox.Show("INICIANDO SESIÓN");
-                        Frm_mdi mdiMenu = new Frm_mdi(idUsuario, nombreUsuario, tipoPerfil);
-                        this.Hide();
-                        mdiMenu.Show();
-
-                        Console.WriteLine("Inicio de sesión");
-                        //Consulta para verificar que el usuario solo pueda logearse al sistema 1 vez
-                        actualizarCampo = "UPDATE tbl_usuario SET logeado = '1' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
-                        OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
-                        commAct.ExecuteNonQuery();
-                        datosIncorrectos = false;
-                        break;
+                            Console.WriteLine("Inicio de sesión");
+                            //Consulta para verificar que el usuario solo pueda logearse al sistema 1 vez
+                            actualizarCampo = "UPDATE tbl_usuario SET logeado = '1' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
+                            OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                            commAct.ExecuteNonQuery();
+                            datosIncorrectos = false;
+                            Console.WriteLine("WORKS3");
+                            break;
+                        }
                     }
                 }
                 
