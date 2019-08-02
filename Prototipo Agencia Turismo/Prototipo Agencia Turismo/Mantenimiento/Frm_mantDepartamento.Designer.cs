@@ -335,6 +335,7 @@
             this.Name = "Frm_mantDepartamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantDepartamento";
+            this.Load += new System.EventHandler(this.Frm_mantDepartamento_Load);
             this.Pnl_principal.ResumeLayout(false);
             this.Pnl_principal.PerformLayout();
             this.ResumeLayout(false);
