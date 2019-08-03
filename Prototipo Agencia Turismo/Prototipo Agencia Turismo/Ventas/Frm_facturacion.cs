@@ -19,13 +19,15 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
 {
     public partial class Frm_facturacion : Form
     {
-        public Frm_facturacion()
-        {
-            InitializeComponent();
-        }
-
         DateTime fecha = DateTime.Now;
         int controlSeleccionHotel = 0;
+        string usuario = " ";
+
+        public Frm_facturacion(string nombreUsuario)
+        {
+            InitializeComponent();
+            usuario = nombreUsuario;
+        }
 
         private void Lbl_titulo_Click(object sender, EventArgs e)
         {
@@ -65,6 +67,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             Grb_Restaurante.Enabled = false;
             Grb_LugarT.Enabled = false;
 
+            Txt_IdEmpleado.Text = usuario;
             Lbl_fechaEmision.Text = fecha.ToString("yyyy/MM/dd");
         }
 

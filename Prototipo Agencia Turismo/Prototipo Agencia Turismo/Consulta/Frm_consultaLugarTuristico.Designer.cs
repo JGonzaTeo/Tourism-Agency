@@ -37,12 +37,13 @@
             this.Txt_consultaLugarT = new System.Windows.Forms.TextBox();
             this.Btn_consultaLugarT = new System.Windows.Forms.Button();
             this.Dgv_consultaLugarT = new System.Windows.Forms.DataGridView();
-            this.Btn_seleccionar = new System.Windows.Forms.Button();
-            this.Btn_actualizar = new System.Windows.Forms.Button();
             this.idLugarT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoLugarT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_seleccionar = new System.Windows.Forms.Button();
+            this.Btn_actualizar = new System.Windows.Forms.Button();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaLugarT)).BeginInit();
             this.SuspendLayout();
@@ -145,7 +146,8 @@
             this.idLugarT,
             this.nombre,
             this.descripcion,
-            this.departamentoLugarT});
+            this.departamentoLugarT,
+            this.precio});
             this.Dgv_consultaLugarT.Location = new System.Drawing.Point(47, 156);
             this.Dgv_consultaLugarT.Name = "Dgv_consultaLugarT";
             this.Dgv_consultaLugarT.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -154,6 +156,26 @@
             this.Dgv_consultaLugarT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaLugarT.Size = new System.Drawing.Size(1098, 405);
             this.Dgv_consultaLugarT.TabIndex = 43;
+            // 
+            // idLugarT
+            // 
+            this.idLugarT.HeaderText = "ID lugar turístico";
+            this.idLugarT.Name = "idLugarT";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre ";
+            this.nombre.Name = "nombre";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            // 
+            // departamentoLugarT
+            // 
+            this.departamentoLugarT.HeaderText = "Departamento";
+            this.departamentoLugarT.Name = "departamentoLugarT";
             // 
             // Btn_seleccionar
             // 
@@ -187,25 +209,10 @@
             this.Btn_actualizar.UseVisualStyleBackColor = true;
             this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
-            // idLugarT
+            // precio
             // 
-            this.idLugarT.HeaderText = "ID lugar turístico";
-            this.idLugarT.Name = "idLugarT";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre ";
-            this.nombre.Name = "nombre";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            // 
-            // departamentoLugarT
-            // 
-            this.departamentoLugarT.HeaderText = "Departamento";
-            this.departamentoLugarT.Name = "departamentoLugarT";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
             // 
             // Frm_consultaLugarTuristico
             // 
@@ -221,7 +228,7 @@
             this.Controls.Add(this.Pnl_principal);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_consultaLugarTuristico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaLugarTuristico";
@@ -250,5 +257,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamentoLugarT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
     }
 }

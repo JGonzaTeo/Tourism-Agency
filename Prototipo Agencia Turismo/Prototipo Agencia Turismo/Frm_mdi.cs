@@ -42,6 +42,8 @@ namespace Prototipo_Agencia_Turismo
                 string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
                 OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
                 commAct.ExecuteNonQuery();
+
+                commAct.Connection.Close();
             }
             catch(Exception err)
             {
@@ -194,7 +196,7 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaFacturacion = false;
-        Frm_facturacion facturacion = new Frm_facturacion();
+        Frm_facturacion facturacion = new Frm_facturacion("");
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_facturacion);
@@ -202,7 +204,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    facturacion = new Frm_facturacion();
+                    facturacion = new Frm_facturacion(nombreUsuario);
                 }
 
                 facturacion.MdiParent = this;
@@ -292,9 +294,13 @@ namespace Prototipo_Agencia_Turismo
                 comm.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm.ExecuteNonQuery();
 
+                comm.Connection.Close();
+
                 string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'"; 
                 OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
                 commAct.ExecuteNonQuery();
+
+                commAct.Connection.Close();
             }
             catch (Exception err)
             {
@@ -515,6 +521,29 @@ namespace Prototipo_Agencia_Turismo
             else
             {
                 habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaReservacion = false;
+        Frm_reservacion reservacion = new Frm_reservacion("");
+        private void reservacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_reservacion);
+            if (ventanaReservacion == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    reservacion = new Frm_reservacion(nombreUsuario);
+                }
+
+                reservacion.MdiParent = this;
+                reservacion.Show();
+                Application.DoEvents();
+                ventanaReservacion = true;
+            }
+            else
+            {
+                reservacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
     }

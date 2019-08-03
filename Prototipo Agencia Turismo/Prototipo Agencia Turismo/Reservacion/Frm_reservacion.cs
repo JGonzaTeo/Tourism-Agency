@@ -277,5 +277,10 @@ namespace Prototipo_Agencia_Turismo
                 Btn_reservar.Enabled = true;
             }
         }
+
+        private void Pnl_principal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

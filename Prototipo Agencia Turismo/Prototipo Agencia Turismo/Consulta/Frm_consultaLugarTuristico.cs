@@ -41,7 +41,7 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     while (cargar.Read())
                     {
                         Dgv_consultaLugarT.Rows.Add(cargarDgv.GetInt32(0), cargarDgv.GetString(1),
-                            cargarDgv.GetString(2), cargar.GetString(0));
+                            cargarDgv.GetString(2), cargar.GetString(0), cargarDgv.GetString(4));
                         break;
                     }
                     comm1.Connection.Close();
