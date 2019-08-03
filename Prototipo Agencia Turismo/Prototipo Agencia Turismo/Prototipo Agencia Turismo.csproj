@@ -60,6 +60,12 @@
     <Compile Include="Consulta\Frm_consultaCliente.Designer.cs">
       <DependentUpon>Frm_consultaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\Frm_consultaCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaCotizacion.Designer.cs">
+      <DependentUpon>Frm_consultaCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\Frm_consultaDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaCliente.resx">
       <DependentUpon>Frm_consultaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaCotizacion.resx">
+      <DependentUpon>Frm_consultaCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaDepartamento.resx">
       <DependentUpon>Frm_consultaDepartamento.cs</DependentUpon>
