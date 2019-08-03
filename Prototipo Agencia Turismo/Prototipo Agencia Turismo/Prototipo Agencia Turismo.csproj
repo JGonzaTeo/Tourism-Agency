@@ -222,6 +222,12 @@
     <Compile Include="Mantenimiento\Frm_mantUsuario.Designer.cs">
       <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\Frm_Nominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Frm_Nominas.Designer.cs">
+      <DependentUpon>Frm_Nominas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Frm_bitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_mantUsuario.resx">
       <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
+      <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\Frm_bitacora.resx">
       <DependentUpon>Frm_bitacora.cs</DependentUpon>
