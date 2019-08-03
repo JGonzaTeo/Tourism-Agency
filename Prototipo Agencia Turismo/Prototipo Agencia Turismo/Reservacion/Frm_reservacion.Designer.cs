@@ -379,6 +379,7 @@
             this.Dtp_FecaEntrada.Size = new System.Drawing.Size(111, 26);
             this.Dtp_FecaEntrada.TabIndex = 110;
             this.Dtp_FecaEntrada.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
+            this.Dtp_FecaEntrada.ValueChanged += new System.EventHandler(this.Dtp_FecaEntrada_ValueChanged);
             // 
             // Dtp_FecaSalida
             // 
@@ -390,6 +391,7 @@
             this.Dtp_FecaSalida.Size = new System.Drawing.Size(111, 26);
             this.Dtp_FecaSalida.TabIndex = 109;
             this.Dtp_FecaSalida.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
+            this.Dtp_FecaSalida.ValueChanged += new System.EventHandler(this.Dtp_FecaSalida_ValueChanged);
             // 
             // Btn_consultarPiloto
             // 

@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Odbc;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -34,6 +35,8 @@ namespace Prototipo_Agencia_Turismo
         String idEmpleado;
         String fechaSalida;
         String fechaEntrada;
+        //Variable para comparar fecha
+        CultureInfo provider = CultureInfo.InvariantCulture;
 
         public Frm_reservacion(String nombreUsuario)
         {
@@ -57,6 +60,8 @@ namespace Prototipo_Agencia_Turismo
             Btn_consultarVehiculo.Enabled = false;
             Btn_consultarPiloto.Enabled = false;
             Btn_reservar.Enabled = false;
+            Dtp_FecaEntrada.Enabled = false;
+            Dtp_FecaSalida.Enabled = false;
         }
         private void MostrarConsulta()
         {
@@ -139,7 +144,7 @@ namespace Prototipo_Agencia_Turismo
                 Lbl_piloto.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                     Cells[0].Value.ToString();
             }
-            Btn_reservar.Enabled = true;
+            Dtp_FecaSalida.Enabled = true;
         }
         
         private void Limpiar()
@@ -237,6 +242,40 @@ namespace Prototipo_Agencia_Turismo
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Dtp_FecaSalida_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaHoy = DateTime.Now;
+            string fecha = fechaHoy.ToString("d");
+            if (Dtp_FecaSalida.Value == fechaHoy || Dtp_FecaSalida.Value < fechaHoy)
+            {
+                MessageBox.Show("Fecha incorrecta.");
+                Btn_reservar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Fecha correcta.");
+                Dtp_FecaEntrada.Enabled = true;
+            }
+
+        }
+        /*
+            Dtp_FecaSalida.Enabled = false;
+            Btn_reservar.Enabled = true;
+         */
+        private void Dtp_FecaEntrada_ValueChanged(object sender, EventArgs e)
+        {
+            if (Dtp_FecaSalida.Value > Dtp_FecaEntrada.Value)
+            {
+                MessageBox.Show("Fecha incorrecta.");
+                Btn_reservar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Fecha correcta.");
+                Btn_reservar.Enabled = true;
+            }
         }
     }
 }
