@@ -126,6 +126,12 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\Frm_consultaEmpGuiacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaEmpGuiacs.Designer.cs">
+      <DependentUpon>Frm_consultaEmpGuiacs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cotizacion\Frm_Cotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     <Compile Include="Mantenimiento\Frm_mantUsuario.Designer.cs">
       <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\Frm_AsignacionEmpGuia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Frm_AsignacionEmpGuia.Designer.cs">
+      <DependentUpon>Frm_AsignacionEmpGuia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\Frm_Nominas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +304,9 @@
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaEmpGuiacs.resx">
+      <DependentUpon>Frm_consultaEmpGuiacs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cotizacion\Frm_Cotizacion.resx">
       <DependentUpon>Frm_Cotizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +355,9 @@
     <EmbeddedResource Include="Mantenimiento\Frm_mantUsuario.resx">
       <DependentUpon>Frm_mantUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Frm_AsignacionEmpGuia.resx">
+      <DependentUpon>Frm_AsignacionEmpGuia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,8 +392,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Asignaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
