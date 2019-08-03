@@ -185,5 +185,11 @@ namespace Prototipo_Agencia_Turismo.Procesos
         {
             this.Close();
         }
+
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Txt_Guia.Text = "";
+            Txt_idEmpleado.Text = "";
+        }
     }
 }
