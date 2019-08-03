@@ -36,7 +36,7 @@
             this.Lbl_Total = new System.Windows.Forms.Label();
             this.Pnl_Detalle = new System.Windows.Forms.Panel();
             this.Btn_facturar = new System.Windows.Forms.Button();
-            this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Btn_quitar = new System.Windows.Forms.Button();
             this.Btn_colocar = new System.Windows.Forms.Button();
             this.Lbl_resultado = new System.Windows.Forms.Label();
             this.Grb_Restaurante = new System.Windows.Forms.GroupBox();
@@ -50,14 +50,7 @@
             this.Btn_consultaLugarTuristico = new System.Windows.Forms.Button();
             this.Lbl_LugarT = new System.Windows.Forms.Label();
             this.Dgv_detalleFactura = new System.Windows.Forms.DataGridView();
-            this.codServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grb_Hotel = new System.Windows.Forms.GroupBox();
-            this.Txt_noHabitacion = new System.Windows.Forms.TextBox();
             this.Txt_habitacion = new System.Windows.Forms.TextBox();
             this.Txt_lugarHotel = new System.Windows.Forms.TextBox();
             this.Btn_consultaHabitación = new System.Windows.Forms.Button();
@@ -80,8 +73,18 @@
             this.Rbtn_cotizacion = new System.Windows.Forms.RadioButton();
             this.Rbtn_facturacion = new System.Windows.Forms.RadioButton();
             this.Lbl_precioHabitacion = new System.Windows.Forms.Label();
-            this.precioMenu = new System.Windows.Forms.Label();
-            this.precioLugarT = new System.Windows.Forms.Label();
+            this.Lbl_precioMenu = new System.Windows.Forms.Label();
+            this.Lbl_precioLugarT = new System.Windows.Forms.Label();
+            this.CB_noHab = new System.Windows.Forms.ComboBox();
+            this.idHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLugarT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadHabitaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lbl_idMenu = new System.Windows.Forms.Label();
+            this.Lbl_idLugarT = new System.Windows.Forms.Label();
+            this.Lbl_idHabitacion = new System.Windows.Forms.Label();
+            this.Btn_consultaMenu = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Pnl_Detalle.SuspendLayout();
             this.Grb_Restaurante.SuspendLayout();
@@ -156,7 +159,7 @@
             // 
             this.Pnl_Detalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pnl_Detalle.Controls.Add(this.Btn_facturar);
-            this.Pnl_Detalle.Controls.Add(this.Btn_eliminar);
+            this.Pnl_Detalle.Controls.Add(this.Btn_quitar);
             this.Pnl_Detalle.Controls.Add(this.Btn_colocar);
             this.Pnl_Detalle.Controls.Add(this.Lbl_resultado);
             this.Pnl_Detalle.Controls.Add(this.Grb_Restaurante);
@@ -167,9 +170,11 @@
             this.Pnl_Detalle.Name = "Pnl_Detalle";
             this.Pnl_Detalle.Size = new System.Drawing.Size(1180, 384);
             this.Pnl_Detalle.TabIndex = 3;
+            this.Pnl_Detalle.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_Detalle_Paint);
             // 
             // Btn_facturar
             // 
+            this.Btn_facturar.Enabled = false;
             this.Btn_facturar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.Btn_facturar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_facturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -181,21 +186,23 @@
             this.Btn_facturar.Text = "Facturar";
             this.Btn_facturar.UseVisualStyleBackColor = true;
             // 
-            // Btn_eliminar
+            // Btn_quitar
             // 
-            this.Btn_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.Btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_eliminar.Location = new System.Drawing.Point(964, 200);
-            this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(202, 44);
-            this.Btn_eliminar.TabIndex = 79;
-            this.Btn_eliminar.Text = "Eliminar";
-            this.Btn_eliminar.UseVisualStyleBackColor = true;
+            this.Btn_quitar.Enabled = false;
+            this.Btn_quitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_quitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_quitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_quitar.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_quitar.Location = new System.Drawing.Point(964, 200);
+            this.Btn_quitar.Name = "Btn_quitar";
+            this.Btn_quitar.Size = new System.Drawing.Size(202, 44);
+            this.Btn_quitar.TabIndex = 79;
+            this.Btn_quitar.Text = "Eliminar";
+            this.Btn_quitar.UseVisualStyleBackColor = true;
             // 
             // Btn_colocar
             // 
+            this.Btn_colocar.Enabled = false;
             this.Btn_colocar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.Btn_colocar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_colocar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -218,7 +225,9 @@
             // 
             // Grb_Restaurante
             // 
-            this.Grb_Restaurante.Controls.Add(this.precioMenu);
+            this.Grb_Restaurante.Controls.Add(this.Btn_consultaMenu);
+            this.Grb_Restaurante.Controls.Add(this.Lbl_idMenu);
+            this.Grb_Restaurante.Controls.Add(this.Lbl_precioMenu);
             this.Grb_Restaurante.Controls.Add(this.Txt_menu);
             this.Grb_Restaurante.Controls.Add(this.Txt_lugarRestaurante);
             this.Grb_Restaurante.Controls.Add(this.Btn_consultaRestaurante);
@@ -251,12 +260,17 @@
             // 
             // Btn_consultaRestaurante
             // 
+            this.Btn_consultaRestaurante.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaRestaurante.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaRestaurante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaRestaurante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaRestaurante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_consultaRestaurante.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaRestaurante.Image")));
-            this.Btn_consultaRestaurante.Location = new System.Drawing.Point(439, 19);
+            this.Btn_consultaRestaurante.Location = new System.Drawing.Point(268, 23);
             this.Btn_consultaRestaurante.Name = "Btn_consultaRestaurante";
             this.Btn_consultaRestaurante.Size = new System.Drawing.Size(75, 36);
             this.Btn_consultaRestaurante.TabIndex = 79;
-            this.Btn_consultaRestaurante.UseVisualStyleBackColor = true;
+            this.Btn_consultaRestaurante.UseVisualStyleBackColor = false;
             this.Btn_consultaRestaurante.Click += new System.EventHandler(this.Btn_consultaRestaurante_Click);
             // 
             // Lbl_restaurante
@@ -281,7 +295,8 @@
             // 
             // Grb_LugarT
             // 
-            this.Grb_LugarT.Controls.Add(this.precioLugarT);
+            this.Grb_LugarT.Controls.Add(this.Lbl_idLugarT);
+            this.Grb_LugarT.Controls.Add(this.Lbl_precioLugarT);
             this.Grb_LugarT.Controls.Add(this.Txt_lugarTuristico);
             this.Grb_LugarT.Controls.Add(this.Btn_consultaLugarTuristico);
             this.Grb_LugarT.Controls.Add(this.Lbl_LugarT);
@@ -303,12 +318,17 @@
             // 
             // Btn_consultaLugarTuristico
             // 
+            this.Btn_consultaLugarTuristico.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaLugarTuristico.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaLugarTuristico.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaLugarTuristico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaLugarTuristico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_consultaLugarTuristico.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaLugarTuristico.Image")));
             this.Btn_consultaLugarTuristico.Location = new System.Drawing.Point(333, 14);
             this.Btn_consultaLugarTuristico.Name = "Btn_consultaLugarTuristico";
             this.Btn_consultaLugarTuristico.Size = new System.Drawing.Size(75, 36);
             this.Btn_consultaLugarTuristico.TabIndex = 78;
-            this.Btn_consultaLugarTuristico.UseVisualStyleBackColor = true;
+            this.Btn_consultaLugarTuristico.UseVisualStyleBackColor = false;
             this.Btn_consultaLugarTuristico.Click += new System.EventHandler(this.Btn_consultaLugarTuristico_Click);
             // 
             // Lbl_LugarT
@@ -330,11 +350,10 @@
             this.Dgv_detalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_detalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_detalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codServicio,
-            this.nombre,
-            this.descripcion,
-            this.precio,
-            this.cantidad,
+            this.idHabitacion,
+            this.idMenu,
+            this.idLugarT,
+            this.cantidadHabitaciones,
             this.importe});
             this.Dgv_detalleFactura.Location = new System.Drawing.Point(27, 114);
             this.Dgv_detalleFactura.Name = "Dgv_detalleFactura";
@@ -343,40 +362,11 @@
             this.Dgv_detalleFactura.Size = new System.Drawing.Size(931, 233);
             this.Dgv_detalleFactura.TabIndex = 0;
             // 
-            // codServicio
-            // 
-            this.codServicio.HeaderText = "Código de Servicio";
-            this.codServicio.Name = "codServicio";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // importe
-            // 
-            this.importe.HeaderText = "Importe";
-            this.importe.Name = "importe";
-            // 
             // Grb_Hotel
             // 
+            this.Grb_Hotel.Controls.Add(this.Lbl_idHabitacion);
+            this.Grb_Hotel.Controls.Add(this.CB_noHab);
             this.Grb_Hotel.Controls.Add(this.Lbl_precioHabitacion);
-            this.Grb_Hotel.Controls.Add(this.Txt_noHabitacion);
             this.Grb_Hotel.Controls.Add(this.Txt_habitacion);
             this.Grb_Hotel.Controls.Add(this.Txt_lugarHotel);
             this.Grb_Hotel.Controls.Add(this.Btn_consultaHabitación);
@@ -390,14 +380,6 @@
             this.Grb_Hotel.TabIndex = 76;
             this.Grb_Hotel.TabStop = false;
             this.Grb_Hotel.Text = "Hotel";
-            // 
-            // Txt_noHabitacion
-            // 
-            this.Txt_noHabitacion.Location = new System.Drawing.Point(181, 130);
-            this.Txt_noHabitacion.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_noHabitacion.Name = "Txt_noHabitacion";
-            this.Txt_noHabitacion.Size = new System.Drawing.Size(35, 30);
-            this.Txt_noHabitacion.TabIndex = 67;
             // 
             // Txt_habitacion
             // 
@@ -419,22 +401,34 @@
             // 
             // Btn_consultaHabitación
             // 
+            this.Btn_consultaHabitación.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaHabitación.Enabled = false;
+            this.Btn_consultaHabitación.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaHabitación.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaHabitación.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaHabitación.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_consultaHabitación.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaHabitación.Image")));
             this.Btn_consultaHabitación.Location = new System.Drawing.Point(321, 85);
             this.Btn_consultaHabitación.Name = "Btn_consultaHabitación";
             this.Btn_consultaHabitación.Size = new System.Drawing.Size(75, 36);
             this.Btn_consultaHabitación.TabIndex = 64;
-            this.Btn_consultaHabitación.UseVisualStyleBackColor = true;
+            this.Btn_consultaHabitación.UseVisualStyleBackColor = false;
             this.Btn_consultaHabitación.Click += new System.EventHandler(this.Btn_consultaHabitación_Click);
             // 
             // Btn_consultaHotel
             // 
+            this.Btn_consultaHotel.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaHotel.Enabled = false;
+            this.Btn_consultaHotel.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaHotel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaHotel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaHotel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_consultaHotel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaHotel.Image")));
             this.Btn_consultaHotel.Location = new System.Drawing.Point(321, 39);
             this.Btn_consultaHotel.Name = "Btn_consultaHotel";
             this.Btn_consultaHotel.Size = new System.Drawing.Size(75, 36);
             this.Btn_consultaHotel.TabIndex = 63;
-            this.Btn_consultaHotel.UseVisualStyleBackColor = true;
+            this.Btn_consultaHotel.UseVisualStyleBackColor = false;
             this.Btn_consultaHotel.Click += new System.EventHandler(this.Btn_consultaHotel_Click);
             // 
             // Lbl_noHabitaciones
@@ -489,12 +483,18 @@
             // 
             // Btn_consultaCliente
             // 
+            this.Btn_consultaCliente.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaCliente.Enabled = false;
+            this.Btn_consultaCliente.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_consultaCliente.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaCliente.Image")));
             this.Btn_consultaCliente.Location = new System.Drawing.Point(313, 59);
             this.Btn_consultaCliente.Name = "Btn_consultaCliente";
             this.Btn_consultaCliente.Size = new System.Drawing.Size(52, 40);
             this.Btn_consultaCliente.TabIndex = 74;
-            this.Btn_consultaCliente.UseVisualStyleBackColor = true;
+            this.Btn_consultaCliente.UseVisualStyleBackColor = false;
             this.Btn_consultaCliente.Click += new System.EventHandler(this.button1_Click);
             // 
             // Lbl_fechaEmision
@@ -543,6 +543,7 @@
             this.CB_Pasajero.Name = "CB_Pasajero";
             this.CB_Pasajero.Size = new System.Drawing.Size(121, 30);
             this.CB_Pasajero.TabIndex = 70;
+            this.CB_Pasajero.SelectedIndexChanged += new System.EventHandler(this.CB_Pasajero_SelectedIndexChanged);
             // 
             // Lbl_pasajeros
             // 
@@ -639,23 +640,110 @@
             this.Lbl_precioHabitacion.TabIndex = 68;
             this.Lbl_precioHabitacion.Text = "precioHab";
             // 
-            // precioMenu
+            // Lbl_precioMenu
             // 
-            this.precioMenu.AutoSize = true;
-            this.precioMenu.Location = new System.Drawing.Point(407, 73);
-            this.precioMenu.Name = "precioMenu";
-            this.precioMenu.Size = new System.Drawing.Size(121, 22);
-            this.precioMenu.TabIndex = 82;
-            this.precioMenu.Text = "precioMenu";
+            this.Lbl_precioMenu.AutoSize = true;
+            this.Lbl_precioMenu.Location = new System.Drawing.Point(407, 73);
+            this.Lbl_precioMenu.Name = "Lbl_precioMenu";
+            this.Lbl_precioMenu.Size = new System.Drawing.Size(121, 22);
+            this.Lbl_precioMenu.TabIndex = 82;
+            this.Lbl_precioMenu.Text = "precioMenu";
             // 
-            // precioLugarT
+            // Lbl_precioLugarT
             // 
-            this.precioLugarT.AutoSize = true;
-            this.precioLugarT.Location = new System.Drawing.Point(343, 65);
-            this.precioLugarT.Name = "precioLugarT";
-            this.precioLugarT.Size = new System.Drawing.Size(129, 22);
-            this.precioLugarT.TabIndex = 83;
-            this.precioLugarT.Text = "precioLugarT";
+            this.Lbl_precioLugarT.AutoSize = true;
+            this.Lbl_precioLugarT.Location = new System.Drawing.Point(285, 65);
+            this.Lbl_precioLugarT.Name = "Lbl_precioLugarT";
+            this.Lbl_precioLugarT.Size = new System.Drawing.Size(129, 22);
+            this.Lbl_precioLugarT.TabIndex = 83;
+            this.Lbl_precioLugarT.Text = "precioLugarT";
+            // 
+            // CB_noHab
+            // 
+            this.CB_noHab.FormattingEnabled = true;
+            this.CB_noHab.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.CB_noHab.Location = new System.Drawing.Point(180, 130);
+            this.CB_noHab.Name = "CB_noHab";
+            this.CB_noHab.Size = new System.Drawing.Size(117, 30);
+            this.CB_noHab.TabIndex = 71;
+            this.CB_noHab.SelectedIndexChanged += new System.EventHandler(this.CB_noHab_SelectedIndexChanged);
+            // 
+            // idHabitacion
+            // 
+            this.idHabitacion.HeaderText = "Código habitación";
+            this.idHabitacion.Name = "idHabitacion";
+            // 
+            // idMenu
+            // 
+            this.idMenu.HeaderText = "Código menú";
+            this.idMenu.Name = "idMenu";
+            // 
+            // idLugarT
+            // 
+            this.idLugarT.HeaderText = "Código lugar turístico";
+            this.idLugarT.Name = "idLugarT";
+            // 
+            // cantidadHabitaciones
+            // 
+            this.cantidadHabitaciones.HeaderText = "Cantidad Habitaciones";
+            this.cantidadHabitaciones.Name = "cantidadHabitaciones";
+            // 
+            // importe
+            // 
+            this.importe.HeaderText = "Importe";
+            this.importe.Name = "importe";
+            // 
+            // Lbl_idMenu
+            // 
+            this.Lbl_idMenu.AutoSize = true;
+            this.Lbl_idMenu.Location = new System.Drawing.Point(367, 51);
+            this.Lbl_idMenu.Name = "Lbl_idMenu";
+            this.Lbl_idMenu.Size = new System.Drawing.Size(25, 22);
+            this.Lbl_idMenu.TabIndex = 83;
+            this.Lbl_idMenu.Text = "...";
+            // 
+            // Lbl_idLugarT
+            // 
+            this.Lbl_idLugarT.AutoSize = true;
+            this.Lbl_idLugarT.Location = new System.Drawing.Point(246, 43);
+            this.Lbl_idLugarT.Name = "Lbl_idLugarT";
+            this.Lbl_idLugarT.Size = new System.Drawing.Size(25, 22);
+            this.Lbl_idLugarT.TabIndex = 84;
+            this.Lbl_idLugarT.Text = "...";
+            // 
+            // Lbl_idHabitacion
+            // 
+            this.Lbl_idHabitacion.AutoSize = true;
+            this.Lbl_idHabitacion.Location = new System.Drawing.Point(125, 97);
+            this.Lbl_idHabitacion.Name = "Lbl_idHabitacion";
+            this.Lbl_idHabitacion.Size = new System.Drawing.Size(25, 22);
+            this.Lbl_idHabitacion.TabIndex = 84;
+            this.Lbl_idHabitacion.Text = "...";
+            // 
+            // Btn_consultaMenu
+            // 
+            this.Btn_consultaMenu.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaMenu.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_consultaMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultaMenu.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaMenu.Image")));
+            this.Btn_consultaMenu.Location = new System.Drawing.Point(268, 63);
+            this.Btn_consultaMenu.Name = "Btn_consultaMenu";
+            this.Btn_consultaMenu.Size = new System.Drawing.Size(75, 36);
+            this.Btn_consultaMenu.TabIndex = 84;
+            this.Btn_consultaMenu.UseVisualStyleBackColor = false;
+            this.Btn_consultaMenu.Click += new System.EventHandler(this.Btn_consultaMenu_Click);
             // 
             // Frm_facturacion
             // 
@@ -716,7 +804,6 @@
         private System.Windows.Forms.Button Btn_consultaHotel;
         private System.Windows.Forms.Button Btn_consultaRestaurante;
         private System.Windows.Forms.Button Btn_consultaLugarTuristico;
-        private System.Windows.Forms.TextBox Txt_noHabitacion;
         private System.Windows.Forms.TextBox Txt_habitacion;
         private System.Windows.Forms.TextBox Txt_lugarHotel;
         private System.Windows.Forms.TextBox Txt_menu;
@@ -735,18 +822,22 @@
         private System.Windows.Forms.Label Lbl_cliente;
         private System.Windows.Forms.RadioButton Rbtn_cotizacion;
         private System.Windows.Forms.RadioButton Rbtn_facturacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private System.Windows.Forms.Button Btn_consultaCliente;
-        private System.Windows.Forms.Button Btn_eliminar;
+        private System.Windows.Forms.Button Btn_quitar;
         private System.Windows.Forms.Button Btn_colocar;
         private System.Windows.Forms.Button Btn_facturar;
-        private System.Windows.Forms.Label precioMenu;
-        private System.Windows.Forms.Label precioLugarT;
+        private System.Windows.Forms.Label Lbl_precioMenu;
+        private System.Windows.Forms.Label Lbl_precioLugarT;
         private System.Windows.Forms.Label Lbl_precioHabitacion;
+        private System.Windows.Forms.ComboBox CB_noHab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idHabitacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLugarT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadHabitaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
+        private System.Windows.Forms.Label Lbl_idMenu;
+        private System.Windows.Forms.Label Lbl_idLugarT;
+        private System.Windows.Forms.Label Lbl_idHabitacion;
+        private System.Windows.Forms.Button Btn_consultaMenu;
     }
 }

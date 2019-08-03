@@ -122,7 +122,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(63, 32);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(189, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(231, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE HABITACION";
             // 
@@ -151,7 +151,7 @@
             this.Txt_consultaHabitacion.Location = new System.Drawing.Point(164, 77);
             this.Txt_consultaHabitacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Txt_consultaHabitacion.Name = "Txt_consultaHabitacion";
-            this.Txt_consultaHabitacion.Size = new System.Drawing.Size(787, 26);
+            this.Txt_consultaHabitacion.Size = new System.Drawing.Size(787, 30);
             this.Txt_consultaHabitacion.TabIndex = 59;
             // 
             // Lbl_consultaHotel
@@ -160,12 +160,16 @@
             this.Lbl_consultaHotel.Location = new System.Drawing.Point(63, 80);
             this.Lbl_consultaHotel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_consultaHotel.Name = "Lbl_consultaHotel";
-            this.Lbl_consultaHotel.Size = new System.Drawing.Size(93, 20);
+            this.Lbl_consultaHotel.Size = new System.Drawing.Size(116, 22);
             this.Lbl_consultaHotel.TabIndex = 58;
             this.Lbl_consultaHotel.Text = "Habitacion:";
             // 
             // Dgv_consultaHabitacion
             // 
+            this.Dgv_consultaHabitacion.AllowUserToAddRows = false;
+            this.Dgv_consultaHabitacion.AllowUserToDeleteRows = false;
+            this.Dgv_consultaHabitacion.AllowUserToResizeColumns = false;
+            this.Dgv_consultaHabitacion.AllowUserToResizeRows = false;
             this.Dgv_consultaHabitacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaHabitacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -179,7 +183,9 @@
             this.Dgv_consultaHabitacion.MultiSelect = false;
             this.Dgv_consultaHabitacion.Name = "Dgv_consultaHabitacion";
             this.Dgv_consultaHabitacion.ReadOnly = true;
+            this.Dgv_consultaHabitacion.RowHeadersVisible = false;
             this.Dgv_consultaHabitacion.RowTemplate.Height = 24;
+            this.Dgv_consultaHabitacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaHabitacion.Size = new System.Drawing.Size(1116, 429);
             this.Dgv_consultaHabitacion.TabIndex = 61;
             // 
@@ -209,7 +215,7 @@
             // 
             // costo
             // 
-            this.costo.HeaderText = "Costo";
+            this.costo.HeaderText = "Precio";
             this.costo.Name = "costo";
             this.costo.ReadOnly = true;
             // 
@@ -247,7 +253,7 @@
             // 
             // Frm_consultaHabitacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actu);
@@ -283,12 +289,12 @@
         private System.Windows.Forms.TextBox Txt_consultaHabitacion;
         private System.Windows.Forms.Label Lbl_consultaHotel;
         public System.Windows.Forms.DataGridView Dgv_consultaHabitacion;
+        private System.Windows.Forms.Button Btn_actu;
+        private System.Windows.Forms.Button Btn_selec;
         private System.Windows.Forms.DataGridViewTextBoxColumn idHabitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idHotel;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
-        private System.Windows.Forms.Button Btn_actu;
-        private System.Windows.Forms.Button Btn_selec;
     }
 }
