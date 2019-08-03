@@ -46,6 +46,10 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_reservacion_Load(object sender, EventArgs e)
         {
+            DateTime fechaHoy = DateTime.Now;
+            string fecha = fechaHoy.ToString("d");
+            Dtp_FecaEntrada.Text = fecha;
+            Dtp_FecaSalida.Text = fecha;
             Desahiblitarbtn();
         }
         private void Habilitarbtn()
@@ -68,7 +72,7 @@ namespace Prototipo_Agencia_Turismo
             string num = Lbl_idCotizacion.Text;
             try
             {
-                string consultaMostrar = "SELECT Fk_idTipoHabitacion, FK_idMenus, Fk_idLugarTuristico,cantidadHabitaciones FROM tbl_facturadetalle WHERE Pk_idFactura= 2;";
+                string consultaMostrar = "SELECT Fk_idTipoHabitacion, FK_idMenus, Fk_idLugarTuristico,cantidadHabitaciones FROM tbl_facturadetalle WHERE Pk_idFactura="+num+";";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
@@ -176,62 +180,75 @@ namespace Prototipo_Agencia_Turismo
             idEmpleado = Lbl_piloto.Text;
             fechaSalida = Dtp_FecaSalida.Text;
             fechaEntrada = Dtp_FecaEntrada.Text;
-            
-            try
+            if (Lbl_idCotizacion.Text == "" || Lbl_metodo.Text == "" || Lbl_vehiculo.Text == "" || Lbl_piloto.Text == "")
+                MessageBox.Show("Algunos campos estan vacios.");
+            else
             {
-
-                OdbcCommand comm2 = new OdbcCommand("{call Sp_InsertarReservacion(?,?)}", Conexion.nuevaConexion());
-                comm2.CommandType = CommandType.StoredProcedure;
-                comm2.Parameters.Add("idCotizacion", OdbcType.Text).Value = idCotizacion;
-                comm2.Parameters.Add("idPago", OdbcType.Text).Value = tipoPago;
-                comm2.ExecuteNonQuery(); MessageBox.Show("Reservacion creada exitosamente");
-
-                string consultaMostrar = "select * from tbl_reservacion order by PK_idReservacion desc limit 1;";
-                OdbcCommand comm3 = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
-                OdbcDataReader mostrarDatos = comm3.ExecuteReader();
-                while (mostrarDatos.Read())
+                try
                 {
-                    idReservacion = mostrarDatos.GetString(0);
+                    //Procedimiento para guardar reservacion
+                    OdbcCommand comm2 = new OdbcCommand("{call Sp_InsertarReservacion(?,?)}", Conexion.nuevaConexion());
+                    comm2.CommandType = CommandType.StoredProcedure;
+                    comm2.Parameters.Add("idCotizacion", OdbcType.Text).Value = idCotizacion;
+                    comm2.Parameters.Add("idPago", OdbcType.Text).Value = tipoPago;
+                    comm2.ExecuteNonQuery(); MessageBox.Show("Reservacion creada exitosamente");
+
+                    //Consulta para mostrar el ultimo campo ingresado en las reservaciones
+                    string consultaMostrar = "select * from tbl_reservacion order by PK_idReservacion desc limit 1;";
+                    OdbcCommand comm3 = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
+                    OdbcDataReader mostrarDatos = comm3.ExecuteReader();
+                    while (mostrarDatos.Read())
+                    {
+                        idReservacion = mostrarDatos.GetString(0);
+                    }
+                    /*
+                    int x = 0;
+
+                    Int32.TryParse(idReservacion,out x);
+                    if (x == 0)
+                      */
+                    if (idReservacion == "NULL")
+                        Lbl_reservacion.Text = "0";
+                    else
+                        Lbl_reservacion.Text = idReservacion;
+
+                    //Procedimiento para guardar asignacion de trasporte 
+                    OdbcCommand comm4 = new OdbcCommand("{call Sp_InsertarAsigacionTransporte(?,?,?,?,?)}", Conexion.nuevaConexion());
+                    comm4.CommandType = CommandType.StoredProcedure;
+                    comm4.Parameters.Add("idTransporte", OdbcType.Text).Value = idTrasnporte;
+                    comm4.Parameters.Add("idReservacion", OdbcType.Text).Value = idReservacion;
+                    comm4.Parameters.Add("idEmpleado", OdbcType.Text).Value = idEmpleado;
+                    comm4.Parameters.Add("salida", OdbcType.Text).Value = fechaSalida;
+                    comm4.Parameters.Add("entrada", OdbcType.Text).Value = fechaEntrada;
+                    comm4.ExecuteNonQuery(); MessageBox.Show("Reservacion transporte");
+
+                    //Cambio de estado para cotizacion (Deja de ser una cotizacion y pasara a factura)
+                    string consulta = "UPDATE `tbl_facturaencabezado` SET `Factura_Cotizacion` = '" + 1 +
+                   "' WHERE Pk_idFactura = " + idReservacion;
+
+                    OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
+                    comm.ExecuteNonQuery();
+                    
+                    //Bitacora
+                    OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                    comm1.CommandType = CommandType.StoredProcedure;
+                    comm1.Parameters.Add("ope", OdbcType.Text).Value = "CREACION DE RESERVACION/ASIGNACION TRANSPORTE";
+                    comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
+                    comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                    comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
+                    comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                    comm1.ExecuteNonQuery();
+
+
                 }
-                /*
-                int x = 0;
-
-                Int32.TryParse(idReservacion,out x);
-                if (x == 0)
-                  */
-                if (idReservacion == "NULL")
-                    Lbl_reservacion.Text = "0";
-                else
-                    Lbl_reservacion.Text = idReservacion;
-
-                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarAsigacionTransporte(?,?,?,?,?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("idTransporte", OdbcType.Text).Value = idTrasnporte;
-                comm.Parameters.Add("idReservacion", OdbcType.Text).Value = idReservacion;
-                comm.Parameters.Add("idEmpleado", OdbcType.Text).Value = idEmpleado;
-                comm.Parameters.Add("salida", OdbcType.Text).Value = fechaSalida;
-                comm.Parameters.Add("entrada", OdbcType.Text).Value = fechaEntrada;
-                comm.ExecuteNonQuery(); MessageBox.Show("Reservacion transporte");
-
-                
-                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
-                comm1.CommandType = CommandType.StoredProcedure;
-                comm1.Parameters.Add("ope", OdbcType.Text).Value = "CREACION DE RESERVACION/ASIGNACION TRANSPORTE";
-                comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
-                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
-                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
-                comm1.ExecuteNonQuery();
-                
-
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                    MessageBox.Show("Error al intentar reservar.");
+                }
+                Limpiar();
+                Desahiblitarbtn();
             }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                MessageBox.Show("Error al intentar reservar.");
-            }
-            Limpiar();
-            Desahiblitarbtn();
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)
@@ -249,15 +266,12 @@ namespace Prototipo_Agencia_Turismo
             DateTime fechaHoy = DateTime.Now;
             string fecha = fechaHoy.ToString("d");
             if (Dtp_FecaSalida.Value == fechaHoy || Dtp_FecaSalida.Value < fechaHoy)
-            {
-                MessageBox.Show("Fecha incorrecta.");
                 Btn_reservar.Enabled = false;
-            }
+            //MessageBox.Show("Fecha incorrecta.");
             else
-            {
-                MessageBox.Show("Fecha correcta.");
                 Dtp_FecaEntrada.Enabled = true;
-            }
+            //MessageBox.Show("Fecha correcta.");
+
 
         }
         /*
@@ -267,15 +281,22 @@ namespace Prototipo_Agencia_Turismo
         private void Dtp_FecaEntrada_ValueChanged(object sender, EventArgs e)
         {
             if (Dtp_FecaSalida.Value > Dtp_FecaEntrada.Value)
-            {
-                MessageBox.Show("Fecha incorrecta.");
                 Btn_reservar.Enabled = false;
-            }
+            //MessageBox.Show("Fecha incorrecta.");
             else
-            {
-                MessageBox.Show("Fecha correcta.");
                 Btn_reservar.Enabled = true;
-            }
+            //MessageBox.Show("Fecha correcta.");
+
+        }
+
+        private void Pnl_principal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -37,6 +37,18 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_mdi_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
+                OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                commAct.ExecuteNonQuery();
+
+                commAct.Connection.Close();
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
             Application.Exit();
         }
 
@@ -184,7 +196,7 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaFacturacion = false;
-        Frm_facturacion facturacion = new Frm_facturacion();
+        Frm_facturacion facturacion = new Frm_facturacion("");
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_facturacion);
@@ -192,7 +204,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    facturacion = new Frm_facturacion();
+                    facturacion = new Frm_facturacion(nombreUsuario);
                 }
 
                 facturacion.MdiParent = this;
@@ -282,9 +294,13 @@ namespace Prototipo_Agencia_Turismo
                 comm.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm.ExecuteNonQuery();
 
+                comm.Connection.Close();
+
                 string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'"; 
                 OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
                 commAct.ExecuteNonQuery();
+
+                commAct.Connection.Close();
             }
             catch (Exception err)
             {

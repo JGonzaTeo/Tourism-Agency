@@ -42,6 +42,7 @@ namespace Prototipo_Agencia_Turismo
             tipoPerfil = 0;
             estadoLogeado = 0;
             actualizarCampo = " ";
+
             DateTime fecha_ingreso = DateTime.Now;
             IPHostEntry host;
             string localIP = "?";
@@ -64,8 +65,7 @@ namespace Prototipo_Agencia_Turismo
 
                 while (mostrarUsuarios.Read())
                 {
-                    //guarda la contraseña del usuario desencriptada 
-                    contrasenaDesencriptada = Seguridad_Login.DesEncriptar(mostrarUsuarios.GetString(2));
+                    contrasenaDesencriptada = Seguridad_Login.DesEncriptar(mostrarUsuarios.GetString(2)); //guarda la contraseña del usuario desencriptada 
                     nombreUsuario = mostrarUsuarios.GetString(1);
                     estadoLogeado = mostrarUsuarios.GetInt32(5);
                     //si los campos escritos en el Formulario son iguales a los del registro de la BD se permite el logeo
@@ -83,7 +83,7 @@ namespace Prototipo_Agencia_Turismo
                         }
                         else
                         {
-                            Console.WriteLine("WORKS");
+                            Console.WriteLine("WORKS"); //Pruebas de depuración
                             idUsuario = mostrarUsuarios.GetInt32(0);
                             nombreUsuario = mostrarUsuarios.GetString(1);
                             Console.WriteLine("WORKS2");
@@ -105,7 +105,9 @@ namespace Prototipo_Agencia_Turismo
                         }
                     }
                 }
-                
+                comm.Connection.Close();
+                mostrarUsuarios.Close();
+
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INICION DE SESIÓN";
@@ -114,6 +116,8 @@ namespace Prototipo_Agencia_Turismo
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "-------------";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+
+                commBitacora.Connection.Close();
 
                 if(datosIncorrectos == true)
                 {

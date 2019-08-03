@@ -80,6 +80,7 @@
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 1;
+            this.Pnl_principal.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_principal_Paint);
             // 
             // Btn_minimizar
             // 
@@ -175,9 +176,9 @@
             this.Lbl_nomCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_nomCliente.Location = new System.Drawing.Point(8, 111);
             this.Lbl_nomCliente.Name = "Lbl_nomCliente";
-            this.Lbl_nomCliente.Size = new System.Drawing.Size(145, 19);
+            this.Lbl_nomCliente.Size = new System.Drawing.Size(100, 19);
             this.Lbl_nomCliente.TabIndex = 22;
-            this.Lbl_nomCliente.Text = "Nombre del cliente:";
+            this.Lbl_nomCliente.Text = "ID de cliente:";
             // 
             // Lbl_idcoti
             // 
@@ -215,9 +216,9 @@
             this.Lbl_metodoPago.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_metodoPago.Location = new System.Drawing.Point(8, 155);
             this.Lbl_metodoPago.Name = "Lbl_metodoPago";
-            this.Lbl_metodoPago.Size = new System.Drawing.Size(133, 19);
+            this.Lbl_metodoPago.Size = new System.Drawing.Size(150, 19);
             this.Lbl_metodoPago.TabIndex = 33;
-            this.Lbl_metodoPago.Text = "Metodo de pago:";
+            this.Lbl_metodoPago.Text = "ID metodo de pago:";
             // 
             // Lbl_fechaSalida
             // 
@@ -368,6 +369,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel2.Size = new System.Drawing.Size(401, 188);
             this.panel2.TabIndex = 52;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Dtp_FecaEntrada
             // 
@@ -487,6 +489,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_reservacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_reservacion";
             this.Load += new System.EventHandler(this.Frm_reservacion_Load);
             this.Pnl_principal.ResumeLayout(false);
