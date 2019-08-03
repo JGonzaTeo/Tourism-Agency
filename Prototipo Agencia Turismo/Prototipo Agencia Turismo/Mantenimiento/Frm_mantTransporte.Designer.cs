@@ -175,6 +175,7 @@
             this.Txt_capacidad.Size = new System.Drawing.Size(83, 24);
             this.Txt_capacidad.TabIndex = 9;
             this.Txt_capacidad.TextChanged += new System.EventHandler(this.Txt_capacidad_TextChanged);
+            this.Txt_capacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_capacidad_KeyPress);
             // 
             // Btn_consultar
             // 

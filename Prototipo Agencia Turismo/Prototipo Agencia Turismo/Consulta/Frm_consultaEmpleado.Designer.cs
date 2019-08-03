@@ -32,19 +32,6 @@
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Dgv_consultaEmpleados = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuenta_Bancaria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sueldo_Base = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btn_consulta = new System.Windows.Forms.Button();
             this.Txt_consultaEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +39,22 @@
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo_Auxiliar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono_residencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dpi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuenta_Bancaria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sueldo_Base = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaEmpleados)).BeginInit();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
@@ -93,92 +96,24 @@
             this.Dgv_consultaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
-            this.Nombre,
+            this.nombre_empleado,
             this.Valor,
             this.Tipo,
             this.Correo,
+            this.Correo_Auxiliar,
             this.Telefono,
+            this.telefono_residencial,
             this.Dpi,
             this.Usario,
             this.Cuenta_Bancaria,
             this.Nit,
             this.Sueldo_Base,
-            this.Direccion,
-            this.Departamento});
-            this.Dgv_consultaEmpleados.Location = new System.Drawing.Point(0, 111);
+            this.Direccion});
+            this.Dgv_consultaEmpleados.Location = new System.Drawing.Point(12, 118);
             this.Dgv_consultaEmpleados.Name = "Dgv_consultaEmpleados";
             this.Dgv_consultaEmpleados.RowTemplate.Height = 24;
-            this.Dgv_consultaEmpleados.Size = new System.Drawing.Size(1418, 305);
+            this.Dgv_consultaEmpleados.Size = new System.Drawing.Size(1111, 305);
             this.Dgv_consultaEmpleados.TabIndex = 66;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Apellido";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Fecha Nacimiento";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            // 
-            // Dpi
-            // 
-            this.Dpi.HeaderText = "Dpi";
-            this.Dpi.Name = "Dpi";
-            // 
-            // Usario
-            // 
-            this.Usario.HeaderText = "Usuario";
-            this.Usario.Name = "Usario";
-            // 
-            // Cuenta_Bancaria
-            // 
-            this.Cuenta_Bancaria.HeaderText = "Cuenta_Bancaria";
-            this.Cuenta_Bancaria.Name = "Cuenta_Bancaria";
-            // 
-            // Nit
-            // 
-            this.Nit.HeaderText = "Nit";
-            this.Nit.Name = "Nit";
-            // 
-            // Sueldo_Base
-            // 
-            this.Sueldo_Base.HeaderText = "Sueldo_Base";
-            this.Sueldo_Base.Name = "Sueldo_Base";
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            // 
-            // Departamento
-            // 
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.Name = "Departamento";
             // 
             // Btn_consulta
             // 
@@ -219,6 +154,8 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.button1);
+            this.Pnl_principal.Controls.Add(this.button2);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -226,7 +163,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1398, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1162, 51);
             this.Pnl_principal.TabIndex = 62;
             // 
             // Btn_minimizar
@@ -266,11 +203,110 @@
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "Consulta De Empleados";
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // nombre_empleado
+            // 
+            this.nombre_empleado.HeaderText = "Nombre";
+            this.nombre_empleado.Name = "nombre_empleado";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Apellido";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Fecha Nacimiento";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            // 
+            // Correo_Auxiliar
+            // 
+            this.Correo_Auxiliar.HeaderText = "Correo alternativo";
+            this.Correo_Auxiliar.Name = "Correo_Auxiliar";
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            // 
+            // telefono_residencial
+            // 
+            this.telefono_residencial.HeaderText = "Telefono residencial";
+            this.telefono_residencial.Name = "telefono_residencial";
+            // 
+            // Dpi
+            // 
+            this.Dpi.HeaderText = "Dpi";
+            this.Dpi.Name = "Dpi";
+            // 
+            // Usario
+            // 
+            this.Usario.HeaderText = "Usuario";
+            this.Usario.Name = "Usario";
+            // 
+            // Cuenta_Bancaria
+            // 
+            this.Cuenta_Bancaria.HeaderText = "Cuenta_Bancaria";
+            this.Cuenta_Bancaria.Name = "Cuenta_Bancaria";
+            // 
+            // Nit
+            // 
+            this.Nit.HeaderText = "Nit";
+            this.Nit.Name = "Nit";
+            // 
+            // Sueldo_Base
+            // 
+            this.Sueldo_Base.HeaderText = "Sueldo_Base";
+            this.Sueldo_Base.Name = "Sueldo_Base";
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1024, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 48);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1104, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 48);
+            this.button2.TabIndex = 12;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Frm_consultaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1398, 593);
+            this.ClientSize = new System.Drawing.Size(1162, 593);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_seleccionar);
             this.Controls.Add(this.Dgv_consultaEmpleados);
@@ -296,19 +332,6 @@
         private System.Windows.Forms.Button Btn_actualizar;
         private System.Windows.Forms.Button Btn_seleccionar;
         public System.Windows.Forms.DataGridView Dgv_consultaEmpleados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dpi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta_Bancaria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo_Base;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.Button Btn_consulta;
         private System.Windows.Forms.TextBox Txt_consultaEmpleado;
         private System.Windows.Forms.Label label1;
@@ -316,5 +339,21 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo_Auxiliar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono_residencial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dpi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta_Bancaria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo_Base;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

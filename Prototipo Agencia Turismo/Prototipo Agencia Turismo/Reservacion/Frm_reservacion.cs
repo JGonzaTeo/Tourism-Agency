@@ -43,21 +43,34 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_reservacion_Load(object sender, EventArgs e)
         {
-            
+            Desahiblitarbtn();
+        }
+        private void Habilitarbtn()
+        {
+            Btn_consultarVehiculo.Enabled = true;
+            Btn_consultarPiloto.Enabled = true;
+            Btn_reservar.Enabled = true;
         }
 
+        private void Desahiblitarbtn()
+        {
+            Btn_consultarVehiculo.Enabled = false;
+            Btn_consultarPiloto.Enabled = false;
+            Btn_reservar.Enabled = false;
+        }
         private void MostrarConsulta()
         {
+            string num = Lbl_idCotizacion.Text;
             try
             {
-                string consultaMostrar = "SELECT * FROM tbl_facturadetalle WHERE Pk_idFactura= "+Lbl_idCotizacion+";";
+                string consultaMostrar = "SELECT Fk_idTipoHabitacion, FK_idMenus, Fk_idLugarTuristico,cantidadHabitaciones FROM tbl_facturadetalle WHERE Pk_idFactura= 2;";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
                 while (mostrarDatos.Read())
                 {
                     Dgv_detalleFactura.Refresh();
-                    Dgv_detalleFactura.Rows.Add(mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5));
+                    Dgv_detalleFactura.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3));
                 }
 
             }
@@ -65,6 +78,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 Console.Write(err.Message);
             }
+           
         }
 
         private void Btn_busquedaCotizacion_Click(object sender, EventArgs e)
@@ -78,11 +92,14 @@ namespace Prototipo_Agencia_Turismo
                     Cells[0].Value.ToString();
                     Lbl_nombCliente.Text = conCotizacion.Dgv_consultaCotizacion.Rows[conCotizacion.Dgv_consultaCotizacion.CurrentRow.Index].
                     Cells[1].Value.ToString();
-                    
+                    Lbl_metodo.Text = conCotizacion.Dgv_consultaCotizacion.Rows[conCotizacion.Dgv_consultaCotizacion.CurrentRow.Index].
+                    Cells[5].Value.ToString();
+
             }
             Dgv_detalleFactura.Rows.Clear();
             Dgv_detalleFactura.Refresh();
-            MostrarConsulta();   
+            MostrarConsulta();
+            Btn_consultarVehiculo.Enabled = true;
         }
 
         private void Btn_consultarMetodoPago_Click(object sender, EventArgs e)
@@ -109,6 +126,7 @@ namespace Prototipo_Agencia_Turismo
                     Cells[0].Value.ToString();
 
             }
+            Btn_consultarPiloto.Enabled = true;
         }
 
         private void Btn_consultarPiloto_Click(object sender, EventArgs e)
@@ -121,11 +139,12 @@ namespace Prototipo_Agencia_Turismo
                 Lbl_piloto.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                     Cells[0].Value.ToString();
             }
+            Btn_reservar.Enabled = true;
         }
         
         private void Limpiar()
         {
-            Lbl_idReservacion.Text = "";
+            Lbl_reservacion.Text = "";
             Lbl_idCotizacion.Text = "";
             Lbl_nombCliente.Text = "";
             Lbl_metodo.Text = "";
@@ -139,6 +158,7 @@ namespace Prototipo_Agencia_Turismo
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            Desahiblitarbtn();
         }
 
         private void Btn_reservar_Click(object sender, EventArgs e)
@@ -198,13 +218,15 @@ namespace Prototipo_Agencia_Turismo
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
                 
-                Limpiar();
+
             }
             catch (Exception err)
             {
                 Console.WriteLine(err.Message);
                 MessageBox.Show("Error al intentar reservar.");
             }
+            Limpiar();
+            Desahiblitarbtn();
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)

@@ -34,6 +34,10 @@
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Dgv_detalleFactura = new System.Windows.Forms.DataGridView();
+            this.habitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lugarTuristico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lbl_nombCliente = new System.Windows.Forms.Label();
             this.Lbl_nomCliente = new System.Windows.Forms.Label();
             this.Lbl_idcoti = new System.Windows.Forms.Label();
@@ -48,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Lbl_detalle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Btn_consultarMetodoPago = new System.Windows.Forms.Button();
             this.Btn_busquedaCotizacion = new System.Windows.Forms.Button();
             this.Lbl_reservacion = new System.Windows.Forms.Label();
             this.Lbl_idCotizacion = new System.Windows.Forms.Label();
@@ -59,10 +62,6 @@
             this.Btn_consultarVehiculo = new System.Windows.Forms.Button();
             this.Btn_reservar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
-            this.habitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lugarTuristico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -135,6 +134,30 @@
             this.Dgv_detalleFactura.RowTemplate.Height = 24;
             this.Dgv_detalleFactura.Size = new System.Drawing.Size(904, 272);
             this.Dgv_detalleFactura.TabIndex = 24;
+            // 
+            // habitacion
+            // 
+            this.habitacion.HeaderText = "ID Habitacion";
+            this.habitacion.Name = "habitacion";
+            this.habitacion.ReadOnly = true;
+            // 
+            // menu
+            // 
+            this.menu.HeaderText = "ID Menu";
+            this.menu.Name = "menu";
+            this.menu.ReadOnly = true;
+            // 
+            // lugarTuristico
+            // 
+            this.lugarTuristico.HeaderText = "ID Turistico";
+            this.lugarTuristico.Name = "lugarTuristico";
+            this.lugarTuristico.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad Habitaciones";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
             // Lbl_nombCliente
             // 
@@ -269,7 +292,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.Btn_consultarMetodoPago);
             this.panel1.Controls.Add(this.Btn_busquedaCotizacion);
             this.panel1.Controls.Add(this.Lbl_idReservacion);
             this.panel1.Controls.Add(this.Lbl_reservacion);
@@ -285,27 +307,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel1.Size = new System.Drawing.Size(401, 188);
             this.panel1.TabIndex = 51;
-            // 
-            // Btn_consultarMetodoPago
-            // 
-            this.Btn_consultarMetodoPago.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_consultarMetodoPago.FlatAppearance.BorderSize = 3;
-            this.Btn_consultarMetodoPago.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_consultarMetodoPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_consultarMetodoPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_consultarMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultarMetodoPago.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_consultarMetodoPago.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarMetodoPago.Image")));
-            this.Btn_consultarMetodoPago.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultarMetodoPago.Location = new System.Drawing.Point(334, 139);
-            this.Btn_consultarMetodoPago.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Btn_consultarMetodoPago.Name = "Btn_consultarMetodoPago";
-            this.Btn_consultarMetodoPago.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consultarMetodoPago.TabIndex = 60;
-            this.Btn_consultarMetodoPago.Text = "Consultar";
-            this.Btn_consultarMetodoPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_consultarMetodoPago.UseVisualStyleBackColor = false;
-            this.Btn_consultarMetodoPago.Click += new System.EventHandler(this.Btn_consultarMetodoPago_Click);
             // 
             // Btn_busquedaCotizacion
             // 
@@ -439,7 +440,7 @@
             this.Btn_reservar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_reservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_reservar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_reservar.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.icons8_guardar_40;
+            this.Btn_reservar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_reservar.Image")));
             this.Btn_reservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_reservar.Location = new System.Drawing.Point(970, 420);
             this.Btn_reservar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -457,7 +458,7 @@
             this.Btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_eliminar.Image = global::Prototipo_Agencia_Turismo.Properties.Resources.icons8_borrar_40;
+            this.Btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_eliminar.Image")));
             this.Btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_eliminar.Location = new System.Drawing.Point(970, 351);
             this.Btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -467,30 +468,6 @@
             this.Btn_eliminar.Text = "Eliminar";
             this.Btn_eliminar.UseVisualStyleBackColor = true;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
-            // 
-            // habitacion
-            // 
-            this.habitacion.HeaderText = "ID Habitacion";
-            this.habitacion.Name = "habitacion";
-            this.habitacion.ReadOnly = true;
-            // 
-            // menu
-            // 
-            this.menu.HeaderText = "ID Menu";
-            this.menu.Name = "menu";
-            this.menu.ReadOnly = true;
-            // 
-            // lugarTuristico
-            // 
-            this.lugarTuristico.HeaderText = "ID Turistico";
-            this.lugarTuristico.Name = "lugarTuristico";
-            this.lugarTuristico.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad Habitaciones";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
             // 
             // Frm_reservacion
             // 
@@ -546,7 +523,6 @@
         private System.Windows.Forms.Label Lbl_detalle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Btn_consultarMetodoPago;
         private System.Windows.Forms.Button Btn_busquedaCotizacion;
         private System.Windows.Forms.Button Btn_consultarPiloto;
         private System.Windows.Forms.Button Btn_consultarVehiculo;

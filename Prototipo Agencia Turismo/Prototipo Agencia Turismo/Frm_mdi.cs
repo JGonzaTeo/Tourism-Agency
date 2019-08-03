@@ -4,6 +4,7 @@
   -----------------------------------------------------
 */
 
+using Prototipo_Agencia_Turismo.Cotizacion;
 using Prototipo_Agencia_Turismo.Mantenimiento;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,14 @@ namespace Prototipo_Agencia_Turismo
     public partial class Frm_mdi : Form
     {
         string nombreUsuario = " ";
-        string tipoPerfil = " ";
+        int tipoPerfil = 0;
         DateTime fecha = DateTime.Now;
+        int idUsuario;
 
-        public Frm_mdi(string usuario, string tipoPerfil)
+        public Frm_mdi(int idUsuario, string usuario, int tipoPerfil)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
             nombreUsuario = usuario;
             this.tipoPerfil = tipoPerfil;
         }
@@ -41,7 +44,7 @@ namespace Prototipo_Agencia_Turismo
         {
             toolStripStatusLabel1.Text = "BIENVENIDO: " + nombreUsuario;
 
-            if (tipoPerfil == "1") //usuario normal
+            if (tipoPerfil == 1) //usuario normal
             {
                 seguridadToolStripMenuItem.Enabled = false;
             }
@@ -112,7 +115,7 @@ namespace Prototipo_Agencia_Turismo
         */
 
         bool ventanaMantTransporte = false;
-        Frm_mantTransporte mantenimientoTransporte = new Frm_mantTransporte();
+        Frm_mantTransporte mantenimientoTransporte = new Frm_mantTransporte("");
         private void transporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantTransporte);
@@ -120,7 +123,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    mantenimientoTransporte = new Frm_mantTransporte();
+                    mantenimientoTransporte = new Frm_mantTransporte(nombreUsuario);
                 }
 
                 mantenimientoTransporte.MdiParent = this;
@@ -278,6 +281,10 @@ namespace Prototipo_Agencia_Turismo
                 comm.Parameters.Add("proc", OdbcType.Text).Value = "-----";
                 comm.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm.ExecuteNonQuery();
+
+                string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'"; 
+                OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                commAct.ExecuteNonQuery();
             }
             catch (Exception err)
             {
@@ -311,7 +318,7 @@ namespace Prototipo_Agencia_Turismo
 
 
         bool ventanaMantDepartamento = false;
-        Frm_mantDepartamento mantenimientoDepartamento = new Frm_mantDepartamento();
+        Frm_mantDepartamento mantenimientoDepartamento = new Frm_mantDepartamento("");
         private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantDepartamento);
@@ -319,7 +326,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    mantenimientoDepartamento = new Frm_mantDepartamento();
+                    mantenimientoDepartamento = new Frm_mantDepartamento(nombreUsuario);
                 }
 
                 mantenimientoDepartamento.MdiParent = this;
@@ -335,7 +342,7 @@ namespace Prototipo_Agencia_Turismo
 
 
         bool ventanaMantCliente = false;
-        Frm_mantCliente mantenimientoCliente = new Frm_mantCliente();
+        Frm_mantCliente mantenimientoCliente = new Frm_mantCliente("");
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantCliente);
@@ -343,7 +350,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    mantenimientoCliente = new Frm_mantCliente();
+                    mantenimientoCliente = new Frm_mantCliente(nombreUsuario);
                 }
 
                 mantenimientoCliente.MdiParent = this;

@@ -175,7 +175,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             {
                 try
                 {
-                    string insertarUsuario = "INSERT INTO tbl_usuario (nombreUsuario,contrasenaUsuario,Fk_idPerfil,estado) VALUES('" + nickUsuario + "', '" + contrasenaEncriptada + "', '" + idPerfil + "', '1' )";
+                    string insertarUsuario = "INSERT INTO tbl_usuario (nombreUsuario,contrasenaUsuario,Fk_idPerfil,estado,logeado) VALUES('" + nickUsuario + "', '" + contrasenaEncriptada + "', '" + idPerfil + "', '1', '0')";
 
                     OdbcCommand comm = new OdbcCommand(insertarUsuario, Conexion.nuevaConexion());
                     comm.ExecuteNonQuery();

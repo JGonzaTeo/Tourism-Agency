@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantEmpleado));
-            this.Txt_departamento = new System.Windows.Forms.TextBox();
             this.Txt_usuario = new System.Windows.Forms.TextBox();
             this.Txt_direccion = new System.Windows.Forms.TextBox();
             this.Txt_sueldoBase = new System.Windows.Forms.TextBox();
@@ -39,15 +38,14 @@
             this.Txt_telefono = new System.Windows.Forms.TextBox();
             this.Txt_correo = new System.Windows.Forms.TextBox();
             this.Dtp_FechaNc = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.Lbl_sueldobase = new System.Windows.Forms.Label();
+            this.Lbl_dirección = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Lbl_Cuentabancaia = new System.Windows.Forms.Label();
+            this.Lbl_Dpi = new System.Windows.Forms.Label();
+            this.Lbl_telefono = new System.Windows.Forms.Label();
+            this.Lbl_correo = new System.Windows.Forms.Label();
             this.Lbl_fechaNac = new System.Windows.Forms.Label();
             this.Lbl_apellido = new System.Windows.Forms.Label();
             this.Lbl_nombre = new System.Windows.Forms.Label();
@@ -64,16 +62,12 @@
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Btn_consultaPerfil = new System.Windows.Forms.Button();
+            this.Lbl_correoaux = new System.Windows.Forms.Label();
+            this.Txt_correoAux = new System.Windows.Forms.TextBox();
+            this.Lbl_telefonores = new System.Windows.Forms.Label();
+            this.Txt_telefonoRes = new System.Windows.Forms.TextBox();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Txt_departamento
-            // 
-            this.Txt_departamento.Location = new System.Drawing.Point(791, 340);
-            this.Txt_departamento.Name = "Txt_departamento";
-            this.Txt_departamento.Size = new System.Drawing.Size(100, 22);
-            this.Txt_departamento.TabIndex = 117;
-            this.Txt_departamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_departamento_KeyPress);
             // 
             // Txt_usuario
             // 
@@ -84,7 +78,7 @@
             // 
             // Txt_direccion
             // 
-            this.Txt_direccion.Location = new System.Drawing.Point(791, 296);
+            this.Txt_direccion.Location = new System.Drawing.Point(791, 336);
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(100, 22);
             this.Txt_direccion.TabIndex = 115;
@@ -92,7 +86,7 @@
             // 
             // Txt_sueldoBase
             // 
-            this.Txt_sueldoBase.Location = new System.Drawing.Point(791, 256);
+            this.Txt_sueldoBase.Location = new System.Drawing.Point(791, 296);
             this.Txt_sueldoBase.Name = "Txt_sueldoBase";
             this.Txt_sueldoBase.Size = new System.Drawing.Size(100, 22);
             this.Txt_sueldoBase.TabIndex = 114;
@@ -100,7 +94,7 @@
             // 
             // Txt_nit
             // 
-            this.Txt_nit.Location = new System.Drawing.Point(432, 479);
+            this.Txt_nit.Location = new System.Drawing.Point(791, 375);
             this.Txt_nit.Name = "Txt_nit";
             this.Txt_nit.Size = new System.Drawing.Size(100, 22);
             this.Txt_nit.TabIndex = 113;
@@ -109,7 +103,7 @@
             // 
             // Txt_cuentaBancaria
             // 
-            this.Txt_cuentaBancaria.Location = new System.Drawing.Point(432, 442);
+            this.Txt_cuentaBancaria.Location = new System.Drawing.Point(354, 510);
             this.Txt_cuentaBancaria.Name = "Txt_cuentaBancaria";
             this.Txt_cuentaBancaria.Size = new System.Drawing.Size(147, 22);
             this.Txt_cuentaBancaria.TabIndex = 112;
@@ -117,7 +111,7 @@
             // 
             // Txt_dpi
             // 
-            this.Txt_dpi.Location = new System.Drawing.Point(432, 405);
+            this.Txt_dpi.Location = new System.Drawing.Point(354, 473);
             this.Txt_dpi.Name = "Txt_dpi";
             this.Txt_dpi.Size = new System.Drawing.Size(100, 22);
             this.Txt_dpi.TabIndex = 111;
@@ -125,7 +119,7 @@
             // 
             // Txt_telefono
             // 
-            this.Txt_telefono.Location = new System.Drawing.Point(432, 360);
+            this.Txt_telefono.Location = new System.Drawing.Point(353, 396);
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(100, 22);
             this.Txt_telefono.TabIndex = 110;
@@ -133,124 +127,113 @@
             // 
             // Txt_correo
             // 
-            this.Txt_correo.Location = new System.Drawing.Point(432, 326);
+            this.Txt_correo.Location = new System.Drawing.Point(354, 317);
             this.Txt_correo.Name = "Txt_correo";
-            this.Txt_correo.Size = new System.Drawing.Size(100, 22);
+            this.Txt_correo.Size = new System.Drawing.Size(186, 22);
             this.Txt_correo.TabIndex = 109;
             // 
             // Dtp_FechaNc
             // 
             this.Dtp_FechaNc.CustomFormat = "yyyy-MM-dd";
             this.Dtp_FechaNc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp_FechaNc.Location = new System.Drawing.Point(465, 294);
+            this.Dtp_FechaNc.Location = new System.Drawing.Point(387, 285);
             this.Dtp_FechaNc.Name = "Dtp_FechaNc";
             this.Dtp_FechaNc.Size = new System.Drawing.Size(125, 22);
             this.Dtp_FechaNc.TabIndex = 108;
             // 
-            // label10
+            // lbl_usuario
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(633, 211);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 25);
-            this.label10.TabIndex = 107;
-            this.label10.Text = "Usuario:";
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(633, 211);
+            this.lbl_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(93, 25);
+            this.lbl_usuario.TabIndex = 107;
+            this.lbl_usuario.Text = "Usuario:";
             // 
-            // label9
+            // Lbl_sueldobase
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(633, 256);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 25);
-            this.label9.TabIndex = 106;
-            this.label9.Text = "Sueldo Base:";
+            this.Lbl_sueldobase.AutoSize = true;
+            this.Lbl_sueldobase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_sueldobase.Location = new System.Drawing.Point(633, 296);
+            this.Lbl_sueldobase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_sueldobase.Name = "Lbl_sueldobase";
+            this.Lbl_sueldobase.Size = new System.Drawing.Size(142, 25);
+            this.Lbl_sueldobase.TabIndex = 106;
+            this.Lbl_sueldobase.Text = "Sueldo Base:";
             // 
-            // label8
+            // Lbl_dirección
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(633, 337);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 25);
-            this.label8.TabIndex = 105;
-            this.label8.Text = "Departamento:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(633, 299);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 25);
-            this.label7.TabIndex = 104;
-            this.label7.Text = "Direccion:";
+            this.Lbl_dirección.AutoSize = true;
+            this.Lbl_dirección.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_dirección.Location = new System.Drawing.Point(633, 339);
+            this.Lbl_dirección.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_dirección.Name = "Lbl_dirección";
+            this.Lbl_dirección.Size = new System.Drawing.Size(109, 25);
+            this.Lbl_dirección.TabIndex = 104;
+            this.Lbl_dirección.Text = "Direccion:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(244, 476);
+            this.label6.Location = new System.Drawing.Point(637, 375);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 25);
             this.label6.TabIndex = 103;
             this.label6.Text = "Nit:";
             // 
-            // label5
+            // Lbl_Cuentabancaia
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(237, 439);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 25);
-            this.label5.TabIndex = 102;
-            this.label5.Text = "Cuenta Bancaria:";
+            this.Lbl_Cuentabancaia.AutoSize = true;
+            this.Lbl_Cuentabancaia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Cuentabancaia.Location = new System.Drawing.Point(159, 507);
+            this.Lbl_Cuentabancaia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Cuentabancaia.Name = "Lbl_Cuentabancaia";
+            this.Lbl_Cuentabancaia.Size = new System.Drawing.Size(180, 25);
+            this.Lbl_Cuentabancaia.TabIndex = 102;
+            this.Lbl_Cuentabancaia.Text = "Cuenta Bancaria:";
             // 
-            // label4
+            // Lbl_Dpi
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(237, 402);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 25);
-            this.label4.TabIndex = 101;
-            this.label4.Text = "DPI:";
+            this.Lbl_Dpi.AutoSize = true;
+            this.Lbl_Dpi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Dpi.Location = new System.Drawing.Point(159, 470);
+            this.Lbl_Dpi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Dpi.Name = "Lbl_Dpi";
+            this.Lbl_Dpi.Size = new System.Drawing.Size(54, 25);
+            this.Lbl_Dpi.TabIndex = 101;
+            this.Lbl_Dpi.Text = "DPI:";
             // 
-            // label3
+            // Lbl_telefono
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(237, 360);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 25);
-            this.label3.TabIndex = 100;
-            this.label3.Text = "Telefono:";
+            this.Lbl_telefono.AutoSize = true;
+            this.Lbl_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_telefono.Location = new System.Drawing.Point(158, 396);
+            this.Lbl_telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_telefono.Name = "Lbl_telefono";
+            this.Lbl_telefono.Size = new System.Drawing.Size(104, 25);
+            this.Lbl_telefono.TabIndex = 100;
+            this.Lbl_telefono.Text = "Telefono:";
             // 
-            // label2
+            // Lbl_correo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(236, 322);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 25);
-            this.label2.TabIndex = 99;
-            this.label2.Text = "Correo:";
+            this.Lbl_correo.AutoSize = true;
+            this.Lbl_correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_correo.Location = new System.Drawing.Point(158, 313);
+            this.Lbl_correo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_correo.Name = "Lbl_correo";
+            this.Lbl_correo.Size = new System.Drawing.Size(85, 25);
+            this.Lbl_correo.TabIndex = 99;
+            this.Lbl_correo.Text = "Correo:";
             // 
             // Lbl_fechaNac
             // 
             this.Lbl_fechaNac.AutoSize = true;
             this.Lbl_fechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_fechaNac.Location = new System.Drawing.Point(239, 292);
+            this.Lbl_fechaNac.Location = new System.Drawing.Point(161, 283);
             this.Lbl_fechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_fechaNac.Name = "Lbl_fechaNac";
             this.Lbl_fechaNac.Size = new System.Drawing.Size(219, 25);
@@ -261,7 +244,7 @@
             // 
             this.Lbl_apellido.AutoSize = true;
             this.Lbl_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_apellido.Location = new System.Drawing.Point(237, 256);
+            this.Lbl_apellido.Location = new System.Drawing.Point(159, 247);
             this.Lbl_apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_apellido.Name = "Lbl_apellido";
             this.Lbl_apellido.Size = new System.Drawing.Size(97, 25);
@@ -272,7 +255,7 @@
             // 
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(237, 214);
+            this.Lbl_nombre.Location = new System.Drawing.Point(159, 205);
             this.Lbl_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_nombre.Name = "Lbl_nombre";
             this.Lbl_nombre.Size = new System.Drawing.Size(94, 25);
@@ -401,7 +384,7 @@
             // 
             // Txt_apellido
             // 
-            this.Txt_apellido.Location = new System.Drawing.Point(432, 256);
+            this.Txt_apellido.Location = new System.Drawing.Point(354, 247);
             this.Txt_apellido.Name = "Txt_apellido";
             this.Txt_apellido.Size = new System.Drawing.Size(100, 22);
             this.Txt_apellido.TabIndex = 89;
@@ -409,7 +392,7 @@
             // 
             // Txt_nombre
             // 
-            this.Txt_nombre.Location = new System.Drawing.Point(432, 214);
+            this.Txt_nombre.Location = new System.Drawing.Point(354, 205);
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(100, 22);
             this.Txt_nombre.TabIndex = 88;
@@ -478,21 +461,61 @@
             this.Btn_consultaPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consultaPerfil.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaPerfil.Image")));
             this.Btn_consultaPerfil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultaPerfil.Location = new System.Drawing.Point(897, 203);
+            this.Btn_consultaPerfil.Location = new System.Drawing.Point(897, 205);
             this.Btn_consultaPerfil.Name = "Btn_consultaPerfil";
-            this.Btn_consultaPerfil.Size = new System.Drawing.Size(56, 40);
+            this.Btn_consultaPerfil.Size = new System.Drawing.Size(81, 52);
             this.Btn_consultaPerfil.TabIndex = 118;
             this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
             this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
+            // 
+            // Lbl_correoaux
+            // 
+            this.Lbl_correoaux.AutoSize = true;
+            this.Lbl_correoaux.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_correoaux.Location = new System.Drawing.Point(161, 353);
+            this.Lbl_correoaux.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_correoaux.Name = "Lbl_correoaux";
+            this.Lbl_correoaux.Size = new System.Drawing.Size(163, 25);
+            this.Lbl_correoaux.TabIndex = 119;
+            this.Lbl_correoaux.Text = "Correo Auxiliar:";
+            // 
+            // Txt_correoAux
+            // 
+            this.Txt_correoAux.Location = new System.Drawing.Point(353, 357);
+            this.Txt_correoAux.Name = "Txt_correoAux";
+            this.Txt_correoAux.Size = new System.Drawing.Size(187, 22);
+            this.Txt_correoAux.TabIndex = 120;
+            // 
+            // Lbl_telefonores
+            // 
+            this.Lbl_telefonores.AutoSize = true;
+            this.Lbl_telefonores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_telefonores.Location = new System.Drawing.Point(161, 432);
+            this.Lbl_telefonores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_telefonores.Name = "Lbl_telefonores";
+            this.Lbl_telefonores.Size = new System.Drawing.Size(147, 25);
+            this.Lbl_telefonores.TabIndex = 121;
+            this.Lbl_telefonores.Text = "Telefono Res:";
+            // 
+            // Txt_telefonoRes
+            // 
+            this.Txt_telefonoRes.Location = new System.Drawing.Point(353, 433);
+            this.Txt_telefonoRes.Name = "Txt_telefonoRes";
+            this.Txt_telefonoRes.Size = new System.Drawing.Size(100, 22);
+            this.Txt_telefonoRes.TabIndex = 122;
+            this.Txt_telefonoRes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefonoRes_KeyPress);
             // 
             // Frm_mantEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 593);
+            this.Controls.Add(this.Txt_telefonoRes);
+            this.Controls.Add(this.Lbl_telefonores);
+            this.Controls.Add(this.Txt_correoAux);
+            this.Controls.Add(this.Lbl_correoaux);
             this.Controls.Add(this.Btn_consultaPerfil);
-            this.Controls.Add(this.Txt_departamento);
             this.Controls.Add(this.Txt_usuario);
             this.Controls.Add(this.Txt_direccion);
             this.Controls.Add(this.Txt_sueldoBase);
@@ -502,15 +525,14 @@
             this.Controls.Add(this.Txt_telefono);
             this.Controls.Add(this.Txt_correo);
             this.Controls.Add(this.Dtp_FechaNc);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_usuario);
+            this.Controls.Add(this.Lbl_sueldobase);
+            this.Controls.Add(this.Lbl_dirección);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lbl_Cuentabancaia);
+            this.Controls.Add(this.Lbl_Dpi);
+            this.Controls.Add(this.Lbl_telefono);
+            this.Controls.Add(this.Lbl_correo);
             this.Controls.Add(this.Lbl_fechaNac);
             this.Controls.Add(this.Lbl_apellido);
             this.Controls.Add(this.Lbl_nombre);
@@ -536,7 +558,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox Txt_departamento;
         private System.Windows.Forms.TextBox Txt_usuario;
         private System.Windows.Forms.TextBox Txt_direccion;
         private System.Windows.Forms.TextBox Txt_sueldoBase;
@@ -546,15 +567,14 @@
         private System.Windows.Forms.TextBox Txt_telefono;
         private System.Windows.Forms.TextBox Txt_correo;
         private System.Windows.Forms.DateTimePicker Dtp_FechaNc;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_usuario;
+        private System.Windows.Forms.Label Lbl_sueldobase;
+        private System.Windows.Forms.Label Lbl_dirección;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Lbl_Cuentabancaia;
+        private System.Windows.Forms.Label Lbl_Dpi;
+        private System.Windows.Forms.Label Lbl_telefono;
+        private System.Windows.Forms.Label Lbl_correo;
         private System.Windows.Forms.Label Lbl_fechaNac;
         private System.Windows.Forms.Label Lbl_apellido;
         private System.Windows.Forms.Label Lbl_nombre;
@@ -571,5 +591,9 @@
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Button Btn_consultaPerfil;
+        private System.Windows.Forms.Label Lbl_correoaux;
+        private System.Windows.Forms.TextBox Txt_correoAux;
+        private System.Windows.Forms.Label Lbl_telefonores;
+        private System.Windows.Forms.TextBox Txt_telefonoRes;
     }
 }
