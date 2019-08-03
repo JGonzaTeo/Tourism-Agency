@@ -105,7 +105,9 @@ namespace Prototipo_Agencia_Turismo
                         }
                     }
                 }
-                
+                comm.Connection.Close();
+                mostrarUsuarios.Close();
+
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INICION DE SESIÓN";
@@ -114,6 +116,7 @@ namespace Prototipo_Agencia_Turismo
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "-------------";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
 
                 if(datosIncorrectos == true)
                 {

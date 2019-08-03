@@ -37,6 +37,16 @@ namespace Prototipo_Agencia_Turismo
 
         private void Frm_mdi_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
+                OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                commAct.ExecuteNonQuery();
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
             Application.Exit();
         }
 

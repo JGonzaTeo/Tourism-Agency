@@ -90,6 +90,12 @@
     <Compile Include="Consulta\Frm_consultaHotel.Designer.cs">
       <DependentUpon>Frm_consultaHotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\Frm_consultaLugarTuristico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaLugarTuristico.Designer.cs">
+      <DependentUpon>Frm_consultaLugarTuristico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\Frm_consultaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     <EmbeddedResource Include="Consulta\Frm_consultaHotel.resx">
       <DependentUpon>Frm_consultaHotel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaLugarTuristico.resx">
+      <DependentUpon>Frm_consultaLugarTuristico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaMenu.resx">
       <DependentUpon>Frm_consultaMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +365,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reservacion\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
