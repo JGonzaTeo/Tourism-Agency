@@ -6,6 +6,7 @@
 
 using Prototipo_Agencia_Turismo.Cotizacion;
 using Prototipo_Agencia_Turismo.Mantenimiento;
+using Prototipo_Agencia_Turismo.Procesos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -219,16 +220,16 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaNominas = false;
-        Frm_nominas nominas = new Frm_nominas();
+        Frm_Nominas nominas = new Frm_Nominas("");
         private void nóminasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_nominas);
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_Nominas);
             if (ventanaNominas== false || frmC == null)
             {
                 if (frmC == null)
                 {
-                    nominas = new Frm_nominas();
+                    nominas = new Frm_Nominas(nombreUsuario);
                 }
 
                 nominas.MdiParent = this;
@@ -544,6 +545,29 @@ namespace Prototipo_Agencia_Turismo
             else
             {
                 reservacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaasginacionguiaemp = false;
+        Frm_AsignacionEmpGuia asig = new Frm_AsignacionEmpGuia("");
+        private void asignacionEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_AsignacionEmpGuia);
+            if (ventanaasginacionguiaemp == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    asig = new Frm_AsignacionEmpGuia(nombreUsuario);
+                }
+
+                asig.MdiParent = this;
+                asig.Show();
+                Application.DoEvents();
+                ventanaasginacionguiaemp = true;
+            }
+            else
+            {
+                habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
     }
