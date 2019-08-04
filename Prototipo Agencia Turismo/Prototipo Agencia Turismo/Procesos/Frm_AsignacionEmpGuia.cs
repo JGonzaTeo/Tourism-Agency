@@ -74,6 +74,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm.Parameters.Add("horariofin", OdbcType.Text).Value = fechafin;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -83,6 +84,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Asignacion de guia";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
 
             }
             catch (Exception err)
@@ -138,6 +140,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm.Parameters.Add("estdo", OdbcType.Text).Value = "1";
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -147,6 +150,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Asignacion Guia";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
             }
             catch (Exception err)
             {

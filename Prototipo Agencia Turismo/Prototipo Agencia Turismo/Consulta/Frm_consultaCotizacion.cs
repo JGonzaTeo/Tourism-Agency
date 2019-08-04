@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: Ivan Mogollón
+  -----------------------------------------------------
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +57,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5), mostrarDatos.GetString(6));
                     //Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(6), mostrarDatos.GetString(10), mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -86,6 +93,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                         Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5), mostrarDatos.GetString(6));
                         // Dgv_consultaCotizacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(6),mostrarDatos.GetString(10), mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                     }
+                    comm.Connection.Close();
+                    mostrarDatos.Close();
                 }
                 catch (Exception err)
                 {

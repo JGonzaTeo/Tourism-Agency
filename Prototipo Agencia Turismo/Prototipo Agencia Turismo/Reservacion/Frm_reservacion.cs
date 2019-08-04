@@ -81,7 +81,8 @@ namespace Prototipo_Agencia_Turismo
                     Dgv_detalleFactura.Refresh();
                     Dgv_detalleFactura.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -192,6 +193,7 @@ namespace Prototipo_Agencia_Turismo
                     comm2.Parameters.Add("idCotizacion", OdbcType.Text).Value = idCotizacion;
                     comm2.Parameters.Add("idPago", OdbcType.Text).Value = tipoPago;
                     comm2.ExecuteNonQuery(); MessageBox.Show("Reservacion creada exitosamente");
+                    comm2.Connection.Close();
 
                     //Consulta para mostrar el ultimo campo ingresado en las reservaciones
                     string consultaMostrar = "select * from tbl_reservacion order by PK_idReservacion desc limit 1;";
@@ -201,6 +203,8 @@ namespace Prototipo_Agencia_Turismo
                     {
                         idReservacion = mostrarDatos.GetString(0);
                     }
+                    comm3.Connection.Close();
+                    mostrarDatos.Close();
                     /*
                     int x = 0;
 
@@ -221,6 +225,7 @@ namespace Prototipo_Agencia_Turismo
                     comm4.Parameters.Add("salida", OdbcType.Text).Value = fechaSalida;
                     comm4.Parameters.Add("entrada", OdbcType.Text).Value = fechaEntrada;
                     comm4.ExecuteNonQuery(); MessageBox.Show("Reservacion transporte");
+                    comm4.Connection.Close();
 
                     //Cambio de estado para cotizacion (Deja de ser una cotizacion y pasara a factura)
                     string consulta = "UPDATE `tbl_facturaencabezado` SET `Factura_Cotizacion` = '" + 1 +
@@ -228,6 +233,7 @@ namespace Prototipo_Agencia_Turismo
 
                     OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                     comm.ExecuteNonQuery();
+                    comm.Connection.Close();
                     
                     //Bitacora
                     OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -238,7 +244,7 @@ namespace Prototipo_Agencia_Turismo
                     comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                     comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                     comm1.ExecuteNonQuery();
-
+                    comm1.Connection.Close();
 
                 }
                 catch (Exception err)

@@ -57,9 +57,64 @@ namespace Prototipo_Agencia_Turismo
         {
             toolStripStatusLabel1.Text = "BIENVENIDO: " + nombreUsuario;
 
-            if (tipoPerfil == 1) //usuario normal
+            if (tipoPerfil == 1) //Administrador
             {
+                //Todas las opciones habilitadas
+            }
+            else if(tipoPerfil == 2) //Contador (Nóminas)
+            {
+                reservacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                cotizacionesToolStripMenuItem.Enabled = false;
                 seguridadToolStripMenuItem.Enabled = false;
+                transporteToolStripMenuItem.Enabled = false;
+                restauranteToolStripMenuItem.Enabled = false;
+                hotelToolStripMenuItem.Enabled = false;
+                departamentoToolStripMenuItem.Enabled = false;
+                clienteToolStripMenuItem.Enabled = false;
+                bonosYDescuentosToolStripMenuItem.Enabled = false;
+                guiaTuristicoToolStripMenuItem.Enabled = false;
+                empleadoToolStripMenuItem.Enabled = false;
+                menuToolStripMenuItem.Enabled = false;
+                tipoDePagoToolStripMenuItem.Enabled = false;
+                habitacionToolStripMenuItem.Enabled = false;
+            }
+            else if(tipoPerfil == 3) //ventas (Facturación) 
+            {
+                reservacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+                mantenimientosToolStripMenuItem.Enabled = false;
+                contabilidadToolStripMenuItem.Enabled = false;
+            }
+            else if(tipoPerfil == 4) //Reservación
+            {
+                cotizacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+                mantenimientosToolStripMenuItem.Enabled = false;
+                contabilidadToolStripMenuItem.Enabled = false;
+            }
+            else if(tipoPerfil == 5) //Usuario normal (solo accederá a algunos mantenimientos 
+            {
+                reservacionesToolStripMenuItem.Enabled = false;
+                cotizacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+                contabilidadToolStripMenuItem.Enabled = false;
+
+                restauranteToolStripMenuItem.Enabled = false;
+                hotelToolStripMenuItem.Enabled = false;
+                departamentoToolStripMenuItem.Enabled = false;
+                bonosYDescuentosToolStripMenuItem.Enabled = false;
+                guiaTuristicoToolStripMenuItem.Enabled = false;
+                empleadoToolStripMenuItem.Enabled = false;
+                asignacionEmpleadoToolStripMenuItem.Enabled = false;
+
             }
 
             MdiClient ctlMDI; 
