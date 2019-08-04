@@ -40,6 +40,8 @@ namespace Prototipo_Agencia_Turismo
                     Dgv_tablaBitacora.Rows.Add(cargarDgv.GetString(0), cargarDgv.GetString(1),
                         cargarDgv.GetString(2), cargarDgv.GetString(3), cargarDgv.GetString(4), cargarDgv.GetString(5));
                 }
+                comm.Connection.Close();
+                cargarDgv.Close();
             }
             catch (Exception err)
             {
@@ -80,6 +82,8 @@ namespace Prototipo_Agencia_Turismo
                         Dgv_tablaBitacora.Rows.Add(cargarDgv.GetString(0), cargarDgv.GetString(1),
                             cargarDgv.GetString(2), cargarDgv.GetString(3), cargarDgv.GetString(4), cargarDgv.GetString(5));
                     }
+                    comm.Connection.Close();
+                    cargarDgv.Close();
                 }
                 catch (Exception err)
                 {

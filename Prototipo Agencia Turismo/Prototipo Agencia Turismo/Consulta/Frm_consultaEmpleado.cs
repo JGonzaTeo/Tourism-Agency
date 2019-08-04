@@ -39,9 +39,10 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaEmpleados.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2),
                              mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5), mostrarDatos.GetString(6),
                               mostrarDatos.GetString(7), mostrarDatos.GetString(8), mostrarDatos.GetString(9), mostrarDatos.GetString(10),
-                               mostrarDatos.GetString(11), mostrarDatos.GetString(12));
+                               mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -71,8 +72,10 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaEmpleados.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2),
                              mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5), mostrarDatos.GetString(6),
                               mostrarDatos.GetString(7), mostrarDatos.GetString(8), mostrarDatos.GetString(9), mostrarDatos.GetString(10),
-                               mostrarDatos.GetString(11), mostrarDatos.GetString(12));
+                               mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                 }
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
 
             catch (Exception err)
@@ -106,6 +109,16 @@ namespace Prototipo_Agencia_Turismo.Consulta
         }
 
         private void Btn_minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }

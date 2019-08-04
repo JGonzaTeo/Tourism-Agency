@@ -30,9 +30,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
 
        
-        public Frm_mantDepartamento()
+        public Frm_mantDepartamento(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         private void limpiar()
@@ -98,6 +99,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("Descripcion", OdbcType.Text).Value = descripcionDepartamento;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -107,6 +109,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -119,7 +122,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void BorrarDatos()
         {
             nombreDepartamento = Txt_nombre.Text;
-
+            id = Txt_id.Text;
             try
             {
                 IPHostEntry host;
@@ -137,6 +140,16 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("Nombre", OdbcType.Text).Value = nombreDepartamento;
                 comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                string consulta2 = "UPDATE tbl_lugarturistico T " +
+                 "INNER JOIN tbl_departamentos D ON T.Fk_idDepartamento = D.Pk_idDepartamento " +
+                 "SET M.estadoLugarTuristico = 0 " +
+                 "WHERE T.Fk_idDepartamento =" + id + "; ";
+                OdbcCommand comm2 = new OdbcCommand(consulta2, Conexion.nuevaConexion());
+                comm2.ExecuteNonQuery();
+                comm2.Connection.Close();
+
                 MessageBox.Show("Registro eliminado correctamente");
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -147,6 +160,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -181,6 +195,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("Departamento", OdbcType.Text).Value = descripcionDepartamento;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -190,6 +205,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -211,6 +227,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
             HabilitarCampos();
+            HabilitarBtn();
         }
 
         private void Btn_borrar_Click(object sender, EventArgs e)
@@ -310,6 +327,13 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                     HabilitarBtn();
                 }
             }
+        }
+
+        private void Frm_mantDepartamento_Load(object sender, EventArgs e)
+        {
+            Btn_editar.Enabled = false;
+            Btn_guardar.Enabled = false;
+            Btn_borrar.Enabled = false;
         }
     }
 }

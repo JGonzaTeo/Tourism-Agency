@@ -20,9 +20,10 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 {
     public partial class Frm_mantTransporte : Form
     {
-        public Frm_mantTransporte()
+        public Frm_mantTransporte(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
         }
 
         string usuario = " ";
@@ -33,7 +34,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         string placa = "";
         string tipoTransporte = "";
         int capacidad = 0;
-
+        //Validaciones
+        Validacion v = new Validacion();
 
 
 
@@ -106,6 +108,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("Capacidad", OdbcType.Int).Value = capacidad;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -115,6 +118,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "TRANSPORTE";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -146,6 +150,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("Placa", OdbcType.Text).Value = placa;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -155,6 +160,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -191,6 +197,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("Capacidad", OdbcType.Text).Value = capacidad;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -200,6 +207,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "DEPARTAMENTOS";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -222,12 +230,15 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
         private void Frm_mantTransporte_Load(object sender, EventArgs e)
         {
-
+            Btn_editar.Enabled = false;
+            Btn_guardar.Enabled = false;
+            Btn_borrar.Enabled = false;
         }
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
             HabilitarCampos();
+            HabilitarBtn();
         }
 
         private void Btn_editar_Click(object sender, EventArgs e)
@@ -371,6 +382,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void Lbl_idTransporte_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txt_capacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumero(e);
         }
     }
 }

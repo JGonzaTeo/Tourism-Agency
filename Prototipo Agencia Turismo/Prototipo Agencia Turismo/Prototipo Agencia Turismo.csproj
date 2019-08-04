@@ -60,11 +60,23 @@
     <Compile Include="Consulta\Frm_consultaCliente.Designer.cs">
       <DependentUpon>Frm_consultaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\Frm_consultaCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaCotizacion.Designer.cs">
+      <DependentUpon>Frm_consultaCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\Frm_consultaDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consulta\Frm_consultaDepartamento.Designer.cs">
       <DependentUpon>Frm_consultaDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaEmpGuiacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaEmpGuiacs.Designer.cs">
+      <DependentUpon>Frm_consultaEmpGuiacs.cs</DependentUpon>
     </Compile>
     <Compile Include="Consulta\Frm_consultaEmpleado.cs">
       <SubType>Form</SubType>
@@ -89,6 +101,12 @@
     </Compile>
     <Compile Include="Consulta\Frm_consultaHotel.Designer.cs">
       <DependentUpon>Frm_consultaHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaLugarTuristico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaLugarTuristico.Designer.cs">
+      <DependentUpon>Frm_consultaLugarTuristico.cs</DependentUpon>
     </Compile>
     <Compile Include="Consulta\Frm_consultaMenu.cs">
       <SubType>Form</SubType>
@@ -126,17 +144,29 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_facturacion.cs">
+    <Compile Include="Procesos\Frm_AsignacionEmpGuia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_facturacion.Designer.cs">
+    <Compile Include="Procesos\Frm_AsignacionEmpGuia.Designer.cs">
+      <DependentUpon>Frm_AsignacionEmpGuia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Frm_Nominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Frm_Nominas.Designer.cs">
+      <DependentUpon>Frm_Nominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservacion\Frm_reservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservacion\Frm_reservacion.Designer.cs">
+      <DependentUpon>Frm_reservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Frm_facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Frm_facturacion.Designer.cs">
       <DependentUpon>Frm_facturacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_nominas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_nominas.Designer.cs">
-      <DependentUpon>Frm_nominas.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Frm_manGuiaTuristico.cs">
       <SubType>Form</SubType>
@@ -247,8 +277,14 @@
     <EmbeddedResource Include="Consulta\Frm_consultaCliente.resx">
       <DependentUpon>Frm_consultaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaCotizacion.resx">
+      <DependentUpon>Frm_consultaCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaDepartamento.resx">
       <DependentUpon>Frm_consultaDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaEmpGuiacs.resx">
+      <DependentUpon>Frm_consultaEmpGuiacs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaEmpleado.resx">
       <DependentUpon>Frm_consultaEmpleado.cs</DependentUpon>
@@ -261,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaHotel.resx">
       <DependentUpon>Frm_consultaHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaLugarTuristico.resx">
+      <DependentUpon>Frm_consultaLugarTuristico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaMenu.resx">
       <DependentUpon>Frm_consultaMenu.cs</DependentUpon>
@@ -280,11 +319,17 @@
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_facturacion.resx">
-      <DependentUpon>Frm_facturacion.cs</DependentUpon>
+    <EmbeddedResource Include="Procesos\Frm_AsignacionEmpGuia.resx">
+      <DependentUpon>Frm_AsignacionEmpGuia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_nominas.resx">
-      <DependentUpon>Frm_nominas.cs</DependentUpon>
+    <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
+      <DependentUpon>Frm_Nominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservacion\Frm_reservacion.resx">
+      <DependentUpon>Frm_reservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Frm_facturacion.resx">
+      <DependentUpon>Frm_facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Frm_manGuiaTuristico.resx">
       <DependentUpon>Frm_manGuiaTuristico.cs</DependentUpon>

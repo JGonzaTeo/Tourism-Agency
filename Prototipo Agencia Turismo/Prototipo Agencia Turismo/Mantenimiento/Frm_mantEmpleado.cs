@@ -41,6 +41,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         String direccion;
         String departamento;
         String codigo;
+        String telefonoresidencial;
+        String correoauxiliar;
 
     
 
@@ -53,6 +55,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_apellido.Enabled = false;
             Dtp_FechaNc.Enabled = false;
             Txt_correo.Enabled = false;
+            Txt_correoAux.Enabled = false;
+            Txt_telefonoRes.Enabled = false;
             Txt_telefono.Enabled = false;
             Txt_dpi.Enabled = false;
             Txt_cuentaBancaria.Enabled = false;
@@ -60,7 +64,6 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_usuario.Enabled = false;
             Txt_sueldoBase.Enabled = false;
             Txt_direccion.Enabled = false;
-            Txt_departamento.Enabled = false;
             Btn_consultaPerfil.Enabled = true;
             nombreUsuario = usuario;
          
@@ -73,6 +76,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_apellido.Enabled = true;
             Dtp_FechaNc.Enabled = true;
             Txt_correo.Enabled = true;
+            Txt_correoAux.Enabled = true;
+            Txt_telefonoRes.Enabled = true;
             Txt_telefono.Enabled = true;
             Txt_dpi.Enabled = true;
             Txt_cuentaBancaria.Enabled = true;
@@ -80,7 +85,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_usuario.Enabled = true;
             Txt_sueldoBase.Enabled = true;
             Txt_direccion.Enabled = true;
-            Txt_departamento.Enabled = true;
+          
 
         }
 
@@ -92,6 +97,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_apellido.Enabled = false;
             Dtp_FechaNc.Enabled = false;
             Txt_correo.Enabled = false;
+            Txt_correoAux.Enabled = false;
+            Txt_telefonoRes.Enabled = false;
             Txt_telefono.Enabled = false;
             Txt_dpi.Enabled = false;
             Txt_cuentaBancaria.Enabled = false;
@@ -99,7 +106,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_usuario.Enabled = false;
             Txt_sueldoBase.Enabled = false;
             Txt_direccion.Enabled = false;
-            Txt_departamento.Enabled = false;
+
         }
 
         private void Habilitarbtn()
@@ -127,6 +134,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_apellido.Text = "";
             Dtp_FechaNc.Text = "";
             Txt_correo.Text = "";
+            Txt_correoAux.Text = "";
+            Txt_telefonoRes.Text= "";
             Txt_telefono.Text = "";
             Txt_dpi.Text = "";
             Txt_cuentaBancaria.Text = "";
@@ -134,7 +143,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             Txt_usuario.Text = "";
             Txt_sueldoBase.Text = "";
             Txt_direccion.Text = "";
-            Txt_departamento.Text = "";
+          
         }
 
         private void ActualizarDatos()
@@ -143,6 +152,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             apellido = Txt_apellido.Text;
             fechanac = Dtp_FechaNc.Text;
             correo = Txt_correo.Text;
+            correoauxiliar = Txt_correoAux.Text;
+            telefonoresidencial = Txt_telefonoRes.Text;
             telefono = Txt_telefono.Text;
             dpi = Txt_dpi.Text;
             cuentabancaria = Txt_cuentaBancaria.Text;
@@ -150,27 +161,30 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             usuario = Txt_usuario.Text;
             sueldobase = Txt_sueldoBase.Text;
             direccion = Txt_direccion.Text;
-            departamento = Txt_departamento.Text;
+            
 
 
             try
             {
-                OdbcCommand comm = new OdbcCommand("{call Sp_Modificarempleado(?,?,?,?,?,?,?,?,?,?,?,?,?)}", Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand("{call Sp_Modificarempleado(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("cod", OdbcType.Text).Value = codigo;
                 comm.Parameters.Add("nombre", OdbcType.Text).Value = nombre;
                 comm.Parameters.Add("apellido", OdbcType.Text).Value = apellido;
                 comm.Parameters.Add("fechanac", OdbcType.Text).Value = fechanac;
                 comm.Parameters.Add("corr", OdbcType.Text).Value = correo;
+                comm.Parameters.Add("corralter", OdbcType.Text).Value = correoauxiliar;
                 comm.Parameters.Add("tel", OdbcType.Text).Value = telefono;
+                comm.Parameters.Add("telres", OdbcType.Text).Value = telefonoresidencial;
                 comm.Parameters.Add("dpi", OdbcType.Text).Value = dpi;
                 comm.Parameters.Add("usu", OdbcType.Text).Value = usuario;
                 comm.Parameters.Add("cuentabancaria", OdbcType.Text).Value = cuentabancaria;
                 comm.Parameters.Add("nit", OdbcType.Text).Value = nit;
                 comm.Parameters.Add("sueldobase", OdbcType.Text).Value = sueldobase;
                 comm.Parameters.Add("dir", OdbcType.Text).Value = direccion;
-                comm.Parameters.Add("dep", OdbcType.Text).Value = departamento;
+               
                 comm.ExecuteNonQuery();
+                comm.Connection.Close();
                 MessageBox.Show("Registro actualizado correctamente");
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -181,6 +195,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
 
 
 
@@ -199,6 +214,8 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             apellido = Txt_apellido.Text;
             fechanac = Dtp_FechaNc.Text;
             correo = Txt_correo.Text;
+            correoauxiliar = Txt_correoAux.Text;
+            telefonoresidencial = Txt_telefonoRes.Text;
             telefono = Txt_telefono.Text;
             dpi = Txt_dpi.Text;
             cuentabancaria = Txt_cuentaBancaria.Text;
@@ -206,27 +223,29 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
             usuario = Txt_usuario.Text;
             sueldobase = Txt_sueldoBase.Text;
             direccion = Txt_direccion.Text;
-            departamento = Txt_departamento.Text;
+       
 
             try
             {
-                OdbcCommand comm = new OdbcCommand("{call Sp_Insertarempleado(?,?,?,?,?,?,?,?,?,?,?,?,?)}", Conexion.nuevaConexion());
+                OdbcCommand comm = new OdbcCommand("{call Sp_Insertarempleado(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("nombre", OdbcType.Text).Value = nombre;
                 comm.Parameters.Add("apellido", OdbcType.Text).Value = apellido;
                 comm.Parameters.Add("fechanac", OdbcType.Text).Value = fechanac;
                 comm.Parameters.Add("corr", OdbcType.Text).Value = correo;
+                comm.Parameters.Add("corralter", OdbcType.Text).Value = correoauxiliar;
                 comm.Parameters.Add("tel", OdbcType.Text).Value = telefono;
+                comm.Parameters.Add("telres", OdbcType.Text).Value = telefonoresidencial;
                 comm.Parameters.Add("dpi", OdbcType.Text).Value = dpi;
                 comm.Parameters.Add("usu", OdbcType.Text).Value = usuario;
                 comm.Parameters.Add("cuentabancaria", OdbcType.Text).Value = cuentabancaria;
                 comm.Parameters.Add("nit", OdbcType.Text).Value = nit;
                 comm.Parameters.Add("sueldobase", OdbcType.Text).Value = sueldobase;
                 comm.Parameters.Add("dir", OdbcType.Text).Value = direccion;
-                comm.Parameters.Add("dep", OdbcType.Text).Value = departamento;
                 comm.Parameters.Add("estado", OdbcType.Text).Value = "0";
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -236,6 +255,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
 
             }
             catch (Exception err)
@@ -256,6 +276,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("cod", OdbcType.Text).Value = codigo;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -265,6 +286,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
             }
             catch (Exception err)
             {
@@ -393,29 +415,35 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                     Txt_correo.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                       Cells[4].Value.ToString();
 
-                    Txt_telefono.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                    Txt_correoAux.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                       Cells[5].Value.ToString();
 
-                    Txt_dpi.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                    Txt_telefono.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                       Cells[6].Value.ToString();
 
-                    Txt_usuario.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                    Txt_telefonoRes.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                      Cells[7].Value.ToString();
 
-                    Txt_cuentaBancaria.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
-                     Cells[8].Value.ToString();
+            
+                    Txt_dpi.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                      Cells[8].Value.ToString();
 
-                    Txt_nit.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                    Txt_usuario.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
                      Cells[9].Value.ToString();
 
+                    Txt_cuentaBancaria.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                     Cells[10].Value.ToString();
+
+                    Txt_nit.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
+                     Cells[11].Value.ToString();
+
                     Txt_sueldoBase.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
-                      Cells[10].Value.ToString();
+                      Cells[12].Value.ToString();
 
                     Txt_direccion.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
-                      Cells[11].Value.ToString();
+                      Cells[13].Value.ToString();
 
-                    Txt_departamento.Text = con_Emp.Dgv_consultaEmpleados.Rows[con_Emp.Dgv_consultaEmpleados.CurrentRow.Index].
-                      Cells[12].Value.ToString();
+                   
 
 
 
@@ -504,6 +532,11 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
         private void Txt_nit_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.Numerosletras(e);
+        }
+
+        private void Txt_telefonoRes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloCodigo(e);
         }
     }
 }

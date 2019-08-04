@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: Ivan Mogollón
+  -----------------------------------------------------
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +37,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaHabitacion.Refresh();
                     Dgv_consultaHabitacion.Rows.Add(mostrarDatos.GetInt32(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetInt32(3), mostrarDatos.GetString(4));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -70,6 +77,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                         Dgv_consultaHabitacion.Refresh();
                         Dgv_consultaHabitacion.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3), mostrarDatos.GetString(4));
                     }
+                    comm.Connection.Close();
+                    mostrarDatos.Close();
                 }
                 catch (Exception err)
                 {

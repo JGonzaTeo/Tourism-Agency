@@ -4,7 +4,9 @@
   -----------------------------------------------------
 */
 
+using Prototipo_Agencia_Turismo.Cotizacion;
 using Prototipo_Agencia_Turismo.Mantenimiento;
+using Prototipo_Agencia_Turismo.Procesos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,18 +24,32 @@ namespace Prototipo_Agencia_Turismo
     public partial class Frm_mdi : Form
     {
         string nombreUsuario = " ";
-        string tipoPerfil = " ";
+        int tipoPerfil = 0;
         DateTime fecha = DateTime.Now;
+        int idUsuario;
 
-        public Frm_mdi(string usuario, string tipoPerfil)
+        public Frm_mdi(int idUsuario, string usuario, int tipoPerfil)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
             nombreUsuario = usuario;
             this.tipoPerfil = tipoPerfil;
         }
 
         private void Frm_mdi_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'";
+                OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                commAct.ExecuteNonQuery();
+
+                commAct.Connection.Close();
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
             Application.Exit();
         }
 
@@ -41,9 +57,64 @@ namespace Prototipo_Agencia_Turismo
         {
             toolStripStatusLabel1.Text = "BIENVENIDO: " + nombreUsuario;
 
-            if (tipoPerfil == "1") //usuario normal
+            if (tipoPerfil == 1) //Administrador
             {
+                //Todas las opciones habilitadas
+            }
+            else if(tipoPerfil == 2) //Contador (Nóminas)
+            {
+                reservacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                cotizacionesToolStripMenuItem.Enabled = false;
                 seguridadToolStripMenuItem.Enabled = false;
+                transporteToolStripMenuItem.Enabled = false;
+                restauranteToolStripMenuItem.Enabled = false;
+                hotelToolStripMenuItem.Enabled = false;
+                departamentoToolStripMenuItem.Enabled = false;
+                clienteToolStripMenuItem.Enabled = false;
+                bonosYDescuentosToolStripMenuItem.Enabled = false;
+                guiaTuristicoToolStripMenuItem.Enabled = false;
+                empleadoToolStripMenuItem.Enabled = false;
+                menuToolStripMenuItem.Enabled = false;
+                tipoDePagoToolStripMenuItem.Enabled = false;
+                habitacionToolStripMenuItem.Enabled = false;
+            }
+            else if(tipoPerfil == 3) //ventas (Facturación) 
+            {
+                reservacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+                mantenimientosToolStripMenuItem.Enabled = false;
+                contabilidadToolStripMenuItem.Enabled = false;
+            }
+            else if(tipoPerfil == 4) //Reservación
+            {
+                cotizacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+                mantenimientosToolStripMenuItem.Enabled = false;
+                contabilidadToolStripMenuItem.Enabled = false;
+            }
+            else if(tipoPerfil == 5) //Usuario normal (solo accederá a algunos mantenimientos 
+            {
+                reservacionesToolStripMenuItem.Enabled = false;
+                cotizacionesToolStripMenuItem.Enabled = false;
+                guíasTurísticasToolStripMenuItem.Enabled = false;
+                planesDeViajeToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+                contabilidadToolStripMenuItem.Enabled = false;
+
+                restauranteToolStripMenuItem.Enabled = false;
+                hotelToolStripMenuItem.Enabled = false;
+                departamentoToolStripMenuItem.Enabled = false;
+                bonosYDescuentosToolStripMenuItem.Enabled = false;
+                guiaTuristicoToolStripMenuItem.Enabled = false;
+                empleadoToolStripMenuItem.Enabled = false;
+                asignacionEmpleadoToolStripMenuItem.Enabled = false;
+
             }
 
             MdiClient ctlMDI; 
@@ -112,7 +183,7 @@ namespace Prototipo_Agencia_Turismo
         */
 
         bool ventanaMantTransporte = false;
-        Frm_mantTransporte mantenimientoTransporte = new Frm_mantTransporte();
+        Frm_mantTransporte mantenimientoTransporte = new Frm_mantTransporte("");
         private void transporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantTransporte);
@@ -120,7 +191,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    mantenimientoTransporte = new Frm_mantTransporte();
+                    mantenimientoTransporte = new Frm_mantTransporte(nombreUsuario);
                 }
 
                 mantenimientoTransporte.MdiParent = this;
@@ -181,7 +252,7 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaFacturacion = false;
-        Frm_facturacion facturacion = new Frm_facturacion();
+        Frm_facturacion facturacion = new Frm_facturacion("");
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_facturacion);
@@ -189,7 +260,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    facturacion = new Frm_facturacion();
+                    facturacion = new Frm_facturacion(nombreUsuario);
                 }
 
                 facturacion.MdiParent = this;
@@ -204,16 +275,16 @@ namespace Prototipo_Agencia_Turismo
         }
 
         bool ventanaNominas = false;
-        Frm_nominas nominas = new Frm_nominas();
+        Frm_Nominas nominas = new Frm_Nominas("");
         private void nóminasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_nominas);
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_Nominas);
             if (ventanaNominas== false || frmC == null)
             {
                 if (frmC == null)
                 {
-                    nominas = new Frm_nominas();
+                    nominas = new Frm_Nominas(nombreUsuario);
                 }
 
                 nominas.MdiParent = this;
@@ -278,6 +349,14 @@ namespace Prototipo_Agencia_Turismo
                 comm.Parameters.Add("proc", OdbcType.Text).Value = "-----";
                 comm.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm.ExecuteNonQuery();
+
+                comm.Connection.Close();
+
+                string actualizarCampo = "UPDATE tbl_usuario SET logeado = '0' WHERE Pk_idUsuario= " + idUsuario + " AND Fk_idPerfil= '" + tipoPerfil + "'"; 
+                OdbcCommand commAct = new OdbcCommand(actualizarCampo, Conexion.nuevaConexion());
+                commAct.ExecuteNonQuery();
+
+                commAct.Connection.Close();
             }
             catch (Exception err)
             {
@@ -311,7 +390,7 @@ namespace Prototipo_Agencia_Turismo
 
 
         bool ventanaMantDepartamento = false;
-        Frm_mantDepartamento mantenimientoDepartamento = new Frm_mantDepartamento();
+        Frm_mantDepartamento mantenimientoDepartamento = new Frm_mantDepartamento("");
         private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantDepartamento);
@@ -319,7 +398,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    mantenimientoDepartamento = new Frm_mantDepartamento();
+                    mantenimientoDepartamento = new Frm_mantDepartamento(nombreUsuario);
                 }
 
                 mantenimientoDepartamento.MdiParent = this;
@@ -335,7 +414,7 @@ namespace Prototipo_Agencia_Turismo
 
 
         bool ventanaMantCliente = false;
-        Frm_mantCliente mantenimientoCliente = new Frm_mantCliente();
+        Frm_mantCliente mantenimientoCliente = new Frm_mantCliente("");
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_mantCliente);
@@ -343,7 +422,7 @@ namespace Prototipo_Agencia_Turismo
             {
                 if (frmC == null)
                 {
-                    mantenimientoCliente = new Frm_mantCliente();
+                    mantenimientoCliente = new Frm_mantCliente(nombreUsuario);
                 }
 
                 mantenimientoCliente.MdiParent = this;
@@ -494,6 +573,52 @@ namespace Prototipo_Agencia_Turismo
                 habitacion.Show();
                 Application.DoEvents();
                 ventanaHabitacion = true;
+            }
+            else
+            {
+                habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaReservacion = false;
+        Frm_reservacion reservacion = new Frm_reservacion("");
+        private void reservacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_reservacion);
+            if (ventanaReservacion == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    reservacion = new Frm_reservacion(nombreUsuario);
+                }
+
+                reservacion.MdiParent = this;
+                reservacion.Show();
+                Application.DoEvents();
+                ventanaReservacion = true;
+            }
+            else
+            {
+                reservacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaasginacionguiaemp = false;
+        Frm_AsignacionEmpGuia asig = new Frm_AsignacionEmpGuia("");
+        private void asignacionEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_AsignacionEmpGuia);
+            if (ventanaasginacionguiaemp == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    asig = new Frm_AsignacionEmpGuia(nombreUsuario);
+                }
+
+                asig.MdiParent = this;
+                asig.Show();
+                Application.DoEvents();
+                ventanaasginacionguiaemp = true;
             }
             else
             {

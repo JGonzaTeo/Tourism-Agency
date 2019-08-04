@@ -122,7 +122,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(63, 32);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(143, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(173, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE MENU";
             // 
@@ -151,7 +151,7 @@
             this.Txt_consultaMenu.Location = new System.Drawing.Point(138, 77);
             this.Txt_consultaMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Txt_consultaMenu.Name = "Txt_consultaMenu";
-            this.Txt_consultaMenu.Size = new System.Drawing.Size(787, 26);
+            this.Txt_consultaMenu.Size = new System.Drawing.Size(787, 30);
             this.Txt_consultaMenu.TabIndex = 59;
             // 
             // Lbl_consultaMenu
@@ -160,12 +160,16 @@
             this.Lbl_consultaMenu.Location = new System.Drawing.Point(63, 83);
             this.Lbl_consultaMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_consultaMenu.Name = "Lbl_consultaMenu";
-            this.Lbl_consultaMenu.Size = new System.Drawing.Size(56, 20);
+            this.Lbl_consultaMenu.Size = new System.Drawing.Size(68, 22);
             this.Lbl_consultaMenu.TabIndex = 58;
             this.Lbl_consultaMenu.Text = "Menu:";
             // 
             // Dgv_consultaMenu
             // 
+            this.Dgv_consultaMenu.AllowUserToAddRows = false;
+            this.Dgv_consultaMenu.AllowUserToDeleteRows = false;
+            this.Dgv_consultaMenu.AllowUserToResizeColumns = false;
+            this.Dgv_consultaMenu.AllowUserToResizeRows = false;
             this.Dgv_consultaMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -179,7 +183,9 @@
             this.Dgv_consultaMenu.MultiSelect = false;
             this.Dgv_consultaMenu.Name = "Dgv_consultaMenu";
             this.Dgv_consultaMenu.ReadOnly = true;
+            this.Dgv_consultaMenu.RowHeadersVisible = false;
             this.Dgv_consultaMenu.RowTemplate.Height = 24;
+            this.Dgv_consultaMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaMenu.Size = new System.Drawing.Size(1116, 429);
             this.Dgv_consultaMenu.TabIndex = 61;
             // 
@@ -247,7 +253,7 @@
             // 
             // Frm_consultaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actu);
