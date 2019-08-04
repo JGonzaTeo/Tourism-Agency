@@ -85,6 +85,8 @@
             this.Lbl_idLugarT = new System.Windows.Forms.Label();
             this.Lbl_idHabitacion = new System.Windows.Forms.Label();
             this.Btn_consultaMenu = new System.Windows.Forms.Button();
+            this.Cmbx_tipoPago = new System.Windows.Forms.ComboBox();
+            this.Lbl_tipoPago = new System.Windows.Forms.Label();
             this.Pnl_principal.SuspendLayout();
             this.Pnl_Detalle.SuspendLayout();
             this.Grb_Restaurante.SuspendLayout();
@@ -147,13 +149,13 @@
             // 
             this.Lbl_Total.AutoSize = true;
             this.Lbl_Total.Enabled = false;
+            this.Lbl_Total.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Total.Location = new System.Drawing.Point(747, 350);
             this.Lbl_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Total.Name = "Lbl_Total";
-            this.Lbl_Total.Size = new System.Drawing.Size(80, 22);
+            this.Lbl_Total.Size = new System.Drawing.Size(80, 23);
             this.Lbl_Total.TabIndex = 56;
             this.Lbl_Total.Text = "Total Q.";
-            this.Lbl_Total.Visible = false;
             // 
             // Pnl_Detalle
             // 
@@ -185,6 +187,7 @@
             this.Btn_facturar.TabIndex = 80;
             this.Btn_facturar.Text = "Facturar";
             this.Btn_facturar.UseVisualStyleBackColor = true;
+            this.Btn_facturar.Click += new System.EventHandler(this.Btn_facturar_Click);
             // 
             // Btn_quitar
             // 
@@ -199,6 +202,7 @@
             this.Btn_quitar.TabIndex = 79;
             this.Btn_quitar.Text = "Eliminar";
             this.Btn_quitar.UseVisualStyleBackColor = true;
+            this.Btn_quitar.Click += new System.EventHandler(this.Btn_quitar_Click);
             // 
             // Btn_colocar
             // 
@@ -213,6 +217,7 @@
             this.Btn_colocar.TabIndex = 78;
             this.Btn_colocar.Text = "Colocar";
             this.Btn_colocar.UseVisualStyleBackColor = true;
+            this.Btn_colocar.Click += new System.EventHandler(this.Btn_colocar_Click);
             // 
             // Lbl_resultado
             // 
@@ -243,6 +248,7 @@
             // Txt_menu
             // 
             this.Txt_menu.Enabled = false;
+            this.Txt_menu.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_menu.Location = new System.Drawing.Point(84, 65);
             this.Txt_menu.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_menu.Name = "Txt_menu";
@@ -252,6 +258,7 @@
             // Txt_lugarRestaurante
             // 
             this.Txt_lugarRestaurante.Enabled = false;
+            this.Txt_lugarRestaurante.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_lugarRestaurante.Location = new System.Drawing.Point(84, 27);
             this.Txt_lugarRestaurante.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_lugarRestaurante.Name = "Txt_lugarRestaurante";
@@ -310,6 +317,7 @@
             // Txt_lugarTuristico
             // 
             this.Txt_lugarTuristico.Enabled = false;
+            this.Txt_lugarTuristico.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_lugarTuristico.Location = new System.Drawing.Point(108, 43);
             this.Txt_lugarTuristico.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_lugarTuristico.Name = "Txt_lugarTuristico";
@@ -384,6 +392,7 @@
             // Txt_habitacion
             // 
             this.Txt_habitacion.Enabled = false;
+            this.Txt_habitacion.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_habitacion.Location = new System.Drawing.Point(181, 89);
             this.Txt_habitacion.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_habitacion.Name = "Txt_habitacion";
@@ -393,6 +402,7 @@
             // Txt_lugarHotel
             // 
             this.Txt_lugarHotel.Enabled = false;
+            this.Txt_lugarHotel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_lugarHotel.Location = new System.Drawing.Point(181, 45);
             this.Txt_lugarHotel.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_lugarHotel.Name = "Txt_lugarHotel";
@@ -509,6 +519,7 @@
             // Txt_codigoCliente
             // 
             this.Txt_codigoCliente.Enabled = false;
+            this.Txt_codigoCliente.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_codigoCliente.Location = new System.Drawing.Point(175, 65);
             this.Txt_codigoCliente.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_codigoCliente.Name = "Txt_codigoCliente";
@@ -527,6 +538,7 @@
             // 
             // CB_Pasajero
             // 
+            this.CB_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_Pasajero.FormattingEnabled = true;
             this.CB_Pasajero.Items.AddRange(new object[] {
             "1",
@@ -568,6 +580,7 @@
             // Txt_IdEmpleado
             // 
             this.Txt_IdEmpleado.Enabled = false;
+            this.Txt_IdEmpleado.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_IdEmpleado.Location = new System.Drawing.Point(175, 22);
             this.Txt_IdEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_IdEmpleado.Name = "Txt_IdEmpleado";
@@ -587,6 +600,7 @@
             // Txt_cliente
             // 
             this.Txt_cliente.Enabled = false;
+            this.Txt_cliente.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_cliente.Location = new System.Drawing.Point(175, 106);
             this.Txt_cliente.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_cliente.Name = "Txt_cliente";
@@ -607,7 +621,7 @@
             // 
             this.Rbtn_cotizacion.AutoSize = true;
             this.Rbtn_cotizacion.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtn_cotizacion.Location = new System.Drawing.Point(1050, 143);
+            this.Rbtn_cotizacion.Location = new System.Drawing.Point(1040, 97);
             this.Rbtn_cotizacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rbtn_cotizacion.Name = "Rbtn_cotizacion";
             this.Rbtn_cotizacion.Size = new System.Drawing.Size(117, 23);
@@ -621,7 +635,7 @@
             // 
             this.Rbtn_facturacion.AutoSize = true;
             this.Rbtn_facturacion.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbtn_facturacion.Location = new System.Drawing.Point(1050, 94);
+            this.Rbtn_facturacion.Location = new System.Drawing.Point(1040, 48);
             this.Rbtn_facturacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rbtn_facturacion.Name = "Rbtn_facturacion";
             this.Rbtn_facturacion.Size = new System.Drawing.Size(126, 23);
@@ -660,6 +674,7 @@
             // 
             // CB_noHab
             // 
+            this.CB_noHab.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_noHab.FormattingEnabled = true;
             this.CB_noHab.Items.AddRange(new object[] {
             "1",
@@ -745,11 +760,31 @@
             this.Btn_consultaMenu.UseVisualStyleBackColor = false;
             this.Btn_consultaMenu.Click += new System.EventHandler(this.Btn_consultaMenu_Click);
             // 
+            // Cmbx_tipoPago
+            // 
+            this.Cmbx_tipoPago.FormattingEnabled = true;
+            this.Cmbx_tipoPago.Location = new System.Drawing.Point(1040, 184);
+            this.Cmbx_tipoPago.Name = "Cmbx_tipoPago";
+            this.Cmbx_tipoPago.Size = new System.Drawing.Size(121, 30);
+            this.Cmbx_tipoPago.TabIndex = 77;
+            // 
+            // Lbl_tipoPago
+            // 
+            this.Lbl_tipoPago.AutoSize = true;
+            this.Lbl_tipoPago.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_tipoPago.Location = new System.Drawing.Point(1036, 155);
+            this.Lbl_tipoPago.Name = "Lbl_tipoPago";
+            this.Lbl_tipoPago.Size = new System.Drawing.Size(134, 23);
+            this.Lbl_tipoPago.TabIndex = 78;
+            this.Lbl_tipoPago.Text = "Tipo de pago";
+            // 
             // Frm_facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Lbl_tipoPago);
+            this.Controls.Add(this.Cmbx_tipoPago);
             this.Controls.Add(this.Rbtn_facturacion);
             this.Controls.Add(this.Grb_Hotel);
             this.Controls.Add(this.Rbtn_cotizacion);
@@ -839,5 +874,7 @@
         private System.Windows.Forms.Label Lbl_idLugarT;
         private System.Windows.Forms.Label Lbl_idHabitacion;
         private System.Windows.Forms.Button Btn_consultaMenu;
+        private System.Windows.Forms.ComboBox Cmbx_tipoPago;
+        private System.Windows.Forms.Label Lbl_tipoPago;
     }
 }
