@@ -349,7 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 593);
+            this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Gpb_Horario);
             this.Controls.Add(this.Gpb_Busqueda);
             this.Controls.Add(this.Btn_consultar);
@@ -357,7 +357,9 @@
             this.Controls.Add(this.Btn_cancelar);
             this.Controls.Add(this.Btn_guardar);
             this.Controls.Add(this.Pnl_principal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_AsignacionEmpGuia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_AsignacionEmpGuia";
             this.Load += new System.EventHandler(this.Frm_AsignacionEmpGuia_Load);
             this.Gpb_Horario.ResumeLayout(false);

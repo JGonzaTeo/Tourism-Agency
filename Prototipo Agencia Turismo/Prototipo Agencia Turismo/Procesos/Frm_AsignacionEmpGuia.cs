@@ -105,7 +105,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 idempleado = consultaEmpleado.Dgv_consultaEmpleados.Rows[consultaEmpleado.Dgv_consultaEmpleados.CurrentRow.Index].
                     Cells[0].Value.ToString();
             }
-            MessageBox.Show(idempleado);
+            Console.WriteLine(idempleado);
         }
 
         private void Btn_buscarGuia_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 idguia = consultaguia.Dgv_consultaBonoYDesc.Rows[consultaguia.Dgv_consultaBonoYDesc.CurrentRow.Index].
                     Cells[0].Value.ToString();
             }
-            MessageBox.Show(idguia);
+            Console.WriteLine(idguia);
         }
 
         private void Btn_borrar_Click(object sender, EventArgs e)
