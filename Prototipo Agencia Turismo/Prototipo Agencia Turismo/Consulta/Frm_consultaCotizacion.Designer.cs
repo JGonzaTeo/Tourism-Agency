@@ -43,13 +43,11 @@
             this.Dgv_consultaCotizacion = new System.Windows.Forms.DataGridView();
             this.idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadPasajeros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadHabitaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaCotizacion)).BeginInit();
             this.SuspendLayout();
@@ -211,13 +209,11 @@
             this.Dgv_consultaCotizacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFactura,
             this.idCliente,
+            this.idEmpleado,
             this.fecha,
             this.cantidadPasajeros,
-            this.total,
-            this.idHabitacion,
-            this.idMenu,
-            this.idLugar,
-            this.cantidadHabitaciones});
+            this.idPago,
+            this.total});
             this.Dgv_consultaCotizacion.Location = new System.Drawing.Point(38, 129);
             this.Dgv_consultaCotizacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Dgv_consultaCotizacion.MultiSelect = false;
@@ -239,6 +235,12 @@
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
             // 
+            // idEmpleado
+            // 
+            this.idEmpleado.HeaderText = "ID Empleado";
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.ReadOnly = true;
+            // 
             // fecha
             // 
             this.fecha.HeaderText = "Fecha Cotizacion";
@@ -251,35 +253,17 @@
             this.cantidadPasajeros.Name = "cantidadPasajeros";
             this.cantidadPasajeros.ReadOnly = true;
             // 
+            // idPago
+            // 
+            this.idPago.HeaderText = "ID Tipo Pago";
+            this.idPago.Name = "idPago";
+            this.idPago.ReadOnly = true;
+            // 
             // total
             // 
             this.total.HeaderText = "Total";
             this.total.Name = "total";
             this.total.ReadOnly = true;
-            // 
-            // idHabitacion
-            // 
-            this.idHabitacion.HeaderText = "ID Habitacion";
-            this.idHabitacion.Name = "idHabitacion";
-            this.idHabitacion.ReadOnly = true;
-            // 
-            // idMenu
-            // 
-            this.idMenu.HeaderText = "ID Menu";
-            this.idMenu.Name = "idMenu";
-            this.idMenu.ReadOnly = true;
-            // 
-            // idLugar
-            // 
-            this.idLugar.HeaderText = "ID Lugar Turistico";
-            this.idLugar.Name = "idLugar";
-            this.idLugar.ReadOnly = true;
-            // 
-            // cantidadHabitaciones
-            // 
-            this.cantidadHabitaciones.HeaderText = "Cantidad Habitaciones";
-            this.cantidadHabitaciones.Name = "cantidadHabitaciones";
-            this.cantidadHabitaciones.ReadOnly = true;
             // 
             // Frm_consultaCotizacion
             // 
@@ -321,12 +305,10 @@
         public System.Windows.Forms.DataGridView Dgv_consultaCotizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadPasajeros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idHabitacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMenu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idLugar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadHabitaciones;
     }
 }

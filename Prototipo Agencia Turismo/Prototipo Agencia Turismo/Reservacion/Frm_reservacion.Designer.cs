@@ -176,9 +176,9 @@
             this.Lbl_nomCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_nomCliente.Location = new System.Drawing.Point(8, 111);
             this.Lbl_nomCliente.Name = "Lbl_nomCliente";
-            this.Lbl_nomCliente.Size = new System.Drawing.Size(174, 21);
+            this.Lbl_nomCliente.Size = new System.Drawing.Size(122, 21);
             this.Lbl_nomCliente.TabIndex = 22;
-            this.Lbl_nomCliente.Text = "Nombre del cliente:";
+            this.Lbl_nomCliente.Text = "ID de cliente:";
             // 
             // Lbl_idcoti
             // 
@@ -216,9 +216,9 @@
             this.Lbl_metodoPago.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_metodoPago.Location = new System.Drawing.Point(8, 155);
             this.Lbl_metodoPago.Name = "Lbl_metodoPago";
-            this.Lbl_metodoPago.Size = new System.Drawing.Size(163, 21);
+            this.Lbl_metodoPago.Size = new System.Drawing.Size(184, 21);
             this.Lbl_metodoPago.TabIndex = 33;
-            this.Lbl_metodoPago.Text = "Metodo de pago:";
+            this.Lbl_metodoPago.Text = "ID metodo de pago:";
             // 
             // Lbl_fechaSalida
             // 
@@ -226,9 +226,9 @@
             this.Lbl_fechaSalida.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_fechaSalida.Location = new System.Drawing.Point(8, 111);
             this.Lbl_fechaSalida.Name = "Lbl_fechaSalida";
-            this.Lbl_fechaSalida.Size = new System.Drawing.Size(149, 21);
+            this.Lbl_fechaSalida.Size = new System.Drawing.Size(164, 21);
             this.Lbl_fechaSalida.TabIndex = 40;
-            this.Lbl_fechaSalida.Text = "Fecha de salida:";
+            this.Lbl_fechaSalida.Text = "Fecha de entrada";
             // 
             // Lbl_piloto
             // 
@@ -276,9 +276,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label2.Location = new System.Drawing.Point(8, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 21);
+            this.label2.Size = new System.Drawing.Size(149, 21);
             this.label2.TabIndex = 47;
-            this.label2.Text = "Fecha de entrada:";
+            this.label2.Text = "Fecha de salida:";
             // 
             // Lbl_detalle
             // 
@@ -369,6 +369,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel2.Size = new System.Drawing.Size(401, 188);
             this.panel2.TabIndex = 52;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Dtp_FecaEntrada
             // 
