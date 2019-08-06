@@ -4,8 +4,6 @@
   -----------------------------------------------------
 */
 
-
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,9 +37,9 @@ namespace Prototipo_Agencia_Turismo.Consulta
                 {
                     Dgv_consultaDepartamento.Refresh();
                     Dgv_consultaDepartamento.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2));
-                    
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -72,6 +70,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                         Dgv_consultaDepartamento.Refresh();
                         Dgv_consultaDepartamento.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2));
                     }
+                    comm.Connection.Close();
+                    mostrarDatos.Close();
                 }
                 catch (Exception err)
                 {

@@ -71,6 +71,10 @@
             // 
             // Dgv_consultaHotel
             // 
+            this.Dgv_consultaHotel.AllowUserToAddRows = false;
+            this.Dgv_consultaHotel.AllowUserToDeleteRows = false;
+            this.Dgv_consultaHotel.AllowUserToResizeColumns = false;
+            this.Dgv_consultaHotel.AllowUserToResizeRows = false;
             this.Dgv_consultaHotel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaHotel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -84,7 +88,9 @@
             this.Dgv_consultaHotel.MultiSelect = false;
             this.Dgv_consultaHotel.Name = "Dgv_consultaHotel";
             this.Dgv_consultaHotel.ReadOnly = true;
+            this.Dgv_consultaHotel.RowHeadersVisible = false;
             this.Dgv_consultaHotel.RowTemplate.Height = 24;
+            this.Dgv_consultaHotel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaHotel.Size = new System.Drawing.Size(1116, 429);
             this.Dgv_consultaHotel.TabIndex = 52;
             // 
@@ -123,7 +129,7 @@
             this.Txt_consultaHotel.Location = new System.Drawing.Point(138, 79);
             this.Txt_consultaHotel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Txt_consultaHotel.Name = "Txt_consultaHotel";
-            this.Txt_consultaHotel.Size = new System.Drawing.Size(787, 26);
+            this.Txt_consultaHotel.Size = new System.Drawing.Size(787, 30);
             this.Txt_consultaHotel.TabIndex = 48;
             // 
             // Lbl_consultaHotel
@@ -132,7 +138,7 @@
             this.Lbl_consultaHotel.Location = new System.Drawing.Point(63, 85);
             this.Lbl_consultaHotel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_consultaHotel.Name = "Lbl_consultaHotel";
-            this.Lbl_consultaHotel.Size = new System.Drawing.Size(51, 20);
+            this.Lbl_consultaHotel.Size = new System.Drawing.Size(62, 22);
             this.Lbl_consultaHotel.TabIndex = 47;
             this.Lbl_consultaHotel.Text = "Hotel:";
             // 
@@ -224,7 +230,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(63, 32);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(145, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(175, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE HOTEL";
             // 
@@ -301,7 +307,7 @@
             // 
             // Frm_consultaHotel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actu);

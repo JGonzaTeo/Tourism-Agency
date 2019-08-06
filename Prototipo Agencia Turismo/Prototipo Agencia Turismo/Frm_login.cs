@@ -21,6 +21,7 @@ namespace Prototipo_Agencia_Turismo
 {
     public partial class Frm_login : Form
     {
+        //variables utilizadas para validar usuario
         string contrasenaDesencriptada = " ";
         int idUsuario = 0;
         string nombreUsuario = " ";
@@ -44,6 +45,8 @@ namespace Prototipo_Agencia_Turismo
             actualizarCampo = " ";
 
             DateTime fecha_ingreso = DateTime.Now;
+
+            //algoritmo para obtener la dirección IP de la máquina
             IPHostEntry host;
             string localIP = "?";
             host = Dns.GetHostEntry(Dns.GetHostName());
@@ -54,8 +57,8 @@ namespace Prototipo_Agencia_Turismo
                 {
                     localIP = ip.ToString();
                 }
-            }
-
+            } //fin de algoritmo
+            
             try
             {
                 //Ejecución de consulta para buscar el usuario
@@ -108,6 +111,7 @@ namespace Prototipo_Agencia_Turismo
                 comm.Connection.Close();
                 mostrarUsuarios.Close();
 
+                //El login del usuario se registra en la bitácora
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
                 commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INICION DE SESIÓN";

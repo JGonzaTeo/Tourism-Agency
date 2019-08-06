@@ -134,6 +134,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 OdbcCommand comm = new OdbcCommand(insertar, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -143,6 +144,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "CLIENTES";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -173,6 +175,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -182,6 +185,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "CLIENTES";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {
@@ -227,6 +231,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 OdbcCommand comm = new OdbcCommand(actualizar, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 commBitacora.CommandType = CommandType.StoredProcedure;
@@ -236,6 +241,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "CLIENTES";
                 commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 commBitacora.ExecuteNonQuery();
+                commBitacora.Connection.Close();
             }
             catch (Exception err)
             {

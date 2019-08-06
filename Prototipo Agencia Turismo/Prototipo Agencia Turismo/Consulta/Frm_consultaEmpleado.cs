@@ -41,7 +41,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                               mostrarDatos.GetString(7), mostrarDatos.GetString(8), mostrarDatos.GetString(9), mostrarDatos.GetString(10),
                                mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -73,6 +74,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                               mostrarDatos.GetString(7), mostrarDatos.GetString(8), mostrarDatos.GetString(9), mostrarDatos.GetString(10),
                                mostrarDatos.GetString(11), mostrarDatos.GetString(12), mostrarDatos.GetString(13));
                 }
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
 
             catch (Exception err)

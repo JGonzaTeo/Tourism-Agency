@@ -145,6 +145,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro actualizado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -154,6 +155,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESTAURANTES";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
             }
             catch (Exception err)
             {
@@ -211,6 +213,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -220,6 +223,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESTAURANTES";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
             }
             catch (Exception err)
             {
@@ -276,12 +280,15 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
 
                 OdbcCommand comm = new OdbcCommand(consulta, Conexion.nuevaConexion());
                 comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
                 string consulta2 = "UPDATE tbl_menus M " +
                 "INNER JOIN tbl_restaurantes R ON M.Fk_idRestaurantes = R.Pk_idRestaurante " +
                 "SET M.estadoMenu = 0 " +
                 "WHERE M.Fk_idRestaurantes =" + idRestaurante + "; ";
                 OdbcCommand comm2 = new OdbcCommand(consulta2, Conexion.nuevaConexion());
                 comm2.ExecuteNonQuery();
+                comm2.Connection.Close();
                 MessageBox.Show("Registro eliminado correctamente");
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -292,6 +299,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESTAURANTES";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
             }
             catch (Exception err)
             {
