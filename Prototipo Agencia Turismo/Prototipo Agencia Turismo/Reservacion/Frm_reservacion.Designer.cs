@@ -62,6 +62,8 @@
             this.Btn_consultarVehiculo = new System.Windows.Forms.Button();
             this.Btn_reservar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Btn_modificar = new System.Windows.Forms.Button();
+            this.Btn_consultarReservacion = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,7 +116,7 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_titulo.Location = new System.Drawing.Point(24, 9);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(126, 19);
+            this.Lbl_titulo.Size = new System.Drawing.Size(102, 17);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "RESERVACION";
             // 
@@ -176,7 +178,7 @@
             this.Lbl_nomCliente.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_nomCliente.Location = new System.Drawing.Point(8, 111);
             this.Lbl_nomCliente.Name = "Lbl_nomCliente";
-            this.Lbl_nomCliente.Size = new System.Drawing.Size(122, 21);
+            this.Lbl_nomCliente.Size = new System.Drawing.Size(100, 19);
             this.Lbl_nomCliente.TabIndex = 22;
             this.Lbl_nomCliente.Text = "ID de cliente:";
             // 
@@ -186,7 +188,7 @@
             this.Lbl_idcoti.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idcoti.Location = new System.Drawing.Point(8, 62);
             this.Lbl_idcoti.Name = "Lbl_idcoti";
-            this.Lbl_idcoti.Size = new System.Drawing.Size(152, 21);
+            this.Lbl_idcoti.Size = new System.Drawing.Size(125, 19);
             this.Lbl_idcoti.TabIndex = 20;
             this.Lbl_idcoti.Text = "ID de cotizacion:";
             // 
@@ -196,7 +198,7 @@
             this.Lbl_idReservacion.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idReservacion.Location = new System.Drawing.Point(8, 16);
             this.Lbl_idReservacion.Name = "Lbl_idReservacion";
-            this.Lbl_idReservacion.Size = new System.Drawing.Size(158, 21);
+            this.Lbl_idReservacion.Size = new System.Drawing.Size(128, 19);
             this.Lbl_idReservacion.TabIndex = 18;
             this.Lbl_idReservacion.Text = "ID de reservacion";
             // 
@@ -216,7 +218,7 @@
             this.Lbl_metodoPago.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_metodoPago.Location = new System.Drawing.Point(8, 155);
             this.Lbl_metodoPago.Name = "Lbl_metodoPago";
-            this.Lbl_metodoPago.Size = new System.Drawing.Size(184, 21);
+            this.Lbl_metodoPago.Size = new System.Drawing.Size(150, 19);
             this.Lbl_metodoPago.TabIndex = 33;
             this.Lbl_metodoPago.Text = "ID metodo de pago:";
             // 
@@ -226,7 +228,7 @@
             this.Lbl_fechaSalida.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_fechaSalida.Location = new System.Drawing.Point(8, 111);
             this.Lbl_fechaSalida.Name = "Lbl_fechaSalida";
-            this.Lbl_fechaSalida.Size = new System.Drawing.Size(164, 21);
+            this.Lbl_fechaSalida.Size = new System.Drawing.Size(137, 19);
             this.Lbl_fechaSalida.TabIndex = 40;
             this.Lbl_fechaSalida.Text = "Fecha de entrada";
             // 
@@ -246,7 +248,7 @@
             this.Lbl_idPiloto.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idPiloto.Location = new System.Drawing.Point(8, 67);
             this.Lbl_idPiloto.Name = "Lbl_idPiloto";
-            this.Lbl_idPiloto.Size = new System.Drawing.Size(113, 21);
+            this.Lbl_idPiloto.Size = new System.Drawing.Size(92, 19);
             this.Lbl_idPiloto.TabIndex = 38;
             this.Lbl_idPiloto.Text = "ID de piloto:";
             // 
@@ -266,7 +268,7 @@
             this.Lbl_idVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.Lbl_idVehiculo.Location = new System.Drawing.Point(8, 16);
             this.Lbl_idVehiculo.Name = "Lbl_idVehiculo";
-            this.Lbl_idVehiculo.Size = new System.Drawing.Size(136, 21);
+            this.Lbl_idVehiculo.Size = new System.Drawing.Size(112, 19);
             this.Lbl_idVehiculo.TabIndex = 36;
             this.Lbl_idVehiculo.Text = "ID de vehiculo:";
             // 
@@ -276,7 +278,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label2.Location = new System.Drawing.Point(8, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 21);
+            this.label2.Size = new System.Drawing.Size(125, 19);
             this.label2.TabIndex = 47;
             this.label2.Text = "Fecha de salida:";
             // 
@@ -286,7 +288,7 @@
             this.Lbl_detalle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.Lbl_detalle.Location = new System.Drawing.Point(25, 248);
             this.Lbl_detalle.Name = "Lbl_detalle";
-            this.Lbl_detalle.Size = new System.Drawing.Size(195, 19);
+            this.Lbl_detalle.Size = new System.Drawing.Size(158, 17);
             this.Lbl_detalle.TabIndex = 13;
             this.Lbl_detalle.Text = "DETALLE RESERVACION";
             // 
@@ -378,7 +380,7 @@
             this.Dtp_FecaEntrada.Location = new System.Drawing.Point(196, 147);
             this.Dtp_FecaEntrada.Margin = new System.Windows.Forms.Padding(2);
             this.Dtp_FecaEntrada.Name = "Dtp_FecaEntrada";
-            this.Dtp_FecaEntrada.Size = new System.Drawing.Size(111, 30);
+            this.Dtp_FecaEntrada.Size = new System.Drawing.Size(111, 26);
             this.Dtp_FecaEntrada.TabIndex = 110;
             this.Dtp_FecaEntrada.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
             this.Dtp_FecaEntrada.ValueChanged += new System.EventHandler(this.Dtp_FecaEntrada_ValueChanged);
@@ -390,7 +392,7 @@
             this.Dtp_FecaSalida.Location = new System.Drawing.Point(196, 104);
             this.Dtp_FecaSalida.Margin = new System.Windows.Forms.Padding(2);
             this.Dtp_FecaSalida.Name = "Dtp_FecaSalida";
-            this.Dtp_FecaSalida.Size = new System.Drawing.Size(111, 30);
+            this.Dtp_FecaSalida.Size = new System.Drawing.Size(111, 26);
             this.Dtp_FecaSalida.TabIndex = 109;
             this.Dtp_FecaSalida.Value = new System.DateTime(2019, 7, 31, 0, 0, 0, 0);
             this.Dtp_FecaSalida.ValueChanged += new System.EventHandler(this.Dtp_FecaSalida_ValueChanged);
@@ -446,7 +448,7 @@
             this.Btn_reservar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_reservar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_reservar.Image")));
             this.Btn_reservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_reservar.Location = new System.Drawing.Point(970, 420);
+            this.Btn_reservar.Location = new System.Drawing.Point(969, 452);
             this.Btn_reservar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_reservar.Name = "Btn_reservar";
             this.Btn_reservar.Size = new System.Drawing.Size(176, 44);
@@ -464,7 +466,7 @@
             this.Btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_eliminar.Image")));
             this.Btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_eliminar.Location = new System.Drawing.Point(970, 351);
+            this.Btn_eliminar.Location = new System.Drawing.Point(969, 372);
             this.Btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_eliminar.Name = "Btn_eliminar";
             this.Btn_eliminar.Size = new System.Drawing.Size(176, 44);
@@ -473,11 +475,52 @@
             this.Btn_eliminar.UseVisualStyleBackColor = true;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
+            // Btn_modificar
+            // 
+            this.Btn_modificar.FlatAppearance.BorderSize = 3;
+            this.Btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_modificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_modificar.Image")));
+            this.Btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_modificar.Location = new System.Drawing.Point(949, 51);
+            this.Btn_modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_modificar.Name = "Btn_modificar";
+            this.Btn_modificar.Size = new System.Drawing.Size(176, 44);
+            this.Btn_modificar.TabIndex = 53;
+            this.Btn_modificar.Text = "Modificar";
+            this.Btn_modificar.UseVisualStyleBackColor = true;
+            this.Btn_modificar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_consultarReservacion
+            // 
+            this.Btn_consultarReservacion.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultarReservacion.FlatAppearance.BorderSize = 3;
+            this.Btn_consultarReservacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultarReservacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultarReservacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultarReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultarReservacion.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultarReservacion.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarReservacion.Image")));
+            this.Btn_consultarReservacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultarReservacion.Location = new System.Drawing.Point(1131, 51);
+            this.Btn_consultarReservacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_consultarReservacion.Name = "Btn_consultarReservacion";
+            this.Btn_consultarReservacion.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultarReservacion.TabIndex = 60;
+            this.Btn_consultarReservacion.Text = "Consultar";
+            this.Btn_consultarReservacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultarReservacion.UseVisualStyleBackColor = false;
+            this.Btn_consultarReservacion.Click += new System.EventHandler(this.Btn_consultarReservacion_Click);
+            // 
             // Frm_reservacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_consultarReservacion);
+            this.Controls.Add(this.Btn_modificar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Lbl_detalle);
@@ -539,5 +582,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn menu;
         private System.Windows.Forms.DataGridViewTextBoxColumn lugarTuristico;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.Button Btn_modificar;
+        private System.Windows.Forms.Button Btn_consultarReservacion;
     }
 }

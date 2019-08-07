@@ -120,6 +120,12 @@
     <Compile Include="Consulta\Frm_consultaPerfil.Designer.cs">
       <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\Frm_consultaReservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaReservacion.Designer.cs">
+      <DependentUpon>Frm_consultaReservacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\Frm_consultaRestaurante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="Reservacion\Frm_reservacion.Designer.cs">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Frm_controlFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Frm_controlFacturas.Designer.cs">
+      <DependentUpon>Frm_controlFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Frm_facturacion.cs">
       <SubType>Form</SubType>
@@ -307,6 +319,9 @@
     <EmbeddedResource Include="Consulta\Frm_consultaPerfil.resx">
       <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaReservacion.resx">
+      <DependentUpon>Frm_consultaReservacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaRestaurante.resx">
       <DependentUpon>Frm_consultaRestaurante.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reservacion\Frm_reservacion.resx">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Frm_controlFacturas.resx">
+      <DependentUpon>Frm_controlFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Frm_facturacion.resx">
       <DependentUpon>Frm_facturacion.cs</DependentUpon>

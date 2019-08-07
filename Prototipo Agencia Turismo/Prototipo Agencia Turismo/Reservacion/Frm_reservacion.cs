@@ -26,6 +26,8 @@ namespace Prototipo_Agencia_Turismo
         string localIP = "?";
         string usuario = "";
         DateTime fechai = DateTime.Now;
+        //Logica
+        int boton = 0;
         //Reservacion
         String idCotizacion;
         String idReservacion;
@@ -37,7 +39,8 @@ namespace Prototipo_Agencia_Turismo
         String fechaEntrada;
         //Variable para comparar fecha
         CultureInfo provider = CultureInfo.InvariantCulture;
-
+        //Variables para modificacion
+        String idAsignacion;
         public Frm_reservacion(String nombreUsuario)
         {
             InitializeComponent();
@@ -66,13 +69,14 @@ namespace Prototipo_Agencia_Turismo
             Btn_reservar.Enabled = false;
             Dtp_FecaEntrada.Enabled = false;
             Dtp_FecaSalida.Enabled = false;
+            Btn_modificar.Enabled = false;
         }
         private void MostrarConsulta()
         {
             string num = Lbl_idCotizacion.Text;
             try
             {
-                string consultaMostrar = "SELECT Fk_idTipoHabitacion, FK_idMenus, Fk_idLugarTuristico,cantidadHabitaciones FROM tbl_facturadetalle WHERE Pk_idFactura="+num+";";
+                string consultaMostrar = "SELECT Fk_idTipoHabitacion, FK_idMenus, Fk_idLugarTuristico,cantidadHabitaciones FROM tbl_facturadetalle WHERE Pk_idFactura="+num+" AND estado = 0;";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
@@ -104,12 +108,21 @@ namespace Prototipo_Agencia_Turismo
                     Cells[1].Value.ToString();
                     Lbl_metodo.Text = conCotizacion.Dgv_consultaCotizacion.Rows[conCotizacion.Dgv_consultaCotizacion.CurrentRow.Index].
                     Cells[5].Value.ToString();
-
             }
             Dgv_detalleFactura.Rows.Clear();
             Dgv_detalleFactura.Refresh();
-            MostrarConsulta();
-            Btn_consultarVehiculo.Enabled = true;
+            if (Lbl_idCotizacion.Text == "" || Lbl_metodo.Text == "")
+            {
+                Btn_consultarReservacion.Enabled = true;
+                Btn_consultarVehiculo.Enabled = false;
+            }
+            else
+            {
+                Btn_consultarReservacion.Enabled = false;
+                Btn_consultarVehiculo.Enabled = true;
+                MostrarConsulta();
+            }
+
         }
 
         private void Btn_consultarMetodoPago_Click(object sender, EventArgs e)
@@ -168,7 +181,10 @@ namespace Prototipo_Agencia_Turismo
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            boton = 0;
             Desahiblitarbtn();
+            Btn_consultarReservacion.Enabled = true;
+            Btn_busquedaCotizacion.Enabled = true;
         }
 
         private void Btn_reservar_Click(object sender, EventArgs e)
@@ -286,12 +302,24 @@ namespace Prototipo_Agencia_Turismo
          */
         private void Dtp_FecaEntrada_ValueChanged(object sender, EventArgs e)
         {
-            if (Dtp_FecaSalida.Value > Dtp_FecaEntrada.Value)
-                Btn_reservar.Enabled = false;
-            //MessageBox.Show("Fecha incorrecta.");
+            if (boton == 1)
+            {
+                if (Dtp_FecaSalida.Value > Dtp_FecaEntrada.Value)
+                    Btn_modificar.Enabled = false;
+                //MessageBox.Show("Fecha incorrecta.");
+                else
+                    Btn_modificar.Enabled = true;
+                //MessageBox.Show("Fecha correcta.");
+            }
             else
-                Btn_reservar.Enabled = true;
-            //MessageBox.Show("Fecha correcta.");
+            {
+                if (Dtp_FecaSalida.Value > Dtp_FecaEntrada.Value)
+                    Btn_reservar.Enabled = false;
+                //MessageBox.Show("Fecha incorrecta.");
+                else
+                    Btn_reservar.Enabled = true;
+                //MessageBox.Show("Fecha correcta.");
+            }
 
         }
 
@@ -302,6 +330,102 @@ namespace Prototipo_Agencia_Turismo
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            idCotizacion = Lbl_idCotizacion.Text;
+            tipoPago = Lbl_metodo.Text;
+            idTrasnporte = Lbl_vehiculo.Text;
+            idEmpleado = Lbl_piloto.Text;
+            fechaSalida = Dtp_FecaSalida.Text;
+            fechaEntrada = Dtp_FecaEntrada.Text;
+           // MessageBox.Show(idCotizacion+" " + tipoPago + " " + idReservacion + " " + idTrasnporte + " " + idEmpleado + " " + fechaSalida + " " + fechaEntrada, idAsignacion);
+            try
+            {
+                //PROCEDIMIENTO DE MODIFICACION
+                OdbcCommand comm = new OdbcCommand("{call  Sp_ModificarReservacion(?,?,?,?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("idCotizacion", OdbcType.Text).Value = idCotizacion;
+                comm.Parameters.Add("idPago", OdbcType.Text).Value = tipoPago;
+                comm.Parameters.Add("cod", OdbcType.Text).Value = idReservacion;
+                comm.Parameters.Add("idTransporte", OdbcType.Text).Value = idTrasnporte;
+                comm.Parameters.Add("idEmpleado", OdbcType.Text).Value = idEmpleado;
+                comm.Parameters.Add("salida", OdbcType.Text).Value = fechaSalida;
+                comm.Parameters.Add("entrada", OdbcType.Text).Value = fechaEntrada;
+                comm.Parameters.Add("cod2", OdbcType.Text).Value = idAsignacion;
+                
+                comm.ExecuteNonQuery();
+                MessageBox.Show("Registro actualizado correctamente");
+                comm.Connection.Close();
+                
+                //PROCEDIMIENTO DE BITACORA
+                
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO MODIFICADO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = usuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "RESERVACION";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
+                
+                Limpiar();
+                boton = 0;
+                Desahiblitarbtn();
+                Btn_consultarReservacion.Enabled = true;
+                Btn_busquedaCotizacion.Enabled = true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                MessageBox.Show("Error al intentar actualizar el registro");
+            }
+        }
+
+        private void Btn_consultarReservacion_Click(object sender, EventArgs e)
+        {
+            Frm_consultaReservacion conReservacion = new Frm_consultaReservacion();
+            conReservacion.ShowDialog();
+
+            if (conReservacion.DialogResult == DialogResult.OK)
+            {
+                Lbl_idCotizacion.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[1].Value.ToString();
+                Lbl_nombCliente.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[0].Value.ToString();
+                Lbl_metodo.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[2].Value.ToString();
+                Lbl_vehiculo.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[4].Value.ToString();
+                Lbl_piloto.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[5].Value.ToString();
+                Dtp_FecaEntrada.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[7].Value.ToString();
+                Dtp_FecaSalida.Text = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[6].Value.ToString();
+                idAsignacion = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[3].Value.ToString();
+                idReservacion = conReservacion.Dgv_consultaReservacion.Rows[conReservacion.Dgv_consultaReservacion.CurrentRow.Index].
+                Cells[0].Value.ToString();
+               
+            }
+            Dgv_detalleFactura.Rows.Clear();
+            Dgv_detalleFactura.Refresh();
+            if (Lbl_idCotizacion.Text == "" )
+            {
+                
+            }
+            else
+            {
+                Btn_reservar.Enabled = false;
+                Btn_modificar.Enabled = true;
+                Dtp_FecaEntrada.Enabled = false;
+                Dtp_FecaSalida.Enabled = false;
+                boton = 1;
+            }
 
         }
     }

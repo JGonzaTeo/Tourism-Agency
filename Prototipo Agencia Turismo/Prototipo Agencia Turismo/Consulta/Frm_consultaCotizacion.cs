@@ -19,6 +19,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
 {
     public partial class Frm_consultaCotizacion : Form
     {
+        int estado = 0;
+
         public Frm_consultaCotizacion()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace Prototipo_Agencia_Turismo.Consulta
         {
             try
             {
-                string consultaMostrar = "SELECT * FROM tbl_facturaencabezado WHERE Factura_Cotizacion = 0;";
+                string consultaMostrar = "SELECT * FROM tbl_facturaencabezado WHERE Factura_Cotizacion = "+estado+" AND estado = 0";
                 OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                 OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
@@ -83,7 +85,7 @@ namespace Prototipo_Agencia_Turismo.Consulta
                 Dgv_consultaCotizacion.Rows.Clear();
                 try
                 {
-                    string consultaMostrar = "SELECT * FROM tbl_facturaencabezado WHERE Pk_idFactura =  (" + Txt_consultaCotizacion.Text.Trim() + ")"+ " AND (Factura_Cotizacion = 0);";
+                    string consultaMostrar = "SELECT * FROM tbl_facturaencabezado WHERE Pk_idFactura =  (" + Txt_consultaCotizacion.Text.Trim() + ")"+ " AND (Factura_Cotizacion = "+estado+") AND estado = 0";
                     OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
                     OdbcDataReader mostrarDatos = comm.ExecuteReader();
 
@@ -119,6 +121,20 @@ namespace Prototipo_Agencia_Turismo.Consulta
         private void Frm_consultaCotizacion_Load(object sender, EventArgs e)
         {
             MostrarConsulta();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            estado = 0;
+            Lbl_consultaMenu.Text = "Cotización";
+            Lbl_titulo.Text = "CONSULTA DE COTIZACION";
+        }
+
+        private void Rbtn_factura_CheckedChanged(object sender, EventArgs e)
+        {
+            estado = 1;
+            Lbl_consultaMenu.Text = "Factura";
+            Lbl_titulo.Text = "CONSULTA DE FACTURA";
         }
     }
 }
