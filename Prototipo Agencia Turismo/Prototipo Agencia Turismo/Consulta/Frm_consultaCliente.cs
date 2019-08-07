@@ -39,7 +39,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaCliente.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2),
                         mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5), mostrarDatos.GetString(6), mostrarDatos.GetString(7), mostrarDatos.GetString(8));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -79,6 +80,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                         Dgv_consultaCliente.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2),
                             mostrarDatos.GetString(3), mostrarDatos.GetString(4), mostrarDatos.GetString(5), mostrarDatos.GetString(6), mostrarDatos.GetString(7), mostrarDatos.GetString(8));
                     }
+                    comm.Connection.Close();
+                    mostrarDatos.Close();
                 }
                 catch (Exception err)
                 {

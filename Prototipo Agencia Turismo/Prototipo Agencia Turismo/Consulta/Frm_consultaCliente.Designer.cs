@@ -36,9 +36,6 @@
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Dgv_consultaCliente = new System.Windows.Forms.DataGridView();
-            this.Btn_consultaCliente = new System.Windows.Forms.Button();
-            this.Txt_consultaDpi = new System.Windows.Forms.TextBox();
-            this.Lbl_consultaCliente = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +45,9 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_consultaCliente = new System.Windows.Forms.Button();
+            this.Txt_consultaDpi = new System.Windows.Forms.TextBox();
+            this.Lbl_consultaCliente = new System.Windows.Forms.Label();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaCliente)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +98,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(155, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(189, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE CLIENTE";
             // 
@@ -136,6 +136,9 @@
             // 
             // Dgv_consultaCliente
             // 
+            this.Dgv_consultaCliente.AllowUserToAddRows = false;
+            this.Dgv_consultaCliente.AllowUserToDeleteRows = false;
+            this.Dgv_consultaCliente.AllowUserToResizeColumns = false;
             this.Dgv_consultaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -149,45 +152,11 @@
             this.Column9});
             this.Dgv_consultaCliente.Location = new System.Drawing.Point(23, 118);
             this.Dgv_consultaCliente.Name = "Dgv_consultaCliente";
+            this.Dgv_consultaCliente.RowHeadersVisible = false;
             this.Dgv_consultaCliente.RowTemplate.Height = 24;
+            this.Dgv_consultaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaCliente.Size = new System.Drawing.Size(1098, 405);
             this.Dgv_consultaCliente.TabIndex = 57;
-            // 
-            // Btn_consultaCliente
-            // 
-            this.Btn_consultaCliente.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_consultaCliente.FlatAppearance.BorderSize = 3;
-            this.Btn_consultaCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_consultaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_consultaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_consultaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultaCliente.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_consultaCliente.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaCliente.Image")));
-            this.Btn_consultaCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultaCliente.Location = new System.Drawing.Point(1077, 58);
-            this.Btn_consultaCliente.Name = "Btn_consultaCliente";
-            this.Btn_consultaCliente.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consultaCliente.TabIndex = 56;
-            this.Btn_consultaCliente.Text = "Consultar";
-            this.Btn_consultaCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_consultaCliente.UseVisualStyleBackColor = false;
-            this.Btn_consultaCliente.Click += new System.EventHandler(this.Btn_consultaCliente_Click);
-            // 
-            // Txt_consultaDpi
-            // 
-            this.Txt_consultaDpi.Location = new System.Drawing.Point(257, 70);
-            this.Txt_consultaDpi.Name = "Txt_consultaDpi";
-            this.Txt_consultaDpi.Size = new System.Drawing.Size(790, 26);
-            this.Txt_consultaDpi.TabIndex = 55;
-            // 
-            // Lbl_consultaCliente
-            // 
-            this.Lbl_consultaCliente.AutoSize = true;
-            this.Lbl_consultaCliente.Location = new System.Drawing.Point(25, 73);
-            this.Lbl_consultaCliente.Name = "Lbl_consultaCliente";
-            this.Lbl_consultaCliente.Size = new System.Drawing.Size(226, 20);
-            this.Lbl_consultaCliente.TabIndex = 54;
-            this.Lbl_consultaCliente.Text = "Documento de Identificacion";
             // 
             // Column1
             // 
@@ -243,9 +212,45 @@
             this.Column9.Name = "Column9";
             this.Column9.Width = 219;
             // 
+            // Btn_consultaCliente
+            // 
+            this.Btn_consultaCliente.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultaCliente.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultaCliente.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultaCliente.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaCliente.Image")));
+            this.Btn_consultaCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultaCliente.Location = new System.Drawing.Point(1077, 58);
+            this.Btn_consultaCliente.Name = "Btn_consultaCliente";
+            this.Btn_consultaCliente.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultaCliente.TabIndex = 56;
+            this.Btn_consultaCliente.Text = "Consultar";
+            this.Btn_consultaCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultaCliente.UseVisualStyleBackColor = false;
+            this.Btn_consultaCliente.Click += new System.EventHandler(this.Btn_consultaCliente_Click);
+            // 
+            // Txt_consultaDpi
+            // 
+            this.Txt_consultaDpi.Location = new System.Drawing.Point(257, 70);
+            this.Txt_consultaDpi.Name = "Txt_consultaDpi";
+            this.Txt_consultaDpi.Size = new System.Drawing.Size(790, 30);
+            this.Txt_consultaDpi.TabIndex = 55;
+            // 
+            // Lbl_consultaCliente
+            // 
+            this.Lbl_consultaCliente.AutoSize = true;
+            this.Lbl_consultaCliente.Location = new System.Drawing.Point(25, 73);
+            this.Lbl_consultaCliente.Name = "Lbl_consultaCliente";
+            this.Lbl_consultaCliente.Size = new System.Drawing.Size(280, 22);
+            this.Lbl_consultaCliente.TabIndex = 54;
+            this.Lbl_consultaCliente.Text = "Documento de Identificacion";
+            // 
             // Frm_consultaCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actualizar);

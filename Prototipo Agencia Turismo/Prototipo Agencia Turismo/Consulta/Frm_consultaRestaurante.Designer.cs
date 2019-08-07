@@ -122,7 +122,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(63, 32);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(199, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(245, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE RESTAURANTES";
             // 
@@ -151,7 +151,7 @@
             this.Txt_consultaRestaurante.Location = new System.Drawing.Point(174, 76);
             this.Txt_consultaRestaurante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Txt_consultaRestaurante.Name = "Txt_consultaRestaurante";
-            this.Txt_consultaRestaurante.Size = new System.Drawing.Size(787, 26);
+            this.Txt_consultaRestaurante.Size = new System.Drawing.Size(787, 30);
             this.Txt_consultaRestaurante.TabIndex = 59;
             this.Txt_consultaRestaurante.TextChanged += new System.EventHandler(this.Txt_consultaHotel_TextChanged);
             // 
@@ -161,13 +161,17 @@
             this.Lbl_consultaRestaurante.Location = new System.Drawing.Point(65, 79);
             this.Lbl_consultaRestaurante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_consultaRestaurante.Name = "Lbl_consultaRestaurante";
-            this.Lbl_consultaRestaurante.Size = new System.Drawing.Size(101, 20);
+            this.Lbl_consultaRestaurante.Size = new System.Drawing.Size(128, 22);
             this.Lbl_consultaRestaurante.TabIndex = 58;
             this.Lbl_consultaRestaurante.Text = "Restaurante:";
             this.Lbl_consultaRestaurante.Click += new System.EventHandler(this.Lbl_consultaUsuario_Click);
             // 
             // Dgv_consultaRestaurante
             // 
+            this.Dgv_consultaRestaurante.AllowUserToAddRows = false;
+            this.Dgv_consultaRestaurante.AllowUserToDeleteRows = false;
+            this.Dgv_consultaRestaurante.AllowUserToResizeColumns = false;
+            this.Dgv_consultaRestaurante.AllowUserToResizeRows = false;
             this.Dgv_consultaRestaurante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaRestaurante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaRestaurante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -181,7 +185,9 @@
             this.Dgv_consultaRestaurante.MultiSelect = false;
             this.Dgv_consultaRestaurante.Name = "Dgv_consultaRestaurante";
             this.Dgv_consultaRestaurante.ReadOnly = true;
+            this.Dgv_consultaRestaurante.RowHeadersVisible = false;
             this.Dgv_consultaRestaurante.RowTemplate.Height = 24;
+            this.Dgv_consultaRestaurante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaRestaurante.Size = new System.Drawing.Size(1116, 453);
             this.Dgv_consultaRestaurante.TabIndex = 61;
             // 
@@ -249,7 +255,7 @@
             // 
             // Frm_consultaRestaurante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actu);

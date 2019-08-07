@@ -63,6 +63,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaUsuario.Rows.Add(cargarDgv.GetString(0), cargarDgv.GetString(1),
                         cargarDgv.GetString(2), cargarDgv.GetString(3), cargarDgv.GetString(4));
                 }
+                comm.Connection.Close();
+                cargarDgv.Close();
             }
             catch (Exception err)
             {
@@ -99,6 +101,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                         Dgv_consultaUsuario.Rows.Add(cargarDgv.GetString(0), cargarDgv.GetString(1),
                             cargarDgv.GetString(2), cargarDgv.GetString(3), cargarDgv.GetString(4));
                     }
+                    comm.Connection.Close();
+                    cargarDgv.Close();
                 }
                 catch (Exception err)
                 {
