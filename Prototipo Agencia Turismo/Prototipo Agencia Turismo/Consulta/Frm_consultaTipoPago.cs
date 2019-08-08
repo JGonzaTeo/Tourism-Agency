@@ -60,6 +60,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                         Dgv_consultaPago.Refresh();
                         Dgv_consultaPago.Rows.Add(mostrarDatos.GetString(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3));
                     }
+                    comm.Connection.Close();
+                    mostrarDatos.Close();
                 }
                 catch (Exception err)
                 {
@@ -81,7 +83,8 @@ namespace Prototipo_Agencia_Turismo.Consulta
                     Dgv_consultaPago.Refresh();
                     Dgv_consultaPago.Rows.Add(mostrarDatos.GetInt32(0), mostrarDatos.GetString(1), mostrarDatos.GetString(2), mostrarDatos.GetString(3));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {

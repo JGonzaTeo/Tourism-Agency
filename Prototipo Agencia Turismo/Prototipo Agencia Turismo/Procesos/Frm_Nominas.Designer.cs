@@ -59,13 +59,13 @@
             this.Txt_bono = new System.Windows.Forms.TextBox();
             this.Lbl_desc = new System.Windows.Forms.Label();
             this.Gpb_operaciones = new System.Windows.Forms.GroupBox();
+            this.Txt_coddescus = new System.Windows.Forms.TextBox();
+            this.Txt_codbonos = new System.Windows.Forms.TextBox();
             this.Btn_ingresardescuento = new System.Windows.Forms.Button();
             this.Btn_ingresarbono = new System.Windows.Forms.Button();
             this.Txt_descuentos = new System.Windows.Forms.TextBox();
             this.Cmb_Descuentos = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Txt_codbonos = new System.Windows.Forms.TextBox();
-            this.Txt_coddescus = new System.Windows.Forms.TextBox();
             this.Pnl_principal.SuspendLayout();
             this.Gpb_datosgenerales.SuspendLayout();
             this.Gpb_Datosemp.SuspendLayout();
@@ -83,7 +83,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(4);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1162, 40);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 3;
             // 
             // Btn_minimizar
@@ -133,7 +133,6 @@
             this.Gpb_datosgenerales.TabIndex = 4;
             this.Gpb_datosgenerales.TabStop = false;
             this.Gpb_datosgenerales.Text = "Datos Generales";
-            
             // 
             // Dtp_FechaEmi
             // 
@@ -384,6 +383,20 @@
             this.Gpb_operaciones.TabStop = false;
             this.Gpb_operaciones.Text = "Operaciones";
             // 
+            // Txt_coddescus
+            // 
+            this.Txt_coddescus.Location = new System.Drawing.Point(816, 61);
+            this.Txt_coddescus.Name = "Txt_coddescus";
+            this.Txt_coddescus.Size = new System.Drawing.Size(100, 22);
+            this.Txt_coddescus.TabIndex = 124;
+            // 
+            // Txt_codbonos
+            // 
+            this.Txt_codbonos.Location = new System.Drawing.Point(205, 61);
+            this.Txt_codbonos.Name = "Txt_codbonos";
+            this.Txt_codbonos.Size = new System.Drawing.Size(100, 22);
+            this.Txt_codbonos.TabIndex = 123;
+            // 
             // Btn_ingresardescuento
             // 
             this.Btn_ingresardescuento.Location = new System.Drawing.Point(922, 27);
@@ -429,31 +442,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 11;
             // 
-            // Txt_codbonos
-            // 
-            this.Txt_codbonos.Location = new System.Drawing.Point(205, 61);
-            this.Txt_codbonos.Name = "Txt_codbonos";
-            this.Txt_codbonos.Size = new System.Drawing.Size(100, 22);
-            this.Txt_codbonos.TabIndex = 123;
-            // 
-            // Txt_coddescus
-            // 
-            this.Txt_coddescus.Location = new System.Drawing.Point(816, 61);
-            this.Txt_coddescus.Name = "Txt_coddescus";
-            this.Txt_coddescus.Size = new System.Drawing.Size(100, 22);
-            this.Txt_coddescus.TabIndex = 124;
-            // 
             // Frm_Nominas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 593);
+            this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Gpb_operaciones);
             this.Controls.Add(this.Gpb_Datosemp);
             this.Controls.Add(this.Gpb_datosgenerales);
             this.Controls.Add(this.Pnl_principal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Nominas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Nominas";
             this.Load += new System.EventHandler(this.Frm_Nominas_Load);
             this.Pnl_principal.ResumeLayout(false);

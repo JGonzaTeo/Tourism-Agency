@@ -184,6 +184,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("dir", OdbcType.Text).Value = direccion;
                
                 comm.ExecuteNonQuery();
+                comm.Connection.Close();
                 MessageBox.Show("Registro actualizado correctamente");
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -194,6 +195,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
 
 
 
@@ -243,6 +245,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("estado", OdbcType.Text).Value = "0";
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Guardado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -252,6 +255,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
 
             }
             catch (Exception err)
@@ -272,6 +276,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm.Parameters.Add("cod", OdbcType.Text).Value = codigo;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
+                comm.Connection.Close();
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
@@ -281,6 +286,7 @@ namespace Prototipo_Agencia_Turismo.Mantenimiento
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Empleado";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
             }
             catch (Exception err)
             {

@@ -163,7 +163,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1162, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
             this.Pnl_principal.TabIndex = 62;
             // 
             // Btn_minimizar
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 593);
+            this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_seleccionar);
             this.Controls.Add(this.Dgv_consultaEmpleadoguia);
@@ -215,7 +215,9 @@
             this.Controls.Add(this.Txt_consultaGuiaturistico);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Pnl_principal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_consultaEmpGuiacs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_consultaEmpGuiacs";
             this.Load += new System.EventHandler(this.Frm_consultaEmpGuiacs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaEmpleadoguia)).EndInit();

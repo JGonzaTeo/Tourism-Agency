@@ -52,7 +52,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
 
         DateTime fechai = DateTime.Now;
-        public Frm_Nominas(String user)
+        public Frm_Nominas(string user)
         {
             InitializeComponent();
             nombreUsuario = user;
@@ -86,7 +86,8 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 {
                     Cmb_Bonos.Items.Add(mostrarDatos.GetString(1));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -107,7 +108,8 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 {
                     Cmb_Descuentos.Items.Add(mostrarDatos.GetString(1));
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -144,7 +146,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm.Parameters.Add("cantidad", OdbcType.Text).Value = cantidad;
 
                 comm.ExecuteNonQuery();
-
+                comm.Connection.Close();
 
 
 
@@ -180,7 +182,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
 
                 comm.ExecuteNonQuery();
-
+                comm.Connection.Close();
                 MessageBox.Show("Registro Guardado correctamente");
 
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -191,7 +193,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Proceso Nomina";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
                 comm1.ExecuteNonQuery();
-
+                comm1.Connection.Close();
 
 
 
@@ -270,7 +272,8 @@ namespace Prototipo_Agencia_Turismo.Procesos
                     Txt_bono.Text = mostrarDatos["Valor"].ToString();
                     Txt_codbonos.Text = mostrarDatos["Pk_idBonos_Desc"].ToString();
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -297,7 +300,8 @@ namespace Prototipo_Agencia_Turismo.Procesos
                     Txt_descuentos.Text = mostrarDatos["Valor"].ToString();
                     Txt_coddescus.Text = mostrarDatos["Pk_idBonos_Desc"].ToString();
                 }
-
+                comm.Connection.Close();
+                mostrarDatos.Close();
             }
             catch (Exception err)
             {
@@ -345,7 +349,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm.Parameters.Add("idbono", OdbcType.Text).Value = idbono;
 
                 comm.ExecuteNonQuery();
-               
+                comm.Connection.Close();
             }
 
             catch (Exception err)
@@ -384,6 +388,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 comm.Parameters.Add("idbono", OdbcType.Text).Value = iddesc;
 
                 comm.ExecuteNonQuery();
+                comm.Connection.Close();
             }
             catch (Exception err)
             {
