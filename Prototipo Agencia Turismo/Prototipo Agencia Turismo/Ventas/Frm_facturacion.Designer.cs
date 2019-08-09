@@ -87,6 +87,7 @@
             this.Rbtn_facturacion = new System.Windows.Forms.RadioButton();
             this.Cmbx_tipoPago = new System.Windows.Forms.ComboBox();
             this.Lbl_tipoPago = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Pnl_Detalle.SuspendLayout();
             this.Grb_Restaurante.SuspendLayout();
@@ -99,6 +100,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -781,6 +783,18 @@
             this.Lbl_tipoPago.TabIndex = 78;
             this.Lbl_tipoPago.Text = "Tipo de pago";
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 13;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -879,5 +893,6 @@
         private System.Windows.Forms.Button Btn_consultaMenu;
         private System.Windows.Forms.ComboBox Cmbx_tipoPago;
         private System.Windows.Forms.Label Lbl_tipoPago;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

@@ -56,9 +56,9 @@
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenStrip_menuPrincipal.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -304,6 +304,15 @@
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xToolStripMenuItem.Image")));
+            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(87, 34);
+            this.xToolStripMenuItem.Text = "Ayuda";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -321,14 +330,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 20);
             this.toolStripStatusLabel1.Text = "Usuario";
-            // 
-            // xToolStripMenuItem
-            // 
-            this.xToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xToolStripMenuItem.Image")));
-            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(87, 34);
-            this.xToolStripMenuItem.Text = "Ayuda";
             // 
             // Frm_mdi
             // 

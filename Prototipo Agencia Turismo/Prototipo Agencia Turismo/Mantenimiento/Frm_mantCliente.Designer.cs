@@ -57,12 +57,14 @@
             this.Lbl_Telres = new System.Windows.Forms.Label();
             this.Txt_CorreoAlt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -104,7 +106,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(34, 16);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(82, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(98, 20);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CLIENTES";
             // 
@@ -233,7 +235,7 @@
             this.Txt_dpi.Enabled = false;
             this.Txt_dpi.Location = new System.Drawing.Point(414, 414);
             this.Txt_dpi.Name = "Txt_dpi";
-            this.Txt_dpi.Size = new System.Drawing.Size(138, 24);
+            this.Txt_dpi.Size = new System.Drawing.Size(138, 29);
             this.Txt_dpi.TabIndex = 48;
             // 
             // Lbl_dpi
@@ -241,7 +243,7 @@
             this.Lbl_dpi.AutoSize = true;
             this.Lbl_dpi.Location = new System.Drawing.Point(187, 417);
             this.Lbl_dpi.Name = "Lbl_dpi";
-            this.Lbl_dpi.Size = new System.Drawing.Size(195, 18);
+            this.Lbl_dpi.Size = new System.Drawing.Size(249, 24);
             this.Lbl_dpi.TabIndex = 47;
             this.Lbl_dpi.Text = "Documento de Identificacion";
             // 
@@ -250,7 +252,7 @@
             this.Txt_telefonoCel.Enabled = false;
             this.Txt_telefonoCel.Location = new System.Drawing.Point(362, 281);
             this.Txt_telefonoCel.Name = "Txt_telefonoCel";
-            this.Txt_telefonoCel.Size = new System.Drawing.Size(190, 24);
+            this.Txt_telefonoCel.Size = new System.Drawing.Size(190, 29);
             this.Txt_telefonoCel.TabIndex = 46;
             this.Txt_telefonoCel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
             // 
@@ -259,7 +261,7 @@
             this.Lbl_telefonoCel.AutoSize = true;
             this.Lbl_telefonoCel.Location = new System.Drawing.Point(187, 288);
             this.Lbl_telefonoCel.Name = "Lbl_telefonoCel";
-            this.Lbl_telefonoCel.Size = new System.Drawing.Size(116, 18);
+            this.Lbl_telefonoCel.Size = new System.Drawing.Size(149, 24);
             this.Lbl_telefonoCel.TabIndex = 45;
             this.Lbl_telefonoCel.Text = "Telefono Celular";
             // 
@@ -268,7 +270,7 @@
             this.Txt_Nombre.Enabled = false;
             this.Txt_Nombre.Location = new System.Drawing.Point(362, 219);
             this.Txt_Nombre.Name = "Txt_Nombre";
-            this.Txt_Nombre.Size = new System.Drawing.Size(190, 24);
+            this.Txt_Nombre.Size = new System.Drawing.Size(190, 29);
             this.Txt_Nombre.TabIndex = 44;
             // 
             // Lbl_nombreCliente
@@ -276,7 +278,7 @@
             this.Lbl_nombreCliente.AutoSize = true;
             this.Lbl_nombreCliente.Location = new System.Drawing.Point(187, 226);
             this.Lbl_nombreCliente.Name = "Lbl_nombreCliente";
-            this.Lbl_nombreCliente.Size = new System.Drawing.Size(62, 18);
+            this.Lbl_nombreCliente.Size = new System.Drawing.Size(79, 24);
             this.Lbl_nombreCliente.TabIndex = 43;
             this.Lbl_nombreCliente.Text = "Nombre";
             // 
@@ -285,7 +287,7 @@
             this.Txt_idCliente.Enabled = false;
             this.Txt_idCliente.Location = new System.Drawing.Point(362, 160);
             this.Txt_idCliente.Name = "Txt_idCliente";
-            this.Txt_idCliente.Size = new System.Drawing.Size(138, 24);
+            this.Txt_idCliente.Size = new System.Drawing.Size(138, 29);
             this.Txt_idCliente.TabIndex = 42;
             this.Txt_idCliente.Visible = false;
             // 
@@ -294,7 +296,7 @@
             this.Lbl_idTransporte.AutoSize = true;
             this.Lbl_idTransporte.Location = new System.Drawing.Point(187, 166);
             this.Lbl_idTransporte.Name = "Lbl_idTransporte";
-            this.Lbl_idTransporte.Size = new System.Drawing.Size(71, 18);
+            this.Lbl_idTransporte.Size = new System.Drawing.Size(90, 24);
             this.Lbl_idTransporte.TabIndex = 41;
             this.Lbl_idTransporte.Text = "ID Cliente";
             this.Lbl_idTransporte.Visible = false;
@@ -304,7 +306,7 @@
             this.Txt_nit.Enabled = false;
             this.Txt_nit.Location = new System.Drawing.Point(752, 411);
             this.Txt_nit.Name = "Txt_nit";
-            this.Txt_nit.Size = new System.Drawing.Size(138, 24);
+            this.Txt_nit.Size = new System.Drawing.Size(138, 29);
             this.Txt_nit.TabIndex = 60;
             // 
             // Lbl_nit
@@ -312,7 +314,7 @@
             this.Lbl_nit.AutoSize = true;
             this.Lbl_nit.Location = new System.Drawing.Point(577, 417);
             this.Lbl_nit.Name = "Lbl_nit";
-            this.Lbl_nit.Size = new System.Drawing.Size(31, 18);
+            this.Lbl_nit.Size = new System.Drawing.Size(40, 24);
             this.Lbl_nit.TabIndex = 59;
             this.Lbl_nit.Text = "NIT";
             // 
@@ -321,7 +323,7 @@
             this.Txt_correo.Enabled = false;
             this.Txt_correo.Location = new System.Drawing.Point(752, 281);
             this.Txt_correo.Name = "Txt_correo";
-            this.Txt_correo.Size = new System.Drawing.Size(190, 24);
+            this.Txt_correo.Size = new System.Drawing.Size(190, 29);
             this.Txt_correo.TabIndex = 58;
             // 
             // Lbl_correo
@@ -329,7 +331,7 @@
             this.Lbl_correo.AutoSize = true;
             this.Lbl_correo.Location = new System.Drawing.Point(577, 288);
             this.Lbl_correo.Name = "Lbl_correo";
-            this.Lbl_correo.Size = new System.Drawing.Size(55, 18);
+            this.Lbl_correo.Size = new System.Drawing.Size(68, 24);
             this.Lbl_correo.TabIndex = 57;
             this.Lbl_correo.Text = "Correo";
             // 
@@ -338,7 +340,7 @@
             this.Txt_Apellido.Enabled = false;
             this.Txt_Apellido.Location = new System.Drawing.Point(752, 219);
             this.Txt_Apellido.Name = "Txt_Apellido";
-            this.Txt_Apellido.Size = new System.Drawing.Size(190, 24);
+            this.Txt_Apellido.Size = new System.Drawing.Size(190, 29);
             this.Txt_Apellido.TabIndex = 56;
             // 
             // Lbl_Apellido
@@ -346,7 +348,7 @@
             this.Lbl_Apellido.AutoSize = true;
             this.Lbl_Apellido.Location = new System.Drawing.Point(577, 226);
             this.Lbl_Apellido.Name = "Lbl_Apellido";
-            this.Lbl_Apellido.Size = new System.Drawing.Size(59, 18);
+            this.Lbl_Apellido.Size = new System.Drawing.Size(79, 24);
             this.Lbl_Apellido.TabIndex = 55;
             this.Lbl_Apellido.Text = "Apellido";
             // 
@@ -355,7 +357,7 @@
             this.Txt_TelefonoRes.Enabled = false;
             this.Txt_TelefonoRes.Location = new System.Drawing.Point(362, 347);
             this.Txt_TelefonoRes.Name = "Txt_TelefonoRes";
-            this.Txt_TelefonoRes.Size = new System.Drawing.Size(190, 24);
+            this.Txt_TelefonoRes.Size = new System.Drawing.Size(190, 29);
             this.Txt_TelefonoRes.TabIndex = 62;
             this.Txt_TelefonoRes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_TelefonoRes_KeyPress);
             // 
@@ -364,7 +366,7 @@
             this.Lbl_Telres.AutoSize = true;
             this.Lbl_Telres.Location = new System.Drawing.Point(187, 354);
             this.Lbl_Telres.Name = "Lbl_Telres";
-            this.Lbl_Telres.Size = new System.Drawing.Size(146, 18);
+            this.Lbl_Telres.Size = new System.Drawing.Size(188, 24);
             this.Lbl_Telres.TabIndex = 61;
             this.Lbl_Telres.Text = "Telefono Residencial";
             // 
@@ -373,7 +375,7 @@
             this.Txt_CorreoAlt.Enabled = false;
             this.Txt_CorreoAlt.Location = new System.Drawing.Point(752, 347);
             this.Txt_CorreoAlt.Name = "Txt_CorreoAlt";
-            this.Txt_CorreoAlt.Size = new System.Drawing.Size(190, 24);
+            this.Txt_CorreoAlt.Size = new System.Drawing.Size(190, 29);
             this.Txt_CorreoAlt.TabIndex = 64;
             // 
             // label1
@@ -381,13 +383,25 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(577, 354);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 18);
+            this.label1.Size = new System.Drawing.Size(160, 24);
             this.label1.TabIndex = 63;
             this.label1.Text = "Correo Alternativo";
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 104;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_mantCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Txt_CorreoAlt);
@@ -459,5 +473,6 @@
         private System.Windows.Forms.Label Lbl_Telres;
         private System.Windows.Forms.TextBox Txt_CorreoAlt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

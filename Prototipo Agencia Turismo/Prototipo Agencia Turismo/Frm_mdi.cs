@@ -655,6 +655,11 @@ namespace Prototipo_Agencia_Turismo
                 facturacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
         }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
     }
     }
 

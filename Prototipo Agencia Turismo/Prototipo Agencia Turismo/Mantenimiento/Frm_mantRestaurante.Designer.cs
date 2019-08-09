@@ -49,12 +49,14 @@
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_editar = new System.Windows.Forms.Button();
             this.Btn_ingresar = new System.Windows.Forms.Button();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -62,7 +64,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 2;
             // 
             // Btn_minimizar
@@ -73,7 +75,7 @@
             this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 40);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
             this.Btn_minimizar.Click += new System.EventHandler(this.button1_Click);
@@ -86,7 +88,7 @@
             this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 40);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.button2_Click);
@@ -95,10 +97,10 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
+            this.Lbl_titulo.Location = new System.Drawing.Point(42, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(103, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(128, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "RESTAURANTES";
             // 
@@ -108,7 +110,7 @@
             this.Lbl_idRestaurante.Location = new System.Drawing.Point(336, 204);
             this.Lbl_idRestaurante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_idRestaurante.Name = "Lbl_idRestaurante";
-            this.Lbl_idRestaurante.Size = new System.Drawing.Size(132, 19);
+            this.Lbl_idRestaurante.Size = new System.Drawing.Size(163, 21);
             this.Lbl_idRestaurante.TabIndex = 3;
             this.Lbl_idRestaurante.Text = "ID de restaurante:";
             // 
@@ -117,7 +119,7 @@
             this.Txt_idRestaurante.Enabled = false;
             this.Txt_idRestaurante.Location = new System.Drawing.Point(518, 197);
             this.Txt_idRestaurante.Name = "Txt_idRestaurante";
-            this.Txt_idRestaurante.Size = new System.Drawing.Size(100, 24);
+            this.Txt_idRestaurante.Size = new System.Drawing.Size(100, 28);
             this.Txt_idRestaurante.TabIndex = 4;
             // 
             // Lbl_nombre
@@ -125,7 +127,7 @@
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Location = new System.Drawing.Point(336, 254);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(68, 19);
+            this.Lbl_nombre.Size = new System.Drawing.Size(82, 21);
             this.Lbl_nombre.TabIndex = 5;
             this.Lbl_nombre.Text = "Nombre:";
             // 
@@ -133,7 +135,7 @@
             // 
             this.Txt_nombre.Location = new System.Drawing.Point(518, 247);
             this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(172, 24);
+            this.Txt_nombre.Size = new System.Drawing.Size(172, 28);
             this.Txt_nombre.TabIndex = 6;
             // 
             // Lbl_direccion
@@ -141,7 +143,7 @@
             this.Lbl_direccion.AutoSize = true;
             this.Lbl_direccion.Location = new System.Drawing.Point(334, 306);
             this.Lbl_direccion.Name = "Lbl_direccion";
-            this.Lbl_direccion.Size = new System.Drawing.Size(78, 19);
+            this.Lbl_direccion.Size = new System.Drawing.Size(93, 21);
             this.Lbl_direccion.TabIndex = 7;
             this.Lbl_direccion.Text = "Dirección:";
             // 
@@ -149,7 +151,7 @@
             // 
             this.Txt_direccion.Location = new System.Drawing.Point(518, 299);
             this.Txt_direccion.Name = "Txt_direccion";
-            this.Txt_direccion.Size = new System.Drawing.Size(243, 24);
+            this.Txt_direccion.Size = new System.Drawing.Size(243, 28);
             this.Txt_direccion.TabIndex = 8;
             // 
             // Lbl_telefono
@@ -157,7 +159,7 @@
             this.Lbl_telefono.AutoSize = true;
             this.Lbl_telefono.Location = new System.Drawing.Point(336, 358);
             this.Lbl_telefono.Name = "Lbl_telefono";
-            this.Lbl_telefono.Size = new System.Drawing.Size(70, 19);
+            this.Lbl_telefono.Size = new System.Drawing.Size(85, 21);
             this.Lbl_telefono.TabIndex = 9;
             this.Lbl_telefono.Text = "Teléfono:";
             // 
@@ -165,7 +167,7 @@
             // 
             this.Txt_telefono.Location = new System.Drawing.Point(518, 351);
             this.Txt_telefono.Name = "Txt_telefono";
-            this.Txt_telefono.Size = new System.Drawing.Size(172, 24);
+            this.Txt_telefono.Size = new System.Drawing.Size(172, 28);
             this.Txt_telefono.TabIndex = 10;
             this.Txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
             // 
@@ -174,7 +176,7 @@
             this.Lbl_correo.AutoSize = true;
             this.Lbl_correo.Location = new System.Drawing.Point(336, 406);
             this.Lbl_correo.Name = "Lbl_correo";
-            this.Lbl_correo.Size = new System.Drawing.Size(59, 19);
+            this.Lbl_correo.Size = new System.Drawing.Size(72, 21);
             this.Lbl_correo.TabIndex = 11;
             this.Lbl_correo.Text = "Correo:";
             // 
@@ -182,7 +184,7 @@
             // 
             this.Txt_correo.Location = new System.Drawing.Point(518, 399);
             this.Txt_correo.Name = "Txt_correo";
-            this.Txt_correo.Size = new System.Drawing.Size(172, 24);
+            this.Txt_correo.Size = new System.Drawing.Size(172, 28);
             this.Txt_correo.TabIndex = 12;
             // 
             // Btn_consultar
@@ -305,9 +307,21 @@
             this.Btn_ingresar.UseVisualStyleBackColor = false;
             this.Btn_ingresar.Click += new System.EventHandler(this.Btn_ingresar_Click);
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 97;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_mantRestaurante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_consultar);
@@ -363,5 +377,6 @@
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_editar;
         private System.Windows.Forms.Button Btn_ingresar;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

@@ -50,6 +50,7 @@
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rbtn_cotizacion = new System.Windows.Forms.RadioButton();
             this.Rbtn_factura = new System.Windows.Forms.RadioButton();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaCotizacion)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_min);
             this.Pnl_principal.Controls.Add(this.Btn_cerr);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
@@ -66,7 +68,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 60);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 57;
             // 
             // Btn_min
@@ -74,10 +76,10 @@
             this.Btn_min.FlatAppearance.BorderSize = 0;
             this.Btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_min.Image = ((System.Drawing.Image)(resources.GetObject("Btn_min.Image")));
-            this.Btn_min.Location = new System.Drawing.Point(1001, 5);
+            this.Btn_min.Location = new System.Drawing.Point(1030, 1);
             this.Btn_min.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Btn_min.Name = "Btn_min";
-            this.Btn_min.Size = new System.Drawing.Size(58, 63);
+            this.Btn_min.Size = new System.Drawing.Size(58, 40);
             this.Btn_min.TabIndex = 13;
             this.Btn_min.UseVisualStyleBackColor = true;
             this.Btn_min.Click += new System.EventHandler(this.Btn_min_Click);
@@ -87,10 +89,10 @@
             this.Btn_cerr.FlatAppearance.BorderSize = 0;
             this.Btn_cerr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cerr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerr.Image")));
-            this.Btn_cerr.Location = new System.Drawing.Point(1107, 5);
+            this.Btn_cerr.Location = new System.Drawing.Point(1107, 1);
             this.Btn_cerr.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Btn_cerr.Name = "Btn_cerr";
-            this.Btn_cerr.Size = new System.Drawing.Size(58, 63);
+            this.Btn_cerr.Size = new System.Drawing.Size(58, 40);
             this.Btn_cerr.TabIndex = 12;
             this.Btn_cerr.UseVisualStyleBackColor = true;
             this.Btn_cerr.Click += new System.EventHandler(this.Btn_cerr_Click);
@@ -123,7 +125,7 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(83, 41);
+            this.Lbl_titulo.Location = new System.Drawing.Point(83, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
             this.Lbl_titulo.Size = new System.Drawing.Size(232, 19);
@@ -299,6 +301,18 @@
             this.Rbtn_factura.UseVisualStyleBackColor = true;
             this.Rbtn_factura.CheckedChanged += new System.EventHandler(this.Rbtn_factura_CheckedChanged);
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 121;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_consultaCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -350,5 +364,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.RadioButton Rbtn_cotizacion;
         private System.Windows.Forms.RadioButton Rbtn_factura;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

@@ -47,12 +47,14 @@
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_editar = new System.Windows.Forms.Button();
             this.Btn_ingresar = new System.Windows.Forms.Button();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -94,7 +96,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(34, 16);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(97, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(120, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "TRANSPORTES";
             // 
@@ -103,7 +105,7 @@
             this.Lbl_idTransporte.AutoSize = true;
             this.Lbl_idTransporte.Location = new System.Drawing.Point(319, 200);
             this.Lbl_idTransporte.Name = "Lbl_idTransporte";
-            this.Lbl_idTransporte.Size = new System.Drawing.Size(123, 19);
+            this.Lbl_idTransporte.Size = new System.Drawing.Size(153, 21);
             this.Lbl_idTransporte.TabIndex = 2;
             this.Lbl_idTransporte.Text = "ID de transporte:";
             this.Lbl_idTransporte.Visible = false;
@@ -114,7 +116,7 @@
             this.Txt_idTransporte.Enabled = false;
             this.Txt_idTransporte.Location = new System.Drawing.Point(494, 193);
             this.Txt_idTransporte.Name = "Txt_idTransporte";
-            this.Txt_idTransporte.Size = new System.Drawing.Size(138, 24);
+            this.Txt_idTransporte.Size = new System.Drawing.Size(138, 28);
             this.Txt_idTransporte.TabIndex = 3;
             this.Txt_idTransporte.Visible = false;
             this.Txt_idTransporte.TextChanged += new System.EventHandler(this.Txt_idTransporte_TextChanged);
@@ -124,7 +126,7 @@
             this.Lbl_noPlaca.AutoSize = true;
             this.Lbl_noPlaca.Location = new System.Drawing.Point(319, 264);
             this.Lbl_noPlaca.Name = "Lbl_noPlaca";
-            this.Lbl_noPlaca.Size = new System.Drawing.Size(105, 19);
+            this.Lbl_noPlaca.Size = new System.Drawing.Size(127, 21);
             this.Lbl_noPlaca.TabIndex = 4;
             this.Lbl_noPlaca.Text = "No. de placa:";
             this.Lbl_noPlaca.Click += new System.EventHandler(this.Lbl_noPlaca_Click);
@@ -134,7 +136,7 @@
             this.Txt_noPlaca.Enabled = false;
             this.Txt_noPlaca.Location = new System.Drawing.Point(494, 257);
             this.Txt_noPlaca.Name = "Txt_noPlaca";
-            this.Txt_noPlaca.Size = new System.Drawing.Size(190, 24);
+            this.Txt_noPlaca.Size = new System.Drawing.Size(190, 28);
             this.Txt_noPlaca.TabIndex = 5;
             this.Txt_noPlaca.TextChanged += new System.EventHandler(this.Txt_noPlaca_TextChanged);
             // 
@@ -143,7 +145,7 @@
             this.Lbl_tipoTransporte.AutoSize = true;
             this.Lbl_tipoTransporte.Location = new System.Drawing.Point(319, 326);
             this.Lbl_tipoTransporte.Name = "Lbl_tipoTransporte";
-            this.Lbl_tipoTransporte.Size = new System.Drawing.Size(137, 19);
+            this.Lbl_tipoTransporte.Size = new System.Drawing.Size(169, 21);
             this.Lbl_tipoTransporte.TabIndex = 6;
             this.Lbl_tipoTransporte.Text = "Tipo de transporte:";
             this.Lbl_tipoTransporte.Click += new System.EventHandler(this.Lbl_tipoTransporte_Click);
@@ -153,7 +155,7 @@
             this.Txt_tipoTransporte.Enabled = false;
             this.Txt_tipoTransporte.Location = new System.Drawing.Point(494, 319);
             this.Txt_tipoTransporte.Name = "Txt_tipoTransporte";
-            this.Txt_tipoTransporte.Size = new System.Drawing.Size(190, 24);
+            this.Txt_tipoTransporte.Size = new System.Drawing.Size(190, 28);
             this.Txt_tipoTransporte.TabIndex = 7;
             this.Txt_tipoTransporte.TextChanged += new System.EventHandler(this.Txt_tipoTransporte_TextChanged);
             // 
@@ -162,7 +164,7 @@
             this.Lbl_capacidad.AutoSize = true;
             this.Lbl_capacidad.Location = new System.Drawing.Point(319, 388);
             this.Lbl_capacidad.Name = "Lbl_capacidad";
-            this.Lbl_capacidad.Size = new System.Drawing.Size(96, 19);
+            this.Lbl_capacidad.Size = new System.Drawing.Size(115, 21);
             this.Lbl_capacidad.TabIndex = 8;
             this.Lbl_capacidad.Text = "Capacidad:";
             this.Lbl_capacidad.Click += new System.EventHandler(this.Lbl_capacidad_Click);
@@ -172,7 +174,7 @@
             this.Txt_capacidad.Enabled = false;
             this.Txt_capacidad.Location = new System.Drawing.Point(494, 381);
             this.Txt_capacidad.Name = "Txt_capacidad";
-            this.Txt_capacidad.Size = new System.Drawing.Size(83, 24);
+            this.Txt_capacidad.Size = new System.Drawing.Size(83, 28);
             this.Txt_capacidad.TabIndex = 9;
             this.Txt_capacidad.TextChanged += new System.EventHandler(this.Txt_capacidad_TextChanged);
             this.Txt_capacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_capacidad_KeyPress);
@@ -297,9 +299,21 @@
             this.Btn_ingresar.UseVisualStyleBackColor = false;
             this.Btn_ingresar.Click += new System.EventHandler(this.Btn_ingresar_Click);
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 95;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_mantTransporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_consultar);
@@ -351,5 +365,6 @@
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_editar;
         private System.Windows.Forms.Button Btn_ingresar;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }
