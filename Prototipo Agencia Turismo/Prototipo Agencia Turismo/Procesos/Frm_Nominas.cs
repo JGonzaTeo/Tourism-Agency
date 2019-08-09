@@ -162,48 +162,52 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void GuardarDatos()
         {
-            codigo = Txt_coddoc.Text;
-            cantidad = Txt_sueldoliquido.Text;
-            codigoemp = Txt_codempleado.Text;
-            dias = Txt_dias.Text;
-            fecha = Dtp_FechaEmi.Text;
+           
+
+                codigo = Txt_coddoc.Text;
+                cantidad = Txt_sueldoliquido.Text;
+                codigoemp = Txt_codempleado.Text;
+                dias = Txt_dias.Text;
+                fecha = Dtp_FechaEmi.Text;
 
 
 
-            try
-            {
-                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominaencabezado(?,?,?,?,?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
-                comm.Parameters.Add("idemp", OdbcType.Text).Value = codigoemp;
-                comm.Parameters.Add("dias", OdbcType.Text).Value = dias;
-                comm.Parameters.Add("fecha", OdbcType.Text).Value = fecha;
-                comm.Parameters.Add("sueldoliquido", OdbcType.Text).Value = cantidad;
+                try
+                {
+                    OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominaencabezado(?,?,?,?,?)}", Conexion.nuevaConexion());
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
+                    comm.Parameters.Add("idemp", OdbcType.Text).Value = codigoemp;
+                    comm.Parameters.Add("dias", OdbcType.Text).Value = dias;
+                    comm.Parameters.Add("fecha", OdbcType.Text).Value = fecha;
+                    comm.Parameters.Add("sueldoliquido", OdbcType.Text).Value = cantidad;
 
 
-                comm.ExecuteNonQuery();
-                comm.Connection.Close();
-                MessageBox.Show("Registro Guardado correctamente");
+                    comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+                    MessageBox.Show("Registro Guardado correctamente");
 
-                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
-                comm1.CommandType = CommandType.StoredProcedure;
-                comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
-                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
-                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
-                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Proceso Nomina";
-                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
-                comm1.ExecuteNonQuery();
-                comm1.Connection.Close();
+                    OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                    comm1.CommandType = CommandType.StoredProcedure;
+                    comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
+                    comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                    comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                    comm1.Parameters.Add("proc", OdbcType.Text).Value = "Proceso Nomina";
+                    comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                    comm1.ExecuteNonQuery();
+                    comm1.Connection.Close();
 
 
 
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                MessageBox.Show("Registro no guardado");
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                    MessageBox.Show("Registro no guardado");
 
-            }
+                }
+            
+         
         }
 
 
@@ -313,50 +317,73 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
-            GuardarDatos();
-            Gpb_operaciones.Enabled = true;
-            Btn_ingresar.Enabled = false;
-            Btn_borrar.Enabled = false;
+            if (Txt_dias.Text != "")
+            {
+
+
+                GuardarDatos();
+                Gpb_operaciones.Enabled = true;
+                Btn_ingresar.Enabled = false;
+                Btn_borrar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("No lleno todos los campos");
+            }
         }
 
         private void Btn_ingresarbono_Click(object sender, EventArgs e)
         {
-            Random numran = new Random();
-            numale = numran.Next(0, 100000);
-            Lbl_sueldoliquido.Visible = true;
-            Txt_sueldoliquido.Visible = true;
-            idbono = Txt_codbonos.Text;
 
-            double bono = Convert.ToDouble(Txt_bono.Text);
-            double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
-            totalbono = bono * sueldobase;
-            Txt_sueldoliquido.Text = Convert.ToString(totalbono);
-
-
-            Txt_sueldoliquido.Text = " ";
-            double operacion = totalbono + var1;
-
-            Txt_sueldoliquido.Text = Convert.ToString(operacion);
-            var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
-            ActualizarDatos();
-
-            try
+            if (Txt_bono.Text != "")
             {
-                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle(?,?,?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
-                comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
-                comm.Parameters.Add("idbono", OdbcType.Text).Value = idbono;
 
-                comm.ExecuteNonQuery();
-                comm.Connection.Close();
+
+                Random numran = new Random();
+                numale = numran.Next(0, 100000);
+                Lbl_sueldoliquido.Visible = true;
+                Txt_sueldoliquido.Visible = true;
+                Txt_coddoc.Enabled = false;
+                Txt_dias.Enabled = false;
+                Txt_sueldoliquido.Enabled = false;
+                idbono = Txt_codbonos.Text;
+
+                double bono = Convert.ToDouble(Txt_bono.Text);
+                double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
+                totalbono = bono * sueldobase;
+                Txt_sueldoliquido.Text = Convert.ToString(totalbono);
+
+
+                Txt_sueldoliquido.Text = " ";
+                double operacion = totalbono + var1;
+
+                Txt_sueldoliquido.Text = Convert.ToString(operacion);
+                var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
+                ActualizarDatos();
+
+                try
+                {
+                    OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle(?,?,?)}", Conexion.nuevaConexion());
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
+                    comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
+                    comm.Parameters.Add("idbono", OdbcType.Text).Value = idbono;
+
+                    comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+                }
+
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+
+
+
+                }
             }
-
-            catch (Exception err)
+            else
             {
-                Console.WriteLine(err.Message);
-               
-
+                MessageBox.Show("No se ha ingresado datos a los campo");
             }
 
 
@@ -366,35 +393,46 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void Btn_ingresardescuento_Click(object sender, EventArgs e)
         {
-            Random numran = new Random();
-            numale = numran.Next(0, 100000);
-            iddesc = Txt_coddescus.Text;
-            double descuento = Convert.ToDouble(Txt_descuentos.Text);
-            double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
-            totaldescuento = descuento * sueldobase;
-
-            double operacion = var1 - totaldescuento;
-
-            Txt_sueldoliquido.Text = Convert.ToString(operacion);
-            var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
-            ActualizarDatos();
-
-            try
+            if (Txt_descuentos.Text != "")
             {
-                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle2(?,?,?)}", Conexion.nuevaConexion());
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
-                comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
-                comm.Parameters.Add("idbono", OdbcType.Text).Value = iddesc;
+                Txt_coddoc.Enabled = false;
+                Txt_dias.Enabled = false;
+                Txt_sueldoliquido.Enabled = false;
+                Random numran = new Random();
+                numale = numran.Next(0, 100000);
+                iddesc = Txt_coddescus.Text;
+                double descuento = Convert.ToDouble(Txt_descuentos.Text);
+                double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
+                totaldescuento = descuento * sueldobase;
 
-                comm.ExecuteNonQuery();
-                comm.Connection.Close();
+                double operacion = var1 - totaldescuento;
+
+                Txt_sueldoliquido.Text = Convert.ToString(operacion);
+                var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
+                ActualizarDatos();
+
+                try
+                {
+                    OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle2(?,?,?)}", Conexion.nuevaConexion());
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
+                    comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
+                    comm.Parameters.Add("idbono", OdbcType.Text).Value = iddesc;
+
+                    comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                    MessageBox.Show("No se ha ingresado ningún campo");
+
+
+                }
             }
-            catch (Exception err)
+            else
             {
-                Console.WriteLine(err.Message);
-
-
+                MessageBox.Show("No se ha ingresado datos a los campos");
             }
         }
 

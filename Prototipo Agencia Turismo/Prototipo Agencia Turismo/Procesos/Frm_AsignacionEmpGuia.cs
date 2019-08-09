@@ -21,21 +21,21 @@ namespace Prototipo_Agencia_Turismo.Procesos
     public partial class Frm_AsignacionEmpGuia : Form
     {
 
-        String nombreUsuario;
+        String snombreUsuario;
         string localIP = "?";
         DateTime fechai = DateTime.Now;
-        String cod_guia;
-        String cod_empleado;
-        String fechainicio;
-        String fechafin;
-        String idguia;
+        String scod_guia;
+        String scod_empleado;
+        String sfechainicio;
+        String sfechafin;
+        String sidguia;
         IPHostEntry host;
 
-        String idempleado;
+        String sidempleado;
         public Frm_AsignacionEmpGuia(String user)
         {
             InitializeComponent();
-            nombreUsuario = user;
+            snombreUsuario = user;
         }
 
 
@@ -61,17 +61,17 @@ namespace Prototipo_Agencia_Turismo.Procesos
         {
             // cod_guia = Txt_Guia.Text;
             //cod_empleado = Txt_idEmpleado.Text;
-            fechainicio = Dtp_Fechainicio.Text;
-            fechafin = Dtp_Fechafin.Text;
+            sfechainicio = Dtp_Fechainicio.Text;
+            sfechafin = Dtp_Fechafin.Text;
 
             try
             {
                 OdbcCommand comm = new OdbcCommand("{call Sp_Insertarasignacionempguia(?,?,?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("idempleado", OdbcType.Text).Value = idempleado;
-                comm.Parameters.Add("idguia", OdbcType.Text).Value = idguia;
-                comm.Parameters.Add("horarioinicio", OdbcType.Text).Value = fechainicio;
-                comm.Parameters.Add("horariofin", OdbcType.Text).Value = fechafin;
+                comm.Parameters.Add("idempleado", OdbcType.Text).Value = sidempleado;
+                comm.Parameters.Add("idguia", OdbcType.Text).Value = sidguia;
+                comm.Parameters.Add("horarioinicio", OdbcType.Text).Value = sfechainicio;
+                comm.Parameters.Add("horariofin", OdbcType.Text).Value = sfechafin;
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Guardado correctamente");
                 comm.Connection.Close();
@@ -79,7 +79,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "REGISTRO INGRESADO";
-                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = snombreUsuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Asignacion de guia";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
@@ -104,10 +104,10 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 Txt_idEmpleado.Text = consultaEmpleado.Dgv_consultaEmpleados.Rows[consultaEmpleado.Dgv_consultaEmpleados.CurrentRow.Index].
                     Cells[1].Value.ToString();
 
-                idempleado = consultaEmpleado.Dgv_consultaEmpleados.Rows[consultaEmpleado.Dgv_consultaEmpleados.CurrentRow.Index].
+                sidempleado = consultaEmpleado.Dgv_consultaEmpleados.Rows[consultaEmpleado.Dgv_consultaEmpleados.CurrentRow.Index].
                     Cells[0].Value.ToString();
             }
-            Console.WriteLine(idempleado);
+            Console.WriteLine(sidempleado);
         }
 
         private void Btn_buscarGuia_Click(object sender, EventArgs e)
@@ -120,23 +120,23 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 Txt_Guia.Text = consultaguia.Dgv_consultaBonoYDesc.Rows[consultaguia.Dgv_consultaBonoYDesc.CurrentRow.Index].
                     Cells[1].Value.ToString();
 
-                idguia = consultaguia.Dgv_consultaBonoYDesc.Rows[consultaguia.Dgv_consultaBonoYDesc.CurrentRow.Index].
+                sidguia = consultaguia.Dgv_consultaBonoYDesc.Rows[consultaguia.Dgv_consultaBonoYDesc.CurrentRow.Index].
                     Cells[0].Value.ToString();
             }
-            Console.WriteLine(idguia);
+            Console.WriteLine(sidguia);
         }
 
         private void Btn_borrar_Click(object sender, EventArgs e)
         {
-            cod_guia = Txt_Guia.Text;
-            cod_empleado = Txt_idEmpleado.Text;
+            scod_guia = Txt_Guia.Text;
+            scod_empleado = Txt_idEmpleado.Text;
 
             try
             {
                 OdbcCommand comm = new OdbcCommand("{call Sp_Eliminarasignacionguiaemp(?,?,?)}", Conexion.nuevaConexion());
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("cod", OdbcType.Text).Value = idempleado;
-                comm.Parameters.Add("codguia", OdbcType.Text).Value = idguia;
+                comm.Parameters.Add("cod", OdbcType.Text).Value = sidempleado;
+                comm.Parameters.Add("codguia", OdbcType.Text).Value = sidguia;
                 comm.Parameters.Add("estdo", OdbcType.Text).Value = "1";
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminado correctamente");
@@ -145,7 +145,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
                 OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
                 comm1.CommandType = CommandType.StoredProcedure;
                 comm1.Parameters.Add("ope", OdbcType.Text).Value = "BORRAR ASIGNACION";
-                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = snombreUsuario;
                 comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
                 comm1.Parameters.Add("proc", OdbcType.Text).Value = "Asignacion Guia";
                 comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
@@ -166,10 +166,10 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
             if (conguia.DialogResult == DialogResult.OK)
             {
-                idempleado = conguia.Dgv_consultaEmpleadoguia.Rows[conguia.Dgv_consultaEmpleadoguia.CurrentRow.Index].
+                sidempleado = conguia.Dgv_consultaEmpleadoguia.Rows[conguia.Dgv_consultaEmpleadoguia.CurrentRow.Index].
                       Cells[0].Value.ToString();
 
-                idguia = conguia.Dgv_consultaEmpleadoguia.Rows[conguia.Dgv_consultaEmpleadoguia.CurrentRow.Index].
+                sidguia = conguia.Dgv_consultaEmpleadoguia.Rows[conguia.Dgv_consultaEmpleadoguia.CurrentRow.Index].
                     Cells[1].Value.ToString();
 
                 Dtp_Fechainicio.Text = conguia.Dgv_consultaEmpleadoguia.Rows[conguia.Dgv_consultaEmpleadoguia.CurrentRow.Index].
