@@ -1,8 +1,8 @@
 CREATE DATABASE  IF NOT EXISTS `agencia_turismo` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `agencia_turismo`;
--- MySQL dump 10.13  Distrib 5.6.24, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: agencia_turismo
+-- Host: localhost    Database: agencia_turismo
 -- ------------------------------------------------------
 -- Server version	5.7.19-log
 
@@ -282,6 +282,7 @@ CREATE TABLE `tbl_facturaencabezado` (
   `Fk_idTipoPago` int(11) DEFAULT NULL,
   `Total` double DEFAULT NULL,
   `Factura_Cotizacion` tinyint(1) DEFAULT NULL,
+  `estado` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Pk_idFactura`,`Pk_idCliente`,`Pk_idEmpleado`),
   KEY `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1_idx` (`Pk_idEmpleado`),
   KEY `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1_idx` (`Pk_idCliente`),
@@ -298,7 +299,7 @@ CREATE TABLE `tbl_facturaencabezado` (
 
 LOCK TABLES `tbl_facturaencabezado` WRITE;
 /*!40000 ALTER TABLE `tbl_facturaencabezado` DISABLE KEYS */;
-INSERT INTO `tbl_facturaencabezado` VALUES (3,1,1,'2019-08-03',4,2,1300,1),(4,1,1,'2019-08-03',4,3,3700,0),(5,1,1,'2019-08-03',3,2,1500,0),(6,1,1,'2019-08-03',1,2,2200,1),(7,1,1,'2019-08-03',10,1,2200,1),(9,1,1,'2019-08-03',2,1,5550,1),(10,1,1,'2019-08-03',2,1,2200,1),(11,1,1,'2019-08-03',2,3,3850,1),(12,1,1,'2019-08-03',3,2,2200,1),(13,1,1,'2019-08-03',3,2,2450,1),(14,1,1,'2019-08-03',3,2,2450,1),(15,1,1,'2019-08-03',7,1,4700,1),(16,1,1,'2019-08-03',3,1,3950,1),(17,1,1,'2019-08-03',3,1,3950,1),(18,1,1,'2019-08-03',10,1,2850,1),(19,1,1,'2019-08-03',10,1,3250,1),(20,1,1,'2019-08-03',5,2,3400,1),(21,1,1,'2019-08-03',3,3,3950,0),(22,1,1,'2019-08-03',7,1,4700,1);
+INSERT INTO `tbl_facturaencabezado` VALUES (3,1,1,'2019-08-03',4,2,1300,1,0),(4,1,1,'2019-08-03',4,3,3700,0,0),(5,1,1,'2019-08-03',3,2,1500,0,0),(6,1,1,'2019-08-03',1,2,2200,1,0),(7,1,1,'2019-08-03',10,1,2200,1,0),(9,1,1,'2019-08-03',2,1,5550,1,0),(10,1,1,'2019-08-03',2,1,2200,1,0),(11,1,1,'2019-08-03',2,3,3850,1,0),(12,1,1,'2019-08-03',3,2,2200,1,0),(13,1,1,'2019-08-03',3,2,2450,1,0),(14,1,1,'2019-08-03',3,2,2450,1,0),(15,1,1,'2019-08-03',7,1,4700,1,0),(16,1,1,'2019-08-03',3,1,3950,1,0),(17,1,1,'2019-08-03',3,1,3950,1,0),(18,1,1,'2019-08-03',10,1,2850,1,0),(19,1,1,'2019-08-03',10,1,3250,1,0),(20,1,1,'2019-08-03',5,2,3400,1,0),(21,1,1,'2019-08-03',3,3,3950,0,0),(22,1,1,'2019-08-03',7,1,4700,1,0);
 /*!40000 ALTER TABLE `tbl_facturaencabezado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1239,6 +1240,34 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Sp_ModificarReservacion` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_ModificarReservacion`(in idCotizacion int(11), in idPago int(11), 
+in cod int(11), in idTransporte int(11), in idEmpleado int(11), in salida date,
+in entrada date, in cod2 int(11))
+BEGIN
+UPDATE tbl_reservacion
+SET Fk_idCotizacion = idCotizacion, Fk_idTipoPago = idPago
+WHERE Pk_idReservacion = cod;
+
+UPDATE tbl_asignaciontransporte
+SET Fk_idTransporte = idTransporte, Fk_idEmpleado = idEmpleado, FechaSalida = salida,
+FechaEntrada = entrada
+WHERE Pk_idAsignacion=cod2;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `Sp_sueldoliquido` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1306,4 +1335,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-04 10:21:54
+-- Dump completed on 2019-08-07 11:11:31

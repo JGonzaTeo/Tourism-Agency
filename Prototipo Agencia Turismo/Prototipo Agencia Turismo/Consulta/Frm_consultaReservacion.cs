@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ -----------------------------------------------------
+            AUTOR: Iván Mogollón
+  -----------------------------------------------------
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
