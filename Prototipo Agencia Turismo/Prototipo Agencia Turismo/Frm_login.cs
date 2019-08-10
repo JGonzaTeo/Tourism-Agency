@@ -104,24 +104,25 @@ namespace Prototipo_Agencia_Turismo
                             commAct.ExecuteNonQuery();
                             datosIncorrectos = false;
                             Console.WriteLine("WORKS3");
+
+                            //El login del usuario se registra en la bitácora
+                            OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                            commBitacora.CommandType = CommandType.StoredProcedure;
+                            commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INICION DE SESIÓN";
+                            commBitacora.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                            commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha_ingreso.ToString("yyyy/MM/dd HH:mm:ss");
+                            commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "-------------";
+                            commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                            commBitacora.ExecuteNonQuery();
+
+                            commBitacora.Connection.Close();
+
                             break;
                         }
                     }
                 }
                 comm.Connection.Close();
                 mostrarUsuarios.Close();
-
-                //El login del usuario se registra en la bitácora
-                OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
-                commBitacora.CommandType = CommandType.StoredProcedure;
-                commBitacora.Parameters.Add("ope", OdbcType.Text).Value = "INICION DE SESIÓN";
-                commBitacora.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
-                commBitacora.Parameters.Add("fecha", OdbcType.Text).Value = fecha_ingreso.ToString("yyyy/MM/dd HH:mm:ss");
-                commBitacora.Parameters.Add("proc", OdbcType.Text).Value = "-------------";
-                commBitacora.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
-                commBitacora.ExecuteNonQuery();
-
-                commBitacora.Connection.Close();
 
                 if(datosIncorrectos == true)
                 {

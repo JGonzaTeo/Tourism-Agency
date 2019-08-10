@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_bitacora));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_consultaPerfil = new System.Windows.Forms.Button();
-            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_tablaBitacora)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,18 @@
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 0;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 92;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Lbl_titulo
             // 
@@ -176,11 +188,14 @@
             this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_generarReporte.Location = new System.Drawing.Point(971, 575);
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(946, 575);
             this.Btn_generarReporte.Name = "Btn_generarReporte";
-            this.Btn_generarReporte.Size = new System.Drawing.Size(164, 41);
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
             this.Btn_generarReporte.TabIndex = 4;
             this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_generarReporte.UseVisualStyleBackColor = true;
             // 
             // Btn_actualizar
@@ -218,18 +233,6 @@
             this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
             this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
-            // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
-            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
-            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
-            this.Btn_ayuda.TabIndex = 92;
-            this.Btn_ayuda.UseVisualStyleBackColor = true;
-            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Frm_bitacora
             // 

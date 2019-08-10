@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_facturacion));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grb_Hotel = new System.Windows.Forms.GroupBox();
             this.Lbl_idHabitacion = new System.Windows.Forms.Label();
-            this.CB_noHab = new System.Windows.Forms.ComboBox();
+            this.Cbo_noHab = new System.Windows.Forms.ComboBox();
             this.Lbl_precioHabitacion = new System.Windows.Forms.Label();
             this.Txt_habitacion = new System.Windows.Forms.TextBox();
             this.Txt_lugarHotel = new System.Windows.Forms.TextBox();
@@ -76,7 +77,7 @@
             this.Lbl_fechaEmision = new System.Windows.Forms.Label();
             this.Txt_codigoCliente = new System.Windows.Forms.TextBox();
             this.Lbl_codCliente = new System.Windows.Forms.Label();
-            this.CB_Pasajero = new System.Windows.Forms.ComboBox();
+            this.Cbo_Pasajero = new System.Windows.Forms.ComboBox();
             this.Lbl_pasajeros = new System.Windows.Forms.Label();
             this.Lbl_fecha = new System.Windows.Forms.Label();
             this.Txt_IdEmpleado = new System.Windows.Forms.TextBox();
@@ -85,9 +86,9 @@
             this.Lbl_cliente = new System.Windows.Forms.Label();
             this.Rbtn_cotizacion = new System.Windows.Forms.RadioButton();
             this.Rbtn_facturacion = new System.Windows.Forms.RadioButton();
-            this.Cmbx_tipoPago = new System.Windows.Forms.ComboBox();
+            this.Cbo_tipoPago = new System.Windows.Forms.ComboBox();
             this.Lbl_tipoPago = new System.Windows.Forms.Label();
-            this.Btn_ayuda = new System.Windows.Forms.Button();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Pnl_Detalle.SuspendLayout();
             this.Grb_Restaurante.SuspendLayout();
@@ -109,6 +110,18 @@
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 1;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 13;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -162,6 +175,7 @@
             // Pnl_Detalle
             // 
             this.Pnl_Detalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_Detalle.Controls.Add(this.Btn_generarReporte);
             this.Pnl_Detalle.Controls.Add(this.Btn_facturar);
             this.Pnl_Detalle.Controls.Add(this.Btn_quitar);
             this.Pnl_Detalle.Controls.Add(this.Btn_colocar);
@@ -453,7 +467,7 @@
             // Grb_Hotel
             // 
             this.Grb_Hotel.Controls.Add(this.Lbl_idHabitacion);
-            this.Grb_Hotel.Controls.Add(this.CB_noHab);
+            this.Grb_Hotel.Controls.Add(this.Cbo_noHab);
             this.Grb_Hotel.Controls.Add(this.Lbl_precioHabitacion);
             this.Grb_Hotel.Controls.Add(this.Txt_habitacion);
             this.Grb_Hotel.Controls.Add(this.Txt_lugarHotel);
@@ -479,11 +493,11 @@
             this.Lbl_idHabitacion.Text = "...";
             this.Lbl_idHabitacion.Visible = false;
             // 
-            // CB_noHab
+            // Cbo_noHab
             // 
-            this.CB_noHab.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CB_noHab.FormattingEnabled = true;
-            this.CB_noHab.Items.AddRange(new object[] {
+            this.Cbo_noHab.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_noHab.FormattingEnabled = true;
+            this.Cbo_noHab.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -494,11 +508,11 @@
             "8",
             "9",
             "10"});
-            this.CB_noHab.Location = new System.Drawing.Point(180, 130);
-            this.CB_noHab.Name = "CB_noHab";
-            this.CB_noHab.Size = new System.Drawing.Size(117, 30);
-            this.CB_noHab.TabIndex = 71;
-            this.CB_noHab.SelectedIndexChanged += new System.EventHandler(this.CB_noHab_SelectedIndexChanged);
+            this.Cbo_noHab.Location = new System.Drawing.Point(180, 130);
+            this.Cbo_noHab.Name = "Cbo_noHab";
+            this.Cbo_noHab.Size = new System.Drawing.Size(117, 30);
+            this.Cbo_noHab.TabIndex = 71;
+            this.Cbo_noHab.SelectedIndexChanged += new System.EventHandler(this.CB_noHab_SelectedIndexChanged);
             // 
             // Lbl_precioHabitacion
             // 
@@ -597,7 +611,7 @@
             this.Grpbx_encabezado.Controls.Add(this.Lbl_fechaEmision);
             this.Grpbx_encabezado.Controls.Add(this.Txt_codigoCliente);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_codCliente);
-            this.Grpbx_encabezado.Controls.Add(this.CB_Pasajero);
+            this.Grpbx_encabezado.Controls.Add(this.Cbo_Pasajero);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_pasajeros);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_fecha);
             this.Grpbx_encabezado.Controls.Add(this.Txt_IdEmpleado);
@@ -656,11 +670,11 @@
             this.Lbl_codCliente.TabIndex = 71;
             this.Lbl_codCliente.Text = "Código cliente:";
             // 
-            // CB_Pasajero
+            // Cbo_Pasajero
             // 
-            this.CB_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CB_Pasajero.FormattingEnabled = true;
-            this.CB_Pasajero.Items.AddRange(new object[] {
+            this.Cbo_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_Pasajero.FormattingEnabled = true;
+            this.Cbo_Pasajero.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -671,11 +685,11 @@
             "8",
             "9",
             "10"});
-            this.CB_Pasajero.Location = new System.Drawing.Point(421, 48);
-            this.CB_Pasajero.Name = "CB_Pasajero";
-            this.CB_Pasajero.Size = new System.Drawing.Size(121, 30);
-            this.CB_Pasajero.TabIndex = 70;
-            this.CB_Pasajero.SelectedIndexChanged += new System.EventHandler(this.CB_Pasajero_SelectedIndexChanged);
+            this.Cbo_Pasajero.Location = new System.Drawing.Point(421, 48);
+            this.Cbo_Pasajero.Name = "Cbo_Pasajero";
+            this.Cbo_Pasajero.Size = new System.Drawing.Size(121, 30);
+            this.Cbo_Pasajero.TabIndex = 70;
+            this.Cbo_Pasajero.SelectedIndexChanged += new System.EventHandler(this.CB_Pasajero_SelectedIndexChanged);
             // 
             // Lbl_pasajeros
             // 
@@ -765,13 +779,13 @@
             this.Rbtn_facturacion.UseVisualStyleBackColor = true;
             this.Rbtn_facturacion.CheckedChanged += new System.EventHandler(this.Rbtn_facturacion_CheckedChanged);
             // 
-            // Cmbx_tipoPago
+            // Cbo_tipoPago
             // 
-            this.Cmbx_tipoPago.FormattingEnabled = true;
-            this.Cmbx_tipoPago.Location = new System.Drawing.Point(1040, 184);
-            this.Cmbx_tipoPago.Name = "Cmbx_tipoPago";
-            this.Cmbx_tipoPago.Size = new System.Drawing.Size(121, 30);
-            this.Cmbx_tipoPago.TabIndex = 77;
+            this.Cbo_tipoPago.FormattingEnabled = true;
+            this.Cbo_tipoPago.Location = new System.Drawing.Point(1040, 184);
+            this.Cbo_tipoPago.Name = "Cbo_tipoPago";
+            this.Cbo_tipoPago.Size = new System.Drawing.Size(121, 30);
+            this.Cbo_tipoPago.TabIndex = 77;
             // 
             // Lbl_tipoPago
             // 
@@ -783,17 +797,24 @@
             this.Lbl_tipoPago.TabIndex = 78;
             this.Lbl_tipoPago.Text = "Tipo de pago";
             // 
-            // Btn_ayuda
+            // Btn_generarReporte
             // 
-            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
-            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
-            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
-            this.Btn_ayuda.TabIndex = 13;
-            this.Btn_ayuda.UseVisualStyleBackColor = true;
-            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            this.Btn_generarReporte.Enabled = false;
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(980, 332);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 81;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
             // 
             // Frm_facturacion
             // 
@@ -801,7 +822,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Lbl_tipoPago);
-            this.Controls.Add(this.Cmbx_tipoPago);
+            this.Controls.Add(this.Cbo_tipoPago);
             this.Controls.Add(this.Rbtn_facturacion);
             this.Controls.Add(this.Grb_Hotel);
             this.Controls.Add(this.Rbtn_cotizacion);
@@ -865,7 +886,7 @@
         private System.Windows.Forms.Label Lbl_fechaEmision;
         private System.Windows.Forms.TextBox Txt_codigoCliente;
         private System.Windows.Forms.Label Lbl_codCliente;
-        private System.Windows.Forms.ComboBox CB_Pasajero;
+        private System.Windows.Forms.ComboBox Cbo_Pasajero;
         private System.Windows.Forms.Label Lbl_pasajeros;
         private System.Windows.Forms.Label Lbl_fecha;
         private System.Windows.Forms.TextBox Txt_IdEmpleado;
@@ -881,7 +902,7 @@
         private System.Windows.Forms.Label Lbl_precioMenu;
         private System.Windows.Forms.Label Lbl_precioLugarT;
         private System.Windows.Forms.Label Lbl_precioHabitacion;
-        private System.Windows.Forms.ComboBox CB_noHab;
+        private System.Windows.Forms.ComboBox Cbo_noHab;
         private System.Windows.Forms.DataGridViewTextBoxColumn idHabitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLugarT;
@@ -891,8 +912,9 @@
         private System.Windows.Forms.Label Lbl_idLugarT;
         private System.Windows.Forms.Label Lbl_idHabitacion;
         private System.Windows.Forms.Button Btn_consultaMenu;
-        private System.Windows.Forms.ComboBox Cmbx_tipoPago;
+        private System.Windows.Forms.ComboBox Cbo_tipoPago;
         private System.Windows.Forms.Label Lbl_tipoPago;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }

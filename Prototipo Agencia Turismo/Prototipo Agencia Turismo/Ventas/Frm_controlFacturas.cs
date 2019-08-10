@@ -31,7 +31,7 @@ namespace Prototipo_Agencia_Turismo.Ventas
             Lbl_codFactura.Text = "";
             Txt_cliente.Text = "";
             Lbl_fechaEmision.Text = "";
-            CB_Pasajero.Text = "";
+            Cbo_Pasajero.Text = "";
             Cmbx_tipoPago.Text = "";
         }
 
@@ -54,7 +54,7 @@ namespace Prototipo_Agencia_Turismo.Ventas
         {
             Grpbx_encabezado.Enabled = true;
             Cmbx_tipoPago.Enabled = false;
-            CB_Pasajero.Enabled = false;
+            Cbo_Pasajero.Enabled = false;
 
             Btn_facturar.Text = "Eliminar factura";
             Btn_facturar.Enabled = true;
@@ -80,7 +80,7 @@ namespace Prototipo_Agencia_Turismo.Ventas
                     consultaFactura.Dgv_consultaCotizacion.Rows[consultaFactura.Dgv_consultaCotizacion.CurrentRow.Index].
                         Cells[3].Value.ToString();
 
-                CB_Pasajero.Text =
+                Cbo_Pasajero.Text =
                     consultaFactura.Dgv_consultaCotizacion.Rows[consultaFactura.Dgv_consultaCotizacion.CurrentRow.Index].
                         Cells[4].Value.ToString();
 

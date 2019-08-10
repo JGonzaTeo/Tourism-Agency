@@ -40,7 +40,7 @@
             this.Lbl_idCliente = new System.Windows.Forms.Label();
             this.Lbl_tipoPago = new System.Windows.Forms.Label();
             this.Cmbx_tipoPago = new System.Windows.Forms.ComboBox();
-            this.CB_Pasajero = new System.Windows.Forms.ComboBox();
+            this.Cbo_Pasajero = new System.Windows.Forms.ComboBox();
             this.Lbl_pasajeros = new System.Windows.Forms.Label();
             this.Lbl_fechaEmision = new System.Windows.Forms.Label();
             this.Lbl_fecha = new System.Windows.Forms.Label();
@@ -159,7 +159,7 @@
             this.Grpbx_encabezado.Controls.Add(this.Lbl_idCliente);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_tipoPago);
             this.Grpbx_encabezado.Controls.Add(this.Cmbx_tipoPago);
-            this.Grpbx_encabezado.Controls.Add(this.CB_Pasajero);
+            this.Grpbx_encabezado.Controls.Add(this.Cbo_Pasajero);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_pasajeros);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_fechaEmision);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_fecha);
@@ -210,11 +210,11 @@
             this.Cmbx_tipoPago.Size = new System.Drawing.Size(121, 29);
             this.Cmbx_tipoPago.TabIndex = 82;
             // 
-            // CB_Pasajero
+            // Cbo_Pasajero
             // 
-            this.CB_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CB_Pasajero.FormattingEnabled = true;
-            this.CB_Pasajero.Items.AddRange(new object[] {
+            this.Cbo_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_Pasajero.FormattingEnabled = true;
+            this.Cbo_Pasajero.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -225,10 +225,10 @@
             "8",
             "9",
             "10"});
-            this.CB_Pasajero.Location = new System.Drawing.Point(389, 39);
-            this.CB_Pasajero.Name = "CB_Pasajero";
-            this.CB_Pasajero.Size = new System.Drawing.Size(121, 30);
-            this.CB_Pasajero.TabIndex = 81;
+            this.Cbo_Pasajero.Location = new System.Drawing.Point(389, 39);
+            this.Cbo_Pasajero.Name = "Cbo_Pasajero";
+            this.Cbo_Pasajero.Size = new System.Drawing.Size(121, 30);
+            this.Cbo_Pasajero.TabIndex = 81;
             // 
             // Lbl_pasajeros
             // 
@@ -634,7 +634,7 @@
         private System.Windows.Forms.Label Lbl_fecha;
         private System.Windows.Forms.TextBox Txt_cliente;
         private System.Windows.Forms.Label Lbl_cliente;
-        private System.Windows.Forms.ComboBox CB_Pasajero;
+        private System.Windows.Forms.ComboBox Cbo_Pasajero;
         private System.Windows.Forms.Label Lbl_pasajeros;
         private System.Windows.Forms.GroupBox Grpbx_habitacion;
         private System.Windows.Forms.GroupBox Grpbx_menu;

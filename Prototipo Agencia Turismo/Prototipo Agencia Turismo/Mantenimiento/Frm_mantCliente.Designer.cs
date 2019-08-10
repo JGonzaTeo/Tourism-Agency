@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantCliente));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.Lbl_Telres = new System.Windows.Forms.Label();
             this.Txt_CorreoAlt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btn_ayuda = new System.Windows.Forms.Button();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,18 @@
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 2;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 104;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -387,23 +400,31 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "Correo Alternativo";
             // 
-            // Btn_ayuda
+            // Btn_generarReporte
             // 
-            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
-            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
-            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
-            this.Btn_ayuda.TabIndex = 104;
-            this.Btn_ayuda.UseVisualStyleBackColor = true;
-            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            this.Btn_generarReporte.Enabled = false;
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(12, 47);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 65;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
             // 
             // Frm_mantCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_generarReporte);
             this.Controls.Add(this.Txt_CorreoAlt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_TelefonoRes);
@@ -474,5 +495,6 @@
         private System.Windows.Forms.TextBox Txt_CorreoAlt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }
