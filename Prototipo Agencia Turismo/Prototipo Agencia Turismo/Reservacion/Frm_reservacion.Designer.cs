@@ -65,6 +65,7 @@
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Btn_modificar = new System.Windows.Forms.Button();
             this.Btn_consultarReservacion = new System.Windows.Forms.Button();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -530,11 +531,31 @@
             this.Btn_consultarReservacion.UseVisualStyleBackColor = false;
             this.Btn_consultarReservacion.Click += new System.EventHandler(this.Btn_consultarReservacion_Click);
             // 
+            // Btn_generarReporte
+            // 
+            this.Btn_generarReporte.Enabled = false;
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(969, 530);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 61;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            // 
             // Frm_reservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_generarReporte);
             this.Controls.Add(this.Btn_consultarReservacion);
             this.Controls.Add(this.Btn_modificar);
             this.Controls.Add(this.panel2);
@@ -601,5 +622,6 @@
         private System.Windows.Forms.Button Btn_modificar;
         private System.Windows.Forms.Button Btn_consultarReservacion;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }

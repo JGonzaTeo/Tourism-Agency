@@ -88,6 +88,7 @@
             this.Rbtn_facturacion = new System.Windows.Forms.RadioButton();
             this.Cbo_tipoPago = new System.Windows.Forms.ComboBox();
             this.Lbl_tipoPago = new System.Windows.Forms.Label();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Pnl_Detalle.SuspendLayout();
             this.Grb_Restaurante.SuspendLayout();
@@ -174,6 +175,7 @@
             // Pnl_Detalle
             // 
             this.Pnl_Detalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_Detalle.Controls.Add(this.Btn_generarReporte);
             this.Pnl_Detalle.Controls.Add(this.Btn_facturar);
             this.Pnl_Detalle.Controls.Add(this.Btn_quitar);
             this.Pnl_Detalle.Controls.Add(this.Btn_colocar);
@@ -795,6 +797,25 @@
             this.Lbl_tipoPago.TabIndex = 78;
             this.Lbl_tipoPago.Text = "Tipo de pago";
             // 
+            // Btn_generarReporte
+            // 
+            this.Btn_generarReporte.Enabled = false;
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(980, 332);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 81;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            // 
             // Frm_facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -894,5 +915,6 @@
         private System.Windows.Forms.ComboBox Cbo_tipoPago;
         private System.Windows.Forms.Label Lbl_tipoPago;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }
