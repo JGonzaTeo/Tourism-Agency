@@ -157,10 +157,10 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_reporteFactura.cs">
+    <Compile Include="Reportes\Frm_reporteFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_reporteFactura.Designer.cs">
+    <Compile Include="Reportes\Frm_reporteFactura.Designer.cs">
       <DependentUpon>Frm_reporteFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Procesos\Frm_AsignacionEmpGuia.cs">
@@ -175,7 +175,7 @@
     <Compile Include="Procesos\Frm_Nominas.Designer.cs">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </Compile>
-    <Compile Include="reporteFactura.cs">
+    <Compile Include="Reportes\reporteFactura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>reporteFactura.rpt</DependentUpon>
@@ -353,7 +353,7 @@
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_reporteFactura.resx">
+    <EmbeddedResource Include="Reportes\Frm_reporteFactura.resx">
       <DependentUpon>Frm_reporteFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Frm_AsignacionEmpGuia.resx">
@@ -362,7 +362,7 @@
     <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reporteFactura.rpt">
+    <EmbeddedResource Include="Reportes\reporteFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporteFactura.cs</LastGenOutput>
     </EmbeddedResource>
@@ -449,7 +449,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <Folder Include="Prototipo_Agencia_Turismo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

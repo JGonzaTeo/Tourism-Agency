@@ -1,4 +1,6 @@
-﻿namespace Prototipo_Agencia_Turismo
+﻿using Prototipo_Agencia_Turismo.Reportes;
+
+namespace Prototipo_Agencia_Turismo
 {
     partial class Frm_reporteFactura
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.reporteFactura1 = new Prototipo_Agencia_Turismo.reporteFactura();
+            this.reporteFactura1 = new Prototipo_Agencia_Turismo.Reportes.reporteFactura();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
