@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_reservacion));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Btn_modificar = new System.Windows.Forms.Button();
             this.Btn_consultarReservacion = new System.Windows.Forms.Button();
-            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,6 +85,18 @@
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 1;
             this.Pnl_principal.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_principal_Paint);
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 93;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -203,6 +215,7 @@
             this.Lbl_idReservacion.Size = new System.Drawing.Size(158, 21);
             this.Lbl_idReservacion.TabIndex = 18;
             this.Lbl_idReservacion.Text = "ID de reservacion";
+            this.Lbl_idReservacion.Visible = false;
             // 
             // Lbl_metodo
             // 
@@ -343,6 +356,7 @@
             this.Lbl_reservacion.Name = "Lbl_reservacion";
             this.Lbl_reservacion.Size = new System.Drawing.Size(106, 28);
             this.Lbl_reservacion.TabIndex = 19;
+            this.Lbl_reservacion.Visible = false;
             // 
             // Lbl_idCotizacion
             // 
@@ -515,18 +529,6 @@
             this.Btn_consultarReservacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_consultarReservacion.UseVisualStyleBackColor = false;
             this.Btn_consultarReservacion.Click += new System.EventHandler(this.Btn_consultarReservacion_Click);
-            // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
-            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
-            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
-            this.Btn_ayuda.TabIndex = 93;
-            this.Btn_ayuda.UseVisualStyleBackColor = true;
-            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Frm_reservacion
             // 

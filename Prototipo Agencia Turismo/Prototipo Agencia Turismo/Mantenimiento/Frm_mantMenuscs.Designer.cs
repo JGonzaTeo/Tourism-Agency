@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantMenuscs));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.Txt_idMenu = new System.Windows.Forms.TextBox();
             this.Lbl_idMenu = new System.Windows.Forms.Label();
             this.Btn_busqueda = new System.Windows.Forms.Button();
-            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,18 @@
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 4;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 99;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -328,18 +340,6 @@
             this.Btn_busqueda.UseVisualStyleBackColor = false;
             this.Btn_busqueda.Click += new System.EventHandler(this.Btn_busqueda_Click);
             // 
-            // Btn_ayuda
-            // 
-            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
-            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
-            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
-            this.Btn_ayuda.TabIndex = 99;
-            this.Btn_ayuda.UseVisualStyleBackColor = true;
-            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
-            // 
             // Frm_mantMenuscs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -367,6 +367,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_mantMenuscs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantMenuscs";
             this.Load += new System.EventHandler(this.Frm_mantMenuscs_Load);
             this.Pnl_principal.ResumeLayout(false);

@@ -96,9 +96,9 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             Txt_IdEmpleado.Text = usuario;
             Lbl_fechaEmision.Text = fecha.ToString("yyyy/MM/dd");
 
-            Cmbx_tipoPago.DataSource = Cargar();
-            Cmbx_tipoPago.DisplayMember = "NombreTipoPago";
-            Cmbx_tipoPago.ValueMember = "Pk_idTipoPago";
+            Cbo_tipoPago.DataSource = Cargar();
+            Cbo_tipoPago.DisplayMember = "NombreTipoPago";
+            Cbo_tipoPago.ValueMember = "Pk_idTipoPago";
         }
 
         private void Rbtn_facturacion_CheckedChanged_1(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                 Lbl_idHabitacion.Text = consultaHabitacion.Dgv_consultaHabitacion.Rows[consultaHabitacion.Dgv_consultaHabitacion.CurrentRow.Index].Cells[0].Value.ToString();
                 precioHabitacion = consultaHabitacion.Dgv_consultaHabitacion.Rows[consultaHabitacion.Dgv_consultaHabitacion.CurrentRow.Index].Cells[4].Value.ToString();
             }
-            cantidadHabitacion = CB_noHab.SelectedIndex.ToString();
+            cantidadHabitacion = Cbo_noHab.SelectedIndex.ToString();
 
             //Conversiones de precio y cantidad de la habitación
             precioHabitacionConvertido = Convert.ToDouble(precioHabitacion);
@@ -228,7 +228,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             //Si no existe nada en el Dgv
             if(contadorFila == 0)
             {
-                if (string.IsNullOrEmpty(Txt_habitacion.Text) == true || string.IsNullOrEmpty(CB_noHab.Text) == true ||
+                if (string.IsNullOrEmpty(Txt_habitacion.Text) == true || string.IsNullOrEmpty(Cbo_noHab.Text) == true ||
                     string.IsNullOrEmpty(Txt_menu.Text) == true || string.IsNullOrEmpty(Txt_lugarTuristico.Text) == true)
                 {
 
@@ -238,7 +238,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                 {
                     //agrega los valores de los Labels al DataGrid
                     Dgv_detalleFactura.Rows.Add(Lbl_idHabitacion.Text, Lbl_idMenu.Text, Lbl_idLugarT.Text,
-                    CB_noHab.SelectedIndex.ToString());
+                    Cbo_noHab.SelectedIndex.ToString());
 
                     //Suma los precios de cada servicio
                     double importe = Convert.ToDouble(Lbl_precioHabitacion.Text) + Convert.ToDouble(Lbl_precioMenu.Text)
@@ -250,7 +250,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             }
             else
             {
-                if (string.IsNullOrEmpty(Txt_habitacion.Text) == true || string.IsNullOrEmpty(CB_noHab.Text) == true ||
+                if (string.IsNullOrEmpty(Txt_habitacion.Text) == true || string.IsNullOrEmpty(Cbo_noHab.Text) == true ||
                   string.IsNullOrEmpty(Txt_menu.Text) == true || string.IsNullOrEmpty(Txt_lugarTuristico.Text) == true)
                 {
 
@@ -260,7 +260,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                 {
                     //agrega los valores de los Labels al DataGrid
                     Dgv_detalleFactura.Rows.Add(Lbl_idHabitacion.Text, Lbl_idMenu.Text, Lbl_idLugarT.Text,
-                    CB_noHab.SelectedIndex.ToString());
+                    Cbo_noHab.SelectedIndex.ToString());
 
                     //Suma los precios de cada servicio
                     double importe = Convert.ToDouble(Lbl_precioHabitacion.Text) + Convert.ToDouble(Lbl_precioMenu.Text)
@@ -308,13 +308,13 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             //Área de encabezado
             Txt_codigoCliente.Text = " ";
             Txt_cliente.Text = " ";
-            CB_Pasajero.Text = " ";
+            Cbo_Pasajero.Text = " ";
 
             //Área de selección de habitación
             Txt_lugarHotel.Text = " ";
             Txt_habitacion.Text = " ";
             Lbl_idHabitacion.Text = " ";
-            CB_noHab.Text = " ";
+            Cbo_noHab.Text = " ";
             Lbl_precioHabitacion.Text = " ";
 
             //Área de selección de menú
@@ -335,7 +335,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             Txt_lugarHotel.Text = "";
             Txt_habitacion.Text = "";
             Lbl_idHabitacion.Text = "";
-            CB_noHab.Text = "";
+            Cbo_noHab.Text = "";
             Lbl_precioHabitacion.Text = "";
 
             //Área de selección de menú
@@ -381,8 +381,8 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     //inserta registro de factura encabezado a la BD
                     string consultaInsertar = "INSERT INTO tbl_facturaencabezado (Pk_idCliente, Pk_idEmpleado, fechaCotizacion," +
                          "cantidadPasajeros, Fk_idTipoPago, Total, Factura_Cotizacion) VALUES('"+idCliente+"' , " +
-                         "'"+idEmpleado+"', '"+Lbl_fechaEmision.Text+"', '"+Convert.ToInt32(CB_Pasajero.Text)+"', " +
-                         "'"+Convert.ToInt32(Cmbx_tipoPago.SelectedValue)+"', '"+Convert.ToInt32(Lbl_resultado.Text)+"', " +
+                         "'"+idEmpleado+"', '"+Lbl_fechaEmision.Text+"', '"+Convert.ToInt32(Cbo_Pasajero.Text)+"', " +
+                         "'"+Convert.ToInt32(Cbo_tipoPago.SelectedValue)+"', '"+Convert.ToInt32(Lbl_resultado.Text)+"', " +
                          "'"+factura_cotizacion+"')";
 
                     OdbcCommand comm = new OdbcCommand(consultaInsertar, Conexion.nuevaConexion());
