@@ -66,6 +66,7 @@
             this.Txt_descuentos = new System.Windows.Forms.TextBox();
             this.Cmb_Descuentos = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Gpb_datosgenerales.SuspendLayout();
             this.Gpb_Datosemp.SuspendLayout();
@@ -442,11 +443,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(989, 471);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 35);
+            this.button1.TabIndex = 123;
+            this.button1.Text = "Completado";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_Nominas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Gpb_operaciones);
             this.Controls.Add(this.Gpb_Datosemp);
@@ -509,5 +521,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox Txt_coddescus;
         private System.Windows.Forms.TextBox Txt_codbonos;
+        private System.Windows.Forms.Button button1;
     }
 }

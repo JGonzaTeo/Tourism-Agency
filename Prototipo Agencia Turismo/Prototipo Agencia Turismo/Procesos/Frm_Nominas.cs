@@ -397,5 +397,10 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
