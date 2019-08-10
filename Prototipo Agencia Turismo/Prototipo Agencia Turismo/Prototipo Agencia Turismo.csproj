@@ -157,6 +157,12 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_reporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_reporteFactura.Designer.cs">
+      <DependentUpon>Frm_reporteFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\Frm_AsignacionEmpGuia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="Procesos\Frm_Nominas.Designer.cs">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteFactura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reservacion\Frm_reservacion.cs">
       <SubType>Form</SubType>
@@ -341,11 +353,18 @@
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_reporteFactura.resx">
+      <DependentUpon>Frm_reporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Frm_AsignacionEmpGuia.resx">
       <DependentUpon>Frm_AsignacionEmpGuia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteFactura.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservacion\Frm_reservacion.resx">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
