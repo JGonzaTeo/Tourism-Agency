@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_bitacora));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_principal = new System.Windows.Forms.Panel();
             this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -116,6 +118,14 @@
             this.Dgv_tablaBitacora.AllowUserToResizeColumns = false;
             this.Dgv_tablaBitacora.AllowUserToResizeRows = false;
             this.Dgv_tablaBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tablaBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_tablaBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_tablaBitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idBitacora,
@@ -124,6 +134,14 @@
             this.fechaIngreso,
             this.aplicacion,
             this.direccionIp});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_tablaBitacora.DefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_tablaBitacora.Location = new System.Drawing.Point(26, 155);
             this.Dgv_tablaBitacora.Name = "Dgv_tablaBitacora";
             this.Dgv_tablaBitacora.RowHeadersVisible = false;
@@ -181,7 +199,6 @@
             // 
             // Btn_generarReporte
             // 
-            this.Btn_generarReporte.Enabled = false;
             this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
             this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
