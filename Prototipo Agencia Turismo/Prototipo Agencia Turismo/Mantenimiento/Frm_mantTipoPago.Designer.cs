@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantTipoPago));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -58,8 +60,20 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 4;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 96;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -69,7 +83,7 @@
             this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 40);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
             this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
@@ -82,7 +96,7 @@
             this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 40);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
@@ -91,10 +105,10 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
+            this.Lbl_titulo.Location = new System.Drawing.Point(42, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(105, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(127, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "TIPO DE PAGO";
             this.Lbl_titulo.Click += new System.EventHandler(this.Lbl_titulo_Click);
@@ -223,7 +237,7 @@
             // 
             this.Txt_descripcion.Location = new System.Drawing.Point(434, 302);
             this.Txt_descripcion.Name = "Txt_descripcion";
-            this.Txt_descripcion.Size = new System.Drawing.Size(243, 26);
+            this.Txt_descripcion.Size = new System.Drawing.Size(243, 30);
             this.Txt_descripcion.TabIndex = 40;
             // 
             // Lbl_descripcion
@@ -231,7 +245,7 @@
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Location = new System.Drawing.Point(250, 309);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
-            this.Lbl_descripcion.Size = new System.Drawing.Size(100, 20);
+            this.Lbl_descripcion.Size = new System.Drawing.Size(121, 22);
             this.Lbl_descripcion.TabIndex = 39;
             this.Lbl_descripcion.Text = "Descripcion:";
             this.Lbl_descripcion.Click += new System.EventHandler(this.Lbl_descripcion_Click);
@@ -240,7 +254,7 @@
             // 
             this.Txt_nombre.Location = new System.Drawing.Point(434, 250);
             this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(243, 26);
+            this.Txt_nombre.Size = new System.Drawing.Size(243, 30);
             this.Txt_nombre.TabIndex = 38;
             // 
             // Lbl_nombre
@@ -248,7 +262,7 @@
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Location = new System.Drawing.Point(252, 257);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
+            this.Lbl_nombre.Size = new System.Drawing.Size(89, 22);
             this.Lbl_nombre.TabIndex = 37;
             this.Lbl_nombre.Text = "Nombre:";
             // 
@@ -257,7 +271,7 @@
             this.Txt_idPago.Enabled = false;
             this.Txt_idPago.Location = new System.Drawing.Point(434, 200);
             this.Txt_idPago.Name = "Txt_idPago";
-            this.Txt_idPago.Size = new System.Drawing.Size(100, 26);
+            this.Txt_idPago.Size = new System.Drawing.Size(100, 30);
             this.Txt_idPago.TabIndex = 36;
             // 
             // Lbl_idPago
@@ -266,13 +280,13 @@
             this.Lbl_idPago.Location = new System.Drawing.Point(252, 207);
             this.Lbl_idPago.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_idPago.Name = "Lbl_idPago";
-            this.Lbl_idPago.Size = new System.Drawing.Size(97, 20);
+            this.Lbl_idPago.Size = new System.Drawing.Size(120, 22);
             this.Lbl_idPago.TabIndex = 35;
             this.Lbl_idPago.Text = "ID de pago:";
             // 
             // Frm_mantTipoPago
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Txt_descripcion);
@@ -292,6 +306,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_mantTipoPago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantTipoPago";
             this.Load += new System.EventHandler(this.Frm_mantTipoPago_Load);
             this.Pnl_principal.ResumeLayout(false);
@@ -319,5 +334,6 @@
         private System.Windows.Forms.Label Lbl_nombre;
         private System.Windows.Forms.TextBox Txt_idPago;
         private System.Windows.Forms.Label Lbl_idPago;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

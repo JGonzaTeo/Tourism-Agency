@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_login));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BackColor = System.Drawing.Color.SeaGreen;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.label1);
             this.Pnl_principal.Dock = System.Windows.Forms.DockStyle.Top;
@@ -54,12 +56,24 @@
             this.Pnl_principal.Size = new System.Drawing.Size(700, 40);
             this.Pnl_principal.TabIndex = 0;
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(580, 0);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 9;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Btn_cerrar
             // 
             this.Btn_cerrar.FlatAppearance.BorderSize = 0;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
-            this.Btn_cerrar.Location = new System.Drawing.Point(650, 3);
+            this.Btn_cerrar.Location = new System.Drawing.Point(650, 1);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(35, 35);
             this.Btn_cerrar.TabIndex = 8;
@@ -188,6 +202,7 @@
         private System.Windows.Forms.TextBox Txt_contrasena;
         private System.Windows.Forms.Button Btn_ingresar;
         private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }
 
