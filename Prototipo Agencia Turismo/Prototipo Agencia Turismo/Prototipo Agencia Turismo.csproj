@@ -175,6 +175,18 @@
     <Compile Include="Procesos\Frm_Nominas.Designer.cs">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\reporteCliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteCliente.Designer.cs">
+      <DependentUpon>Frm_reporteCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\reporteFactura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -362,6 +374,13 @@
     <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteCliente.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_reporteCliente.resx">
+      <DependentUpon>Frm_reporteCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporteFactura.cs</LastGenOutput>
@@ -448,6 +467,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Folder Include="Prototipo_Agencia_Turismo\" />
   </ItemGroup>
