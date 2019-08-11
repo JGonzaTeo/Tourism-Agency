@@ -4,6 +4,8 @@
   -----------------------------------------------------
 */
 
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using Prototipo_Agencia_Turismo.Consulta;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Prototipo_Agencia_Turismo.Reportes;
 
 namespace Prototipo_Agencia_Turismo
 {
@@ -54,6 +57,7 @@ namespace Prototipo_Agencia_Turismo
             Dtp_FecaEntrada.Text = fecha;
             Dtp_FecaSalida.Text = fecha;
             Desahiblitarbtn();
+            Btn_generarReporte.Enabled = true;
         }
         private void Habilitarbtn()
         {
@@ -432,6 +436,11 @@ namespace Prototipo_Agencia_Turismo
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
+
+        private void Btn_generarReporte_Click(object sender, EventArgs e)
+        {
+            new Frm_reporteBus().Show();
         }
     }
 }
