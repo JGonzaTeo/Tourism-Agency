@@ -111,7 +111,7 @@ namespace Prototipo_Agencia_Turismo
 
         private void Btn_generarReporte_Click(object sender, EventArgs e)
         {
-            new RepBitacora().Show();
+            new Frm_reportBitacora().Show();
         }
     }
 }

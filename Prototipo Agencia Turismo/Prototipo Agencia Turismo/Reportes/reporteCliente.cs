@@ -16,14 +16,14 @@ namespace Prototipo_Agencia_Turismo.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class reporteCliente : ReportClass {
         
-        public CrystalReport1() {
+        public reporteCliente() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "reporteCliente.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Prototipo_Agencia_Turismo.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Prototipo_Agencia_Turismo.Reportes.CrystalReport1.rpt";
+                return "Prototipo_Agencia_Turismo.Reportes.reporteCliente.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Prototipo_Agencia_Turismo.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedreporteCliente : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedreporteCliente() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Prototipo_Agencia_Turismo.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            reporteCliente rpt = new reporteCliente();
             rpt.Site = this.Site;
             return rpt;
         }

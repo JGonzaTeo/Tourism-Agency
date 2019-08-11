@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Prototipo_Agencia_Turismo.Reportes {
+namespace Prototipo_Agencia_Turismo {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Prototipo_Agencia_Turismo.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Prototipo_Agencia_Turismo.Reportes.reporteBitacora.rpt";
+                return "Prototipo_Agencia_Turismo.reporteBitacora.rpt";
             }
             set {
                 // Do nothing

@@ -44,7 +44,6 @@ namespace Prototipo_Agencia_Turismo.Procesos
         IPHostEntry host;
         string localIP = "?";
         int numale;
-        int poc;
 
         //Creamos un objeto random, simplemente
 
@@ -206,27 +205,6 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
             }
         }
-        private void MostrarConsulta()
-        {
-            try
-            {
-                string consultaMostrar = "SELECT Nombre FROM tbl_nomina_detalle t1 INNER JOIN tbl_bonos_descuentos t2 ON t1.Fk_idBonos_Desc = t2.Pk_idBonos_Desc WHERE Pk_idEncabezadoN = '" + Txt_coddoc.Text + "';";
-                OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
-                OdbcDataReader mostrarDatos = comm.ExecuteReader();
-
-                while (mostrarDatos.Read())
-                {
-                    Dgv_mostrardetalle.Refresh();
-                    Dgv_mostrardetalle.Rows.Add(mostrarDatos.GetString(0));
-                }
-                comm.Connection.Close();
-                mostrarDatos.Close();
-            }
-            catch (Exception err)
-            {
-                Console.Write(err.Message);
-            }
-        }
 
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
@@ -335,25 +313,15 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
-            if (Txt_dias.Text != "")
-            {
-                GuardarDatos();
+            GuardarDatos();
             Gpb_operaciones.Enabled = true;
             Btn_ingresar.Enabled = false;
             Btn_borrar.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("No lleno todos los campos");
-            }
         }
 
         private void Btn_ingresarbono_Click(object sender, EventArgs e)
         {
-            if (Txt_bono.Text != "")
-            {
-
-                Random numran = new Random();
+            Random numran = new Random();
             numale = numran.Next(0, 100000);
             Lbl_sueldoliquido.Visible = true;
             Txt_sueldoliquido.Visible = true;
@@ -390,12 +358,6 @@ namespace Prototipo_Agencia_Turismo.Procesos
                
 
             }
-            }
-            else
-            {
-                MessageBox.Show("No se ha ingresado datos a los campo");
-            }
-
 
 
 
@@ -404,9 +366,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void Btn_ingresardescuento_Click(object sender, EventArgs e)
         {
-            if (Txt_descuentos.Text != "")
-            {
-                Random numran = new Random();
+            Random numran = new Random();
             numale = numran.Next(0, 100000);
             iddesc = Txt_coddescus.Text;
             double descuento = Convert.ToDouble(Txt_descuentos.Text);
@@ -436,25 +396,16 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
 
             }
-            }
-            else
-            {
-                MessageBox.Show("No se ha ingresado datos a los campos");
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dgv_mostrardetalle.Rows.Clear();
-            MostrarConsulta();
+            this.Close();
         }
 
-        private void Btn_eliminarbono_Click(object sender, EventArgs e)
+        private void Btn_ayuda_Click(object sender, EventArgs e)
         {
-           poc = Dgv_mostrardetalle.CurrentRow.Index;
-            Dgv_mostrardetalle.Rows.RemoveAt(poc);
-
-            Dgv_mostrardetalle.Rows.Remove(Dgv_mostrardetalle.CurrentRow);
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
         }
     }
 }

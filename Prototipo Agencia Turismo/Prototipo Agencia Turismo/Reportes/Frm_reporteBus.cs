@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prototipo_Agencia_Turismo.Reportes
+namespace Prototipo_Agencia_Turismo
 {
-    public partial class RepBitacora : Form
+    public partial class Frm_reporteBus : Form
     {
-        public RepBitacora()
+        public Frm_reporteBus()
         {
             InitializeComponent();
         }

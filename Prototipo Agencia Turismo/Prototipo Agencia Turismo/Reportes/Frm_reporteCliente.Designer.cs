@@ -1,6 +1,6 @@
 ﻿namespace Prototipo_Agencia_Turismo.Reportes
 {
-    partial class RepBitacora
+    partial class Frm_reporteCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,29 +29,33 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.reporte_bitacora1 = new Prototipo_Agencia_Turismo.reporte_bitacora();
+            this.reporteCliente1 = new Prototipo_Agencia_Turismo.Reportes.reporteCliente();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.reporte_bitacora1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.ReportSource = this.reporteCliente1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1354, 733);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // RepBitacora
+            // Frm_reporteCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "RepBitacora";
-            this.Text = "RepBitacora";
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Frm_reporteCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Reporte Cliente";
             this.ResumeLayout(false);
 
         }
@@ -59,6 +63,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private reporte_bitacora reporte_bitacora1;
+        private reporteCliente reporteCliente1;
     }
 }

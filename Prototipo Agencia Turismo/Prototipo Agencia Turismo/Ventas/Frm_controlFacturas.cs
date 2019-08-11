@@ -1,4 +1,8 @@
-﻿using Prototipo_Agencia_Turismo.Consulta;
+﻿/*
+        AUTOR: EDSON JUAREZ 
+*/
+
+using Prototipo_Agencia_Turismo.Consulta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +14,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Net;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace Prototipo_Agencia_Turismo.Ventas
 {
@@ -91,6 +97,8 @@ namespace Prototipo_Agencia_Turismo.Ventas
                 Lbl_resultado.Text =
                     consultaFactura.Dgv_consultaCotizacion.Rows[consultaFactura.Dgv_consultaCotizacion.CurrentRow.Index].
                         Cells[6].Value.ToString();
+
+                Btn_generarReporte.Enabled = true;
 
                 try
                 {
@@ -192,6 +200,23 @@ namespace Prototipo_Agencia_Turismo.Ventas
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
+
+        private void Btn_generarReporte_Click(object sender, EventArgs e)
+        {
+            Frm_reporteFactura reporteFactura = new Frm_reporteFactura();
+            ReportDocument oRep = new ReportDocument();
+            ParameterField pf = new ParameterField();
+            ParameterFields pfs = new ParameterFields();
+            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+            pf.Name = "numFac"; // variable del store procedure
+            pdv.Value = Lbl_codFactura.Text; // variable donde se  guarda el numero de factura
+            pf.CurrentValues.Add(pdv);
+            pfs.Add(pf);
+            reporteFactura.crystalReportViewer1.ParameterFieldInfo = pfs;
+            oRep.Load("C:/Reportes/reporteFactura.rpt");
+            reporteFactura.crystalReportViewer1.ReportSource = oRep;
+            reporteFactura.Show();
         }
     }
 }

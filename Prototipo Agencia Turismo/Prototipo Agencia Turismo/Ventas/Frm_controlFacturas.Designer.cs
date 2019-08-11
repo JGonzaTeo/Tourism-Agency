@@ -72,6 +72,7 @@
             this.Btn_consultaFactura = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_ayuda = new System.Windows.Forms.Button();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Grpbx_encabezado.SuspendLayout();
             this.Grpbx_habitacion.SuspendLayout();
@@ -131,6 +132,7 @@
             // Rbtn_modificar
             // 
             this.Rbtn_modificar.AutoSize = true;
+            this.Rbtn_modificar.Enabled = false;
             this.Rbtn_modificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rbtn_modificar.Location = new System.Drawing.Point(972, 66);
             this.Rbtn_modificar.Name = "Rbtn_modificar";
@@ -353,7 +355,7 @@
             this.Grpbx_menu.Controls.Add(this.Btn_consultaMenu);
             this.Grpbx_menu.Controls.Add(this.Txt_menu);
             this.Grpbx_menu.Enabled = false;
-            this.Grpbx_menu.Location = new System.Drawing.Point(366, 175);
+            this.Grpbx_menu.Location = new System.Drawing.Point(372, 205);
             this.Grpbx_menu.Name = "Grpbx_menu";
             this.Grpbx_menu.Size = new System.Drawing.Size(365, 100);
             this.Grpbx_menu.TabIndex = 7;
@@ -389,7 +391,7 @@
             this.Grpbx_lugarT.Controls.Add(this.Btn_consultaLugarTuristico);
             this.Grpbx_lugarT.Controls.Add(this.Txt_lugarTuristico);
             this.Grpbx_lugarT.Enabled = false;
-            this.Grpbx_lugarT.Location = new System.Drawing.Point(776, 175);
+            this.Grpbx_lugarT.Location = new System.Drawing.Point(772, 205);
             this.Grpbx_lugarT.Name = "Grpbx_lugarT";
             this.Grpbx_lugarT.Size = new System.Drawing.Size(344, 100);
             this.Grpbx_lugarT.TabIndex = 8;
@@ -576,11 +578,32 @@
             this.Btn_ayuda.UseVisualStyleBackColor = true;
             this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
+            // Btn_generarReporte
+            // 
+            this.Btn_generarReporte.Enabled = false;
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(979, 141);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 92;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            this.Btn_generarReporte.Click += new System.EventHandler(this.Btn_generarReporte_Click);
+            // 
             // Frm_controlFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_generarReporte);
             this.Controls.Add(this.Btn_ayuda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_consultaFactura);
@@ -666,5 +689,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadHabitaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }

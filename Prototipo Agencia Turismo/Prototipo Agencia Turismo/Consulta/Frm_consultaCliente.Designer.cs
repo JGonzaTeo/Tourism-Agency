@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_consultaCliente));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.Btn_consultaCliente = new System.Windows.Forms.Button();
             this.Txt_consultaDpi = new System.Windows.Forms.TextBox();
             this.Lbl_consultaCliente = new System.Windows.Forms.Label();
-            this.Btn_ayuda = new System.Windows.Forms.Button();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaCliente)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,18 @@
             this.Pnl_principal.Name = "Pnl_principal";
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 8;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 122;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -100,7 +113,7 @@
             this.Lbl_titulo.Location = new System.Drawing.Point(42, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(189, 19);
+            this.Lbl_titulo.Size = new System.Drawing.Size(155, 17);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE CLIENTE";
             // 
@@ -238,7 +251,7 @@
             // 
             this.Txt_consultaDpi.Location = new System.Drawing.Point(257, 70);
             this.Txt_consultaDpi.Name = "Txt_consultaDpi";
-            this.Txt_consultaDpi.Size = new System.Drawing.Size(790, 30);
+            this.Txt_consultaDpi.Size = new System.Drawing.Size(790, 26);
             this.Txt_consultaDpi.TabIndex = 55;
             // 
             // Lbl_consultaCliente
@@ -246,27 +259,35 @@
             this.Lbl_consultaCliente.AutoSize = true;
             this.Lbl_consultaCliente.Location = new System.Drawing.Point(25, 73);
             this.Lbl_consultaCliente.Name = "Lbl_consultaCliente";
-            this.Lbl_consultaCliente.Size = new System.Drawing.Size(280, 22);
+            this.Lbl_consultaCliente.Size = new System.Drawing.Size(226, 20);
             this.Lbl_consultaCliente.TabIndex = 54;
             this.Lbl_consultaCliente.Text = "Documento de Identificacion";
             // 
-            // Btn_ayuda
+            // Btn_generarReporte
             // 
-            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
-            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
-            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
-            this.Btn_ayuda.Name = "Btn_ayuda";
-            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
-            this.Btn_ayuda.TabIndex = 122;
-            this.Btn_ayuda.UseVisualStyleBackColor = true;
-            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(546, 577);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 66;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            this.Btn_generarReporte.Click += new System.EventHandler(this.Btn_generarReporte_Click);
             // 
             // Frm_consultaCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_generarReporte);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_seleccionar);
             this.Controls.Add(this.Dgv_consultaCliente);
@@ -311,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }

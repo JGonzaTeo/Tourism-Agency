@@ -16,14 +16,14 @@ namespace Prototipo_Agencia_Turismo.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class reporteBitacora : ReportClass {
+    public class reporteFactura : ReportClass {
         
-        public reporteBitacora() {
+        public reporteFactura() {
         }
         
         public override string ResourceName {
             get {
-                return "reporteBitacora.rpt";
+                return "reporteFactura.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Prototipo_Agencia_Turismo.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Prototipo_Agencia_Turismo.Reportes.reporteBitacora.rpt";
+                return "Prototipo_Agencia_Turismo.Reportes.reporteFactura.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,20 @@ namespace Prototipo_Agencia_Turismo.Reportes {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_numFac {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedreporteBitacora : Component, ICachedReport {
+    public class CachedreporteFactura : Component, ICachedReport {
         
-        public CachedreporteBitacora() {
+        public CachedreporteFactura() {
         }
         
         [Browsable(false)]
@@ -129,7 +137,7 @@ namespace Prototipo_Agencia_Turismo.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            reporteBitacora rpt = new reporteBitacora();
+            reporteFactura rpt = new reporteFactura();
             rpt.Site = this.Site;
             return rpt;
         }

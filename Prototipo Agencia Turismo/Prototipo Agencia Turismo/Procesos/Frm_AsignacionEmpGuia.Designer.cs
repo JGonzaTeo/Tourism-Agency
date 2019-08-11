@@ -51,6 +51,7 @@
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Gpb_Horario.SuspendLayout();
             this.Gpb_Busqueda.SuspendLayout();
             this.Pnl_principal.SuspendLayout();
@@ -273,6 +274,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar1);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar1);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
@@ -289,7 +291,7 @@
             this.Btn_minimizar1.FlatAppearance.BorderSize = 0;
             this.Btn_minimizar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_minimizar1.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar1.Image")));
-            this.Btn_minimizar1.Location = new System.Drawing.Point(1020, 1);
+            this.Btn_minimizar1.Location = new System.Drawing.Point(1031, 1);
             this.Btn_minimizar1.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar1.Name = "Btn_minimizar1";
             this.Btn_minimizar1.Size = new System.Drawing.Size(44, 48);
@@ -345,6 +347,18 @@
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "Asignacion Empleado A Guia Turistico";
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(969, 8);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 103;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_AsignacionEmpGuia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,5 +410,6 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

@@ -533,7 +533,6 @@
             // 
             // Btn_generarReporte
             // 
-            this.Btn_generarReporte.Enabled = false;
             this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
             this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -546,9 +545,10 @@
             this.Btn_generarReporte.Name = "Btn_generarReporte";
             this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
             this.Btn_generarReporte.TabIndex = 61;
-            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.Text = "Generar reporte bus";
             this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            this.Btn_generarReporte.Click += new System.EventHandler(this.Btn_generarReporte_Click);
             // 
             // Frm_reservacion
             // 

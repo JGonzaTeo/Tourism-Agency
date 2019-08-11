@@ -16,6 +16,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace Prototipo_Agencia_Turismo.Cotizacion
 {
@@ -419,9 +421,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     MessageBox.Show("Se realizo la factura correctamente");
                     Dgv_detalleFactura.Rows.Clear();
                     Limpiar();
-                    Grb_Hotel.Enabled = false;
                     Grpbx_encabezado.Enabled = true;
-                    Btn_consultaCliente.Enabled = false;
                     contadorFila = 0;
 
                     OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -434,6 +434,21 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     commBitacora.ExecuteNonQuery();
 
                     commBitacora.Connection.Close();
+
+                    Frm_reporteFactura reporteFactura = new Frm_reporteFactura();
+                    ReportDocument oRep = new ReportDocument();
+                    ParameterField pf = new ParameterField();
+                    ParameterFields pfs = new ParameterFields();
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                    pf.Name = "numFac"; // variable del store procedure
+                    pdv.Value = numFactura; // variable donde se  guarda el numero de factura
+                    pf.CurrentValues.Add(pdv);
+                    pfs.Add(pf);
+                    reporteFactura.crystalReportViewer1.ParameterFieldInfo = pfs;
+                    oRep.Load("C:/Users/Edson Juarez/Desktop/UMG/Octavo Semestre/Análisis de Sistemas II/Mini proyecto/Agencia de turismo/Tourism-Agency/Prototipo Agencia Turismo/Prototipo Agencia Turismo/reporteFactura.rpt");
+                    reporteFactura.crystalReportViewer1.ReportSource = oRep;
+                    reporteFactura.Show();
+                    
                 }
                 catch(Exception err)
                 {
