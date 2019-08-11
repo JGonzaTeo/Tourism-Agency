@@ -157,6 +157,18 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteBitacora.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteBitacora.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reportBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reportBitacora.Designer.cs">
+      <DependentUpon>Frm_reportBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_reporteBus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +388,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteBitacora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteBitacora.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_reportBitacora.resx">
+      <DependentUpon>Frm_reportBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_reporteBus.resx">
       <DependentUpon>Frm_reporteBus.cs</DependentUpon>

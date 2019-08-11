@@ -195,5 +195,10 @@ namespace Prototipo_Agencia_Turismo.Procesos
             Txt_Guia.Text = "";
             Txt_idEmpleado.Text = "";
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
     }
 }

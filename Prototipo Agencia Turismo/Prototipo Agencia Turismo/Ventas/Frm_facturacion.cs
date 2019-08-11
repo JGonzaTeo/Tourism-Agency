@@ -445,7 +445,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     pf.CurrentValues.Add(pdv);
                     pfs.Add(pf);
                     reporteFactura.crystalReportViewer1.ParameterFieldInfo = pfs;
-                    oRep.Load("C:/Users/Edson Juarez/Desktop/UMG/Octavo Semestre/Análisis de Sistemas II/Mini proyecto/Agencia de turismo/Tourism-Agency/Prototipo Agencia Turismo/Prototipo Agencia Turismo/reporteFactura.rpt");
+                    oRep.Load("C:/Reportes/reporteFactura.rpt");
                     reporteFactura.crystalReportViewer1.ReportSource = oRep;
                     reporteFactura.Show();
                     
