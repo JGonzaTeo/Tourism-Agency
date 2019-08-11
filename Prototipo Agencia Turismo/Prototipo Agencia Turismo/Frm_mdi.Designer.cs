@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mdi));
             this.MenStrip_menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.reservacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guíasTurísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planesDeViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,10 +56,9 @@
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.controlDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenStrip_menuPrincipal.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +75,8 @@
             this.seguridadToolStripMenuItem,
             this.mantenimientosToolStripMenuItem,
             this.contabilidadToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.cerrarSesiónToolStripMenuItem,
+            this.xToolStripMenuItem});
             this.MenStrip_menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MenStrip_menuPrincipal.Name = "MenStrip_menuPrincipal";
             this.MenStrip_menuPrincipal.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -114,6 +117,20 @@
             this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(79, 34);
             this.cotizacionesToolStripMenuItem.Text = "Ventas";
             this.cotizacionesToolStripMenuItem.Click += new System.EventHandler(this.cotizacionesToolStripMenuItem_Click);
+            // 
+            // facturaciónToolStripMenuItem
+            // 
+            this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.facturaciónToolStripMenuItem.Text = "Facturación";
+            this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.facturaciónToolStripMenuItem_Click);
+            // 
+            // controlDeFacturasToolStripMenuItem
+            // 
+            this.controlDeFacturasToolStripMenuItem.Name = "controlDeFacturasToolStripMenuItem";
+            this.controlDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.controlDeFacturasToolStripMenuItem.Text = "Control de facturas";
+            this.controlDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.controlDeFacturasToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -287,6 +304,15 @@
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xToolStripMenuItem.Image")));
+            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(87, 34);
+            this.xToolStripMenuItem.Text = "Ayuda";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -304,20 +330,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 20);
             this.toolStripStatusLabel1.Text = "Usuario";
-            // 
-            // controlDeFacturasToolStripMenuItem
-            // 
-            this.controlDeFacturasToolStripMenuItem.Name = "controlDeFacturasToolStripMenuItem";
-            this.controlDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.controlDeFacturasToolStripMenuItem.Text = "Control de facturas";
-            this.controlDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.controlDeFacturasToolStripMenuItem_Click);
-            // 
-            // facturaciónToolStripMenuItem
-            // 
-            this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.facturaciónToolStripMenuItem.Text = "Facturación";
-            this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.facturaciónToolStripMenuItem_Click);
             // 
             // Frm_mdi
             // 
@@ -377,5 +389,6 @@
         private System.Windows.Forms.ToolStripMenuItem asignacionEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlDeFacturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
     }
 }

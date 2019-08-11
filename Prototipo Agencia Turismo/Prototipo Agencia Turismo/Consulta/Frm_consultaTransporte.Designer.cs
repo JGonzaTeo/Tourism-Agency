@@ -43,6 +43,7 @@
             this.Btn_consultaTransporte = new System.Windows.Forms.Button();
             this.Txt_consultaPlaca = new System.Windows.Forms.TextBox();
             this.Lbl_consultaTransporte = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaTransporte)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 7;
             // 
             // Btn_minimizar
@@ -68,7 +69,7 @@
             this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 40);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
             this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
@@ -81,7 +82,7 @@
             this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 40);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
@@ -90,10 +91,10 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
+            this.Lbl_titulo.Location = new System.Drawing.Point(42, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(186, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(228, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE TRANSPORTE";
             this.Lbl_titulo.Click += new System.EventHandler(this.Lbl_titulo_Click);
@@ -132,6 +133,11 @@
             // 
             // Dgv_consultaTransporte
             // 
+            this.Dgv_consultaTransporte.AllowUserToAddRows = false;
+            this.Dgv_consultaTransporte.AllowUserToDeleteRows = false;
+            this.Dgv_consultaTransporte.AllowUserToResizeColumns = false;
+            this.Dgv_consultaTransporte.AllowUserToResizeRows = false;
+            this.Dgv_consultaTransporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_consultaTransporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaTransporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaCodigo,
@@ -140,7 +146,9 @@
             this.columnaCapacidad});
             this.Dgv_consultaTransporte.Location = new System.Drawing.Point(22, 116);
             this.Dgv_consultaTransporte.Name = "Dgv_consultaTransporte";
+            this.Dgv_consultaTransporte.RowHeadersVisible = false;
             this.Dgv_consultaTransporte.RowTemplate.Height = 24;
+            this.Dgv_consultaTransporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaTransporte.Size = new System.Drawing.Size(1098, 405);
             this.Dgv_consultaTransporte.TabIndex = 51;
             // 
@@ -188,7 +196,7 @@
             // 
             this.Txt_consultaPlaca.Location = new System.Drawing.Point(112, 68);
             this.Txt_consultaPlaca.Name = "Txt_consultaPlaca";
-            this.Txt_consultaPlaca.Size = new System.Drawing.Size(934, 26);
+            this.Txt_consultaPlaca.Size = new System.Drawing.Size(934, 30);
             this.Txt_consultaPlaca.TabIndex = 49;
             // 
             // Lbl_consultaTransporte
@@ -196,15 +204,28 @@
             this.Lbl_consultaTransporte.AutoSize = true;
             this.Lbl_consultaTransporte.Location = new System.Drawing.Point(24, 71);
             this.Lbl_consultaTransporte.Name = "Lbl_consultaTransporte";
-            this.Lbl_consultaTransporte.Size = new System.Drawing.Size(51, 20);
+            this.Lbl_consultaTransporte.Size = new System.Drawing.Size(62, 22);
             this.Lbl_consultaTransporte.TabIndex = 48;
             this.Lbl_consultaTransporte.Text = "Placa";
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 108;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_consultaTransporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_ayuda);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_seleccionar);
             this.Controls.Add(this.Dgv_consultaTransporte);
@@ -243,5 +264,6 @@
         private System.Windows.Forms.Button Btn_consultaTransporte;
         private System.Windows.Forms.TextBox Txt_consultaPlaca;
         private System.Windows.Forms.Label Lbl_consultaTransporte;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

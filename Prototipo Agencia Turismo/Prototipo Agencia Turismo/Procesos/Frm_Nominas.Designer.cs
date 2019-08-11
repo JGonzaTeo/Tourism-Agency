@@ -65,14 +65,15 @@
             this.Btn_ingresarbono = new System.Windows.Forms.Button();
             this.Txt_descuentos = new System.Windows.Forms.TextBox();
             this.Cmb_Descuentos = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Dgv_mostrardetalle = new System.Windows.Forms.DataGridView();
+            this.btn_actualizarbonos = new System.Windows.Forms.Button();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_eliminarbono = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Gpb_datosgenerales.SuspendLayout();
             this.Gpb_Datosemp.SuspendLayout();
             this.Gpb_operaciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_mostrardetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_principal
@@ -411,7 +412,7 @@
             // 
             // Btn_ingresarbono
             // 
-            this.Btn_ingresarbono.Location = new System.Drawing.Point(311, 27);
+            this.Btn_ingresarbono.Location = new System.Drawing.Point(343, 28);
             this.Btn_ingresarbono.Name = "Btn_ingresarbono";
             this.Btn_ingresarbono.Size = new System.Drawing.Size(85, 35);
             this.Btn_ingresarbono.TabIndex = 121;
@@ -435,42 +436,50 @@
             this.Cmb_Descuentos.TabIndex = 10;
             this.Cmb_Descuentos.SelectedIndexChanged += new System.EventHandler(this.Cmb_Descuentos_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // Dgv_mostrardetalle
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(382, 431);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 11;
+            this.Dgv_mostrardetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_mostrardetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombre});
+            this.Dgv_mostrardetalle.Location = new System.Drawing.Point(406, 452);
+            this.Dgv_mostrardetalle.Name = "Dgv_mostrardetalle";
+            this.Dgv_mostrardetalle.RowTemplate.Height = 24;
+            this.Dgv_mostrardetalle.Size = new System.Drawing.Size(358, 150);
+            this.Dgv_mostrardetalle.TabIndex = 11;
             // 
-            // button1
+            // btn_actualizarbonos
             // 
-            this.button1.Location = new System.Drawing.Point(997, 454);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 35);
-            this.button1.TabIndex = 123;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_actualizarbonos.Location = new System.Drawing.Point(788, 481);
+            this.btn_actualizarbonos.Name = "btn_actualizarbonos";
+            this.btn_actualizarbonos.Size = new System.Drawing.Size(202, 35);
+            this.btn_actualizarbonos.TabIndex = 123;
+            this.btn_actualizarbonos.Text = "Mostrar Bonos y Desucentos";
+            this.btn_actualizarbonos.UseVisualStyleBackColor = true;
+            this.btn_actualizarbonos.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // nombre
             // 
-            this.button2.Location = new System.Drawing.Point(997, 495);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 35);
-            this.button2.TabIndex = 124;
-            this.button2.Text = "Completado";
-            this.button2.UseVisualStyleBackColor = true;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // Btn_eliminarbono
+            // 
+            this.Btn_eliminarbono.Location = new System.Drawing.Point(788, 522);
+            this.Btn_eliminarbono.Name = "Btn_eliminarbono";
+            this.Btn_eliminarbono.Size = new System.Drawing.Size(202, 35);
+            this.Btn_eliminarbono.TabIndex = 124;
+            this.Btn_eliminarbono.Text = "Eliminar Bonos/Descuentos";
+            this.Btn_eliminarbono.UseVisualStyleBackColor = true;
+            this.Btn_eliminarbono.Click += new System.EventHandler(this.Btn_eliminarbono_Click);
             // 
             // Frm_Nominas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Btn_eliminarbono);
+            this.Controls.Add(this.btn_actualizarbonos);
+            this.Controls.Add(this.Dgv_mostrardetalle);
             this.Controls.Add(this.Gpb_operaciones);
             this.Controls.Add(this.Gpb_Datosemp);
             this.Controls.Add(this.Gpb_datosgenerales);
@@ -488,7 +497,7 @@
             this.Gpb_Datosemp.PerformLayout();
             this.Gpb_operaciones.ResumeLayout(false);
             this.Gpb_operaciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_mostrardetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,10 +538,11 @@
         private System.Windows.Forms.Button Btn_ingresarbono;
         private System.Windows.Forms.TextBox Txt_sueldoliquido;
         private System.Windows.Forms.Label Lbl_sueldoliquido;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgv_mostrardetalle;
         private System.Windows.Forms.TextBox Txt_coddescus;
         private System.Windows.Forms.TextBox Txt_codbonos;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_actualizarbonos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.Button Btn_eliminarbono;
     }
 }

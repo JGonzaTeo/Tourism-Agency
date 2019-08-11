@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Prototipo_Agencia_Turismo {
+namespace Prototipo_Agencia_Turismo.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Prototipo_Agencia_Turismo {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReporteBitacora : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public ReporteBitacora() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "ReporteBitacora.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Prototipo_Agencia_Turismo {
         
         public override string FullResourceName {
             get {
-                return "Prototipo_Agencia_Turismo.ReporteBitacora.rpt";
+                return "Prototipo_Agencia_Turismo.Reportes.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Prototipo_Agencia_Turismo {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReporteBitacora : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedReporteBitacora() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Prototipo_Agencia_Turismo {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReporteBitacora rpt = new ReporteBitacora();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

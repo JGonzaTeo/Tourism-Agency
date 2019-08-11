@@ -47,12 +47,14 @@
             this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Txt_id = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar1);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar1);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
@@ -61,7 +63,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(2, 3);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 6;
             // 
             // Btn_minimizar1
@@ -72,7 +74,7 @@
             this.Btn_minimizar1.Location = new System.Drawing.Point(1020, 1);
             this.Btn_minimizar1.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar1.Name = "Btn_minimizar1";
-            this.Btn_minimizar1.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar1.Size = new System.Drawing.Size(44, 40);
             this.Btn_minimizar1.TabIndex = 13;
             this.Btn_minimizar1.UseVisualStyleBackColor = true;
             this.Btn_minimizar1.Click += new System.EventHandler(this.Btn_minimizar1_Click);
@@ -85,7 +87,7 @@
             this.Btn_cerrar1.Location = new System.Drawing.Point(1100, 1);
             this.Btn_cerrar1.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar1.Name = "Btn_cerrar1";
-            this.Btn_cerrar1.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar1.Size = new System.Drawing.Size(44, 40);
             this.Btn_cerrar1.TabIndex = 12;
             this.Btn_cerrar1.UseVisualStyleBackColor = true;
             this.Btn_cerrar1.Click += new System.EventHandler(this.Btn_cerrar1_Click);
@@ -118,10 +120,10 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(52, 28);
+            this.Lbl_titulo.Location = new System.Drawing.Point(52, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(122, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(150, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "DEPARTAMENTOS";
             // 
@@ -257,7 +259,7 @@
             this.Txt_nombre.Location = new System.Drawing.Point(565, 260);
             this.Txt_nombre.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(214, 26);
+            this.Txt_nombre.Size = new System.Drawing.Size(214, 30);
             this.Txt_nombre.TabIndex = 41;
             // 
             // Lbl_nombre
@@ -266,7 +268,7 @@
             this.Lbl_nombre.Location = new System.Drawing.Point(415, 263);
             this.Lbl_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(68, 20);
+            this.Lbl_nombre.Size = new System.Drawing.Size(84, 22);
             this.Lbl_nombre.TabIndex = 40;
             this.Lbl_nombre.Text = "Nombre";
             // 
@@ -276,7 +278,7 @@
             this.Txt_descripcion.Location = new System.Drawing.Point(565, 321);
             this.Txt_descripcion.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_descripcion.Name = "Txt_descripcion";
-            this.Txt_descripcion.Size = new System.Drawing.Size(214, 26);
+            this.Txt_descripcion.Size = new System.Drawing.Size(214, 30);
             this.Txt_descripcion.TabIndex = 43;
             // 
             // Lbl_descripcion
@@ -285,7 +287,7 @@
             this.Lbl_descripcion.Location = new System.Drawing.Point(415, 327);
             this.Lbl_descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
-            this.Lbl_descripcion.Size = new System.Drawing.Size(96, 20);
+            this.Lbl_descripcion.Size = new System.Drawing.Size(116, 22);
             this.Lbl_descripcion.TabIndex = 42;
             this.Lbl_descripcion.Text = "Descripcion";
             // 
@@ -295,7 +297,7 @@
             this.textBox1.Location = new System.Drawing.Point(565, 205);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 26);
+            this.textBox1.Size = new System.Drawing.Size(214, 30);
             this.textBox1.TabIndex = 45;
             this.textBox1.Visible = false;
             // 
@@ -306,14 +308,26 @@
             this.Txt_id.Location = new System.Drawing.Point(415, 205);
             this.Txt_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Txt_id.Name = "Txt_id";
-            this.Txt_id.Size = new System.Drawing.Size(25, 20);
+            this.Txt_id.Size = new System.Drawing.Size(29, 22);
             this.Txt_id.TabIndex = 44;
             this.Txt_id.Text = "ID";
             this.Txt_id.Visible = false;
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 103;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_mantDepartamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.textBox1);
@@ -363,5 +377,6 @@
         private System.Windows.Forms.Label Lbl_descripcion;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Txt_id;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

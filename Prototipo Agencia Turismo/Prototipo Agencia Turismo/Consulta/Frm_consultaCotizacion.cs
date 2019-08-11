@@ -136,5 +136,10 @@ namespace Prototipo_Agencia_Turismo.Consulta
             Lbl_consultaMenu.Text = "Factura";
             Lbl_titulo.Text = "CONSULTA DE FACTURA";
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
     }
 }

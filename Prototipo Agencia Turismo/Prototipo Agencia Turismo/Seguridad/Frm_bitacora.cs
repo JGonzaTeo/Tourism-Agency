@@ -101,5 +101,10 @@ namespace Prototipo_Agencia_Turismo
             Dgv_tablaBitacora.Rows.Clear();
             CargarDatos();
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
     }
 }

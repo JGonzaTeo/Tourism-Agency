@@ -32,13 +32,6 @@
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_seleccionar = new System.Windows.Forms.Button();
             this.Dgv_consultaEmpleados = new System.Windows.Forms.DataGridView();
-            this.Btn_consulta = new System.Windows.Forms.Button();
-            this.Txt_consultaEmpleado = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Pnl_principal = new System.Windows.Forms.Panel();
-            this.Btn_minimizar = new System.Windows.Forms.Button();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
-            this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +46,16 @@
             this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo_Base = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_consulta = new System.Windows.Forms.Button();
+            this.Txt_consultaEmpleado = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Pnl_principal = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Btn_minimizar = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Lbl_titulo = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaEmpleados)).BeginInit();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,10 @@
             // 
             // Dgv_consultaEmpleados
             // 
+            this.Dgv_consultaEmpleados.AllowUserToAddRows = false;
+            this.Dgv_consultaEmpleados.AllowUserToDeleteRows = false;
+            this.Dgv_consultaEmpleados.AllowUserToResizeColumns = false;
+            this.Dgv_consultaEmpleados.AllowUserToResizeRows = false;
             this.Dgv_consultaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_consultaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -111,97 +116,11 @@
             this.Direccion});
             this.Dgv_consultaEmpleados.Location = new System.Drawing.Point(12, 118);
             this.Dgv_consultaEmpleados.Name = "Dgv_consultaEmpleados";
+            this.Dgv_consultaEmpleados.RowHeadersVisible = false;
             this.Dgv_consultaEmpleados.RowTemplate.Height = 24;
+            this.Dgv_consultaEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_consultaEmpleados.Size = new System.Drawing.Size(1111, 305);
             this.Dgv_consultaEmpleados.TabIndex = 66;
-            // 
-            // Btn_consulta
-            // 
-            this.Btn_consulta.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_consulta.FlatAppearance.BorderSize = 3;
-            this.Btn_consulta.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_consulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_consulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_consulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_consulta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consulta.Image")));
-            this.Btn_consulta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consulta.Location = new System.Drawing.Point(1083, 56);
-            this.Btn_consulta.Name = "Btn_consulta";
-            this.Btn_consulta.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consulta.TabIndex = 65;
-            this.Btn_consulta.Text = "Consultar";
-            this.Btn_consulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_consulta.UseVisualStyleBackColor = false;
-            this.Btn_consulta.Click += new System.EventHandler(this.Btn_consulta_Click);
-            // 
-            // Txt_consultaEmpleado
-            // 
-            this.Txt_consultaEmpleado.Location = new System.Drawing.Point(119, 68);
-            this.Txt_consultaEmpleado.Name = "Txt_consultaEmpleado";
-            this.Txt_consultaEmpleado.Size = new System.Drawing.Size(934, 22);
-            this.Txt_consultaEmpleado.TabIndex = 64;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "Nombre:";
-            // 
-            // Pnl_principal
-            // 
-            this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pnl_principal.Controls.Add(this.button1);
-            this.Pnl_principal.Controls.Add(this.button2);
-            this.Pnl_principal.Controls.Add(this.Btn_minimizar);
-            this.Pnl_principal.Controls.Add(this.Btn_cerrar);
-            this.Pnl_principal.Controls.Add(this.Lbl_titulo);
-            this.Pnl_principal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
-            this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
-            this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1162, 51);
-            this.Pnl_principal.TabIndex = 62;
-            // 
-            // Btn_minimizar
-            // 
-            this.Btn_minimizar.FlatAppearance.BorderSize = 0;
-            this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
-            this.Btn_minimizar.Location = new System.Drawing.Point(1239, -1);
-            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
-            this.Btn_minimizar.TabIndex = 11;
-            this.Btn_minimizar.UseVisualStyleBackColor = true;
-            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
-            // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
-            this.Btn_cerrar.Location = new System.Drawing.Point(1319, -1);
-            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
-            this.Btn_cerrar.TabIndex = 10;
-            this.Btn_cerrar.UseVisualStyleBackColor = true;
-            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
-            // 
-            // Lbl_titulo
-            // 
-            this.Lbl_titulo.AutoSize = true;
-            this.Lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
-            this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(211, 20);
-            this.Lbl_titulo.TabIndex = 1;
-            this.Lbl_titulo.Text = "Consulta De Empleados";
             // 
             // Codigo
             // 
@@ -276,15 +195,67 @@
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.Name = "Direccion";
             // 
+            // Btn_consulta
+            // 
+            this.Btn_consulta.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consulta.FlatAppearance.BorderSize = 3;
+            this.Btn_consulta.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consulta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consulta.Image")));
+            this.Btn_consulta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consulta.Location = new System.Drawing.Point(1083, 56);
+            this.Btn_consulta.Name = "Btn_consulta";
+            this.Btn_consulta.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consulta.TabIndex = 65;
+            this.Btn_consulta.Text = "Consultar";
+            this.Btn_consulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consulta.UseVisualStyleBackColor = false;
+            this.Btn_consulta.Click += new System.EventHandler(this.Btn_consulta_Click);
+            // 
+            // Txt_consultaEmpleado
+            // 
+            this.Txt_consultaEmpleado.Location = new System.Drawing.Point(119, 68);
+            this.Txt_consultaEmpleado.Name = "Txt_consultaEmpleado";
+            this.Txt_consultaEmpleado.Size = new System.Drawing.Size(934, 22);
+            this.Txt_consultaEmpleado.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Nombre:";
+            // 
+            // Pnl_principal
+            // 
+            this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
+            this.Pnl_principal.Controls.Add(this.button1);
+            this.Pnl_principal.Controls.Add(this.button2);
+            this.Pnl_principal.Controls.Add(this.Btn_minimizar);
+            this.Pnl_principal.Controls.Add(this.Btn_cerrar);
+            this.Pnl_principal.Controls.Add(this.Lbl_titulo);
+            this.Pnl_principal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
+            this.Pnl_principal.Name = "Pnl_principal";
+            this.Pnl_principal.Size = new System.Drawing.Size(1162, 40);
+            this.Pnl_principal.TabIndex = 62;
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1024, 2);
+            this.button1.Location = new System.Drawing.Point(1024, 1);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 48);
+            this.button1.Size = new System.Drawing.Size(44, 40);
             this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -294,13 +265,62 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1104, 2);
+            this.button2.Location = new System.Drawing.Point(1104, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 48);
+            this.button2.Size = new System.Drawing.Size(44, 40);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Btn_minimizar
+            // 
+            this.Btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.Btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_minimizar.Image")));
+            this.Btn_minimizar.Location = new System.Drawing.Point(1239, -1);
+            this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_minimizar.Name = "Btn_minimizar";
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.TabIndex = 11;
+            this.Btn_minimizar.UseVisualStyleBackColor = true;
+            this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
+            // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_cerrar.Image")));
+            this.Btn_cerrar.Location = new System.Drawing.Point(1319, -1);
+            this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.TabIndex = 10;
+            this.Btn_cerrar.UseVisualStyleBackColor = true;
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
+            // 
+            // Lbl_titulo
+            // 
+            this.Lbl_titulo.AutoSize = true;
+            this.Lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo.Location = new System.Drawing.Point(42, 12);
+            this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Lbl_titulo.Name = "Lbl_titulo";
+            this.Lbl_titulo.Size = new System.Drawing.Size(211, 20);
+            this.Lbl_titulo.TabIndex = 1;
+            this.Lbl_titulo.Text = "Consulta De Empleados";
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 118;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Frm_consultaEmpleado
             // 
@@ -355,5 +375,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

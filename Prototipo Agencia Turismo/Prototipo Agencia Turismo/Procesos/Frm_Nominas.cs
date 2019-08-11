@@ -44,6 +44,7 @@ namespace Prototipo_Agencia_Turismo.Procesos
         IPHostEntry host;
         string localIP = "?";
         int numale;
+        int poc;
 
         //Creamos un objeto random, simplemente
 
@@ -162,52 +163,69 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void GuardarDatos()
         {
-           
-
-                codigo = Txt_coddoc.Text;
-                cantidad = Txt_sueldoliquido.Text;
-                codigoemp = Txt_codempleado.Text;
-                dias = Txt_dias.Text;
-                fecha = Dtp_FechaEmi.Text;
+            codigo = Txt_coddoc.Text;
+            cantidad = Txt_sueldoliquido.Text;
+            codigoemp = Txt_codempleado.Text;
+            dias = Txt_dias.Text;
+            fecha = Dtp_FechaEmi.Text;
 
 
 
-                try
+            try
+            {
+                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominaencabezado(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
+                comm.Parameters.Add("idemp", OdbcType.Text).Value = codigoemp;
+                comm.Parameters.Add("dias", OdbcType.Text).Value = dias;
+                comm.Parameters.Add("fecha", OdbcType.Text).Value = fecha;
+                comm.Parameters.Add("sueldoliquido", OdbcType.Text).Value = cantidad;
+
+
+                comm.ExecuteNonQuery();
+                comm.Connection.Close();
+                MessageBox.Show("Registro Guardado correctamente");
+
+                OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
+                comm1.CommandType = CommandType.StoredProcedure;
+                comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
+                comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
+                comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
+                comm1.Parameters.Add("proc", OdbcType.Text).Value = "Proceso Nomina";
+                comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
+                comm1.ExecuteNonQuery();
+                comm1.Connection.Close();
+
+
+
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                MessageBox.Show("Registro no guardado");
+
+            }
+        }
+        private void MostrarConsulta()
+        {
+            try
+            {
+                string consultaMostrar = "SELECT Nombre FROM tbl_nomina_detalle t1 INNER JOIN tbl_bonos_descuentos t2 ON t1.Fk_idBonos_Desc = t2.Pk_idBonos_Desc WHERE Pk_idEncabezadoN = '" + Txt_coddoc.Text + "';";
+                OdbcCommand comm = new OdbcCommand(consultaMostrar, Conexion.nuevaConexion());
+                OdbcDataReader mostrarDatos = comm.ExecuteReader();
+
+                while (mostrarDatos.Read())
                 {
-                    OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominaencabezado(?,?,?,?,?)}", Conexion.nuevaConexion());
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
-                    comm.Parameters.Add("idemp", OdbcType.Text).Value = codigoemp;
-                    comm.Parameters.Add("dias", OdbcType.Text).Value = dias;
-                    comm.Parameters.Add("fecha", OdbcType.Text).Value = fecha;
-                    comm.Parameters.Add("sueldoliquido", OdbcType.Text).Value = cantidad;
-
-
-                    comm.ExecuteNonQuery();
-                    comm.Connection.Close();
-                    MessageBox.Show("Registro Guardado correctamente");
-
-                    OdbcCommand comm1 = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
-                    comm1.CommandType = CommandType.StoredProcedure;
-                    comm1.Parameters.Add("ope", OdbcType.Text).Value = "NUEVO REGISTRO";
-                    comm1.Parameters.Add("usr", OdbcType.Text).Value = nombreUsuario;
-                    comm1.Parameters.Add("fecha", OdbcType.Text).Value = fechai.ToString("yyyy/MM/dd HH:mm:ss");
-                    comm1.Parameters.Add("proc", OdbcType.Text).Value = "Proceso Nomina";
-                    comm1.Parameters.Add("dirIp", OdbcType.Text).Value = localIP;
-                    comm1.ExecuteNonQuery();
-                    comm1.Connection.Close();
-
-
-
+                    Dgv_mostrardetalle.Refresh();
+                    Dgv_mostrardetalle.Rows.Add(mostrarDatos.GetString(0));
                 }
-                catch (Exception err)
-                {
-                    Console.WriteLine(err.Message);
-                    MessageBox.Show("Registro no guardado");
-
-                }
-            
-         
+                comm.Connection.Close();
+                mostrarDatos.Close();
+            }
+            catch (Exception err)
+            {
+                Console.Write(err.Message);
+            }
         }
 
 
@@ -319,12 +337,10 @@ namespace Prototipo_Agencia_Turismo.Procesos
         {
             if (Txt_dias.Text != "")
             {
-
-
                 GuardarDatos();
-                Gpb_operaciones.Enabled = true;
-                Btn_ingresar.Enabled = false;
-                Btn_borrar.Enabled = false;
+            Gpb_operaciones.Enabled = true;
+            Btn_ingresar.Enabled = false;
+            Btn_borrar.Enabled = false;
             }
             else
             {
@@ -334,57 +350,52 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void Btn_ingresarbono_Click(object sender, EventArgs e)
         {
-
             if (Txt_bono.Text != "")
             {
 
-
                 Random numran = new Random();
-                numale = numran.Next(0, 100000);
-                Lbl_sueldoliquido.Visible = true;
-                Txt_sueldoliquido.Visible = true;
-                Txt_coddoc.Enabled = false;
-                Txt_dias.Enabled = false;
-                Txt_sueldoliquido.Enabled = false;
-                idbono = Txt_codbonos.Text;
+            numale = numran.Next(0, 100000);
+            Lbl_sueldoliquido.Visible = true;
+            Txt_sueldoliquido.Visible = true;
+            idbono = Txt_codbonos.Text;
 
-                double bono = Convert.ToDouble(Txt_bono.Text);
-                double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
-                totalbono = bono * sueldobase;
-                Txt_sueldoliquido.Text = Convert.ToString(totalbono);
+            double bono = Convert.ToDouble(Txt_bono.Text);
+            double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
+            totalbono = bono * sueldobase;
+            Txt_sueldoliquido.Text = Convert.ToString(totalbono);
 
 
-                Txt_sueldoliquido.Text = " ";
-                double operacion = totalbono + var1;
+            Txt_sueldoliquido.Text = " ";
+            double operacion = totalbono + var1;
 
-                Txt_sueldoliquido.Text = Convert.ToString(operacion);
-                var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
-                ActualizarDatos();
+            Txt_sueldoliquido.Text = Convert.ToString(operacion);
+            var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
+            ActualizarDatos();
 
-                try
-                {
-                    OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle(?,?,?)}", Conexion.nuevaConexion());
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
-                    comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
-                    comm.Parameters.Add("idbono", OdbcType.Text).Value = idbono;
+            try
+            {
+                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle(?,?,?)}", Conexion.nuevaConexion());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
+                comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
+                comm.Parameters.Add("idbono", OdbcType.Text).Value = idbono;
 
-                    comm.ExecuteNonQuery();
-                    comm.Connection.Close();
-                }
+                comm.ExecuteNonQuery();
+                comm.Connection.Close();
+            }
 
-                catch (Exception err)
-                {
-                    Console.WriteLine(err.Message);
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+               
 
-
-
-                }
+            }
             }
             else
             {
                 MessageBox.Show("No se ha ingresado datos a los campo");
             }
+
 
 
 
@@ -395,40 +406,36 @@ namespace Prototipo_Agencia_Turismo.Procesos
         {
             if (Txt_descuentos.Text != "")
             {
-                Txt_coddoc.Enabled = false;
-                Txt_dias.Enabled = false;
-                Txt_sueldoliquido.Enabled = false;
                 Random numran = new Random();
-                numale = numran.Next(0, 100000);
-                iddesc = Txt_coddescus.Text;
-                double descuento = Convert.ToDouble(Txt_descuentos.Text);
-                double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
-                totaldescuento = descuento * sueldobase;
+            numale = numran.Next(0, 100000);
+            iddesc = Txt_coddescus.Text;
+            double descuento = Convert.ToDouble(Txt_descuentos.Text);
+            double sueldobase = Convert.ToDouble(Txt_sueldobase.Text);
+            totaldescuento = descuento * sueldobase;
 
-                double operacion = var1 - totaldescuento;
+            double operacion = var1 - totaldescuento;
 
-                Txt_sueldoliquido.Text = Convert.ToString(operacion);
-                var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
-                ActualizarDatos();
+            Txt_sueldoliquido.Text = Convert.ToString(operacion);
+            var1 = Convert.ToDouble(Txt_sueldoliquido.Text);
+            ActualizarDatos();
 
-                try
-                {
-                    OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle2(?,?,?)}", Conexion.nuevaConexion());
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
-                    comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
-                    comm.Parameters.Add("idbono", OdbcType.Text).Value = iddesc;
+            try
+            {
+                OdbcCommand comm = new OdbcCommand("{call Sp_InsertarNominadetalle2(?,?,?)}", Conexion.nuevaConexion());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("idenca", OdbcType.Text).Value = codigo;
+                comm.Parameters.Add("idliena", OdbcType.Text).Value = numale;
+                comm.Parameters.Add("idbono", OdbcType.Text).Value = iddesc;
 
-                    comm.ExecuteNonQuery();
-                    comm.Connection.Close();
-                }
-                catch (Exception err)
-                {
-                    Console.WriteLine(err.Message);
-                    MessageBox.Show("No se ha ingresado ningún campo");
+                comm.ExecuteNonQuery();
+                comm.Connection.Close();
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
 
 
-                }
+            }
             }
             else
             {
@@ -438,7 +445,16 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Dgv_mostrardetalle.Rows.Clear();
+            MostrarConsulta();
+        }
+
+        private void Btn_eliminarbono_Click(object sender, EventArgs e)
+        {
+           poc = Dgv_mostrardetalle.CurrentRow.Index;
+            Dgv_mostrardetalle.Rows.RemoveAt(poc);
+
+            Dgv_mostrardetalle.Rows.Remove(Dgv_mostrardetalle.CurrentRow);
         }
     }
 }

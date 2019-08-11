@@ -40,7 +40,7 @@
             this.Lbl_idCliente = new System.Windows.Forms.Label();
             this.Lbl_tipoPago = new System.Windows.Forms.Label();
             this.Cmbx_tipoPago = new System.Windows.Forms.ComboBox();
-            this.CB_Pasajero = new System.Windows.Forms.ComboBox();
+            this.Cbo_Pasajero = new System.Windows.Forms.ComboBox();
             this.Lbl_pasajeros = new System.Windows.Forms.Label();
             this.Lbl_fechaEmision = new System.Windows.Forms.Label();
             this.Lbl_fecha = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.idMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLugarT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadHabitaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lbl_resultado = new System.Windows.Forms.Label();
             this.Lbl_Total = new System.Windows.Forms.Label();
             this.Btn_facturar = new System.Windows.Forms.Button();
@@ -70,7 +71,7 @@
             this.Lbl_codFactura = new System.Windows.Forms.Label();
             this.Btn_consultaFactura = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.Grpbx_encabezado.SuspendLayout();
             this.Grpbx_habitacion.SuspendLayout();
@@ -158,7 +159,7 @@
             this.Grpbx_encabezado.Controls.Add(this.Lbl_idCliente);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_tipoPago);
             this.Grpbx_encabezado.Controls.Add(this.Cmbx_tipoPago);
-            this.Grpbx_encabezado.Controls.Add(this.CB_Pasajero);
+            this.Grpbx_encabezado.Controls.Add(this.Cbo_Pasajero);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_pasajeros);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_fechaEmision);
             this.Grpbx_encabezado.Controls.Add(this.Lbl_fecha);
@@ -209,11 +210,11 @@
             this.Cmbx_tipoPago.Size = new System.Drawing.Size(121, 29);
             this.Cmbx_tipoPago.TabIndex = 82;
             // 
-            // CB_Pasajero
+            // Cbo_Pasajero
             // 
-            this.CB_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CB_Pasajero.FormattingEnabled = true;
-            this.CB_Pasajero.Items.AddRange(new object[] {
+            this.Cbo_Pasajero.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_Pasajero.FormattingEnabled = true;
+            this.Cbo_Pasajero.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -224,10 +225,10 @@
             "8",
             "9",
             "10"});
-            this.CB_Pasajero.Location = new System.Drawing.Point(389, 39);
-            this.CB_Pasajero.Name = "CB_Pasajero";
-            this.CB_Pasajero.Size = new System.Drawing.Size(121, 30);
-            this.CB_Pasajero.TabIndex = 81;
+            this.Cbo_Pasajero.Location = new System.Drawing.Point(389, 39);
+            this.Cbo_Pasajero.Name = "Cbo_Pasajero";
+            this.Cbo_Pasajero.Size = new System.Drawing.Size(121, 30);
+            this.Cbo_Pasajero.TabIndex = 81;
             // 
             // Lbl_pasajeros
             // 
@@ -460,6 +461,11 @@
             this.cantidadHabitaciones.HeaderText = "Cantidad Habitaciones";
             this.cantidadHabitaciones.Name = "cantidadHabitaciones";
             // 
+            // importe
+            // 
+            this.importe.HeaderText = "Importe";
+            this.importe.Name = "importe";
+            // 
             // Lbl_resultado
             // 
             this.Lbl_resultado.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -558,16 +564,24 @@
             this.label1.TabIndex = 90;
             this.label1.Text = "Código de factura:";
             // 
-            // importe
+            // Btn_ayuda
             // 
-            this.importe.HeaderText = "Importe";
-            this.importe.Name = "importe";
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 91;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Frm_controlFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_ayuda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_consultaFactura);
             this.Controls.Add(this.Lbl_codFactura);
@@ -620,7 +634,7 @@
         private System.Windows.Forms.Label Lbl_fecha;
         private System.Windows.Forms.TextBox Txt_cliente;
         private System.Windows.Forms.Label Lbl_cliente;
-        private System.Windows.Forms.ComboBox CB_Pasajero;
+        private System.Windows.Forms.ComboBox Cbo_Pasajero;
         private System.Windows.Forms.Label Lbl_pasajeros;
         private System.Windows.Forms.GroupBox Grpbx_habitacion;
         private System.Windows.Forms.GroupBox Grpbx_menu;
@@ -651,5 +665,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idLugarT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadHabitaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

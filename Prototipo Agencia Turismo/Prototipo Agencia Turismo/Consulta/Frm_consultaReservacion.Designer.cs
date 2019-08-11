@@ -47,6 +47,7 @@
             this.idPiloto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_consultaReservacion)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -61,7 +63,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(7);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 50);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 7;
             // 
             // Btn_minimizar
@@ -72,7 +74,7 @@
             this.Btn_minimizar.Location = new System.Drawing.Point(1003, -1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(5);
             this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(59, 63);
+            this.Btn_minimizar.Size = new System.Drawing.Size(59, 40);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
             this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
@@ -85,7 +87,7 @@
             this.Btn_cerrar.Location = new System.Drawing.Point(1094, -1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(5);
             this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(59, 63);
+            this.Btn_cerrar.Size = new System.Drawing.Size(59, 40);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
@@ -94,10 +96,10 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(40, 21);
+            this.Lbl_titulo.Location = new System.Drawing.Point(40, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(198, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(243, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "CONSULTA DE RESERVACION";
             // 
@@ -125,7 +127,7 @@
             // 
             this.Txt_consultaReservacion.Location = new System.Drawing.Point(155, 78);
             this.Txt_consultaReservacion.Name = "Txt_consultaReservacion";
-            this.Txt_consultaReservacion.Size = new System.Drawing.Size(899, 24);
+            this.Txt_consultaReservacion.Size = new System.Drawing.Size(899, 28);
             this.Txt_consultaReservacion.TabIndex = 44;
             // 
             // Lbl_consultaUsuario
@@ -133,7 +135,7 @@
             this.Lbl_consultaUsuario.AutoSize = true;
             this.Lbl_consultaUsuario.Location = new System.Drawing.Point(40, 83);
             this.Lbl_consultaUsuario.Name = "Lbl_consultaUsuario";
-            this.Lbl_consultaUsuario.Size = new System.Drawing.Size(109, 19);
+            this.Lbl_consultaUsuario.Size = new System.Drawing.Size(135, 21);
             this.Lbl_consultaUsuario.TabIndex = 43;
             this.Lbl_consultaUsuario.Text = "ID reservacion:";
             this.Lbl_consultaUsuario.Click += new System.EventHandler(this.Lbl_consultaUsuario_Click);
@@ -235,9 +237,21 @@
             this.fechaEntrada.HeaderText = "Fecha Entrada";
             this.fechaEntrada.Name = "fechaEntrada";
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 111;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_consultaReservacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_actualizar);
@@ -281,5 +295,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idPiloto;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaSalida;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntrada;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

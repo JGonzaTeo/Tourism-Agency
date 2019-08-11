@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mantHabitacion));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -63,8 +65,20 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1180, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 4;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 101;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -74,7 +88,7 @@
             this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 40);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
             this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click);
@@ -87,7 +101,7 @@
             this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 40);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
@@ -96,10 +110,10 @@
             // 
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(42, 21);
+            this.Lbl_titulo.Location = new System.Drawing.Point(42, 12);
             this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(107, 17);
+            this.Lbl_titulo.Size = new System.Drawing.Size(132, 19);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "HABITACIONES";
             // 
@@ -247,7 +261,7 @@
             // 
             this.Txt_costo.Location = new System.Drawing.Point(474, 403);
             this.Txt_costo.Name = "Txt_costo";
-            this.Txt_costo.Size = new System.Drawing.Size(172, 26);
+            this.Txt_costo.Size = new System.Drawing.Size(172, 30);
             this.Txt_costo.TabIndex = 68;
             this.Txt_costo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_costo_KeyUp);
             // 
@@ -256,7 +270,7 @@
             this.Lbl_costo.AutoSize = true;
             this.Lbl_costo.Location = new System.Drawing.Point(292, 410);
             this.Lbl_costo.Name = "Lbl_costo";
-            this.Lbl_costo.Size = new System.Drawing.Size(56, 20);
+            this.Lbl_costo.Size = new System.Drawing.Size(68, 22);
             this.Lbl_costo.TabIndex = 67;
             this.Lbl_costo.Text = "Costo:";
             // 
@@ -264,7 +278,7 @@
             // 
             this.Txt_capacidad.Location = new System.Drawing.Point(474, 355);
             this.Txt_capacidad.Name = "Txt_capacidad";
-            this.Txt_capacidad.Size = new System.Drawing.Size(172, 26);
+            this.Txt_capacidad.Size = new System.Drawing.Size(172, 30);
             this.Txt_capacidad.TabIndex = 66;
             this.Txt_capacidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_capacidad_KeyUp);
             // 
@@ -273,7 +287,7 @@
             this.Lbl_capacidad.AutoSize = true;
             this.Lbl_capacidad.Location = new System.Drawing.Point(292, 362);
             this.Lbl_capacidad.Name = "Lbl_capacidad";
-            this.Lbl_capacidad.Size = new System.Drawing.Size(98, 20);
+            this.Lbl_capacidad.Size = new System.Drawing.Size(123, 22);
             this.Lbl_capacidad.TabIndex = 65;
             this.Lbl_capacidad.Text = "Capacidad:";
             // 
@@ -281,7 +295,7 @@
             // 
             this.Txt_nombre.Location = new System.Drawing.Point(474, 303);
             this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(243, 26);
+            this.Txt_nombre.Size = new System.Drawing.Size(243, 30);
             this.Txt_nombre.TabIndex = 64;
             // 
             // Lbl_nombre
@@ -289,7 +303,7 @@
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Location = new System.Drawing.Point(290, 310);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
+            this.Lbl_nombre.Size = new System.Drawing.Size(89, 22);
             this.Lbl_nombre.TabIndex = 63;
             this.Lbl_nombre.Text = "Nombre:";
             // 
@@ -297,7 +311,7 @@
             // 
             this.Txt_hotel.Location = new System.Drawing.Point(474, 251);
             this.Txt_hotel.Name = "Txt_hotel";
-            this.Txt_hotel.Size = new System.Drawing.Size(100, 26);
+            this.Txt_hotel.Size = new System.Drawing.Size(100, 30);
             this.Txt_hotel.TabIndex = 62;
             // 
             // Lbl_idHotel
@@ -305,7 +319,7 @@
             this.Lbl_idHotel.AutoSize = true;
             this.Lbl_idHotel.Location = new System.Drawing.Point(292, 258);
             this.Lbl_idHotel.Name = "Lbl_idHotel";
-            this.Lbl_idHotel.Size = new System.Drawing.Size(95, 20);
+            this.Lbl_idHotel.Size = new System.Drawing.Size(116, 22);
             this.Lbl_idHotel.TabIndex = 61;
             this.Lbl_idHotel.Text = "ID de Hotel:";
             // 
@@ -314,7 +328,7 @@
             this.Txt_idHabitacion.Enabled = false;
             this.Txt_idHabitacion.Location = new System.Drawing.Point(474, 201);
             this.Txt_idHabitacion.Name = "Txt_idHabitacion";
-            this.Txt_idHabitacion.Size = new System.Drawing.Size(100, 26);
+            this.Txt_idHabitacion.Size = new System.Drawing.Size(100, 30);
             this.Txt_idHabitacion.TabIndex = 60;
             // 
             // Lbl_idHabitacion
@@ -323,13 +337,13 @@
             this.Lbl_idHabitacion.Location = new System.Drawing.Point(292, 208);
             this.Lbl_idHabitacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_idHabitacion.Name = "Lbl_idHabitacion";
-            this.Lbl_idHabitacion.Size = new System.Drawing.Size(136, 20);
+            this.Lbl_idHabitacion.Size = new System.Drawing.Size(169, 22);
             this.Lbl_idHabitacion.TabIndex = 59;
             this.Lbl_idHabitacion.Text = "ID de habitacion:";
             // 
             // Frm_mantHabitacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_busqueda);
@@ -354,6 +368,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm_mantHabitacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_mantHabitacion";
             this.Load += new System.EventHandler(this.Frm_mantHabitacion_Load);
             this.Pnl_principal.ResumeLayout(false);
@@ -386,5 +401,6 @@
         private System.Windows.Forms.Label Lbl_idHotel;
         private System.Windows.Forms.TextBox Txt_idHabitacion;
         private System.Windows.Forms.Label Lbl_idHabitacion;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }
