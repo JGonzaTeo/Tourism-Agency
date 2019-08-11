@@ -78,10 +78,10 @@
             // Lbl_titulo
             // 
             this.Lbl_titulo.AutoSize = true;
-            this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_titulo.Location = new System.Drawing.Point(22, 13);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(94, 19);
+            this.Lbl_titulo.Size = new System.Drawing.Size(102, 20);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "BITÁCORA";
             // 
@@ -165,10 +165,10 @@
             // Lbl_nombreUsuario
             // 
             this.Lbl_nombreUsuario.AutoSize = true;
-            this.Lbl_nombreUsuario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_nombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_nombreUsuario.Location = new System.Drawing.Point(23, 101);
             this.Lbl_nombreUsuario.Name = "Lbl_nombreUsuario";
-            this.Lbl_nombreUsuario.Size = new System.Drawing.Size(173, 21);
+            this.Lbl_nombreUsuario.Size = new System.Drawing.Size(156, 20);
             this.Lbl_nombreUsuario.TabIndex = 2;
             this.Lbl_nombreUsuario.Text = "Nombre de usuario:";
             // 
@@ -176,7 +176,7 @@
             // 
             this.Txt_consultaUsuario.Location = new System.Drawing.Point(221, 99);
             this.Txt_consultaUsuario.Name = "Txt_consultaUsuario";
-            this.Txt_consultaUsuario.Size = new System.Drawing.Size(844, 23);
+            this.Txt_consultaUsuario.Size = new System.Drawing.Size(844, 22);
             this.Txt_consultaUsuario.TabIndex = 3;
             // 
             // Btn_generarReporte
@@ -187,7 +187,7 @@
             this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
             this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_generarReporte.Location = new System.Drawing.Point(946, 575);
@@ -197,6 +197,7 @@
             this.Btn_generarReporte.Text = "Generar reporte";
             this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            this.Btn_generarReporte.Click += new System.EventHandler(this.Btn_generarReporte_Click);
             // 
             // Btn_actualizar
             // 
@@ -205,7 +206,7 @@
             this.Btn_actualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_actualizar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_actualizar.Location = new System.Drawing.Point(771, 575);
             this.Btn_actualizar.Name = "Btn_actualizar";
             this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
@@ -222,7 +223,7 @@
             this.Btn_consultaPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.Btn_consultaPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Btn_consultaPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultaPerfil.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultaPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_consultaPerfil.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaPerfil.Image")));
             this.Btn_consultaPerfil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btn_consultaPerfil.Location = new System.Drawing.Point(1095, 82);
@@ -236,7 +237,7 @@
             // 
             // Frm_bitacora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_consultaPerfil);
@@ -246,7 +247,7 @@
             this.Controls.Add(this.Lbl_nombreUsuario);
             this.Controls.Add(this.Dgv_tablaBitacora);
             this.Controls.Add(this.Pnl_principal);
-            this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_bitacora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

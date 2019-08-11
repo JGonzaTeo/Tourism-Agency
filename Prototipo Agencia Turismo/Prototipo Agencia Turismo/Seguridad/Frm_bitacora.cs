@@ -4,6 +4,7 @@
   -----------------------------------------------------
 */
 
+using Prototipo_Agencia_Turismo.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace Prototipo_Agencia_Turismo
         public Frm_bitacora()
         {
             InitializeComponent();
+            Btn_generarReporte.Enabled = true;
         }
 
         private void CargarDatos()
@@ -105,6 +107,11 @@ namespace Prototipo_Agencia_Turismo
         private void Btn_ayuda_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
+
+        private void Btn_generarReporte_Click(object sender, EventArgs e)
+        {
+            new RepBitacora().Show();
         }
     }
 }

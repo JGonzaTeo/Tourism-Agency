@@ -169,6 +169,18 @@
     <Compile Include="Procesos\Frm_Nominas.Designer.cs">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\RepBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RepBitacora.Designer.cs">
+      <DependentUpon>RepBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporte_bitacora.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporte_bitacora.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reservacion\Frm_reservacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +359,13 @@
     <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepBitacora.resx">
+      <DependentUpon>RepBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporte_bitacora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporte_bitacora.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservacion\Frm_reservacion.resx">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,8 +448,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
