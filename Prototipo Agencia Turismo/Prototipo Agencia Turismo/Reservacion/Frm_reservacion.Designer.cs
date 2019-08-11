@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_reservacion));
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
@@ -62,6 +63,9 @@
             this.Btn_consultarVehiculo = new System.Windows.Forms.Button();
             this.Btn_reservar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Btn_modificar = new System.Windows.Forms.Button();
+            this.Btn_consultarReservacion = new System.Windows.Forms.Button();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +75,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
@@ -81,6 +86,18 @@
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 1;
             this.Pnl_principal.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_principal_Paint);
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 93;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_minimizar
             // 
@@ -199,6 +216,7 @@
             this.Lbl_idReservacion.Size = new System.Drawing.Size(158, 21);
             this.Lbl_idReservacion.TabIndex = 18;
             this.Lbl_idReservacion.Text = "ID de reservacion";
+            this.Lbl_idReservacion.Visible = false;
             // 
             // Lbl_metodo
             // 
@@ -339,6 +357,7 @@
             this.Lbl_reservacion.Name = "Lbl_reservacion";
             this.Lbl_reservacion.Size = new System.Drawing.Size(106, 28);
             this.Lbl_reservacion.TabIndex = 19;
+            this.Lbl_reservacion.Visible = false;
             // 
             // Lbl_idCotizacion
             // 
@@ -446,7 +465,7 @@
             this.Btn_reservar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_reservar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_reservar.Image")));
             this.Btn_reservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_reservar.Location = new System.Drawing.Point(970, 420);
+            this.Btn_reservar.Location = new System.Drawing.Point(969, 452);
             this.Btn_reservar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_reservar.Name = "Btn_reservar";
             this.Btn_reservar.Size = new System.Drawing.Size(176, 44);
@@ -464,7 +483,7 @@
             this.Btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_eliminar.Image")));
             this.Btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_eliminar.Location = new System.Drawing.Point(970, 351);
+            this.Btn_eliminar.Location = new System.Drawing.Point(969, 372);
             this.Btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_eliminar.Name = "Btn_eliminar";
             this.Btn_eliminar.Size = new System.Drawing.Size(176, 44);
@@ -473,11 +492,72 @@
             this.Btn_eliminar.UseVisualStyleBackColor = true;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
+            // Btn_modificar
+            // 
+            this.Btn_modificar.FlatAppearance.BorderSize = 3;
+            this.Btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_modificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_modificar.Image")));
+            this.Btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_modificar.Location = new System.Drawing.Point(949, 51);
+            this.Btn_modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_modificar.Name = "Btn_modificar";
+            this.Btn_modificar.Size = new System.Drawing.Size(176, 44);
+            this.Btn_modificar.TabIndex = 53;
+            this.Btn_modificar.Text = "Modificar";
+            this.Btn_modificar.UseVisualStyleBackColor = true;
+            this.Btn_modificar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_consultarReservacion
+            // 
+            this.Btn_consultarReservacion.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultarReservacion.FlatAppearance.BorderSize = 3;
+            this.Btn_consultarReservacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultarReservacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultarReservacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultarReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultarReservacion.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultarReservacion.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultarReservacion.Image")));
+            this.Btn_consultarReservacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultarReservacion.Location = new System.Drawing.Point(1131, 51);
+            this.Btn_consultarReservacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_consultarReservacion.Name = "Btn_consultarReservacion";
+            this.Btn_consultarReservacion.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultarReservacion.TabIndex = 60;
+            this.Btn_consultarReservacion.Text = "Consultar";
+            this.Btn_consultarReservacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultarReservacion.UseVisualStyleBackColor = false;
+            this.Btn_consultarReservacion.Click += new System.EventHandler(this.Btn_consultarReservacion_Click);
+            // 
+            // Btn_generarReporte
+            // 
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(969, 530);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 61;
+            this.Btn_generarReporte.Text = "Generar reporte bus";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            this.Btn_generarReporte.Click += new System.EventHandler(this.Btn_generarReporte_Click);
+            // 
             // Frm_reservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
+            this.Controls.Add(this.Btn_generarReporte);
+            this.Controls.Add(this.Btn_consultarReservacion);
+            this.Controls.Add(this.Btn_modificar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Lbl_detalle);
@@ -539,5 +619,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn menu;
         private System.Windows.Forms.DataGridViewTextBoxColumn lugarTuristico;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.Button Btn_modificar;
+        private System.Windows.Forms.Button Btn_consultarReservacion;
+        private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_generarReporte;
     }
 }

@@ -397,5 +397,15 @@ namespace Prototipo_Agencia_Turismo.Procesos
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
     }
 }

@@ -33,9 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -120,6 +127,12 @@
     <Compile Include="Consulta\Frm_consultaPerfil.Designer.cs">
       <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\Frm_consultaReservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\Frm_consultaReservacion.Designer.cs">
+      <DependentUpon>Frm_consultaReservacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\Frm_consultaRestaurante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +157,30 @@
     <Compile Include="Consulta\Frm_consultaUsuario.Designer.cs">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteBitacora.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteBitacora.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reportBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reportBitacora.Designer.cs">
+      <DependentUpon>Frm_reportBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteBus.Designer.cs">
+      <DependentUpon>Frm_reporteBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteFactura.Designer.cs">
+      <DependentUpon>Frm_reporteFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\Frm_AsignacionEmpGuia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,11 +193,41 @@
     <Compile Include="Procesos\Frm_Nominas.Designer.cs">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\reporteBus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteBus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteCliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_reporteCliente.Designer.cs">
+      <DependentUpon>Frm_reporteCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteFactura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reservacion\Frm_reservacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reservacion\Frm_reservacion.Designer.cs">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Frm_controlFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Frm_controlFacturas.Designer.cs">
+      <DependentUpon>Frm_controlFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Frm_facturacion.cs">
       <SubType>Form</SubType>
@@ -307,6 +374,9 @@
     <EmbeddedResource Include="Consulta\Frm_consultaPerfil.resx">
       <DependentUpon>Frm_consultaPerfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\Frm_consultaReservacion.resx">
+      <DependentUpon>Frm_consultaReservacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta\Frm_consultaRestaurante.resx">
       <DependentUpon>Frm_consultaRestaurante.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,14 +389,45 @@
     <EmbeddedResource Include="Consulta\Frm_consultaUsuario.resx">
       <DependentUpon>Frm_consultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reporteBitacora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteBitacora.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_reportBitacora.resx">
+      <DependentUpon>Frm_reportBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_reporteBus.resx">
+      <DependentUpon>Frm_reporteBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_reporteFactura.resx">
+      <DependentUpon>Frm_reporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Frm_AsignacionEmpGuia.resx">
       <DependentUpon>Frm_AsignacionEmpGuia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Frm_Nominas.resx">
       <DependentUpon>Frm_Nominas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteBus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteBus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteCliente.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_reporteCliente.resx">
+      <DependentUpon>Frm_reporteCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteFactura.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservacion\Frm_reservacion.resx">
       <DependentUpon>Frm_reservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Frm_controlFacturas.resx">
+      <DependentUpon>Frm_controlFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Frm_facturacion.resx">
       <DependentUpon>Frm_facturacion.cs</DependentUpon>
@@ -400,6 +501,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Prototipo_Agencia_Turismo\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

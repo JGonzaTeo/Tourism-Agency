@@ -16,14 +16,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace Prototipo_Agencia_Turismo.Cotizacion
 {
     public partial class Frm_facturacion : Form
     {
         DateTime fecha = DateTime.Now;
-        int controlSeleccionHotel = 0;
-        int controlSeleccionRestaurante = 0;
         string usuario = " ";
         int idEmpleado = 1;
         int factura_cotizacion = 0;
@@ -59,6 +59,9 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
         private void Rbtn_facturacion_CheckedChanged(object sender, EventArgs e)
         {
             Grpbx_encabezado.Enabled = true;
+            Grb_Hotel.Enabled = true;
+            Grb_Restaurante.Enabled = true;
+            Grb_LugarT.Enabled = true;
             Lbl_titulo.Text = "FACTURACIÓN";
             factura_cotizacion = 1;
         }
@@ -95,9 +98,9 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             Txt_IdEmpleado.Text = usuario;
             Lbl_fechaEmision.Text = fecha.ToString("yyyy/MM/dd");
 
-            Cmbx_tipoPago.DataSource = Cargar();
-            Cmbx_tipoPago.DisplayMember = "NombreTipoPago";
-            Cmbx_tipoPago.ValueMember = "Pk_idTipoPago";
+            Cbo_tipoPago.DataSource = Cargar();
+            Cbo_tipoPago.DisplayMember = "NombreTipoPago";
+            Cbo_tipoPago.ValueMember = "Pk_idTipoPago";
         }
 
         private void Rbtn_facturacion_CheckedChanged_1(object sender, EventArgs e)
@@ -108,6 +111,9 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
         private void Rbtn_cotizacion_CheckedChanged(object sender, EventArgs e)
         {
             Grpbx_encabezado.Enabled = true;
+            Grb_Hotel.Enabled = true;
+            Grb_Restaurante.Enabled = true;
+            Grb_LugarT.Enabled = true;
             Lbl_titulo.Text = "COTIZACIÓN";
             factura_cotizacion = 0;
         }
@@ -122,9 +128,6 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                 Txt_codigoCliente.Text = consultaCliente.Dgv_consultaCliente.Rows[consultaCliente.Dgv_consultaCliente.CurrentRow.Index].Cells[0].Value.ToString();
                 Txt_cliente.Text = consultaCliente.Dgv_consultaCliente.Rows[consultaCliente.Dgv_consultaCliente.CurrentRow.Index].Cells[1].Value.ToString();
             }
-
-            Grpbx_encabezado.Enabled = false;
-            Grb_Hotel.Enabled = true;
         }
 
         private void Btn_consultaHotel_Click(object sender, EventArgs e)
@@ -132,12 +135,10 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             Frm_consultaHotel consultaHotel = new Frm_consultaHotel();
             consultaHotel.ShowDialog();
 
-            if(consultaHotel.DialogResult == DialogResult.OK)
+            if (consultaHotel.DialogResult == DialogResult.OK)
             {
                 Txt_lugarHotel.Text = consultaHotel.Dgv_consultaHotel.Rows[consultaHotel.Dgv_consultaHotel.CurrentRow.Index].Cells[1].Value.ToString();
             }
-
-            Btn_consultaHotel.Enabled = false;
             Btn_consultaHabitación.Enabled = true;
         }
 
@@ -154,7 +155,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                 Lbl_idHabitacion.Text = consultaHabitacion.Dgv_consultaHabitacion.Rows[consultaHabitacion.Dgv_consultaHabitacion.CurrentRow.Index].Cells[0].Value.ToString();
                 precioHabitacion = consultaHabitacion.Dgv_consultaHabitacion.Rows[consultaHabitacion.Dgv_consultaHabitacion.CurrentRow.Index].Cells[4].Value.ToString();
             }
-            cantidadHabitacion = CB_noHab.SelectedIndex.ToString();
+            cantidadHabitacion = Cbo_noHab.SelectedIndex.ToString();
 
             //Conversiones de precio y cantidad de la habitación
             precioHabitacionConvertido = Convert.ToDouble(precioHabitacion);
@@ -163,13 +164,6 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             //Calculo del total
             totalPrecioHabitacion = precioHabitacionConvertido * cantidadHabitacionConvertido + precioHabitacionConvertido;
             Lbl_precioHabitacion.Text = Convert.ToString(totalPrecioHabitacion);
-            
-            Grb_Hotel.Enabled = false;
-            Grb_Restaurante.Enabled = true;
-
-            Btn_consultaRestaurante.Enabled = true;
-            Btn_consultaMenu.Enabled = false;
-            Btn_consultaHabitación.Enabled = false;
         }
 
         private void Btn_consultaRestaurante_Click(object sender, EventArgs e)
@@ -181,8 +175,6 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             {
                 Txt_lugarRestaurante.Text = consultaRestaurante.Dgv_consultaRestaurante.Rows[consultaRestaurante.Dgv_consultaRestaurante.CurrentRow.Index].Cells[1].Value.ToString();
             }
-
-            Btn_consultaRestaurante.Enabled = false;
             Btn_consultaMenu.Enabled = true;
         }
 
@@ -228,13 +220,6 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                 Txt_menu.Text = consultaMenu.Dgv_consultaMenu.Rows[consultaMenu.Dgv_consultaMenu.CurrentRow.Index].Cells[2].Value.ToString();
                 Lbl_precioMenu.Text = consultaMenu.Dgv_consultaMenu.Rows[consultaMenu.Dgv_consultaMenu.CurrentRow.Index].Cells[4].Value.ToString();
             }
-
-            
-            Grb_Restaurante.Enabled = false;
-            Grb_LugarT.Enabled = true;
-           
-            Btn_consultaMenu.Enabled = false;
-            Btn_consultaLugarTuristico.Enabled = true;
         }
 
         int contadorFila = 0; //controla que los campos no se asignen en la misma fila del Dgv
@@ -245,29 +230,47 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             //Si no existe nada en el Dgv
             if(contadorFila == 0)
             {
-                //agrega los valores de los Labels al DataGrid
-                Dgv_detalleFactura.Rows.Add(Lbl_idHabitacion.Text, Lbl_idMenu.Text, Lbl_idLugarT.Text,
-                CB_noHab.SelectedIndex.ToString());
+                if (string.IsNullOrEmpty(Txt_habitacion.Text) == true || string.IsNullOrEmpty(Cbo_noHab.Text) == true ||
+                    string.IsNullOrEmpty(Txt_menu.Text) == true || string.IsNullOrEmpty(Txt_lugarTuristico.Text) == true)
+                {
 
-                //Suma los precios de cada servicio
-                double importe = Convert.ToDouble(Lbl_precioHabitacion.Text) + Convert.ToDouble(Lbl_precioMenu.Text)
-                    + Convert.ToDouble(Lbl_precioLugarT.Text);
+                    MessageBox.Show("Algunos campos no han sido llenados");
+                }
+                else
+                {
+                    //agrega los valores de los Labels al DataGrid
+                    Dgv_detalleFactura.Rows.Add(Lbl_idHabitacion.Text, Lbl_idMenu.Text, Lbl_idLugarT.Text,
+                    Cbo_noHab.SelectedIndex.ToString());
 
-                Dgv_detalleFactura.Rows[contadorFila].Cells[4].Value = importe;
-                contadorFila++;
+                    //Suma los precios de cada servicio
+                    double importe = Convert.ToDouble(Lbl_precioHabitacion.Text) + Convert.ToDouble(Lbl_precioMenu.Text)
+                        + Convert.ToDouble(Lbl_precioLugarT.Text);
+
+                    Dgv_detalleFactura.Rows[contadorFila].Cells[4].Value = importe;
+                    contadorFila++;
+                }
             }
             else
             {
-                //agrega los valores de los Labels al DataGrid
-                Dgv_detalleFactura.Rows.Add(Lbl_idHabitacion.Text, Lbl_idMenu.Text, Lbl_idLugarT.Text,
-                CB_noHab.SelectedIndex.ToString());
+                if (string.IsNullOrEmpty(Txt_habitacion.Text) == true || string.IsNullOrEmpty(Cbo_noHab.Text) == true ||
+                  string.IsNullOrEmpty(Txt_menu.Text) == true || string.IsNullOrEmpty(Txt_lugarTuristico.Text) == true)
+                {
 
-                //Suma los precios de cada servicio
-                double importe = Convert.ToDouble(Lbl_precioHabitacion.Text) + Convert.ToDouble(Lbl_precioMenu.Text)
-                    + Convert.ToDouble(Lbl_precioLugarT.Text);
+                    MessageBox.Show("Algunos campos no han sido llenados");
+                }
+                else
+                {
+                    //agrega los valores de los Labels al DataGrid
+                    Dgv_detalleFactura.Rows.Add(Lbl_idHabitacion.Text, Lbl_idMenu.Text, Lbl_idLugarT.Text,
+                    Cbo_noHab.SelectedIndex.ToString());
 
-                Dgv_detalleFactura.Rows[contadorFila].Cells[4].Value = importe;
-                contadorFila++;
+                    //Suma los precios de cada servicio
+                    double importe = Convert.ToDouble(Lbl_precioHabitacion.Text) + Convert.ToDouble(Lbl_precioMenu.Text)
+                        + Convert.ToDouble(Lbl_precioLugarT.Text);
+
+                    Dgv_detalleFactura.Rows[contadorFila].Cells[4].Value = importe;
+                    contadorFila++;
+                }
             }
             total = 0;
 
@@ -279,11 +282,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             }
             Lbl_resultado.Text = " " + total.ToString();
 
-            Grb_LugarT.Enabled = false;
-            Grb_Hotel.Enabled = true;
-
-            controlSeleccionHotel = 0;
-            controlSeleccionRestaurante = 0;
+            LimpiarDetalle();
         }
 
         private void Btn_quitar_Click(object sender, EventArgs e)
@@ -311,13 +310,13 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             //Área de encabezado
             Txt_codigoCliente.Text = " ";
             Txt_cliente.Text = " ";
-            CB_Pasajero.Text = " ";
+            Cbo_Pasajero.Text = " ";
 
             //Área de selección de habitación
             Txt_lugarHotel.Text = " ";
             Txt_habitacion.Text = " ";
             Lbl_idHabitacion.Text = " ";
-            CB_noHab.Text = " ";
+            Cbo_noHab.Text = " ";
             Lbl_precioHabitacion.Text = " ";
 
             //Área de selección de menú
@@ -330,6 +329,27 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
             Txt_lugarTuristico.Text = " ";
             Lbl_idLugarT.Text = " ";
             Lbl_precioLugarT.Text = " ";
+        }
+
+        private void LimpiarDetalle()
+        {
+            //Área de selección de habitación
+            Txt_lugarHotel.Text = "";
+            Txt_habitacion.Text = "";
+            Lbl_idHabitacion.Text = "";
+            Cbo_noHab.Text = "";
+            Lbl_precioHabitacion.Text = "";
+
+            //Área de selección de menú
+            Txt_lugarRestaurante.Text = "";
+            Txt_menu.Text = "";
+            Lbl_idMenu.Text = "";
+            Lbl_precioMenu.Text = "";
+
+            //Área de lugar turístico
+            Txt_lugarTuristico.Text = "";
+            Lbl_idLugarT.Text = "";
+            Lbl_precioLugarT.Text = "";
         }
 
         int codLinea = 0;
@@ -363,8 +383,8 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     //inserta registro de factura encabezado a la BD
                     string consultaInsertar = "INSERT INTO tbl_facturaencabezado (Pk_idCliente, Pk_idEmpleado, fechaCotizacion," +
                          "cantidadPasajeros, Fk_idTipoPago, Total, Factura_Cotizacion) VALUES('"+idCliente+"' , " +
-                         "'"+idEmpleado+"', '"+Lbl_fechaEmision.Text+"', '"+Convert.ToInt32(CB_Pasajero.Text)+"', " +
-                         "'"+Convert.ToInt32(Cmbx_tipoPago.SelectedValue)+"', '"+Convert.ToInt32(Lbl_resultado.Text)+"', " +
+                         "'"+idEmpleado+"', '"+Lbl_fechaEmision.Text+"', '"+Convert.ToInt32(Cbo_Pasajero.Text)+"', " +
+                         "'"+Convert.ToInt32(Cbo_tipoPago.SelectedValue)+"', '"+Convert.ToInt32(Lbl_resultado.Text)+"', " +
                          "'"+factura_cotizacion+"')";
 
                     OdbcCommand comm = new OdbcCommand(consultaInsertar, Conexion.nuevaConexion());
@@ -401,9 +421,7 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     MessageBox.Show("Se realizo la factura correctamente");
                     Dgv_detalleFactura.Rows.Clear();
                     Limpiar();
-                    Grb_Hotel.Enabled = false;
                     Grpbx_encabezado.Enabled = true;
-                    Btn_consultaCliente.Enabled = false;
                     contadorFila = 0;
 
                     OdbcCommand commBitacora = new OdbcCommand("{call SP_InsertarBitacora(?,?,?,?,?)}", Conexion.nuevaConexion());
@@ -416,16 +434,37 @@ namespace Prototipo_Agencia_Turismo.Cotizacion
                     commBitacora.ExecuteNonQuery();
 
                     commBitacora.Connection.Close();
+
+                    Frm_reporteFactura reporteFactura = new Frm_reporteFactura();
+                    ReportDocument oRep = new ReportDocument();
+                    ParameterField pf = new ParameterField();
+                    ParameterFields pfs = new ParameterFields();
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                    pf.Name = "numFac"; // variable del store procedure
+                    pdv.Value = numFactura; // variable donde se  guarda el numero de factura
+                    pf.CurrentValues.Add(pdv);
+                    pfs.Add(pf);
+                    reporteFactura.crystalReportViewer1.ParameterFieldInfo = pfs;
+                    oRep.Load("C:/Reportes/reporteFactura.rpt");
+                    reporteFactura.crystalReportViewer1.ReportSource = oRep;
+                    reporteFactura.Show();
+                    
                 }
                 catch(Exception err)
                 {
                     Console.WriteLine(err.Message);
+                    MessageBox.Show("Error al realizar la factura");
                 }
             }
             else
             {
                 MessageBox.Show("No se han ingresado campos para facturar");
             }
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
         }
     }
 }

@@ -7,6 +7,7 @@
 using Prototipo_Agencia_Turismo.Cotizacion;
 using Prototipo_Agencia_Turismo.Mantenimiento;
 using Prototipo_Agencia_Turismo.Procesos;
+using Prototipo_Agencia_Turismo.Ventas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -251,27 +252,9 @@ namespace Prototipo_Agencia_Turismo
             }
         }
 
-        bool ventanaFacturacion = false;
-        Frm_facturacion facturacion = new Frm_facturacion("");
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_facturacion);
-            if (ventanaFacturacion == false || frmC == null)
-            {
-                if (frmC == null)
-                {
-                    facturacion = new Frm_facturacion(nombreUsuario);
-                }
-
-                facturacion.MdiParent = this;
-                facturacion.Show();
-                Application.DoEvents();
-                ventanaFacturacion = true;
-            }
-            else
-            {
-                facturacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
-            }
+        
         }
 
         bool ventanaNominas = false;
@@ -624,6 +607,58 @@ namespace Prototipo_Agencia_Turismo
             {
                 habitacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
             }
+        }
+
+        bool ventanaControlFactura = false;
+        Frm_controlFacturas controlFactura = new Frm_controlFacturas("");
+        private void controlDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_controlFacturas);
+            if (ventanaControlFactura == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    controlFactura = new Frm_controlFacturas(nombreUsuario);
+                }
+
+                controlFactura.MdiParent = this;
+                controlFactura.Show();
+                Application.DoEvents();
+                ventanaControlFactura = true;
+            }
+            else
+            {
+                controlFactura.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        bool ventanaFacturacion = false;
+        Frm_facturacion facturacion = new Frm_facturacion("");
+        private void facturaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmC = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Frm_facturacion);
+            if (ventanaFacturacion == false || frmC == null)
+            {
+                if (frmC == null)
+                {
+                    facturacion = new Frm_facturacion(nombreUsuario);
+                }
+
+                facturacion.MdiParent = this;
+                facturacion.Show();
+                Application.DoEvents();
+                ventanaFacturacion = true;
+            }
+            else
+            {
+                facturacion.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            }
+        }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
         }
     }
     }

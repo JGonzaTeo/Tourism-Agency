@@ -29,22 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_bitacora));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_principal = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Dgv_tablaBitacora = new System.Windows.Forms.DataGridView();
-            this.Lbl_nombreUsuario = new System.Windows.Forms.Label();
-            this.Txt_consultaUsuario = new System.Windows.Forms.TextBox();
-            this.Btn_generarReporte = new System.Windows.Forms.Button();
-            this.Btn_actualizar = new System.Windows.Forms.Button();
-            this.Btn_consultaPerfil = new System.Windows.Forms.Button();
             this.idBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operacionBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioBitacora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionIp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lbl_nombreUsuario = new System.Windows.Forms.Label();
+            this.Txt_consultaUsuario = new System.Windows.Forms.TextBox();
+            this.Btn_generarReporte = new System.Windows.Forms.Button();
+            this.Btn_actualizar = new System.Windows.Forms.Button();
+            this.Btn_consultaPerfil = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_tablaBitacora)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +55,7 @@
             // Pnl_principal
             // 
             this.Pnl_principal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_principal.Controls.Add(this.Btn_ayuda);
             this.Pnl_principal.Controls.Add(this.Lbl_titulo);
             this.Pnl_principal.Controls.Add(this.Btn_minimizar);
             this.Pnl_principal.Controls.Add(this.Btn_cerrar);
@@ -61,13 +65,25 @@
             this.Pnl_principal.Size = new System.Drawing.Size(1180, 40);
             this.Pnl_principal.TabIndex = 0;
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 2);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 92;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Lbl_titulo
             // 
             this.Lbl_titulo.AutoSize = true;
-            this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_titulo.Location = new System.Drawing.Point(22, 13);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(94, 19);
+            this.Lbl_titulo.Size = new System.Drawing.Size(102, 20);
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "BITÁCORA";
             // 
@@ -102,6 +118,14 @@
             this.Dgv_tablaBitacora.AllowUserToResizeColumns = false;
             this.Dgv_tablaBitacora.AllowUserToResizeRows = false;
             this.Dgv_tablaBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tablaBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_tablaBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_tablaBitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idBitacora,
@@ -110,6 +134,14 @@
             this.fechaIngreso,
             this.aplicacion,
             this.direccionIp});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dgv_tablaBitacora.DefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_tablaBitacora.Location = new System.Drawing.Point(26, 155);
             this.Dgv_tablaBitacora.Name = "Dgv_tablaBitacora";
             this.Dgv_tablaBitacora.RowHeadersVisible = false;
@@ -117,75 +149,6 @@
             this.Dgv_tablaBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_tablaBitacora.Size = new System.Drawing.Size(1109, 376);
             this.Dgv_tablaBitacora.TabIndex = 1;
-            // 
-            // Lbl_nombreUsuario
-            // 
-            this.Lbl_nombreUsuario.AutoSize = true;
-            this.Lbl_nombreUsuario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombreUsuario.Location = new System.Drawing.Point(23, 101);
-            this.Lbl_nombreUsuario.Name = "Lbl_nombreUsuario";
-            this.Lbl_nombreUsuario.Size = new System.Drawing.Size(173, 21);
-            this.Lbl_nombreUsuario.TabIndex = 2;
-            this.Lbl_nombreUsuario.Text = "Nombre de usuario:";
-            // 
-            // Txt_consultaUsuario
-            // 
-            this.Txt_consultaUsuario.Location = new System.Drawing.Point(221, 99);
-            this.Txt_consultaUsuario.Name = "Txt_consultaUsuario";
-            this.Txt_consultaUsuario.Size = new System.Drawing.Size(844, 23);
-            this.Txt_consultaUsuario.TabIndex = 3;
-            // 
-            // Btn_generarReporte
-            // 
-            this.Btn_generarReporte.Enabled = false;
-            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
-            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_generarReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_generarReporte.Location = new System.Drawing.Point(971, 575);
-            this.Btn_generarReporte.Name = "Btn_generarReporte";
-            this.Btn_generarReporte.Size = new System.Drawing.Size(164, 41);
-            this.Btn_generarReporte.TabIndex = 4;
-            this.Btn_generarReporte.Text = "Generar reporte";
-            this.Btn_generarReporte.UseVisualStyleBackColor = true;
-            // 
-            // Btn_actualizar
-            // 
-            this.Btn_actualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Btn_actualizar.FlatAppearance.BorderSize = 3;
-            this.Btn_actualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_actualizar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_actualizar.Location = new System.Drawing.Point(771, 575);
-            this.Btn_actualizar.Name = "Btn_actualizar";
-            this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
-            this.Btn_actualizar.TabIndex = 5;
-            this.Btn_actualizar.Text = "Actualizar";
-            this.Btn_actualizar.UseVisualStyleBackColor = true;
-            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
-            // 
-            // Btn_consultaPerfil
-            // 
-            this.Btn_consultaPerfil.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Btn_consultaPerfil.FlatAppearance.BorderSize = 3;
-            this.Btn_consultaPerfil.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.Btn_consultaPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.Btn_consultaPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.Btn_consultaPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_consultaPerfil.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_consultaPerfil.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaPerfil.Image")));
-            this.Btn_consultaPerfil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_consultaPerfil.Location = new System.Drawing.Point(1095, 82);
-            this.Btn_consultaPerfil.Name = "Btn_consultaPerfil";
-            this.Btn_consultaPerfil.Size = new System.Drawing.Size(40, 40);
-            this.Btn_consultaPerfil.TabIndex = 42;
-            this.Btn_consultaPerfil.Text = "Consultar";
-            this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
-            this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
             // 
             // idBitacora
             // 
@@ -217,9 +180,81 @@
             this.direccionIp.HeaderText = "Dirección IP";
             this.direccionIp.Name = "direccionIp";
             // 
+            // Lbl_nombreUsuario
+            // 
+            this.Lbl_nombreUsuario.AutoSize = true;
+            this.Lbl_nombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_nombreUsuario.Location = new System.Drawing.Point(23, 101);
+            this.Lbl_nombreUsuario.Name = "Lbl_nombreUsuario";
+            this.Lbl_nombreUsuario.Size = new System.Drawing.Size(156, 20);
+            this.Lbl_nombreUsuario.TabIndex = 2;
+            this.Lbl_nombreUsuario.Text = "Nombre de usuario:";
+            // 
+            // Txt_consultaUsuario
+            // 
+            this.Txt_consultaUsuario.Location = new System.Drawing.Point(221, 99);
+            this.Txt_consultaUsuario.Name = "Txt_consultaUsuario";
+            this.Txt_consultaUsuario.Size = new System.Drawing.Size(844, 22);
+            this.Txt_consultaUsuario.TabIndex = 3;
+            // 
+            // Btn_generarReporte
+            // 
+            this.Btn_generarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_generarReporte.FlatAppearance.BorderSize = 3;
+            this.Btn_generarReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarReporte.Image = ((System.Drawing.Image)(resources.GetObject("Btn_generarReporte.Image")));
+            this.Btn_generarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_generarReporte.Location = new System.Drawing.Point(946, 575);
+            this.Btn_generarReporte.Name = "Btn_generarReporte";
+            this.Btn_generarReporte.Size = new System.Drawing.Size(189, 41);
+            this.Btn_generarReporte.TabIndex = 4;
+            this.Btn_generarReporte.Text = "Generar reporte";
+            this.Btn_generarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_generarReporte.UseVisualStyleBackColor = true;
+            this.Btn_generarReporte.Click += new System.EventHandler(this.Btn_generarReporte_Click);
+            // 
+            // Btn_actualizar
+            // 
+            this.Btn_actualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_actualizar.FlatAppearance.BorderSize = 3;
+            this.Btn_actualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_actualizar.Location = new System.Drawing.Point(771, 575);
+            this.Btn_actualizar.Name = "Btn_actualizar";
+            this.Btn_actualizar.Size = new System.Drawing.Size(164, 41);
+            this.Btn_actualizar.TabIndex = 5;
+            this.Btn_actualizar.Text = "Actualizar";
+            this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
+            // 
+            // Btn_consultaPerfil
+            // 
+            this.Btn_consultaPerfil.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Btn_consultaPerfil.FlatAppearance.BorderSize = 3;
+            this.Btn_consultaPerfil.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.Btn_consultaPerfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Btn_consultaPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Btn_consultaPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_consultaPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_consultaPerfil.Image = ((System.Drawing.Image)(resources.GetObject("Btn_consultaPerfil.Image")));
+            this.Btn_consultaPerfil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_consultaPerfil.Location = new System.Drawing.Point(1095, 82);
+            this.Btn_consultaPerfil.Name = "Btn_consultaPerfil";
+            this.Btn_consultaPerfil.Size = new System.Drawing.Size(40, 40);
+            this.Btn_consultaPerfil.TabIndex = 42;
+            this.Btn_consultaPerfil.Text = "Consultar";
+            this.Btn_consultaPerfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_consultaPerfil.UseVisualStyleBackColor = false;
+            this.Btn_consultaPerfil.Click += new System.EventHandler(this.Btn_consultaPerfil_Click);
+            // 
             // Frm_bitacora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 640);
             this.Controls.Add(this.Btn_consultaPerfil);
@@ -229,7 +264,7 @@
             this.Controls.Add(this.Lbl_nombreUsuario);
             this.Controls.Add(this.Dgv_tablaBitacora);
             this.Controls.Add(this.Pnl_principal);
-            this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_bitacora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -261,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn aplicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionIp;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

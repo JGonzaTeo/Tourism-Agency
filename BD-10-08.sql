@@ -95,7 +95,7 @@ CREATE TABLE `tbl_bitacora` (
   `proceso_afectado` varchar(45) NOT NULL,
   `direccion_ip` varchar(45) NOT NULL,
   PRIMARY KEY (`Pk_idBitacora`)
-) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `tbl_bitacora` (
 
 LOCK TABLES `tbl_bitacora` WRITE;
 /*!40000 ALTER TABLE `tbl_bitacora` DISABLE KEYS */;
-INSERT INTO `tbl_bitacora` VALUES (90,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(91,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(92,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(93,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(94,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(95,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(96,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(97,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(98,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(99,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(100,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(101,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(102,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(103,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(104,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(105,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(106,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(107,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(108,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(109,'INICION DE SESIÓN','admin','2019-08-02 00:00:00','-------------','192.168.1.9'),(110,'NUEVO REGISTRO','','2019-08-02 00:00:00','Empleado','192.168.1.9'),(111,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(112,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(113,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(114,'MODIFICAR','','2019-08-02 00:00:00','Empleado','192.168.1.9'),(115,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.103'),(116,'CIERRE DE SESIÓN','edson','2019-08-02 00:00:00','-----','192.168.43.103'),(117,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.103'),(118,'CIERRE DE SESIÓN','edson','2019-08-02 00:00:00','-----','192.168.43.103'),(119,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.103'),(120,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.187'),(121,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(122,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(123,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(124,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(125,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(126,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(127,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(128,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(129,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(130,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(131,'CIERRE DE SESIÓN','edson','2019-08-02 00:00:00','-----','192.168.43.103'),(132,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.43.104'),(133,'INGRESO DE REGISTRO',' ','2019-08-02 00:00:00','DEPARTAMENTOS','192.168.43.104'),(134,'CIERRE DE SESIÓN','jose','2019-08-02 00:00:00','-----','192.168.43.104'),(135,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.43.104'),(136,'INGRESO DE REGISTRO','jose','2019-08-02 00:00:00','DEPARTAMENTOS','192.168.43.104'),(137,'CIERRE DE SESIÓN','jose','2019-08-02 00:00:00','-----','192.168.43.104'),(138,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(139,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(140,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(141,'INICION DE SESIÓN','edson','2019-08-03 00:00:00','-------------','192.168.0.5'),(142,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(143,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(144,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(145,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(146,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(147,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(148,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(149,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(150,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(151,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(152,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(153,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(154,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(155,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(156,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(157,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(158,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(159,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(160,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(161,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(162,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(163,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(164,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(165,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(166,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(167,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(168,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(169,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(170,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(171,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(172,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(173,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(174,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(175,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(176,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(177,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(178,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(179,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(180,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(181,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(182,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(183,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(184,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(185,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(186,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(187,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(188,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(189,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(190,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(191,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(192,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(193,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(194,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(195,'PROCESO DE FACTURACIÓN','admin','2019-08-03 00:00:00','VENTAS','192.168.0.5'),(196,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(197,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(198,'PROCESO DE FACTURACIÓN','admin','2019-08-03 00:00:00','VENTAS','192.168.0.5'),(199,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(200,'CREACION DE RESERVACION/ASIGNACION TRANSPORTE','admin','2019-08-03 00:00:00','Empleado','?'),(201,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(202,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(203,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(204,'INICION DE SESIÓN','admin','2019-08-04 00:00:00','-------------','192.168.0.5'),(205,'CIERRE DE SESIÓN','admin','2019-08-04 00:00:00','-----','192.168.0.5'),(206,'INICION DE SESIÓN','jose','2019-08-04 00:00:00','-------------','192.168.0.5'),(207,'CIERRE DE SESIÓN','jose','2019-08-04 00:00:00','-----','192.168.0.5'),(208,'INICION DE SESIÓN','edson','2019-08-04 00:00:00','-------------','192.168.0.5'),(209,'CIERRE DE SESIÓN','edson','2019-08-04 00:00:00','-----','192.168.0.5'),(210,'INICION DE SESIÓN','ivan','2019-08-04 00:00:00','-------------','192.168.0.5'),(211,'CIERRE DE SESIÓN','ivan','2019-08-04 00:00:00','-----','192.168.0.5'),(212,'INICION DE SESIÓN','angel','2019-08-04 00:00:00','-------------','192.168.0.5'),(213,'CIERRE DE SESIÓN','angel','2019-08-04 00:00:00','-----','192.168.0.5');
+INSERT INTO `tbl_bitacora` VALUES (90,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(91,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(92,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(93,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(94,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(95,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(96,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(97,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(98,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(99,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(100,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(101,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(102,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(103,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(104,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(105,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(106,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(107,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(108,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.1.9'),(109,'INICION DE SESIÓN','admin','2019-08-02 00:00:00','-------------','192.168.1.9'),(110,'NUEVO REGISTRO','','2019-08-02 00:00:00','Empleado','192.168.1.9'),(111,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(112,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(113,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.1.9'),(114,'MODIFICAR','','2019-08-02 00:00:00','Empleado','192.168.1.9'),(115,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.103'),(116,'CIERRE DE SESIÓN','edson','2019-08-02 00:00:00','-----','192.168.43.103'),(117,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.103'),(118,'CIERRE DE SESIÓN','edson','2019-08-02 00:00:00','-----','192.168.43.103'),(119,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.103'),(120,'INICION DE SESIÓN','edson','2019-08-02 00:00:00','-------------','192.168.43.187'),(121,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(122,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(123,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(124,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(125,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(126,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(127,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(128,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(129,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(130,'INICION DE SESIÓN',' ','2019-08-02 00:00:00','-------------','192.168.43.187'),(131,'CIERRE DE SESIÓN','edson','2019-08-02 00:00:00','-----','192.168.43.103'),(132,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.43.104'),(133,'INGRESO DE REGISTRO',' ','2019-08-02 00:00:00','DEPARTAMENTOS','192.168.43.104'),(134,'CIERRE DE SESIÓN','jose','2019-08-02 00:00:00','-----','192.168.43.104'),(135,'INICION DE SESIÓN','jose','2019-08-02 00:00:00','-------------','192.168.43.104'),(136,'INGRESO DE REGISTRO','jose','2019-08-02 00:00:00','DEPARTAMENTOS','192.168.43.104'),(137,'CIERRE DE SESIÓN','jose','2019-08-02 00:00:00','-----','192.168.43.104'),(138,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(139,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(140,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(141,'INICION DE SESIÓN','edson','2019-08-03 00:00:00','-------------','192.168.0.5'),(142,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(143,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(144,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(145,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(146,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(147,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(148,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(149,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(150,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(151,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(152,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(153,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(154,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(155,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(156,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(157,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(158,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(159,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(160,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(161,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(162,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(163,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(164,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(165,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(166,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(167,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(168,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(169,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(170,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(171,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(172,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(173,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(174,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(175,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(176,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(177,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(178,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(179,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(180,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(181,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(182,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(183,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(184,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(185,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(186,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(187,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(188,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(189,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(190,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(191,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(192,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(193,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(194,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(195,'PROCESO DE FACTURACIÓN','admin','2019-08-03 00:00:00','VENTAS','192.168.0.5'),(196,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(197,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(198,'PROCESO DE FACTURACIÓN','admin','2019-08-03 00:00:00','VENTAS','192.168.0.5'),(199,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(200,'CREACION DE RESERVACION/ASIGNACION TRANSPORTE','admin','2019-08-03 00:00:00','Empleado','?'),(201,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(202,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(203,'INICION DE SESIÓN','admin','2019-08-03 00:00:00','-------------','192.168.0.5'),(204,'INICION DE SESIÓN','admin','2019-08-04 00:00:00','-------------','192.168.0.5'),(205,'CIERRE DE SESIÓN','admin','2019-08-04 00:00:00','-----','192.168.0.5'),(206,'INICION DE SESIÓN','jose','2019-08-04 00:00:00','-------------','192.168.0.5'),(207,'CIERRE DE SESIÓN','jose','2019-08-04 00:00:00','-----','192.168.0.5'),(208,'INICION DE SESIÓN','edson','2019-08-04 00:00:00','-------------','192.168.0.5'),(209,'CIERRE DE SESIÓN','edson','2019-08-04 00:00:00','-----','192.168.0.5'),(210,'INICION DE SESIÓN','ivan','2019-08-04 00:00:00','-------------','192.168.0.5'),(211,'CIERRE DE SESIÓN','ivan','2019-08-04 00:00:00','-----','192.168.0.5'),(212,'INICION DE SESIÓN','angel','2019-08-04 00:00:00','-------------','192.168.0.5'),(213,'CIERRE DE SESIÓN','angel','2019-08-04 00:00:00','-----','192.168.0.5'),(214,' ',' ','1900-01-01 00:00:00',' ',' '),(215,' ',' ','1900-01-01 00:00:00',' ',' '),(216,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(217,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(218,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(219,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(220,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(221,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(222,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(223,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(224,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(225,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(226,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(227,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(228,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(229,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(230,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(231,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(232,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(233,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(234,'PROCESO DE FACTURACIÓN','admin','2019-08-10 00:00:00','VENTAS','192.168.0.4'),(235,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(236,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(237,'ELIMINACIÓN DE FACTURA','admin','2019-08-10 00:00:00','CONTROL DE FACTURAS','192.168.0.4'),(238,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(239,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(240,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4'),(241,'INICION DE SESIÓN','admin','2019-08-10 00:00:00','-------------','192.168.0.4');
 /*!40000 ALTER TABLE `tbl_bitacora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `tbl_bonos_descuentos` (
   `Bono_Desc` tinyint(1) DEFAULT NULL,
   `Estado` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Pk_idBonos_Desc`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,6 +131,7 @@ CREATE TABLE `tbl_bonos_descuentos` (
 
 LOCK TABLES `tbl_bonos_descuentos` WRITE;
 /*!40000 ALTER TABLE `tbl_bonos_descuentos` DISABLE KEYS */;
+INSERT INTO `tbl_bonos_descuentos` VALUES (1,' ',0,0,0),(2,' ',0,0,0);
 /*!40000 ALTER TABLE `tbl_bonos_descuentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +180,7 @@ CREATE TABLE `tbl_departamentos` (
   `DescripcionDepartamento` varchar(45) DEFAULT NULL,
   `estadoDepartamento` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`Pk_idDepartamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +189,7 @@ CREATE TABLE `tbl_departamentos` (
 
 LOCK TABLES `tbl_departamentos` WRITE;
 /*!40000 ALTER TABLE `tbl_departamentos` DISABLE KEYS */;
-INSERT INTO `tbl_departamentos` VALUES (1,'Guatemala','Peligroso',1),(2,'Zapaca','Infierno',1);
+INSERT INTO `tbl_departamentos` VALUES (1,'Guatemala','Peligroso',1),(2,'Zapaca','Infierno',1),(3,' ',' ',1),(4,' ',' ',1);
 /*!40000 ALTER TABLE `tbl_departamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +219,7 @@ CREATE TABLE `tbl_empleado` (
   PRIMARY KEY (`Pk_idEmpleado`),
   KEY `fk_Tbl_empleado_Tbl_usuario_idx` (`Fk_idUsuario`),
   CONSTRAINT `fk_Tbl_empleado_Tbl_usuario` FOREIGN KEY (`Fk_idUsuario`) REFERENCES `tbl_usuario` (`Pk_idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +263,7 @@ CREATE TABLE `tbl_facturadetalle` (
 
 LOCK TABLES `tbl_facturadetalle` WRITE;
 /*!40000 ALTER TABLE `tbl_facturadetalle` DISABLE KEYS */;
-INSERT INTO `tbl_facturadetalle` VALUES (11,1995461673,1,1,1,3),(12,861703383,1,1,1,1),(13,702952675,1,1,1,0),(14,674925169,1,1,1,0),(15,348671078,1,1,1,6),(16,1600748774,1,1,1,2),(17,62925841,1,1,1,2),(17,796700439,2,2,2,6),(18,524370221,2,2,2,9),(18,2079518173,2,1,1,1),(19,393385965,2,2,2,9),(19,737577323,1,1,1,1),(20,95953033,2,1,2,3),(20,2070127402,2,1,2,1),(21,97511713,1,1,1,2),(21,601161250,2,2,2,6),(22,1576199354,1,1,1,6);
+INSERT INTO `tbl_facturadetalle` VALUES (11,1995461673,1,1,1,3),(12,861703383,1,1,1,1),(13,702952675,1,1,1,0),(14,674925169,1,1,1,0),(15,348671078,1,1,1,6),(16,1600748774,1,1,1,2),(17,62925841,1,1,1,2),(17,796700439,2,2,2,6),(18,524370221,2,2,2,9),(18,2079518173,2,1,1,1),(19,393385965,2,2,2,9),(19,737577323,1,1,1,1),(20,95953033,2,1,2,3),(20,2070127402,2,1,2,1),(21,97511713,1,1,1,2),(21,601161250,2,2,2,6),(22,1576199354,1,1,1,6),(23,442692596,2,2,2,2),(23,558793624,1,1,1,0),(24,533779143,1,1,1,7),(25,1852483582,1,1,1,7),(26,112791041,1,1,2,9),(27,230200919,1,1,1,2),(27,1821874198,1,1,1,6),(28,926334048,1,1,1,3),(28,1020228155,2,1,2,0),(28,1130571637,1,1,1,4),(29,149038404,1,1,1,2),(30,1149827649,1,1,1,1),(31,304102206,2,1,1,3),(31,801559344,1,1,1,2),(31,1373135268,1,1,2,3),(32,260044769,1,1,1,9),(32,961190993,2,2,1,8);
 /*!40000 ALTER TABLE `tbl_facturadetalle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,6 +283,7 @@ CREATE TABLE `tbl_facturaencabezado` (
   `Fk_idTipoPago` int(11) DEFAULT NULL,
   `Total` double DEFAULT NULL,
   `Factura_Cotizacion` tinyint(1) DEFAULT NULL,
+  `estado` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Pk_idFactura`,`Pk_idCliente`,`Pk_idEmpleado`),
   KEY `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1_idx` (`Pk_idEmpleado`),
   KEY `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1_idx` (`Pk_idCliente`),
@@ -289,7 +291,7 @@ CREATE TABLE `tbl_facturaencabezado` (
   CONSTRAINT `fk_Tbl_CotizacionEncabezado_Tbl_Cliente1` FOREIGN KEY (`Pk_idCliente`) REFERENCES `tbl_cliente` (`Pk_idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Tbl_CotizacionEncabezado_Tbl_Empleado1` FOREIGN KEY (`Pk_idEmpleado`) REFERENCES `tbl_empleado` (`Pk_idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Tbl_FacturaEncabezado_Tbl_TipoPago1` FOREIGN KEY (`Fk_idTipoPago`) REFERENCES `tbl_tipopagos` (`Pk_idTipoPago`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -298,7 +300,7 @@ CREATE TABLE `tbl_facturaencabezado` (
 
 LOCK TABLES `tbl_facturaencabezado` WRITE;
 /*!40000 ALTER TABLE `tbl_facturaencabezado` DISABLE KEYS */;
-INSERT INTO `tbl_facturaencabezado` VALUES (3,1,1,'2019-08-03',4,2,1300,1),(4,1,1,'2019-08-03',4,3,3700,0),(5,1,1,'2019-08-03',3,2,1500,0),(6,1,1,'2019-08-03',1,2,2200,1),(7,1,1,'2019-08-03',10,1,2200,1),(9,1,1,'2019-08-03',2,1,5550,1),(10,1,1,'2019-08-03',2,1,2200,1),(11,1,1,'2019-08-03',2,3,3850,1),(12,1,1,'2019-08-03',3,2,2200,1),(13,1,1,'2019-08-03',3,2,2450,1),(14,1,1,'2019-08-03',3,2,2450,1),(15,1,1,'2019-08-03',7,1,4700,1),(16,1,1,'2019-08-03',3,1,3950,1),(17,1,1,'2019-08-03',3,1,3950,1),(18,1,1,'2019-08-03',10,1,2850,1),(19,1,1,'2019-08-03',10,1,3250,1),(20,1,1,'2019-08-03',5,2,3400,1),(21,1,1,'2019-08-03',3,3,3950,0),(22,1,1,'2019-08-03',7,1,4700,1);
+INSERT INTO `tbl_facturaencabezado` VALUES (3,1,1,'2019-08-03',4,2,1300,1,0),(4,1,1,'2019-08-03',4,3,3700,0,0),(5,1,1,'2019-08-03',3,2,1500,0,0),(6,1,1,'2019-08-03',1,2,2200,1,0),(7,1,1,'2019-08-03',10,1,2200,1,0),(9,1,1,'2019-08-03',2,1,5550,1,0),(10,1,1,'2019-08-03',2,1,2200,1,0),(11,1,1,'2019-08-03',2,3,3850,1,0),(12,1,1,'2019-08-03',3,2,2200,1,0),(13,1,1,'2019-08-03',3,2,2450,1,0),(14,1,1,'2019-08-03',3,2,2450,1,0),(15,1,1,'2019-08-03',7,1,4700,1,0),(16,1,1,'2019-08-03',3,1,3950,1,0),(17,1,1,'2019-08-03',3,1,3950,1,0),(18,1,1,'2019-08-03',10,1,2850,1,0),(19,1,1,'2019-08-03',10,1,3250,1,0),(20,1,1,'2019-08-03',5,2,3400,1,0),(21,1,1,'2019-08-03',3,3,3950,0,0),(22,1,1,'2019-08-03',7,1,4700,1,0),(23,1,1,'2019-08-10',1,1,2550,1,0),(24,1,1,'2019-08-10',4,1,5200,1,0),(25,1,1,'2019-08-10',3,1,5200,1,0),(26,1,1,'2019-08-10',4,1,6400,1,0),(27,1,1,'2019-08-10',5,1,7400,1,0),(28,1,1,'2019-08-10',5,1,8400,1,0),(29,1,1,'2019-08-10',4,1,2700,1,0),(30,1,1,'2019-08-10',4,1,2200,1,0),(31,1,1,'2019-08-10',4,1,7700,1,0),(32,1,1,'2019-08-10',10,1,7450,1,1);
 /*!40000 ALTER TABLE `tbl_facturaencabezado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -315,7 +317,7 @@ CREATE TABLE `tbl_guiaturistico` (
   `Descripcion` varchar(45) DEFAULT NULL,
   `Estado` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Pk_idGuia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,6 +326,7 @@ CREATE TABLE `tbl_guiaturistico` (
 
 LOCK TABLES `tbl_guiaturistico` WRITE;
 /*!40000 ALTER TABLE `tbl_guiaturistico` DISABLE KEYS */;
+INSERT INTO `tbl_guiaturistico` VALUES (1,' ',' ',0),(2,' ',' ',0);
 /*!40000 ALTER TABLE `tbl_guiaturistico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -623,7 +626,7 @@ CREATE TABLE `tbl_transporte` (
   `Capacidad` int(11) DEFAULT NULL,
   `estadoTransporte` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`Pk_idTransporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -632,7 +635,7 @@ CREATE TABLE `tbl_transporte` (
 
 LOCK TABLES `tbl_transporte` WRITE;
 /*!40000 ALTER TABLE `tbl_transporte` DISABLE KEYS */;
-INSERT INTO `tbl_transporte` VALUES (1,'DDFDe','Troca',35,1);
+INSERT INTO `tbl_transporte` VALUES (1,'DDFDe','Troca',35,1),(2,' ',' ',0,1),(3,' ',' ',0,1);
 /*!40000 ALTER TABLE `tbl_transporte` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -665,6 +668,27 @@ LOCK TABLES `tbl_usuario` WRITE;
 INSERT INTO `tbl_usuario` VALUES (1,'admin','123',1,1,0),(2,'jose','123',2,1,0),(3,'edson','123',3,1,0),(4,'ivan','456',4,1,0),(5,'angel','789',5,1,0);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `view_cliente`
+--
+
+DROP TABLE IF EXISTS `view_cliente`;
+/*!50001 DROP VIEW IF EXISTS `view_cliente`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `view_cliente` AS SELECT 
+ 1 AS `Pk_idCliente`,
+ 1 AS `nombreCliente`,
+ 1 AS `apellidoCliente`,
+ 1 AS `telefonoCelCliente`,
+ 1 AS `telefonoCasaCliente`,
+ 1 AS `correoCliente`,
+ 1 AS `correoAltCliente`,
+ 1 AS `identificacionCliente`,
+ 1 AS `nitCliente`,
+ 1 AS `estadoCliente`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Temporary view structure for view `view_departamento`
@@ -821,6 +845,53 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SP_BuscarFactura` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BuscarFactura`(IN numFac VARCHAR(10))
+BEGIN
+SELECT C.Pk_idCliente, C.nombreCliente, C.apellidoCliente, F.Pk_idFactura, F.cantidadPasajeros, T.NombreTipoPago, F.Total
+FROM tbl_facturaencabezado F, tbl_cliente C, tbl_tipopagos T
+WHERE F.Pk_idCliente = C.Pk_idCliente 
+AND F.Fk_idTipoPago = T.Pk_idTipoPago
+AND F.Pk_idFactura like numFac;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SP_BuscarFacturaDetalle` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BuscarFacturaDetalle`(IN numFac VARCHAR(10))
+BEGIN
+SELECT H.nombreHabitacion, M.nombreMenu, L.NombreLugarTuristico, FD.cantidadHabitaciones
+FROM tbl_facturadetalle FD, tbl_tipohabitacion H, tbl_menus M, tbl_lugarturistico L 
+WHERE FD.Fk_idTipoHabitacion = H.Pk_idTipoHabitacion 
+AND FD.FK_idMenus = M.Pk_idMenus
+AND FD.Fk_idLugarTuristico = L.Pk_idLugarTuristico
+AND FD.Pk_idFactura LIKE numFac;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `Sp_Buscarguia` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -835,6 +906,25 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Buscarguia`(in nom VARCHAR(45))
 BEGIN
 SELECT Pk_idBonos_Desc,Nombre,Valor,Bono_Desc FROM tbl_bonos_descuentos 
 WHERE Nombre = nom;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SP_buses` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_buses`(in a int )
+BEGIN
+select * from tbl_asignaciontransporte where fechasalida > DATE_FORMAT(NOW(),"%Y-%m-%d") AND fechaentrada > DATE_FORMAT(NOW(),"%Y-%m-%d");
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -977,6 +1067,26 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_InsertarAsigacionTransporte`(in 
 in entrada DATE)
 BEGIN
 	insert into tbl_asignaciontransporte values (0,idTransporte, idReservacion, idEmpleado, salida, entrada);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Sp_Insertarasignacionempguia` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_Insertarasignacionempguia`(in idempleado INT(11),in idguia INT(11),in horarioinicio DATE,in horariofin DATE)
+BEGIN
+insert into tbl_asignacionempleadoaguia(Pk_idEmpleado,Pk_idGuia,Horario_Inicio,Horario_Fin) 
+VALUES (idempleado,idguia,horarioinicio,horariofin);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1239,6 +1349,34 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Sp_ModificarReservacion` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Sp_ModificarReservacion`(in idCotizacion int(11), in idPago int(11), 
+in cod int(11), in idTransporte int(11), in idEmpleado int(11), in salida date,
+in entrada date, in cod2 int(11))
+BEGIN
+UPDATE tbl_reservacion
+SET Fk_idCotizacion = idCotizacion, Fk_idTipoPago = idPago
+WHERE Pk_idReservacion = cod;
+
+UPDATE tbl_asignaciontransporte
+SET Fk_idTransporte = idTransporte, Fk_idEmpleado = idEmpleado, FechaSalida = salida,
+FechaEntrada = entrada
+WHERE Pk_idAsignacion=cod2;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `Sp_sueldoliquido` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1260,6 +1398,24 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `view_cliente`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_cliente`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_cliente` AS select `tbl_cliente`.`Pk_idCliente` AS `Pk_idCliente`,`tbl_cliente`.`nombreCliente` AS `nombreCliente`,`tbl_cliente`.`apellidoCliente` AS `apellidoCliente`,`tbl_cliente`.`telefonoCelCliente` AS `telefonoCelCliente`,`tbl_cliente`.`telefonoCasaCliente` AS `telefonoCasaCliente`,`tbl_cliente`.`correoCliente` AS `correoCliente`,`tbl_cliente`.`correoAltCliente` AS `correoAltCliente`,`tbl_cliente`.`identificacionCliente` AS `identificacionCliente`,`tbl_cliente`.`nitCliente` AS `nitCliente`,`tbl_cliente`.`estadoCliente` AS `estadoCliente` from `tbl_cliente` where (`tbl_cliente`.`estadoCliente` = 1) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
 -- Final view structure for view `view_departamento`
@@ -1306,4 +1462,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-04 10:21:54
+-- Dump completed on 2019-08-10 23:15:50

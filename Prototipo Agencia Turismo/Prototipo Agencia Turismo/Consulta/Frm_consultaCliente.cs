@@ -108,5 +108,18 @@ namespace Prototipo_Agencia_Turismo.Consulta
                 Close();
             }
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayudas Agencia Turismo.chm");
+        }
+
+        private void Btn_generarReporte_Click(object sender, EventArgs e)
+        {
+            
+
+            Reportes.Frm_reporteCliente rptCliente = new Reportes.Frm_reporteCliente();
+            rptCliente.ShowDialog();
+        }
     }
 }

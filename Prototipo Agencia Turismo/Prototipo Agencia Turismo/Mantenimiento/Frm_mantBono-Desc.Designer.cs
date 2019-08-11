@@ -47,6 +47,7 @@
             this.Btn_minimizar = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Pnl_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,7 +262,7 @@
             this.Pnl_principal.Location = new System.Drawing.Point(0, 0);
             this.Pnl_principal.Margin = new System.Windows.Forms.Padding(5);
             this.Pnl_principal.Name = "Pnl_principal";
-            this.Pnl_principal.Size = new System.Drawing.Size(1162, 51);
+            this.Pnl_principal.Size = new System.Drawing.Size(1162, 40);
             this.Pnl_principal.TabIndex = 51;
             // 
             // Btn_minimizar
@@ -272,7 +273,7 @@
             this.Btn_minimizar.Location = new System.Drawing.Point(1020, 1);
             this.Btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimizar.Name = "Btn_minimizar";
-            this.Btn_minimizar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_minimizar.Size = new System.Drawing.Size(44, 40);
             this.Btn_minimizar.TabIndex = 11;
             this.Btn_minimizar.UseVisualStyleBackColor = true;
             this.Btn_minimizar.Click += new System.EventHandler(this.Btn_minimizar_Click_1);
@@ -285,7 +286,7 @@
             this.Btn_cerrar.Location = new System.Drawing.Point(1100, 1);
             this.Btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(44, 48);
+            this.Btn_cerrar.Size = new System.Drawing.Size(44, 40);
             this.Btn_cerrar.TabIndex = 10;
             this.Btn_cerrar.UseVisualStyleBackColor = true;
             this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click_1);
@@ -301,11 +302,24 @@
             this.Lbl_titulo.TabIndex = 1;
             this.Lbl_titulo.Text = "Bonos Y Descuentos";
             // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ayuda.Image")));
+            this.Btn_ayuda.Location = new System.Drawing.Point(945, 1);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(35, 35);
+            this.Btn_ayuda.TabIndex = 105;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // Frm_mantBono_Desc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 593);
+            this.Controls.Add(this.Btn_ayuda);
             this.Controls.Add(this.Chk_descuento);
             this.Controls.Add(this.Chk_bono);
             this.Controls.Add(this.Lbl_valor);
@@ -353,5 +367,6 @@
         private System.Windows.Forms.Button Btn_minimizar;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Label Lbl_titulo;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

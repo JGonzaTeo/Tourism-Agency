@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_mdi));
             this.MenStrip_menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.reservacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guíasTurísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planesDeViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +56,7 @@
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.MenStrip_menuPrincipal.SuspendLayout();
@@ -71,7 +75,8 @@
             this.seguridadToolStripMenuItem,
             this.mantenimientosToolStripMenuItem,
             this.contabilidadToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.cerrarSesiónToolStripMenuItem,
+            this.xToolStripMenuItem});
             this.MenStrip_menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MenStrip_menuPrincipal.Name = "MenStrip_menuPrincipal";
             this.MenStrip_menuPrincipal.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -104,11 +109,28 @@
             // cotizacionesToolStripMenuItem
             // 
             this.cotizacionesToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.facturaciónToolStripMenuItem,
+            this.controlDeFacturasToolStripMenuItem});
             this.cotizacionesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(120, 34);
-            this.cotizacionesToolStripMenuItem.Text = "Facturación";
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(79, 34);
+            this.cotizacionesToolStripMenuItem.Text = "Ventas";
             this.cotizacionesToolStripMenuItem.Click += new System.EventHandler(this.cotizacionesToolStripMenuItem_Click);
+            // 
+            // facturaciónToolStripMenuItem
+            // 
+            this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.facturaciónToolStripMenuItem.Text = "Facturación";
+            this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.facturaciónToolStripMenuItem_Click);
+            // 
+            // controlDeFacturasToolStripMenuItem
+            // 
+            this.controlDeFacturasToolStripMenuItem.Name = "controlDeFacturasToolStripMenuItem";
+            this.controlDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.controlDeFacturasToolStripMenuItem.Text = "Control de facturas";
+            this.controlDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.controlDeFacturasToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -126,21 +148,21 @@
             // 
             this.bitácoraToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.bitácoraToolStripMenuItem.Text = "Bitácora";
             this.bitácoraToolStripMenuItem.Click += new System.EventHandler(this.bitácoraToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
@@ -270,7 +292,7 @@
             // 
             this.nóminasToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nóminasToolStripMenuItem.Name = "nóminasToolStripMenuItem";
-            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.nóminasToolStripMenuItem.Text = "Nóminas";
             this.nóminasToolStripMenuItem.Click += new System.EventHandler(this.nóminasToolStripMenuItem_Click);
             // 
@@ -281,6 +303,15 @@
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(138, 34);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xToolStripMenuItem.Image")));
+            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(87, 34);
+            this.xToolStripMenuItem.Text = "Ayuda";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -356,5 +387,8 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDePagoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem habitacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignacionEmpleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
     }
 }
