@@ -1,0 +1,12 @@
+-------------------------------
+	INSTRUCCIONES
+-------------------------------
+
+Para que las ayudas puedan ser vistas en el programa se tiene que tener el archivo
+"Ayudas Agencia Turismo.chm" en el disco 'C'.
+
+-----------------------------------------------------------------------------------
+
+
+En caso del reporte de facturación, se debe crear una carpeta llamada "Reportes" en el 
+disco C y adentro de la carpeta incluir el archivo de reporte llamado "reporteFactura.rpt"
