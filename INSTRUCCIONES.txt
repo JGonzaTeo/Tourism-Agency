@@ -8,5 +8,8 @@ Para que las ayudas puedan ser vistas en el programa se tiene que tener el archi
 -----------------------------------------------------------------------------------
 
 
-En caso del reporte de facturación, se debe crear una carpeta llamada "Reportes" en el 
+En caso del reporte de facturaciï¿½n, se debe crear una carpeta llamada "Reportes" en el 
 disco C y adentro de la carpeta incluir el archivo de reporte llamado "reporteFactura.rpt"
+
+
+Probando el bloqueo del master por segunda vez porque Teo no habia guardado los cambios
